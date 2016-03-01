@@ -1,0 +1,18 @@
+<Solution>
+  <PropertyGroup Name="authenticationScene" Version="2.3.3.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="AuthenticationScene.csd" Type="Scene" />
+        <Image Name="authenticationBackGround.png" />
+        <Image Name="submitbtn2.png" />
+        <Image Name="submitbtn1.png" />
+        <TTF Name="FZMWFont.ttf" />
+        <TTF Name="wending.TTF" />
+        <Image Name="giveupbtn1.png" />
+        <Image Name="giveupbtn2.png" />
+        <Image Name="TextField.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

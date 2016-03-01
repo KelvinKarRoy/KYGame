@@ -1,0 +1,27 @@
+<UserData Version="2.3.3.0">
+  <Properties>
+    <Item Key="CocosRecentOperation">
+      <Value ctype="CocosRecentOperation">
+        <LastPublishType Value="Resource" />
+        <IsLastPublish Value="True" />
+        <LastRunType Value="Windows" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="MainScene.csd" />
+          <FilePathData Path="jones.csd" />
+          <FilePathData Path="huchey.csd" />
+          <FilePathData Path="generalshark.csd" />
+          <FilePathData Path="BattleTop.csd" />
+          <FilePathData Path="captain_jack.csd" />
+          <FilePathData Path="BattleLayer.csd" />
+          <FilePathData Path="BattleBottom.csd" />
+          <FilePathData Path="cat_queen.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="MainScene.csd" />
+      </Value>
+    </Item>
+  </Properties>
+</UserData>

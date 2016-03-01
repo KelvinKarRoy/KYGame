@@ -1,0 +1,19 @@
+<Solution>
+  <PropertyGroup Name="RoleSelectScene" Version="2.3.3.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="RoleSelectScene.csd" Type="Scene" />
+        <Image Name="RoleSelectBackground.png" />
+        <Image Name="karryRolebtn1.png" />
+        <Image Name="karryRolebtn2.png" />
+        <Image Name="royRolebtn1.png" />
+        <Image Name="royRolebtn2.png" />
+        <Image Name="submitRegeditbtn1.png" />
+        <Image Name="submitRegeditbtn2.png" />
+        <Image Name="back1.png" />
+        <Image Name="back2.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

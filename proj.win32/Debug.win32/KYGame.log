@@ -1,0 +1,55 @@
+﻿生成启动时间为 2016/2/9 19:45:55。
+     1>项目“E:\simple\KYGame\proj.win32\KYGame.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         E:\VS2013\VC\bin\CL.exe /c /IE:\simple\KYGame\cocos2d /IE:\simple\cocos2d\extensions /IE:\simple\KYGame\cocos2d\cocos\2d\..\..\cocos\audio\include /IE:\simple\KYGame\cocos2d\cocos\2d\..\..\external /IE:\simple\KYGame\cocos2d\cocos\2d\..\..\external\chipmunk\include\chipmunk /IE:\simple\KYGame\cocos2d\cocos\2d\..\..\extensions /I..\Classes /I.. /I"E:\simple\KYGame\cocos2d\cocos\2d\..\..\cocos\editor-support" /IE:\simple\KYGame\cocos2d\cocos\2d\..\..\cocos /IE:\simple\KYGame\cocos2d\cocos\2d\..\..\cocos\platform /IE:\simple\KYGame\cocos2d\cocos\2d\..\..\cocos\platform\desktop /IE:\simple\KYGame\cocos2d\cocos\2d\..\..\external\glfw3\include\win32 /I"E:\simple\KYGame\cocos2d\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /IE:\simple\KYGame\cocos2d\cocos\2d\..\..\external\freetype2\include\win32\freetype2 /IE:\simple\KYGame\cocos2d\cocos\2d\..\..\external\freetype2\include\win32\ /IE:\simple\KYGame\cocos2d\cocos\2d\..\..\external /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USE_MATH_DEFINES /D GL_GLEXT_PROTOTYPES /D CC_ENABLE_CHIPMUNK_INTEGRATION=1 /D COCOS2D_DEBUG=1 /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc120.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\utility.cpp
+         utility.cpp
+     1>e:\simple\kygame\classes\utility.cpp(11): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\simple\kygame\classes\utility.cpp(28): warning C4996: 'cocos2d::ui::Widget::getSize': 被声明为已否决
+                 e:\simple\kygame\cocos2d\cocos\ui\uiwidget.h(520) : 参见“cocos2d::ui::Widget::getSize”的声明
+     1>e:\simple\kygame\classes\utility.cpp(32): warning C4996: 'cocos2d::ui::Widget::getSize': 被声明为已否决
+                 e:\simple\kygame\cocos2d\cocos\ui\uiwidget.h(520) : 参见“cocos2d::ui::Widget::getSize”的声明
+     1>e:\simple\kygame\classes\utility.cpp(34): warning C4996: 'cocos2d::ui::Text::getStringValue': 被声明为已否决
+                 e:\simple\kygame\cocos2d\cocos\ui\uitext.h(116) : 参见“cocos2d::ui::Text::getStringValue”的声明
+     1>e:\simple\kygame\classes\utility.cpp(44): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\simple\kygame\classes\utility.cpp(64): warning C4996: 'cocos2d::ui::Text::setText': 被声明为已否决
+                 e:\simple\kygame\cocos2d\cocos\ui\uitext.h(105) : 参见“cocos2d::ui::Text::setText”的声明
+     1>e:\simple\kygame\classes\utility.cpp(69): warning C4018: “<”: 有符号/无符号不匹配
+     1>e:\simple\kygame\classes\utility.cpp(88): warning C4996: 'cocos2d::Layer::setTouchEnabled': 被声明为已否决
+                 e:\simple\kygame\cocos2d\cocos\2d\cclayer.h(179) : 参见“cocos2d::Layer::setTouchEnabled”的声明
+     1>e:\simple\kygame\classes\utility.cpp(89): warning C4996: 'cocos2d::Layer::setKeyboardEnabled': 被声明为已否决
+                 e:\simple\kygame\cocos2d\cocos\2d\cclayer.h(207) : 参见“cocos2d::Layer::setKeyboardEnabled”的声明
+                 e:\simple\kygame\cocos2d\cocos\2d\cclayer.h(207) : 参见“cocos2d::Layer::setKeyboardEnabled”的声明
+       Link:
+         E:\VS2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\simple\proj.win32\Debug.win32\KYGame.exe" /INCREMENTAL /NOLOGO /LIBPATH:E:\simple\proj.win32\Debug.win32\ /LIBPATH:E:\simple\proj.win32\Debug.win32\ opengl32.lib glew32.lib libzlib.lib libwebp.lib libiconv.lib freetype.lib winmm.lib ws2_32.lib libbox2d.lib libSpine.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib libcurl_imp.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\simple\proj.win32\Debug.win32\KYGame.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\simple\proj.win32\Debug.win32\KYGame.lib" /MACHINE:X86 /SAFESEH Debug.win32\game.res
+         Debug.win32\AboutScene.obj
+         Debug.win32\AppDelegate.obj
+         Debug.win32\AuthenticationScene.obj
+         Debug.win32\CsvData.obj
+         Debug.win32\CsvUtil.obj
+         Debug.win32\DataUtility.obj
+         Debug.win32\DialogLayer.obj
+         Debug.win32\HttpUtility.obj
+         Debug.win32\LogInScene.obj
+         Debug.win32\Player.obj
+         Debug.win32\PropertyScene.obj
+         Debug.win32\RegeditScene.obj
+         Debug.win32\Self.obj
+         Debug.win32\StringUtil.obj
+         Debug.win32\StringUtility.obj
+         Debug.win32\utility.obj
+         Debug.win32\main.obj
+         E:\simple\proj.win32\Debug.win32\libcocos2d.lib
+         E:\simple\proj.win32\Debug.win32\libSpine.lib
+         E:\simple\proj.win32\Debug.win32\libbox2d.lib
+         KYGame.vcxproj -> E:\simple\proj.win32\Debug.win32\KYGame.exe
+       CustomBuildStep:
+         if not exist "E:\simple\proj.win32\Debug.win32\" mkdir "E:\simple\proj.win32\Debug.win32\"
+         xcopy "E:\simple\KYGame\proj.win32\..\Resources" "E:\simple\proj.win32\Debug.win32\" /D /E /I /F /Y
+               
+         :VCEnd
+         复制了 0 个文件
+     1>已完成生成项目“E:\simple\KYGame\proj.win32\KYGame.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:20.17
