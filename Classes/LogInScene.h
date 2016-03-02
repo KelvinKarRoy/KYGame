@@ -1,16 +1,16 @@
 #ifndef __LOGIN_SCENE_H__
 #define __LOGIN_SCENE_H__
 /*
-	µÇÂ¼Ò³Ãæ
+	ÂµÂ«Â¬Âºâ€œâ‰¥âˆšÃŠ
 */
 
 #include "cocos2d.h"
 #include "editor-support/cocostudio/CCSGUIReader.h"
-#include "ui/CocosGUI.h"//UIÏà¹ØµÄÍ·ÎÄ¼ş 
-#include "cocostudio/CocoStudio.h"//ÔÚCocosStudio.h Í·ÎÄ¼şÖĞÒÑ¾­°üº¬ÁËStudioËùĞèÒªµÄ¸÷¸öÍ·ÎÄ¼ş(³ıCocosGUI)Òò´ËÎÒÃÇÊ¹ÓÃStudio½öĞèÒª°üº¬Ëû¾Í¿ÉÒÔ 
+#include "ui/CocosGUI.h"//UIè¯»å–ç±»
+#include "cocostudio/CocoStudio.h"//â€˜â„CocosStudio.h Ã•âˆ‘Å’Æ’ÂºË›Ã·â€“â€œâ€”Ã¦â‰ âˆÂ¸âˆ«Â¨Â¡Ã€StudioÃ€Ë˜â€“Ã‹â€œâ„¢ÂµÆ’âˆËœâˆË†Ã•âˆ‘Å’Æ’ÂºË›(â‰¥ËCocosGUI)â€œÃšÂ¥Ã€Å’â€œâˆšÂ«Â Ï€â€âˆšStudioÎ©Ë†â€“Ã‹â€œâ„¢âˆÂ¸âˆ«Â¨Ã€ËšÃ¦Ã•Ã¸â€¦â€œâ€˜ 
 
 #include "cocos-ext.h"
-//Ò»Ğ©Ïà¹ØÒ³Ãæ
+//â€œÂªâ€“Â©Å“â€¡Ï€Ã¿â€œâ‰¥âˆšÃŠ
 #include "AboutScene.h"
 #include "RegeditScene.h"
 #include "AuthenticationScene.h"
@@ -18,6 +18,8 @@
 #include "HttpUtility.h"
 #include "utility.h"
 #include "StringUtility.h"
+
+//#include "sqlite/sqlite3.h"
 
 
 using namespace cocos2d::ui;
@@ -29,17 +31,17 @@ public:
 
 	virtual bool init();
 
-	//ÊµÏÖ static create()º¯ÊıµÄºê
+	//Â ÂµÅ“Ã· static create()âˆ«Ã˜Â ËÂµÆ’âˆ«Ã
 	CREATE_FUNC(LogInScene);
 
-	void promptDialogBox(std::string strInfo);//µ¯³öÌáÊ¾¶Ô»°¿ò
+	void promptDialogBox(std::string strInfo);//ÂµÃ˜â‰¥Ë†ÃƒÂ·Â Ã¦âˆ‚â€˜ÂªâˆÃ¸Ãš
 
 private:
 	Node* rootNode;
-	Layer* childLayer;//¸÷ÖÖÒ³Ãæ
-	void clickAboutCallback(Ref*, TouchEventType type);//¹ØÓÚ°´Å¥»Øµ÷º¯Êı
-	void clickLoginCallback(Ref*, TouchEventType type);//µÇÂ¼°´Å¥»Øµ÷º¯Êı
-	void clickRegeditCallback(Ref*, TouchEventType type);//×¢²á°´Å¥»Øµ÷º¯Êı
+	Layer* childLayer;//âˆËœÃ·Ã·â€œâ‰¥âˆšÃŠ
+	void clickAboutCallback(Ref*, TouchEventType type);//Ï€Ã¿â€â„âˆÂ¥â‰ˆâ€¢ÂªÃ¿ÂµËœâˆ«Ã˜Â Ë
+	void clickLoginCallback(Ref*, TouchEventType type);//ÂµÂ«Â¬ÂºâˆÂ¥â‰ˆâ€¢ÂªÃ¿ÂµËœâˆ«Ã˜Â Ë
+	void clickRegeditCallback(Ref*, TouchEventType type);//â—ŠÂ¢â‰¤Â·âˆÂ¥â‰ˆâ€¢ÂªÃ¿ÂµËœâˆ«Ã˜Â Ë
 
 
 

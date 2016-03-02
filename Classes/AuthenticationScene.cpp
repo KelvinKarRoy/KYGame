@@ -21,26 +21,26 @@ bool AuthenticationScene::init()
 	{
 		return false;
 	}
-	/*»ñÈ¡ÆÁÄ»´óĞ¡*/
+	/*ÂªÃ’Â»Â°âˆ†Â¡Æ’ÂªÂ¥Ã›â€“Â°*/
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	/**************¼ÓÔØUI***************/
+	/**************Âºâ€â€˜Ã¿UI***************/
 	rootNode = CSLoader::createNode("csb/AuthenticationScene.csb");
 
-	//µ÷ÕûUI´óĞ¡
+	//ÂµËœâ€™ËšUIÂ¥Ã›â€“Â°
 	rootNode->setScale(visibleSize.width / rootNode->getContentSize().width, visibleSize.height / rootNode->getContentSize().height);
 
 	this->addChild(rootNode);
 
 	
-	//»ñÈ¡·­Ò³ÈİÆ÷
+	//ÂªÃ’Â»Â°âˆ‘â‰ â€œâ‰¥Â»â€ºâˆ†Ëœ
 	auto pageView = (PageView*)rootNode->getChildByName("PageView");
 
-	//µ÷Õû·­Ò³ÁéÃô¶È
+	//ÂµËœâ€™Ëšâˆ‘â‰ â€œâ‰¥Â¡ÃˆâˆšÃ™âˆ‚Â»
 	pageView->setCustomScrollThreshold(0.3);
 	
-	//°´Å¥»Øµ÷º¯Êı
+	//âˆÂ¥â‰ˆâ€¢ÂªÃ¿ÂµËœâˆ«Ã˜Â Ë
 	Button* giveUpbtn = (Button*)rootNode->getChildByName("Button_giveup");
 
 	giveUpbtn->addTouchEventListener(this, toucheventselector(AuthenticationScene::clickGiveupCallback));
@@ -55,39 +55,39 @@ bool AuthenticationScene::init()
 
 	this->addChild(childLayer);
 
-	//»ñÈ¡ÎåµÀÌâ
+	//ÂªÃ’Â»Â°Å’Ã‚ÂµÂ¿Ãƒâ€š
 	HttpUtility::getInstance(this)->loadQuestion(5);
 	
 	return true;
 }
 
-//ÌâÄ¿¸üĞÂ
+//Ãƒâ€šÆ’Ã¸âˆÂ¸â€“Â¬
 void AuthenticationScene::updateQuestion()
 {
 
-	//·­Ò³ÈİÆ÷
+	//âˆ‘â‰ â€œâ‰¥Â»â€ºâˆ†Ëœ
 	auto pageView = (PageView*)rootNode->getChildByName("PageView");
 
-	//ÎÊÌâvector
+	//Å’Â Ãƒâ€švector
 	std::vector<std::string> questionVector = question_answer.first;
 
 	for (int i = 1; i <= questionVector.size(); ++i)
 	{
-		//»ñÈ¡ÆäÖĞÒ»Ò³
+		//ÂªÃ’Â»Â°âˆ†â€°Ã·â€“â€œÂªâ€œâ‰¥
 		char childName[30];
 		sprintf(childName, "Panel_%d", i);
 		auto page = pageView->getChildByName(childName);
 
-		//»ñÈ¡ÎÊÌâÎÄ±¾
+		//ÂªÃ’Â»Â°Å’Â Ãƒâ€šÅ’Æ’Â±Ã¦
 		sprintf(childName, "Text_Qestion%d", i);
 		Text* questionText = (Text*)page->getChildByName(childName);
 
-		//ÒÔÏÂ´úÂëÊÇÉèÖÃ×Ô¶¯»»ĞĞ
+		//â€œâ€˜Å“Â¬Â¥Ë™Â¬ÃÂ Â«â€¦Ã‹Ã·âˆšâ—Šâ€˜âˆ‚Ã˜ÂªÂªâ€“â€“
 		questionText->setTextHorizontalAlignment(cocos2d::TextHAlignment::LEFT);
 		questionText->setTextVerticalAlignment(cocos2d::TextVAlignment::TOP);
 		utility::setTextAuto(questionText);
 
-		//½«ÎÊÌâÈ¡³ö·Åµ½Ò³ÃæÉÏ
+		//Î©Â´Å’Â Ãƒâ€šÂ»Â°â‰¥Ë†âˆ‘â‰ˆÂµÎ©â€œâ‰¥âˆšÃŠâ€¦Å“
 		std::string questionStr = questionVector[i - 1];
 		questionText->setText(questionStr);
 	}
@@ -104,7 +104,7 @@ void AuthenticationScene::clickGiveupCallback(Ref*, TouchEventType type)
 		break;
 	case TouchEventType::TOUCH_EVENT_ENDED:
 		CCLOG("%s", "give up!!!!");
-		cocos2d::Director::getInstance()->replaceScene(LogInScene::createScene());//ÇĞ»»µ½µÇÂ¼Ò³Ãæ
+		cocos2d::Director::getInstance()->replaceScene(LogInScene::createScene());//Â«â€“ÂªÂªÂµÎ©ÂµÂ«Â¬Âºâ€œâ‰¥âˆšÃŠ
 		break;
 	case TouchEventType::TOUCH_EVENT_MOVED:
 		break;
@@ -112,7 +112,7 @@ void AuthenticationScene::clickGiveupCallback(Ref*, TouchEventType type)
 }
 
 
-//¸ù¾İstatusµ¯³ö¶ÔÓ¦ÌáÊ¾¿ò
+//âˆË˜Ã¦â€ºstatusÂµÃ˜â‰¥Ë†âˆ‚â€˜â€Â¶ÃƒÂ·Â Ã¦Ã¸Ãš
 void AuthenticationScene::promptDialogBox(std::string str, AuthenticationScene::STATUS status)
 {
 	utility::setEnable(false, this);
@@ -120,11 +120,11 @@ void AuthenticationScene::promptDialogBox(std::string str, AuthenticationScene::
 	{
 	case AuthenticationScene::STATUS::LINK_ERROR:
 		childLayer->setVisible(true);
-		((DialogLayer*)childLayer)->setText(str);//Êä³öÎÄ×Ö
+		((DialogLayer*)childLayer)->setText(str);//Â â€°â‰¥Ë†Å’Æ’â—ŠÃ·
 		break;
 	case AuthenticationScene::STATUS::ANSWER_ERROR:
 		childLayer->setVisible(true);
-		((DialogLayer*)childLayer)->setText(str);//Êä³öÎÄ×Ö
+		((DialogLayer*)childLayer)->setText(str);//Â â€°â‰¥Ë†Å’Æ’â—ŠÃ·
 		break;
 	default:
 		break;
@@ -133,7 +133,7 @@ void AuthenticationScene::promptDialogBox(std::string str, AuthenticationScene::
 
 void AuthenticationScene::clickSubmitCallback(Ref*, TouchEventType type)
 {
-	bool flag = checkAnswer();//¼ì²é´ğ°¸ÊÇ·ñÕıÈ·
+	bool flag = checkAnswer();//æ£€æŸ¥ç­”æ¡ˆæ˜¯å¦æ­£ç¡®
 	switch (type)
 	{
 	case TouchEventType::TOUCH_EVENT_BEGAN:
@@ -143,14 +143,14 @@ void AuthenticationScene::clickSubmitCallback(Ref*, TouchEventType type)
 	case TouchEventType::TOUCH_EVENT_ENDED:
 		CCLOG("%s", "submit!!!!");
 		if (flag)
-		{//ÑéÖ¤³É¹¦
+		{//éªŒè¯æˆåŠŸ
 			CCLOG("%s", "success");
 			Director::getInstance()->replaceScene(RegeditScene::createScene());
 		}
 		else
-		{//´ğ°¸ÓĞÎó»òÎª¿Õ
-			this->promptDialogBox("The Answer is wrong!If you have any question, welcome to sent email to yk118921@outlook.com"
-				, AuthenticationScene::STATUS::ANSWER_ERROR);//µ¯³ö¶Ô»°¿ò
+		{//å›ç­”é”™è¯¯
+			this->promptDialogBox("å›ç­”é”™è¯¯!å¦‚æœä½ æœ‰ä»»ä½•ç–‘é—®,æ¬¢è¿å¯„ä»¶ç»™yk118921@outlook.com"
+				, AuthenticationScene::STATUS::ANSWER_ERROR);//ÂµÃ˜â‰¥Ë†âˆ‚â€˜ÂªâˆÃ¸Ãš
 		}
 		break;
 	case TouchEventType::TOUCH_EVENT_MOVED:
@@ -159,36 +159,36 @@ void AuthenticationScene::clickSubmitCallback(Ref*, TouchEventType type)
 	
 }
 
-//¼ì²é´ğ°¸ÊÇ·ñÕıÈ·
+//æ£€æŸ¥ç­”æ¡ˆæ˜¯å¦æ­£ç¡®
 bool AuthenticationScene::checkAnswer()
 {
 	bool flag = true;
 	
-	//·­Ò³ÈİÆ÷
+	//âˆ‘â‰ â€œâ‰¥Â»â€ºâˆ†Ëœ
 	auto pageView = (PageView*)rootNode->getChildByName("PageView");
 
-	//ÎÊÌâvector
+	//Å’Â Ãƒâ€švector
 	std::vector<std::string> answerVector = question_answer.second;
 
-	if (answerVector.size() == 0) flag = false;//¼ÓÔØÊ§°ÜÔòÎªfalse
+	if (answerVector.size() == 0) flag = false;//Âºâ€â€˜Ã¿Â ÃŸâˆâ€¹â€˜ÃšÅ’â„¢false
 
 	for (int i = 1; i <= answerVector.size(); ++i)
 	{
-		//»ñÈ¡ÆäÖĞÒ»Ò³
+		//ÂªÃ’Â»Â°âˆ†â€°Ã·â€“â€œÂªâ€œâ‰¥
 		char childName[30];
 		sprintf(childName, "Panel_%d", i);
 		auto page = pageView->getChildByName(childName);
 
-		//»ñÈ¡»Ø´ğ¿ò
+		//ÂªÃ’Â»Â°ÂªÃ¿Â¥ï£¿Ã¸Ãš
 		sprintf(childName, "Panel_Answer%d", i);
 		auto answerPanel = page->getChildByName(childName);
 
-		//»ñÈ¡»Ø´ğÎÄ±¾
+		//ÂªÃ’Â»Â°ÂªÃ¿Â¥ï£¿Å’Æ’Â±Ã¦
 		auto answertf = (TextField*)answerPanel->getChildByName("TextField_Answer");
-		std::string player_answer = answertf->getStringValue();
+		std::string player_answer = answertf->getString();
 		CCLOG("%s", player_answer.c_str());
 
-		//½«ÕıÈ·´ğ°¸È¡³ö
+		//Î©Â´â€™ËÂ»âˆ‘Â¥ï£¿âˆâˆÂ»Â°â‰¥Ë†
 		std::string answerStr = answerVector[i - 1];
 		CCLOG("%s", answerStr.c_str());
 		if (player_answer.length() == 0 || strcmp(player_answer.c_str(), answerStr.c_str()) != 0)

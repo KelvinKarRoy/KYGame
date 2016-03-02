@@ -3,7 +3,7 @@
 
 HttpClient* HttpUtility::httpClient = HttpClient::getInstance();
 HttpUtility* HttpUtility::httpUtility = nullptr;
-std::string HttpUtility::ip = "121.42.8.206";//·şÎñÆ÷ip
+std::string HttpUtility::ip = "121.42.8.206";//æˆ‘çš„æœåŠ¡å™¨ip
 
 HttpUtility::HttpUtility() {
 
@@ -55,11 +55,11 @@ void HttpUtility::checkPassword(std::string account, std::string password)
 
 }
 
-//Ïò·şÎñÆ÷ÉêÇë×¢²áÕËºÅ
-void HttpUtility::regeditAccount(std::string account,//ÕËºÅ
-	std::string password,//ÃÜÂë
-	std::string name,//êÇ³Æ
-	bool role//ÊÇ·ñÎª¿­
+//Å“Ãšâˆ‘Ë›Å’Ã’âˆ†Ëœâ€¦ÃÂ«Ãâ—ŠÂ¢â‰¤Â·â€™Ã€âˆ«â‰ˆ
+void HttpUtility::regeditAccount(std::string account,//â€™Ã€âˆ«â‰ˆ
+	std::string password,//âˆšâ€¹Â¬Ã
+	std::string name,//ÃÂ«â‰¥âˆ†
+	bool role//Â Â«âˆ‘Ã’Å’â„¢Ã¸â‰ 
 	)
 {
 	HttpRequest * request = new HttpRequest();
@@ -111,7 +111,7 @@ void HttpUtility::loadQuestion(int num_question)
 }
 
 
-//µÇÂ¼Ê±¸ù¾İÕËºÅ¼ÓÔØÓÃ»§ĞÅÏ¢
+//ÂµÂ«Â¬ÂºÂ Â±âˆË˜Ã¦â€ºâ€™Ã€âˆ«â‰ˆÂºâ€â€˜Ã¿â€âˆšÂªÃŸâ€“â‰ˆÅ“Â¢
 void HttpUtility::loadPlayerInformation(std::string account)
 {
 	HttpRequest * request = new HttpRequest();
@@ -131,7 +131,7 @@ void HttpUtility::loadPlayerInformation(std::string account)
 	request->release();
 }
 
-//Í¨¹ıid¼ÓÔØÓÃ»§×´Ì¬
+//Ã•Â®Ï€ËidÂºâ€â€˜Ã¿â€âˆšÂªÃŸâ—ŠÂ¥ÃƒÂ¨
 void HttpUtility::loadPlayerStatus(int playerID)
 {
 	HttpRequest * request = new HttpRequest();
@@ -153,7 +153,7 @@ void HttpUtility::loadPlayerStatus(int playerID)
 }
 
 
-/******************http»Øµ÷************/
+/******************httpÂªÃ¿ÂµËœ************/
 void HttpUtility::onHttpRequestCompleted(HttpClient *sender, HttpResponse *response){
 
 	if (!response) {
@@ -183,53 +183,58 @@ void HttpUtility::onHttpRequestCompleted(HttpClient *sender, HttpResponse *respo
 	log("%s", responseDataStr.c_str());
 
 	switch (tag) {
-		/**********************¼ìÑéÃÜÂëÊÇ·ñÕıÈ·*********************/
+		/**********************æ£€æŸ¥å¯†ç æ˜¯å¦æ­£ç¡®*********************/
 	case HttpEnum::CHECKPASSWORD:
 		if (statusCode == 200) {
-			flag = DataUtility::decodeFlagData(responseDataStr);//ÃÜÂëÊÇ·ñÕıÈ·
+			flag = DataUtility::decodeFlagData(responseDataStr);//è§£æè¿”å›çš„flag
 			flag ? log("password is true") : log("password is wrong");
-			flag ? ((LogInScene*) this->callerLayer)->promptDialogBox("log in!!")
-				: ((LogInScene*) this->callerLayer)->promptDialogBox("password is wrong");//Ê¹loginÒ³Ãæµ¯³öÌáÊ¾¿ò
+            if(flag)
+            {//ç™»å½•æˆåŠŸ
+                ((LogInScene*) this->callerLayer)->promptDialogBox("log in!!");
+            }else
+            {//å¯†ç æœ‰è¯¯
+                ((LogInScene*) this->callerLayer)->promptDialogBox("å¯†ç æœ‰è¯¯ï¼Œè¯·æ ¸å¯¹åè¾“å…¥");
+            }
 		}
 		else {
-			//·şÎñÆ÷Òì³£
+			//æœåŠ¡å™¨å¼‚å¸¸
 			((LogInScene*) this->callerLayer)->promptDialogBox("there exist some error in Internet, please react");
 		}
 		break;
-		/******************¼ÓÔØÑéÖ¤ÎÊÌâ*****************************/
+		/******************Âºâ€â€˜Ã¿â€”ÃˆÃ·Â§Å’Â Ãƒâ€š*****************************/
 	case HttpEnum::LOADQUESTION:
 		if (statusCode == 200) {
-			//¼ÓÔØÎÊÌâ³É¹¦
+			//Âºâ€â€˜Ã¿Å’Â Ãƒâ€šâ‰¥â€¦Ï€Â¶
 			std::pair<std::vector<std::string>, std::vector<std::string>> question_answer 
-				= DataUtility::decodeQuestionData(responseDataStr);//½âÎöjson¸ñÊ½µÄÎÊÌâ
-			((AuthenticationScene*) this->callerLayer)->setQuestion(question_answer);//½«ÎÊÌâºÍ´ğ°¸´«¸øÑéÖ¤Ò³Ãæ
+				= DataUtility::decodeQuestionData(responseDataStr);//Î©â€šÅ’Ë†jsonâˆÃ’Â Î©ÂµÆ’Å’Â Ãƒâ€š
+			((AuthenticationScene*) this->callerLayer)->setQuestion(question_answer);//Î©Â´Å’Â Ãƒâ€šâˆ«Ã•Â¥ï£¿âˆâˆÂ¥Â´âˆÂ¯â€”ÃˆÃ·Â§â€œâ‰¥âˆšÃŠ
 		}
 		else {
-			//·şÎñÆ÷Òì³£
+			//âˆ‘Ë›Å’Ã’âˆ†Ëœâ€œÃâ‰¥Â£
 			((AuthenticationScene*) this->callerLayer)->promptDialogBox("there exist some error in Internet, please react"
 				,AuthenticationScene::STATUS::LINK_ERROR);
 		}
 		break;
-		/*****************************×¢²áÕËºÅ****************************/
+		/*****************************â—ŠÂ¢â‰¤Â·â€™Ã€âˆ«â‰ˆ****************************/
 	case HttpEnum::REGEDITACCOUNT:
 		if (statusCode == 200) {
-			flag = DataUtility::decodeFlagData(responseDataStr);//×¢²áÊÇ·ñ³É¹¦
+			flag = DataUtility::decodeFlagData(responseDataStr);//â—ŠÂ¢â‰¤Â·Â Â«âˆ‘Ã’â‰¥â€¦Ï€Â¶
 			flag ? CCLOG("%s", "regedit succeed!") : CCLOG("%s", "regedit error!");
 			if (flag)
-			{//×¢²á³É¹¦
+			{//â—ŠÂ¢â‰¤Â·â‰¥â€¦Ï€Â¶
 
 				((RegeditScene*) this->callerLayer)->promptDialogBox("regedit suceed!",
-					RegeditScene::STATUS::SUCCEED);//Ê¹loginÒ³Ãæµ¯³öÌáÊ¾¿ò
+					RegeditScene::STATUS::SUCCEED);//Â Ï€loginâ€œâ‰¥âˆšÃŠÂµÃ˜â‰¥Ë†ÃƒÂ·Â Ã¦Ã¸Ãš
 			}
 			else
-			{//ÕËºÅ»òêÇ³ÆÒÑ´æÔÚ
+			{//â€™Ã€âˆ«â‰ˆÂªÃšÃÂ«â‰¥âˆ†â€œâ€”Â¥ÃŠâ€˜â„
 				((RegeditScene*) this->callerLayer)->promptDialogBox("there is the same account or name already",
-					RegeditScene::STATUS::ACCOUNTEXIST);//Ê¹loginÒ³Ãæµ¯³öÌáÊ¾¿ò
+					RegeditScene::STATUS::ACCOUNTEXIST);//Â Ï€loginâ€œâ‰¥âˆšÃŠÂµÃ˜â‰¥Ë†ÃƒÂ·Â Ã¦Ã¸Ãš
 
 			}
 		}
 		else {
-			//·şÎñÆ÷Òì³£
+			//âˆ‘Ë›Å’Ã’âˆ†Ëœâ€œÃâ‰¥Â£
 			((RegeditScene*) this->callerLayer)->promptDialogBox("there exist some error in Internet, please react",
 				RegeditScene::STATUS::LINK_ERROR);
 		}
@@ -239,7 +244,7 @@ void HttpUtility::onHttpRequestCompleted(HttpClient *sender, HttpResponse *respo
 			DataUtility::getInstance()->decodeInformation(responseDataStr);
 		}
 		else {
-			//·şÎñÆ÷Òì³£
+			//âˆ‘Ë›Å’Ã’âˆ†Ëœâ€œÃâ‰¥Â£
 			((RegeditScene*) this->callerLayer)->promptDialogBox("there exist some error in Internet, please react",
 				RegeditScene::STATUS::LINK_ERROR);
 		}
@@ -249,7 +254,7 @@ void HttpUtility::onHttpRequestCompleted(HttpClient *sender, HttpResponse *respo
 			DataUtility::getInstance()->decodeStatus(responseDataStr);
 		}
 		else {
-			//·şÎñÆ÷Òì³£
+			//âˆ‘Ë›Å’Ã’âˆ†Ëœâ€œÃâ‰¥Â£
 			((RegeditScene*) this->callerLayer)->promptDialogBox("there exist some error in Internet, please react",
 				RegeditScene::STATUS::LINK_ERROR);
 		}
