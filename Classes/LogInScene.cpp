@@ -103,6 +103,7 @@ void LogInScene::clickLoginCallback(Ref*, TouchEventType type)
 			//提示对话框
 			this->promptDialogBox("输入了非法的账号或密码!(只能包括数字、字母、@和.)且最低不能少于六位");
         }
+            
         sqlite3 *pDB = NULL;//本地数据库对象
         int rc = sqlite3_open("db/KYGame.db", &pDB);
         CCLOG("SQLITE连接状态rc = %d",rc);

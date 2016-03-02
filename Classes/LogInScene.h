@@ -19,7 +19,7 @@
 #include "utility.h"
 #include "StringUtility.h"
 
-//#include "sqlite/sqlite3.h"
+#include "sqlite/sqlite3.h"
 
 
 using namespace cocos2d::ui;
