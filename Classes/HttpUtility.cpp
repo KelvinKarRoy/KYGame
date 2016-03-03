@@ -190,7 +190,7 @@ void HttpUtility::onHttpRequestCompleted(HttpClient *sender, HttpResponse *respo
 			flag ? log("password is true") : log("password is wrong");
             if(flag)
             {//登录成功
-                ((LogInScene*) this->callerLayer)->promptDialogBox("log in!!");
+                ((LogInScene*) this->callerLayer)->toHome();//密码正确，进入主页
             }else
             {//密码有误
                 ((LogInScene*) this->callerLayer)->promptDialogBox("密码有误，请核对后输入");
@@ -198,7 +198,7 @@ void HttpUtility::onHttpRequestCompleted(HttpClient *sender, HttpResponse *respo
 		}
 		else {
 			//服务器异常
-			((LogInScene*) this->callerLayer)->promptDialogBox("there exist some error in Internet, please react");
+			((LogInScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
 		}
 		break;
 		/******************加载验证问题*****************************/
@@ -211,31 +211,31 @@ void HttpUtility::onHttpRequestCompleted(HttpClient *sender, HttpResponse *respo
 		}
 		else {
 			//∑˛ŒÒ∆˜“Ï≥£
-			((AuthenticationScene*) this->callerLayer)->promptDialogBox("there exist some error in Internet, please react"
+			((AuthenticationScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试"
 				,AuthenticationScene::STATUS::LINK_ERROR);
 		}
 		break;
 		/*****************************注册账号****************************/
 	case HttpEnum::REGEDITACCOUNT:
 		if (statusCode == 200) {
-			flag = DataUtility::decodeFlagData(responseDataStr);//◊¢≤· «∑Ò≥…π¶
+			flag = DataUtility::decodeFlagData(responseDataStr);//是否注册成功
 			flag ? CCLOG("%s", "regedit succeed!") : CCLOG("%s", "regedit error!");
 			if (flag)
-			{//◊¢≤·≥…π¶
+			{//注册成功
 
-				((RegeditScene*) this->callerLayer)->promptDialogBox("regedit suceed!",
-					RegeditScene::STATUS::SUCCEED);// πlogin“≥√ÊµØ≥ˆÃ· æøÚ
+				((RegeditScene*) this->callerLayer)->promptDialogBox("注册成功，欢迎进入这个大家庭",
+					RegeditScene::STATUS::SUCCEED);//弹出对话框并进行回调
 			}
 			else
-			{//’À∫≈ªÚÍ«≥∆“—¥Ê‘⁄
-				((RegeditScene*) this->callerLayer)->promptDialogBox("there is the same account or name already",
-					RegeditScene::STATUS::ACCOUNTEXIST);// πlogin“≥√ÊµØ≥ˆÃ· æøÚ
+			{//注册失败
+				((RegeditScene*) this->callerLayer)->promptDialogBox("账号或昵称已存在（至于究竟是账号存在还是昵称已存在，开发者觉得判断实在是太麻烦了ZZZ）",
+					RegeditScene::STATUS::ACCOUNTEXIST);//弹出对话框并进行回调
 
 			}
 		}
 		else {
-			//∑˛ŒÒ∆˜“Ï≥£
-			((RegeditScene*) this->callerLayer)->promptDialogBox("there exist some error in Internet, please react",
+			//服务器连接异常
+			((RegeditScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后重试",
 				RegeditScene::STATUS::LINK_ERROR);
 		}
 		break;
@@ -245,7 +245,7 @@ void HttpUtility::onHttpRequestCompleted(HttpClient *sender, HttpResponse *respo
 		}
 		else {
 			//∑˛ŒÒ∆˜“Ï≥£
-			((RegeditScene*) this->callerLayer)->promptDialogBox("there exist some error in Internet, please react",
+			((RegeditScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后重试",
 				RegeditScene::STATUS::LINK_ERROR);
 		}
 		break;
@@ -255,7 +255,7 @@ void HttpUtility::onHttpRequestCompleted(HttpClient *sender, HttpResponse *respo
 		}
 		else {
 			//∑˛ŒÒ∆˜“Ï≥£
-			((RegeditScene*) this->callerLayer)->promptDialogBox("there exist some error in Internet, please react",
+			((RegeditScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后重试",
 				RegeditScene::STATUS::LINK_ERROR);
 		}
 		break;

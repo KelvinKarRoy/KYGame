@@ -191,7 +191,6 @@ void LogInScene::clickLoginCallback(Ref*, TouchEventType type)
 		{//输入合法
 			CCLOG("%s", "input is legal!!!!!!!!!!!!");
 			HttpUtility::getInstance(this)->checkPassword(account, password);
-            saveAccount();//记住账号密码;
 		}else{//输入非法
             CCLOG("%s", "input is illegal!!!!!!!!!!!!!");
 			//提示对话框
@@ -230,3 +229,10 @@ void LogInScene::promptDialogBox(std::string strInfo)
 	utility::setEnable(false, this);
 }
 
+
+//账号密码正确，进入游戏主页面
+void LogInScene::toHome()
+{
+    saveAccount();//记住账号密码
+    promptDialogBox("登录成功");
+}

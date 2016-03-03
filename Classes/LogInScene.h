@@ -36,6 +36,7 @@ public:
 
 	void promptDialogBox(std::string strInfo);//µØ≥ˆÃ· æ∂‘ª∞øÚ
 
+
 private:
 	Node* rootNode;
 	Layer* childLayer;//∏˜÷÷“≥√Ê
@@ -46,9 +47,9 @@ private:
     void loadPlayerAccount(TextField* accountField,TextField* passwdField);//从本地数据库读取账号
     void saveAccount();//记住账号密码
 
+    void toHome();//账号密码正确，进入游戏主页面
 
-	
-
+    friend class HttpUtility;//设置友元 使得http工具类能访问toHome()等重要方法
 };
 
 
