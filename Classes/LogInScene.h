@@ -42,8 +42,9 @@ private:
 	void clickAboutCallback(Ref*, TouchEventType type);//πÿ”⁄∞¥≈•ªÿµ˜∫Ø ˝
 	void clickLoginCallback(Ref*, TouchEventType type);//µ«¬º∞¥≈•ªÿµ˜∫Ø ˝
 	void clickRegeditCallback(Ref*, TouchEventType type);//◊¢≤·∞¥≈•ªÿµ˜∫Ø ˝
-
-
+    
+    void loadPlayerAccount(TextField* accountField,TextField* passwdField);//从本地数据库读取账号
+    void saveAccount();//记住账号密码
 
 
 	

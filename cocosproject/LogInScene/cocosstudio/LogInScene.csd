@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="LogInScene" Type="Scene" ID="a2ee0952-26b5-49ae-8bf9-4f1d6279b798" Version="2.3.3.0" />
+  <PropertyGroup Name="LogInScene" Type="Scene" ID="a2ee0952-26b5-49ae-8bf9-4f1d6279b798" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
@@ -16,7 +16,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="LogInBackGround.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_1" ActionTag="-2030366082" Tag="62" IconVisible="False" LeftMargin="644.0033" RightMargin="713.9967" TopMargin="417.6654" BottomMargin="734.3346" TouchEnable="True" BackColorAlpha="103" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="850" Scale9Height="90" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_1" ActionTag="-2030366082" Tag="62" IconVisible="False" LeftMargin="644.0033" RightMargin="713.9967" TopMargin="417.6654" BottomMargin="734.3346" TouchEnable="True" ClipAble="False" BackColorAlpha="103" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="850" Scale9Height="90" ctype="PanelObjectData">
             <Size X="850.0000" Y="90.0000" />
             <Children>
               <AbstractNodeData Name="TextField_account" ActionTag="18092142" Tag="64" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="32.3383" RightMargin="35.6617" TopMargin="15.4026" BottomMargin="-6.4026" TouchEnable="True" FontSize="54" IsCustomSize="True" LabelText="" PlaceHolderText="account" MaxLengthText="10" ctype="TextFieldObjectData">
@@ -41,7 +41,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_2" ActionTag="-1000170520" Tag="67" IconVisible="False" LeftMargin="640.6699" RightMargin="717.3301" TopMargin="564.3331" BottomMargin="587.6669" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="850" Scale9Height="90" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_2" ActionTag="-1000170520" Tag="67" IconVisible="False" LeftMargin="640.6699" RightMargin="717.3301" TopMargin="564.3331" BottomMargin="587.6669" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="850" Scale9Height="90" ctype="PanelObjectData">
             <Size X="850.0000" Y="90.0000" />
             <Children>
               <AbstractNodeData Name="TextField_password" ActionTag="-28638643" Tag="68" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="35.6716" RightMargin="32.3284" TopMargin="15.5753" BottomMargin="2.4247" TouchEnable="True" FontSize="54" IsCustomSize="True" LabelText="" PlaceHolderText="password" MaxLengthText="10" PasswordEnable="True" ctype="TextFieldObjectData">

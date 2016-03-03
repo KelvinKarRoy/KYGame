@@ -201,7 +201,7 @@ void HttpUtility::onHttpRequestCompleted(HttpClient *sender, HttpResponse *respo
 			((LogInScene*) this->callerLayer)->promptDialogBox("there exist some error in Internet, please react");
 		}
 		break;
-		/******************º”‘ÿ—È÷§Œ Ã‚*****************************/
+		/******************加载验证问题*****************************/
 	case HttpEnum::LOADQUESTION:
 		if (statusCode == 200) {
 			//º”‘ÿŒ Ã‚≥…π¶
@@ -215,7 +215,7 @@ void HttpUtility::onHttpRequestCompleted(HttpClient *sender, HttpResponse *respo
 				,AuthenticationScene::STATUS::LINK_ERROR);
 		}
 		break;
-		/*****************************◊¢≤·’À∫≈****************************/
+		/*****************************注册账号****************************/
 	case HttpEnum::REGEDITACCOUNT:
 		if (statusCode == 200) {
 			flag = DataUtility::decodeFlagData(responseDataStr);//◊¢≤· «∑Ò≥…π¶

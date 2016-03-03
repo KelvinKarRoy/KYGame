@@ -44,9 +44,102 @@ bool LogInScene::init()
 
 	regeditbtn->addTouchEventListener(this, toucheventselector(LogInScene::clickRegeditCallback));
 	
+    //获取account输入框
+    auto accountField = static_cast<TextField*>(rootNode->getChildByName("Panel_1")->getChildByName("TextField_account"));
+    
+    //获取password输入框
+    auto passwdField = static_cast<TextField*>(rootNode->getChildByName("Panel_2")->getChildByName("TextField_password"));
+    
+    loadPlayerAccount(accountField,passwdField);
+    
 	return true;
 }
 
+
+//从本地数据库读取账号
+void LogInScene::loadPlayerAccount(TextField* accountField,TextField* passwdField)
+{
+    sqlite3 *pDB = NULL;//本地数据库对象
+    std::string path= FileUtils::getInstance()->getWritablePath()+"KYGame.db";//获取本地数据库路径
+    
+    log("打开路径:%s",path.c_str());
+    
+    int rc = sqlite3_open(path.c_str(), &pDB);//打开数据库
+    CCLOG("SQLITE连接状态rc = %d",rc);
+    if( rc ){
+        CCLOG("Can't open database: ");
+        sqlite3_close(pDB);
+        return;
+    }
+    /*
+    //是否存在information表单
+    std::string  sql = "select count(*) from sqlite_master where type = 'table' and name = 'information'";
+    char** re;//查询结果
+    int r,c;//行、列
+    rc = sqlite3_get_table(pDB, sql.c_str(), &re, &r, &c, nullptr);
+    if(re[1]==0)
+    {//不存在information表
+        //创建information表
+        sql = "create table information(name text primary key,value text)";//创建information表单
+        rc = sqlite3_exec(pDB, sql.c_str(), nullptr, nullptr, nullptr);
+        if(rc!=SQLITE_OK)   log("create table failed");
+    }
+    */
+    std::string sql = "select * from information where name='account'";//查询账号
+    char** re;//查询结果
+    int r,c;//行、列
+    rc = sqlite3_get_table(pDB, sql.c_str(), &re, &r, &c,nullptr);
+    /*
+    log("%d行,%d列",r,c);
+    if(r == 0)
+    {//木有账号这一行
+        //增加这一行
+        sql = "insert into information values('account',NULL)";
+        rc = sqlite3_exec(pDB, sql.c_str(), nullptr, nullptr, nullptr);
+        if(rc!=SQLITE_OK)   log("插入失败");
+    }else{//得到了账号
+        accountField->setString(re[1*c+1]);
+    }
+    */
+    accountField->setString(re[1*c+1]);
+    
+    sql = "select * from information where name='passwd'";//查询密码
+    rc = sqlite3_get_table(pDB, sql.c_str(), &re, &r, &c,nullptr);
+    passwdField->setString(re[1*c+1]);
+    
+    sqlite3_close(pDB);//关闭数据库
+}
+
+//记住账号密码
+void LogInScene::saveAccount()
+{
+    bool isPWSave = static_cast<CheckBox*> (rootNode->getChildByName("CheckBox_1"))->getSelectedState();//密码是否保存
+    //获取账号和密码
+    auto account = static_cast<TextField*>(rootNode->getChildByName("Panel_1")->getChildByName("TextField_account"))->getString();
+    auto passwd = static_cast<TextField*>(rootNode->getChildByName("Panel_2")->getChildByName("TextField_password"))->getString();;
+    
+    sqlite3* pDB = nullptr;//本地数据库
+    std::string path= FileUtils::getInstance()->getWritablePath()+"KYGame.db";//获取本地数据库路径
+    sqlite3_open(path.c_str(), &pDB);//打开数据库
+    
+    //保存账号信息
+    std:string sql = "update information set value = '";
+    sql += account+"' where name = 'account'";//添加语句
+    sqlite3_exec(pDB, sql.c_str(), nullptr, nullptr, nullptr);
+    
+    //如果需要保存密码，保存密码信息
+    if(isPWSave)
+    {
+        sql = "update information set value = '";
+        sql += passwd+"' where name = 'passwd'";//添加语句
+        sqlite3_exec(pDB, sql.c_str(), nullptr, nullptr, nullptr);
+    }else
+    {//不需要保存 将密码设为空
+        sql = "update information set value = '' where name = 'passwd'";//添加语句
+        sqlite3_exec(pDB, sql.c_str(), nullptr, nullptr, nullptr);
+    }
+    
+}
 void LogInScene::clickAboutCallback(Ref*, TouchEventType type)
 {
 	
@@ -98,19 +191,14 @@ void LogInScene::clickLoginCallback(Ref*, TouchEventType type)
 		{//输入合法
 			CCLOG("%s", "input is legal!!!!!!!!!!!!");
 			HttpUtility::getInstance(this)->checkPassword(account, password);
+            saveAccount();//记住账号密码;
 		}else{//输入非法
             CCLOG("%s", "input is illegal!!!!!!!!!!!!!");
 			//提示对话框
 			this->promptDialogBox("输入了非法的账号或密码!(只能包括数字、字母、@和.)且最低不能少于六位");
         }
             
-        sqlite3 *pDB = NULL;//本地数据库对象
-        int rc = sqlite3_open("db/KYGame.db", &pDB);
-        CCLOG("SQLITE连接状态rc = %d",rc);
-        if( rc ){
-            CCLOG("Can't open database: ");
-            sqlite3_close(pDB);
-        }
+        
         break;
     
 	}
