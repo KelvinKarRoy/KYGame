@@ -99,7 +99,9 @@
 		B66C0A0A1C85505F002C8270 /* wending.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E91C85505F002C8270 /* wending.TTF */; };
 		B66C0A0D1C85537C002C8270 /* AboutScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C0A0B1C85537C002C8270 /* AboutScene.cpp */; };
 		B66C0A101C858B6F002C8270 /* PropertyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C0A0E1C858B6F002C8270 /* PropertyScene.cpp */; };
+		B68806EF1C89DD45009D28D8 /* GCCsvHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B68806ED1C89DD45009D28D8 /* GCCsvHelper.cpp */; };
 		B68F575B1C8928640008250A /* PropertyBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B68F575A1C8928640008250A /* PropertyBackGround.png */; };
+		B6E1EF731C89DFBF00D55420 /* db in Resources */ = {isa = PBXBuildFile; fileRef = B6E1EF721C89DFBF00D55420 /* db */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -248,8 +250,10 @@
 		B66C0A0C1C85537C002C8270 /* AboutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutScene.h; sourceTree = "<group>"; };
 		B66C0A0E1C858B6F002C8270 /* PropertyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PropertyScene.cpp; sourceTree = "<group>"; };
 		B66C0A0F1C858B6F002C8270 /* PropertyScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PropertyScene.hpp; sourceTree = "<group>"; };
-		B68F57591C8926620008250A /* PropertyScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = PropertyScene.csb; sourceTree = "<group>"; };
+		B68806ED1C89DD45009D28D8 /* GCCsvHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GCCsvHelper.cpp; sourceTree = "<group>"; };
+		B68806EE1C89DD45009D28D8 /* GCCsvHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GCCsvHelper.hpp; sourceTree = "<group>"; };
 		B68F575A1C8928640008250A /* PropertyBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PropertyBackGround.png; sourceTree = "<group>"; };
+		B6E1EF721C89DFBF00D55420 /* db */ = {isa = PBXFileReference; lastKnownFileType = folder; path = db; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -382,6 +386,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6E1EF721C89DFBF00D55420 /* db */,
 				B66C09C91C85505E002C8270 /* about1.png */,
 				B66C09CA1C85505E002C8270 /* about2.png */,
 				B66C09CB1C85505E002C8270 /* aboutScene.png */,
@@ -415,7 +420,6 @@
 				B66C09E71C85505F002C8270 /* submitRegeditbtn2.png */,
 				B66C09E81C85505F002C8270 /* TextField.png */,
 				B66C09E91C85505F002C8270 /* wending.TTF */,
-				B68F57591C8926620008250A /* PropertyScene.csb */,
 				B68F575A1C8928640008250A /* PropertyBackGround.png */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
@@ -427,6 +431,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B68806ED1C89DD45009D28D8 /* GCCsvHelper.cpp */,
+				B68806EE1C89DD45009D28D8 /* GCCsvHelper.hpp */,
 				B63A05A71C87388F0061C902 /* sqlite */,
 				B66C0A0B1C85537C002C8270 /* AboutScene.cpp */,
 				B66C0A0C1C85537C002C8270 /* AboutScene.h */,
@@ -607,6 +613,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				B6E1EF731C89DFBF00D55420 /* db in Resources */,
 				B66C0A011C85505F002C8270 /* res in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				B66C0A071C85505F002C8270 /* submitRegeditbtn1.png in Resources */,
@@ -682,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B66C09C11C854FA6002C8270 /* DialogLayer.cpp in Sources */,
+				B68806EF1C89DD45009D28D8 /* GCCsvHelper.cpp in Sources */,
 				B66C09C31C854FA6002C8270 /* LogInScene.cpp in Sources */,
 				B66C09C01C854FA6002C8270 /* DataUtility.cpp in Sources */,
 				B66C09C61C854FA6002C8270 /* Self.cpp in Sources */,

@@ -60,7 +60,7 @@ bool LogInScene::init()
 void LogInScene::loadPlayerAccount(TextField* accountField,TextField* passwdField)
 {
     sqlite3 *pDB = NULL;//本地数据库对象
-    std::string path= FileUtils::getInstance()->getWritablePath()+"KYGame.db";//获取本地数据库路径
+    std::string path= FileUtils::getInstance()->getWritablePath()+"db/KYGame.db";//获取本地数据库路径
     
     log("打开路径:%s",path.c_str());
     
