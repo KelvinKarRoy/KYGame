@@ -4,7 +4,9 @@
 #include "vector"
 #include "map"
 
-class Player
+#include "cocos2d.h"
+
+class Player : cocos2d::Node
 {
 public:
 	Player();

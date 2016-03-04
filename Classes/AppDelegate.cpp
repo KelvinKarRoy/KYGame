@@ -4,7 +4,7 @@
 #include "AboutScene.h"
 #include "AuthenticationScene.h"
 #include "RegeditScene.h"
-//#include "PropertyScene.h"
+#include "PropertyScene.hpp"
 
 USING_NS_CC;
 
@@ -82,7 +82,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     // create a scene. it's an autorelease object
-	auto scene = LogInScene::createScene();
+	auto scene = PropertyScene::createScene();
 
     // run
     director->runWithScene(scene);

@@ -16,6 +16,8 @@
 
 #include "sqlite3.h"
 
+#include "Self.h"
+
 using namespace cocos2d;
 using namespace cocos2d::ui;
 
@@ -42,6 +44,35 @@ private:
     
     Node* rootNode;//csb
     
+    Player* player;//要展示的人
+    
+    //各属性值
+    std::map<Player::ATTRIBUTE,int> attributes;
+    int id;
+    int cpid;
+    int cardid;
+    int clothid;
+    int exp;
+    int honor;
+    int level;
+    int money;
+    std::string name;
+    bool role;
+    bool top;
+    
+    void setPlayer(Player* player)
+    {
+        this->player = player;
+    }
+    
+    //读取各属性值
+    void loadPeoperty();
+    
+    //填写属性
+    void fillText();
+    
+    //画雷达图
+    void drawRadar();
     
 };
 

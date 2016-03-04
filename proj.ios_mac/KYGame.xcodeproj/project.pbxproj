@@ -99,6 +99,7 @@
 		B66C0A0A1C85505F002C8270 /* wending.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E91C85505F002C8270 /* wending.TTF */; };
 		B66C0A0D1C85537C002C8270 /* AboutScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C0A0B1C85537C002C8270 /* AboutScene.cpp */; };
 		B66C0A101C858B6F002C8270 /* PropertyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C0A0E1C858B6F002C8270 /* PropertyScene.cpp */; };
+		B68F575B1C8928640008250A /* PropertyBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B68F575A1C8928640008250A /* PropertyBackGround.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -247,6 +248,8 @@
 		B66C0A0C1C85537C002C8270 /* AboutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutScene.h; sourceTree = "<group>"; };
 		B66C0A0E1C858B6F002C8270 /* PropertyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PropertyScene.cpp; sourceTree = "<group>"; };
 		B66C0A0F1C858B6F002C8270 /* PropertyScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PropertyScene.hpp; sourceTree = "<group>"; };
+		B68F57591C8926620008250A /* PropertyScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = PropertyScene.csb; sourceTree = "<group>"; };
+		B68F575A1C8928640008250A /* PropertyBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PropertyBackGround.png; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -412,6 +415,8 @@
 				B66C09E71C85505F002C8270 /* submitRegeditbtn2.png */,
 				B66C09E81C85505F002C8270 /* TextField.png */,
 				B66C09E91C85505F002C8270 /* wending.TTF */,
+				B68F57591C8926620008250A /* PropertyScene.csb */,
+				B68F575A1C8928640008250A /* PropertyBackGround.png */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
 			);
@@ -634,6 +639,7 @@
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				B66C09F21C85505F002C8270 /* dialogBackGround.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
+				B68F575B1C8928640008250A /* PropertyBackGround.png in Resources */,
 				B66C09F61C85505F002C8270 /* giveupbtn2.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				B66C0A081C85505F002C8270 /* submitRegeditbtn2.png in Resources */,
