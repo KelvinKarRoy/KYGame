@@ -1,10 +1,12 @@
 #pragma once
-/*玩家对象*/
+/**/
 #include "string"
 #include "vector"
 #include "map"
 
 #include "cocos2d.h"
+
+#include "GCCsvHelper.hpp"
 
 class Player : cocos2d::Node
 {
@@ -12,7 +14,7 @@ public:
 	Player();
 	~Player();
 
-	//下面写各种get set方法
+	//
 	int getPlayerID(){ return playerID; }
 	void setPlayerID(int playerID){ this->playerID = playerID; }
 
@@ -59,38 +61,42 @@ public:
 	//各属性值枚举
 	static enum ATTRIBUTE
 	{
-		BASE_POPULARITY,//基础人气
-		BASE_BEAUTY,//基础颜值
-		BASE_BOYABLITY,//基础男友力
-		BASE_LEADERSHIP,//基础领导力
-		BASE_ACTION, //基础行动力
+		BASE_POPULARITY,//
+		BASE_BEAUTY,//
+		BASE_BOYABLITY,//
+		BASE_LEADERSHIP,//
+		BASE_ACTION, //
 
-		EXP_POPULARITY,//附加人气
-		EXP_BEAUTY,//附加颜值
-		EXP_BOYABLITY,//附加男友力
-		EXP_LEADERSHIP,//附加领导力
-		EXP_ACTION //附加行动力
+		EXP_POPULARITY,//
+		EXP_BEAUTY,//
+		EXP_BOYABLITY,//
+		EXP_LEADERSHIP,//
+		EXP_ACTION //
 	};
 	std::map<Player::ATTRIBUTE, int> getAttributes(){ return attributes; }
 	void setAttributes(std::map<Player::ATTRIBUTE, int> attributes){ this->attributes = attributes; }
 
 private:
-	int playerID;//玩家ID
-	std::string name;//玩家昵称
-	int clothID;//服装ID
-	int money;//金钱数
-	int cardID;//卡片ID
-	std::vector<int> skillsID;//五级技能ID
-	int exp;//经验值
-	int level;//玩家等级
-	int cpID;//cp的ID
-	bool role;//是否为凯
-	bool top;//是否为攻
-	bool playable;//是否允许进入游戏
-	bool speakable;//是否可以说话
-	int honor;//荣誉值
+	int playerID;//
+	std::string name;//
+	int clothID;//
+	int money;//
+	int cardID;//
+	std::vector<int> skillsID;//
+	int exp;//
+	int level;//
+	int cpID;//
+	bool role;//
+	bool top;//
+	bool playable;//
+	bool speakable;//
+	int honor;//
 
-	std::map<Player::ATTRIBUTE, int> attributes;//各属性值，查询角色和等级获得
-	
+	std::map<Player::ATTRIBUTE, int> attributes;//
+
+    
+protected:
+    void expTolevel();//
+    
 };
 

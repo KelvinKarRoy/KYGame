@@ -71,36 +71,11 @@ void LogInScene::loadPlayerAccount(TextField* accountField,TextField* passwdFiel
         sqlite3_close(pDB);
         return;
     }
-    /*
-    //是否存在information表单
-    std::string  sql = "select count(*) from sqlite_master where type = 'table' and name = 'information'";
-    char** re;//查询结果
-    int r,c;//行、列
-    rc = sqlite3_get_table(pDB, sql.c_str(), &re, &r, &c, nullptr);
-    if(re[1]==0)
-    {//不存在information表
-        //创建information表
-        sql = "create table information(name text primary key,value text)";//创建information表单
-        rc = sqlite3_exec(pDB, sql.c_str(), nullptr, nullptr, nullptr);
-        if(rc!=SQLITE_OK)   log("create table failed");
-    }
-    */
+    
     std::string sql = "select * from information where name='account'";//查询账号
     char** re;//查询结果
     int r,c;//行、列
     rc = sqlite3_get_table(pDB, sql.c_str(), &re, &r, &c,nullptr);
-    /*
-    log("%d行,%d列",r,c);
-    if(r == 0)
-    {//木有账号这一行
-        //增加这一行
-        sql = "insert into information values('account',NULL)";
-        rc = sqlite3_exec(pDB, sql.c_str(), nullptr, nullptr, nullptr);
-        if(rc!=SQLITE_OK)   log("插入失败");
-    }else{//得到了账号
-        accountField->setString(re[1*c+1]);
-    }
-    */
     accountField->setString(re[1*c+1]);
     
     sql = "select * from information where name='passwd'";//查询密码

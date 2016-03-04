@@ -21,7 +21,8 @@ Self::Self()
 	setAttributes(attribute);
 
 	setHonor(50);
-	setLevel(12);
+    setExp(5450);
+    expTolevel();
 	setPlayerID(921118);
 	setName("Kelvin");
 	setCpID(1642127033);
