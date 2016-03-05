@@ -95,7 +95,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #endif
 
     // create a scene. it's an autorelease object
-	auto scene = LogInScene::createScene();
+	auto scene = RegeditScene::createScene();
 
     // run
     director->runWithScene(scene);

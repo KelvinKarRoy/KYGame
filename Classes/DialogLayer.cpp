@@ -27,14 +27,14 @@ bool DialogLayer::init()
 	{
 		return false;
 	}
-	/*»ñÈ¡ÆÁÄ»´óĞ¡*/
+	/*ÂªÃ’Â»Â°âˆ†Â¡Æ’ÂªÂ¥Ã›â€“Â°*/
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	/**************¼ÓÔØUI***************/
+	/**************Âºâ€â€˜Ã¿UI***************/
 	rootNode = CSLoader::createNode("csb/DialogLayer.csb");
 
-	//µ÷ÕûUI´óĞ¡
+	//ÂµËœâ€™ËšUIÂ¥Ã›â€“Â°
 	rootNode->setScale(visibleSize.width / rootNode->getContentSize().width, visibleSize.height / rootNode->getContentSize().height);
 	CCLOG("%f %f %f %f", visibleSize.width, rootNode->getContentSize().width, visibleSize.height, rootNode->getContentSize().height);
 
@@ -46,29 +46,28 @@ bool DialogLayer::init()
 
 	okbtn->addTouchEventListener(this, toucheventselector(DialogLayer::clickOKCallback));
 
-	
-	return true;
+    return true;
 }
 
 
 
 void DialogLayer::clickOKCallback(Ref*, TouchEventType type)
 {
-	switch (type)
-	{
-	case TouchEventType::TOUCH_EVENT_BEGAN:
-		break;
-	case TouchEventType::TOUCH_EVENT_CANCELED:
-		break;
-	case TouchEventType::TOUCH_EVENT_ENDED:
-		CCLOG("%s", "ok!!!!!!!!");
-		if (nextScene != nullptr)
-		{
-			//Ìí¼ÓÂß¼­Ê¹µÃÌø×ªnextScene
+    switch (type)
+    {
+        case TouchEventType::TOUCH_EVENT_BEGAN:
+            break;
+        case TouchEventType::TOUCH_EVENT_CANCELED:
+            break;
+        case TouchEventType::TOUCH_EVENT_ENDED:
+            CCLOG("%s", "ok!!!!!!!!");
+            if (nextScene != nullptr)
+            {
+                //ÃƒÃŒÂºâ€Â¬ï¬‚Âºâ‰ Â Ï€ÂµâˆšÃƒÂ¯â—Šâ„¢nextScene
 			
 		}
 		this->setVisible(false);
-		//ÖØĞÂ¼¤»îÏÂ²ã
+		//Ã·Ã¿â€“Â¬ÂºÂ§ÂªÃ“Å“Â¬â‰¤â€
 		utility::setEnable(true, static_cast<Layer*>(this->getParent()));
 		break;
 	case TouchEventType::TOUCH_EVENT_MOVED:
@@ -86,24 +85,24 @@ void DialogLayer::setText(std::string _text)
 	Text* text = (Text*) scrollVeiw->getChildByName("Text");
 
 	text->setText(_text);
-	//×Ô¶¯»»ĞĞ
+	//â—Šâ€˜âˆ‚Ã˜ÂªÂªâ€“â€“
 	utility::setTextAuto(text);
 	
 
 	if (text->getVirtualRendererSize().height < scrollVeiw->getContentSize().height )
 	{
-		//ÈôÒ»Ò³ÄÜÏÔÊ¾ÍêÈ«
+		//Â»Ã™â€œÂªâ€œâ‰¥Æ’â€¹Å“â€˜Â Ã¦Ã•ÃÂ»Â´
 		
-		//ÎÄ±¾¾ÓÖĞ
+		//Å’Æ’Â±Ã¦Ã¦â€Ã·â€“
 		text->setTextHorizontalAlignment(cocos2d::TextHAlignment::CENTER);
 		text->setTextVerticalAlignment(cocos2d::TextVAlignment::CENTER);
 		text->setPosition(Vec2(scrollVeiw->getContentSize().width / 2, scrollVeiw->getContentSize().height * 3 / 2 ));
 
 	}else
 	{
-		//Ò»Ò³ÏÔÊ¾²»ÁË
+		//â€œÂªâ€œâ‰¥Å“â€˜Â Ã¦â‰¤ÂªÂ¡Ã€
 
-		//ÎÄ±¾¾Ó×ó¾ÓÉÏ
+		//Å’Æ’Â±Ã¦Ã¦â€â—ŠÃ›Ã¦â€â€¦Å“
 		text->setTextVerticalAlignment(cocos2d::TextVAlignment::TOP);
 		text->setTextHorizontalAlignment(cocos2d::TextHAlignment::LEFT);
 		text->setPosition(Vec2(scrollVeiw->getContentSize().width / 2, scrollVeiw->getContentSize().height));

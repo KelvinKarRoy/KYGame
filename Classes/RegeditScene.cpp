@@ -28,19 +28,19 @@ bool RegeditScene::init()
 	{
 		return false;
 	}
-	/*»ñÈ¡ÆÁÄ»´óÐ¡*/
+	/*ÂªÃ’Â»Â°âˆ†Â¡Æ’ÂªÂ¥Ã›â€“Â°*/
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	/**************¼ÓÔØUI***************/
+	/**************Âºâ€â€˜Ã¿UI***************/
 	rootNode = CSLoader::createNode("csb/RegeditScene.csb");
 
-	//µ÷ÕûUI´óÐ¡
+	//ÂµËœâ€™ËšUIÂ¥Ã›â€“Â°
 	rootNode->setScale(visibleSize.width / rootNode->getContentSize().width, visibleSize.height / rootNode->getContentSize().height);
 
 	this->addChild(rootNode);
 
-	//»ñÈ¡°´Å¥°ó¶¨»Øµ÷
+	//ÂªÃ’Â»Â°âˆžÂ¥â‰ˆâ€¢âˆžÃ›âˆ‚Â®ÂªÃ¿ÂµËœ
 	auto backbtn = (Button*) rootNode->getChildByName("Button_back");
 
 	backbtn->addTouchEventListener(this, toucheventselector(RegeditScene::onClickBackCallback));
@@ -49,32 +49,33 @@ bool RegeditScene::init()
 
 	nextbtn->addTouchEventListener(this, toucheventselector(RegeditScene::onClickNextCallback));
 	
-	//¼ÓÈë×Ó²ã
-	childNode = CSLoader::createNode("csb/RoleSelectScene.csb");
-
-	//µ÷ÕûUI´óÐ¡
-	childNode->setScale(visibleSize.width / rootNode->getContentSize().width, visibleSize.height / rootNode->getContentSize().height);
-
-	childNode->setVisible(false);
-
-	//°ó¶¨°´Å¥»Øµ÷º¯Êý
-	karrybtn = (Button*)childNode->getChildByName("Button_Karry");
-
-	karrybtn->addTouchEventListener(this, toucheventselector(RegeditScene::onClickKarryCallback));
-
-	roybtn = (Button*)childNode->getChildByName("Button_Roy");
-
-	roybtn->addTouchEventListener(this, toucheventselector(RegeditScene::onClickRoyCallback));
-
-	backbtn = (Button*)childNode->getChildByName("Button_Back");
-
-	backbtn->addTouchEventListener(this, toucheventselector(RegeditScene::onClickBackCallback));
-
-	auto regeditbtn = (Button*)childNode->getChildByName("Button_Regedit");
-
-	regeditbtn->addTouchEventListener(this, toucheventselector(RegeditScene::onClickRegeditCallback));
-
-	this->addChild(childNode);
+	//childNodeçš„UI
+    childNode = CSLoader::createNode("csb/RoleSelectScene.csb");
+    
+    childNode->retain();
+    
+    //ÂµËœâ€™ËšUIÂ¥Ã›â€“Â°
+    childNode->setScale(visibleSize.width / rootNode->getContentSize().width, visibleSize.height /rootNode->getContentSize().height);
+    
+    childNode->setVisible(false);
+    
+    //âˆžÃ›âˆ‚Â®âˆžÂ¥â‰ˆâ€¢ÂªÃ¿ÂµËœâˆ«Ã˜Â Ë
+    karrybtn = (Button*)childNode->getChildByName("Button_Karry");
+    
+    karrybtn->addTouchEventListener(this, toucheventselector(RegeditScene::onClickKarryCallback));
+    
+    roybtn = (Button*)childNode->getChildByName("Button_Roy");
+    
+    roybtn->addTouchEventListener(this, toucheventselector(RegeditScene::onClickRoyCallback));
+    
+    backbtn = (Button*)childNode->getChildByName("Button_Back");
+    
+    backbtn->addTouchEventListener(this, toucheventselector(RegeditScene::onClickBackCallback));
+    
+    auto regeditbtn = (Button*)childNode->getChildByName("Button_Regedit");
+    
+    regeditbtn->addTouchEventListener(this, toucheventselector(RegeditScene::onClickRegeditCallback));
+    
 
 	return true;
 }
@@ -86,20 +87,20 @@ void RegeditScene::promptDialogBox(std::string text, RegeditScene::STATUS status
 	{
 	case RegeditScene::STATUS::LINK_ERROR:
 		childLayer = DialogLayer::create();
-		((DialogLayer*)childLayer)->setText(text);//Êä³öÎÄ×Ö
+		((DialogLayer*)childLayer)->setText(text);//Â â€°â‰¥Ë†Å’Æ’â—ŠÃ·
 		this->addChild(childLayer);
 		break;
 	case RegeditScene::STATUS::ACCOUNTEXIST:
 		childLayer = DialogLayer::create();
-		((DialogLayer*)childLayer)->setText(text);//Êä³öÎÄ×Ö
+		((DialogLayer*)childLayer)->setText(text);//Â â€°â‰¥Ë†Å’Æ’â—ŠÃ·
 		this->addChild(childLayer);
 		break;
 	case RegeditScene::STATUS::SUCCEED:
 		childLayer = DialogLayer::create();
 		scene = LogInScene::createScene();
-		((DialogLayer*)childLayer)->setText(text);//Êä³öÎÄ×Ö
+		((DialogLayer*)childLayer)->setText(text);//Â â€°â‰¥Ë†Å’Æ’â—ŠÃ·
 		scene->addChild(childLayer);
-		Director::getInstance()->replaceScene(scene);//×ªÖÁµÇÂ¼Ò³Ãæ
+		Director::getInstance()->replaceScene(scene);//â—Šâ„¢Ã·Â¡ÂµÂ«Â¬Âºâ€œâ‰¥âˆšÃŠ
 		break;
 	default:
 		break;
@@ -121,7 +122,7 @@ void RegeditScene::onClickBackCallback(Ref*, TouchEventType type)
 		if (childNode->isVisible())
 		{
 			childNode->setVisible(false);
-			this->setTouchEnabled(true);
+            this->removeChild(childNode);
 		}else Director::getInstance()->replaceScene(LogInScene::createScene());
 		break;
 	case TouchEventType::TOUCH_EVENT_MOVED:
@@ -140,7 +141,7 @@ void RegeditScene::onClickRegeditCallback(Ref*, TouchEventType type)
 	case TouchEventType::TOUCH_EVENT_ENDED:
 		CCLOG("%s", "regedit!!!!!!!!");
 		if (isRegeditLegal())
-		{//ÊäÈëºÏ·¨
+		{//Â â€°Â»ÃŽâˆ«Å“âˆ‘Â®
 			HttpUtility::getInstance(this)->regeditAccount(playerInfo.account,
 				playerInfo.password, playerInfo.name, playerInfo.role);
 		}
@@ -159,28 +160,41 @@ void RegeditScene::onClickNextCallback(Ref*, TouchEventType type)
 		break;
 	case TouchEventType::TOUCH_EVENT_CANCELED:
 		break;
+    case TouchEventType::TOUCH_EVENT_MOVED:
+        break;
 	case TouchEventType::TOUCH_EVENT_ENDED:
-		CCLOG("%s", "regedit!!!!!!!!");
-		this->setTouchEnabled(false);
-		childNode->setVisible(true);
-		break;
-	case TouchEventType::TOUCH_EVENT_MOVED:
-		break;
-	}
+        
+        this->addChild(childNode);
+		
+        childNode->setVisible(true);
+            
+        //åžå™¬ä¸‹å±‚äº‹ä»¶
+        auto callback = [](cocos2d::Touch * ,cocos2d::Event *)
+        {
+            return true;
+        };
+        auto listener = cocos2d::EventListenerTouchOneByOne::create();
+        listener->onTouchBegan = callback;
+        listener->setSwallowTouches(true);
+        _eventDispatcher->addEventListenerWithSceneGraphPriority(listener,childNode);
+            
+        break;
+            
+    }
 }
 
 void RegeditScene::onClickKarryCallback(Ref*, TouchEventType type)
 {
-	switch (type)
-	{
-	case TouchEventType::TOUCH_EVENT_BEGAN:
-		break;
-	case TouchEventType::TOUCH_EVENT_CANCELED:
-		break;
-	case TouchEventType::TOUCH_EVENT_ENDED:
-		playerInfo.role = true;
-		karrybtn->setEnabled(false);
-		roybtn->setEnabled(true);
+    switch (type)
+    {
+        case TouchEventType::TOUCH_EVENT_BEGAN:
+            break;
+        case TouchEventType::TOUCH_EVENT_CANCELED:
+            break;
+        case TouchEventType::TOUCH_EVENT_ENDED:
+            playerInfo.role = true;
+            karrybtn->setEnabled(false);
+            roybtn->setEnabled(true);
 		break;
 	case TouchEventType::TOUCH_EVENT_MOVED:
 		break;
@@ -220,32 +234,32 @@ bool RegeditScene::isRegeditLegal()
 
 	if (playerInfo.password != ((TextField*)rootNode->getChildByName("Panel_password2")
 		->getChildByName("Panel")->getChildByName("TextField"))->getString())
-	{//Á½´ÎÃÜÂë²»Ò»ÖÂ
-		this->promptDialogBox("password input different!");//µ¯³ö¶Ô»°¿ò
+	{//Â¡Î©Â¥Å’âˆšâ€¹Â¬ÃŽâ‰¤Âªâ€œÂªÃ·Â¬
+		this->promptDialogBox("password input different!");//ÂµÃ˜â‰¥Ë†âˆ‚â€˜ÂªâˆžÃ¸Ãš
 		return false;
 	}
 
 	if (!utility::isStringLegal(playerInfo.account))
-	{//ÕËºÅ²»ºÏ·¨
-		this->promptDialogBox("your account is illegal!(it only can include letter, number,@ and .)it can not be less than 6 bit");//µ¯³ö¶Ô»°¿ò
+	{//â€™Ã€âˆ«â‰ˆâ‰¤Âªâˆ«Å“âˆ‘Â®
+		this->promptDialogBox("è´¦å·éžæ³•ï¼ï¼ˆåªèƒ½åŒ…å«å­—æ¯æ•°å­—å’Œ@.ï¼‰");//ÂµÃ˜â‰¥Ë†âˆ‚â€˜ÂªâˆžÃ¸Ãš
 		return false;
 	}
 
 	if (!utility::isStringLegal(playerInfo.password))
-	{//ÃÜÂë²»ºÏ·¨
-		this->promptDialogBox("your password is illegal!(it only can include letter, number,@ and .)it can not be less than 6 bit");//µ¯³ö¶Ô»°¿ò
+	{//âˆšâ€¹Â¬ÃŽâ‰¤Âªâˆ«Å“âˆ‘Â®
+		this->promptDialogBox("your password is illegal!(it only can include letter, number,@ and .)it can not be less than 6 bit");//ÂµÃ˜â‰¥Ë†âˆ‚â€˜ÂªâˆžÃ¸Ãš
 		return false;
 	}
 
 	if (!(roybtn->isEnabled() ^ karrybtn->isEnabled()))
-	{//Î´Ñ¡Ôñ½ÇÉ«
-		this->promptDialogBox("Whitch one do you want to be? Karry or Roy?");//µ¯³ö¶Ô»°¿ò
+	{//Å’Â¥â€”Â°â€˜Ã’Î©Â«â€¦Â´
+		this->promptDialogBox("Whitch one do you want to be? Karry or Roy?");//ÂµÃ˜â‰¥Ë†âˆ‚â€˜ÂªâˆžÃ¸Ãš
 		return false;
 	}
 
 	if (!utility::isNameLegal(playerInfo.name))
-	{//Ãû×Ö²»ºÏ·¨
-		this->promptDialogBox("your name is illegal, me me da");//µ¯³ö¶Ô»°¿ò
+	{//âˆšËšâ—ŠÃ·â‰¤Âªâˆ«Å“âˆ‘Â®
+		this->promptDialogBox("your name is illegal, me me da");//ÂµÃ˜â‰¥Ë†âˆ‚â€˜ÂªâˆžÃ¸Ãš
 		return false;
 	}
 
@@ -255,6 +269,6 @@ bool RegeditScene::isRegeditLegal()
 void RegeditScene::promptDialogBox(std::string str)
 {
 	childLayer = DialogLayer::create();
-	((DialogLayer*)childLayer)->setText(str);//Êä³öÎÄ×Ö
+	((DialogLayer*)childLayer)->setText(str);//Â â€°â‰¥Ë†Å’Æ’â—ŠÃ·
 	this->addChild(childLayer);
 }
