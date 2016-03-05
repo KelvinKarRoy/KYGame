@@ -6,6 +6,9 @@
 #include "RegeditScene.h"
 #include "PropertyScene.hpp"
 
+#include <sys/stat.h>//系统库
+#include <dirent.h>
+
 USING_NS_CC;
 
 //static cocos2d::Size designResolutionSize = cocos2d::Size(2208, 1242);
@@ -80,6 +83,14 @@ bool AppDelegate::applicationDidFinishLaunching() {
     }
 
     register_all_packages();
+    
+#if (CC_TARGET_PLATFORM != CC_PLATFORM_WIN32)
+    createDownLoadUrl("db/");
+    copyFile("db/radar.csv");
+    copyFile("db/exp.csv");
+    copyFile("db/KYGame.db");
+    
+#endif
 
     // create a scene. it's an autorelease object
 	auto scene = LogInScene::createScene();
@@ -104,4 +115,56 @@ void AppDelegate::applicationWillEnterForeground() {
 
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+    
 }
+
+
+//创建数据库目录
+std::string AppDelegate::createDownLoadUrl(std::string path){
+    std::string pathToSave;
+#if (CC_TARGET_PLATFORM != CC_PLATFORM_WIN32)
+    pathToSave = CCFileUtils::sharedFileUtils()->getWritablePath();
+    pathToSave += path;
+    
+    // Create the folder if it doesn't exist
+    DIR *pDir = NULL;
+    
+    pDir = opendir (pathToSave.c_str());
+    if (!pDir)
+    {
+        mkdir(pathToSave.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
+    }
+#else
+    if ((GetFileAttributesA(pathToSave.c_str())) == INVALID_FILE_ATTRIBUTES)
+    {
+        CreateDirectoryA(pathToSave.c_str(), 0);
+    }
+#endif
+    return pathToSave;
+    
+}
+
+//拷贝文件
+bool AppDelegate::copyFile(const std::string& filename)
+{
+    // 资源路径
+    std::string sourcePath = FileUtils::getInstance()->fullPathForFilename(filename);
+    Data data = FileUtils::getInstance()->getDataFromFile(sourcePath);
+    
+    // 可写路径
+    std::string destPath = FileUtils::getInstance()->getWritablePath() + filename;
+    FILE *fp = fopen(destPath.c_str(), "w+");
+    if (fp)
+    {
+        size_t size = fwrite(data.getBytes(), sizeof(unsigned char), data.getSize(), fp);
+        fclose(fp);
+        
+        if (size > 0)
+        {
+            return true;
+        }
+    }
+    CCLOG("copy file %s failed.", filename.c_str());
+    return false;
+}
+

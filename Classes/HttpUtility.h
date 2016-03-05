@@ -30,15 +30,16 @@ private:
     static HttpUtility* httpUtility;
     Layer* callerLayer;//调用它的对象
     
+    //flag枚举
     enum HttpEnum
     {
-        CHECKPASSWORD,
-        LOADQUESTION,
-        CHECKVERSION,
-        LOADPLAYERINFO,
-        REGEDITACCOUNT,
-        LOADACCOUNT,
-        LOADSTATUS
+        CHECKPASSWORD,//检查账号密码是否匹配
+        LOADQUESTION,//加载验证问题
+        CHECKVERSION,//检查版本
+        LOADPLAYERINFO,//加载用户账号信息
+        REGEDITACCOUNT,//注册账号
+        LOADACCOUNT,//加载账号
+        LOADSTATUS//加载用户状态
     };
     
     bool flag;
@@ -49,6 +50,13 @@ private:
     static std::string ip;
     
     HttpUtility();
+    
+    //各种回调函数
+    void onCheckPassword(HttpClient *sender, HttpResponse *response);
+    void onLoadQuestion(HttpClient *sender, HttpResponse *response);
+    void onRegeditAccount(HttpClient *sender, HttpResponse *response);
+    void onLoadPlayerInformation(HttpClient *sender, HttpResponse *response);
+    void onLoadPlayerStatus(HttpClient *sender, HttpResponse *response);
     
 public:
     
@@ -61,36 +69,18 @@ public:
     ~HttpUtility();
     
     
-    //检查密码是否正确
-    void checkPassword(std::string account, std::string password);
-    void onCheckPassword(HttpClient *sender, HttpResponse *response);
-
     
-    //加载问题
-    void loadQuestion(int num_question);
-    void onLoadQuestion(HttpClient *sender, HttpResponse *response);
-
-    
-    //注册账号
+    void checkPassword(std::string account, std::string password);//检查密码是否正确
+    void loadQuestion(int num_question);//加载问题
     void regeditAccount(
                         std::string account,
                         std::string password,
                         std::string name,
-                        bool role);
-    void onRegeditAccount(HttpClient *sender, HttpResponse *response);
+                        bool role);//注册账号
+    void loadPlayerInformation(std::string account);//加载玩家信息
+    void loadPlayerStatus(int playerID);//加载玩家状态
     
     //bool checkVersion(std::string version);
-    
-    void onHttpRequestCompleted(HttpClient *sender, HttpResponse *response);
-    
-    //加载玩家信息
-    void loadPlayerInformation(std::string account);
-    void onLoadPlayerInformation(HttpClient *sender, HttpResponse *response);
-
-    
-    //加载玩家状态
-    void loadPlayerStatus(int playerID);
-    void onLoadPlayerStatus(HttpClient *sender, HttpResponse *response);
 };
 
 

@@ -88,13 +88,14 @@ void LogInScene::loadPlayerAccount(TextField* accountField,TextField* passwdFiel
 //记住账号密码
 void LogInScene::saveAccount()
 {
-    bool isPWSave = static_cast<CheckBox*> (rootNode->getChildByName("CheckBox_1"))->getSelectedState();//密码是否保存
+    //bool isPWSave = static_cast<CheckBox*> (rootNode->getChildByName("CheckBox_1"))->getSelectedState();//密码是否保存
+    bool isPWSave = true;
     //获取账号和密码
     auto account = static_cast<TextField*>(rootNode->getChildByName("Panel_1")->getChildByName("TextField_account"))->getString();
     auto passwd = static_cast<TextField*>(rootNode->getChildByName("Panel_2")->getChildByName("TextField_password"))->getString();;
     
     sqlite3* pDB = nullptr;//本地数据库
-    std::string path= FileUtils::getInstance()->getWritablePath()+"KYGame.db";//获取本地数据库路径
+    std::string path= FileUtils::getInstance()->getWritablePath()+"db/KYGame.db";//获取本地数据库路径
     sqlite3_open(path.c_str(), &pDB);//打开数据库
     
     //保存账号信息
@@ -107,6 +108,7 @@ void LogInScene::saveAccount()
     {
         sql = "update information set value = '";
         sql += passwd+"' where name = 'passwd'";//添加语句
+        log(sql.c_str());
         sqlite3_exec(pDB, sql.c_str(), nullptr, nullptr, nullptr);
     }else
     {//不需要保存 将密码设为空

@@ -34,6 +34,9 @@ public:
     @param  the pointer of the application
     */
     virtual void applicationWillEnterForeground();
+    
+    std::string createDownLoadUrl(std::string path);
+    bool copyFile(const std::string& filename);
 };
 
 #endif // _APP_DELEGATE_H_

@@ -53,6 +53,8 @@ void HttpUtility::checkPassword(std::string account, std::string password)
 	request->setRequestData(finalString.c_str(), finalString.length() );
 	this->httpClient->send(request);
 	request->release();
+    
+    //加入等待转圈Layer，并吞噬下层事件
 
 }
 
@@ -168,7 +170,6 @@ void HttpUtility::onRegeditAccount(HttpClient *sender, HttpResponse *response)
     
     if (statusCode == 200) {
         flag = DataUtility::decodeFlagData(responseDataStr);//是否注册成功
-        flag ? CCLOG("%s", "regedit succeed!") : CCLOG("%s", "regedit error!");
         if (flag)
         {//注册成功
             
