@@ -18,6 +18,7 @@
 #include "HttpUtility.h"
 #include "utility.h"
 #include "StringUtility.h"
+#include "PropertyScene.hpp"
 
 #include "sqlite/sqlite3.h"
 

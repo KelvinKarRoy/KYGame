@@ -209,5 +209,6 @@ void LogInScene::promptDialogBox(std::string strInfo)
 void LogInScene::toHome()
 {
     saveAccount();//记住账号密码
-    promptDialogBox("登录成功");
+    //promptDialogBox("登录成功");
+    cocos2d::Director::getInstance()->replaceScene(PropertyScene::createScene());//切换到属性页面
 }

@@ -54,8 +54,8 @@
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		B63A05A81C87388F0061C902 /* sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B63A05A71C87388F0061C902 /* sqlite */; };
 		B63A05AA1C8742D80061C902 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B63A05A91C8742D80061C902 /* libsqlite3.dylib */; };
+		B6567D671C8AA98700A4056B /* DataUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6567D661C8AA98700A4056B /* DataUtility.cpp */; };
 		B66C09BF1C854FA6002C8270 /* AuthenticationScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09AB1C854FA6002C8270 /* AuthenticationScene.cpp */; };
-		B66C09C01C854FA6002C8270 /* DataUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09AD1C854FA6002C8270 /* DataUtility.cpp */; };
 		B66C09C11C854FA6002C8270 /* DialogLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09AF1C854FA6002C8270 /* DialogLayer.cpp */; };
 		B66C09C21C854FA6002C8270 /* HttpUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09B11C854FA6002C8270 /* HttpUtility.cpp */; };
 		B66C09C31C854FA6002C8270 /* LogInScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09B31C854FA6002C8270 /* LogInScene.cpp */; };
@@ -193,14 +193,14 @@
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B63A05A71C87388F0061C902 /* sqlite */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sqlite; sourceTree = "<group>"; };
 		B63A05A91C8742D80061C902 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		B64352251C8AA45A004ACFD6 /* HttpUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpUtility.h; sourceTree = "<group>"; };
+		B6567D661C8AA98700A4056B /* DataUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataUtility.cpp; sourceTree = "<group>"; };
 		B66C09AB1C854FA6002C8270 /* AuthenticationScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AuthenticationScene.cpp; sourceTree = "<group>"; };
 		B66C09AC1C854FA6002C8270 /* AuthenticationScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationScene.h; sourceTree = "<group>"; };
-		B66C09AD1C854FA6002C8270 /* DataUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataUtility.cpp; sourceTree = "<group>"; };
 		B66C09AE1C854FA6002C8270 /* DataUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtility.h; sourceTree = "<group>"; };
 		B66C09AF1C854FA6002C8270 /* DialogLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DialogLayer.cpp; sourceTree = "<group>"; };
 		B66C09B01C854FA6002C8270 /* DialogLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogLayer.h; sourceTree = "<group>"; };
 		B66C09B11C854FA6002C8270 /* HttpUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HttpUtility.cpp; sourceTree = "<group>"; };
-		B66C09B21C854FA6002C8270 /* HttpUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpUtility.h; sourceTree = "<group>"; };
 		B66C09B31C854FA6002C8270 /* LogInScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogInScene.cpp; sourceTree = "<group>"; };
 		B66C09B41C854FA6002C8270 /* LogInScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInScene.h; sourceTree = "<group>"; };
 		B66C09B51C854FA6002C8270 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
@@ -438,12 +438,12 @@
 				B66C0A0C1C85537C002C8270 /* AboutScene.h */,
 				B66C09AB1C854FA6002C8270 /* AuthenticationScene.cpp */,
 				B66C09AC1C854FA6002C8270 /* AuthenticationScene.h */,
-				B66C09AD1C854FA6002C8270 /* DataUtility.cpp */,
+				B6567D661C8AA98700A4056B /* DataUtility.cpp */,
 				B66C09AE1C854FA6002C8270 /* DataUtility.h */,
 				B66C09AF1C854FA6002C8270 /* DialogLayer.cpp */,
 				B66C09B01C854FA6002C8270 /* DialogLayer.h */,
 				B66C09B11C854FA6002C8270 /* HttpUtility.cpp */,
-				B66C09B21C854FA6002C8270 /* HttpUtility.h */,
+				B64352251C8AA45A004ACFD6 /* HttpUtility.h */,
 				B66C09B31C854FA6002C8270 /* LogInScene.cpp */,
 				B66C09B41C854FA6002C8270 /* LogInScene.h */,
 				B66C09B51C854FA6002C8270 /* Player.cpp */,
@@ -691,7 +691,7 @@
 				B66C09C11C854FA6002C8270 /* DialogLayer.cpp in Sources */,
 				B68806EF1C89DD45009D28D8 /* GCCsvHelper.cpp in Sources */,
 				B66C09C31C854FA6002C8270 /* LogInScene.cpp in Sources */,
-				B66C09C01C854FA6002C8270 /* DataUtility.cpp in Sources */,
+				B6567D671C8AA98700A4056B /* DataUtility.cpp in Sources */,
 				B66C09C61C854FA6002C8270 /* Self.cpp in Sources */,
 				B66C0A0D1C85537C002C8270 /* AboutScene.cpp in Sources */,
 				B66C0A101C858B6F002C8270 /* PropertyScene.cpp in Sources */,

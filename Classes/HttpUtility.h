@@ -1,4 +1,13 @@
-#pragma once
+//
+//  HttpUtility.h
+//  KYGame
+//
+//  Created by Kelvin on 16/3/5.
+//
+//
+
+#ifndef HttpUtility_h
+#define HttpUtility_h
 
 #include "cocos2d.h"
 #include "network/HttpClient.h"
@@ -17,59 +26,73 @@ using namespace cocos2d::network;
 class HttpUtility : public Node
 {
 private:
-	static HttpClient* httpClient;
-	static HttpUtility* httpUtility;
-	Layer* callerLayer;
-
-	enum HttpEnum
-	{
-		CHECKPASSWORD,//¼ì²éÕËºÅÃÜÂëÊÇ·ñÆ¥Åä
-		LOADQUESTION,//¼ÓÔØÎÊÌâ
-		CHECKVERSION,//¼ì²éÊÇ·ñÎª×îĞÂ°æ
-		LOADPLAYERINFO,//¸ù¾İÕËºÅ£¬¼ÓÔØÓÃ»§ĞÅÏ¢
-		REGEDITACCOUNT, //×¢²áÕËºÅ
-		LOADACCOUNT,//¼ÓÔØÓÃ»§ĞÅÏ¢
-		LOADSTATUS//¼ÓÔØÓÃ»§×´Ì¬
-	};
-
-	bool flag;
-	
-	//ÊµÏÖ static create()º¯ÊıµÄºê
-	CREATE_FUNC(HttpUtility);
-
-	static std::string ip;
-	
-	HttpUtility();
-
+    static HttpClient* httpClient;
+    static HttpUtility* httpUtility;
+    Layer* callerLayer;//è°ƒç”¨å®ƒçš„å¯¹è±¡
+    
+    enum HttpEnum
+    {
+        CHECKPASSWORD,
+        LOADQUESTION,
+        CHECKVERSION,
+        LOADPLAYERINFO,
+        REGEDITACCOUNT,
+        LOADACCOUNT,
+        LOADSTATUS
+    };
+    
+    bool flag;
+    
+    
+    CREATE_FUNC(HttpUtility);
+    
+    static std::string ip;
+    
+    HttpUtility();
+    
 public:
-	//»ñÈ¡µ¥ÀıÀà
-	static HttpUtility* getInstance(Layer* callerLayer);//´«ÈëµÄÊÇµ÷ÓÃËüµÄ²ã
-	static HttpUtility* getInstance();
+    
+    //å•ä¾‹ç±»è·å–
+    static HttpUtility* getInstance(Layer* callerLayer);//è°ƒç”¨å®ƒçš„å¯¹è±¡
+    static HttpUtility* getInstance();
+    
+    bool getFlag();
+    
+    ~HttpUtility();
+    
+    
+    //æ£€æŸ¥å¯†ç æ˜¯å¦æ­£ç¡®
+    void checkPassword(std::string account, std::string password);
+    void onCheckPassword(HttpClient *sender, HttpResponse *response);
 
-	bool getFlag();
-	
-	~HttpUtility();
+    
+    //åŠ è½½é—®é¢˜
+    void loadQuestion(int num_question);
+    void onLoadQuestion(HttpClient *sender, HttpResponse *response);
 
+    
+    //æ³¨å†Œè´¦å·
+    void regeditAccount(
+                        std::string account,
+                        std::string password,
+                        std::string name,
+                        bool role);
+    void onRegeditAccount(HttpClient *sender, HttpResponse *response);
+    
+    //bool checkVersion(std::string version);
+    
+    void onHttpRequestCompleted(HttpClient *sender, HttpResponse *response);
+    
+    //åŠ è½½ç©å®¶ä¿¡æ¯
+    void loadPlayerInformation(std::string account);
+    void onLoadPlayerInformation(HttpClient *sender, HttpResponse *response);
 
-
-	void checkPassword(std::string account, std::string password);//¼ì²âÕËºÅÃÜÂë
-	void loadQuestion(int num_question);//¼ÓÔØÑéÖ¤ÎÊÌâ
-	
-	//×¢²áÕËºÅÃÜÂë£¬²»Ìá¹©ºÏ·¨ĞÔ¼ì²â£¬ĞèÔÚÍâ²ã½øĞĞ
-	void regeditAccount(std::string account,//ÕËºÅ
-		std::string password,//ÃÜÂë
-		std::string name,//Ãû×Ö
-		bool role//ÊÇ·ñÎª¿­
-		);
-	//bool checkVersion(std::string version);//¼ì²é°æ±¾
-
-	//http»Øµ÷
-	void onHttpRequestCompleted(HttpClient *sender, HttpResponse *response);
-
-	//µÇÂ¼Ê±¸ù¾İÕËºÅ¼ÓÔØÓÃ»§ĞÅÏ¢
-	void loadPlayerInformation(std::string account);
-
-	//Í¨¹ıid¼ÓÔØÓÃ»§×´Ì¬
-	void loadPlayerStatus(int playerID);
+    
+    //åŠ è½½ç©å®¶çŠ¶æ€
+    void loadPlayerStatus(int playerID);
+    void onLoadPlayerStatus(HttpClient *sender, HttpResponse *response);
 };
 
+
+
+#endif /* HttpUtility_h */

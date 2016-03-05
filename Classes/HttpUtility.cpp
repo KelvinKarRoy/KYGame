@@ -35,6 +35,7 @@ HttpUtility::~HttpUtility() {
 
 }
 
+/******************检查账号密码是否正确****************/
 void HttpUtility::checkPassword(std::string account, std::string password)
 {
 	HttpRequest * request = new HttpRequest();
@@ -42,7 +43,7 @@ void HttpUtility::checkPassword(std::string account, std::string password)
 	url += ip + "/php/check_password.php";
 	request->setUrl(url.c_str());
 	request->setRequestType(HttpRequest::Type::POST);
-	request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onHttpRequestCompleted, this));
+	request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onCheckPassword, this));
 	std::string tag("%d", HttpEnum::CHECKPASSWORD);
 	request->setTag(tag.c_str());
 
@@ -55,7 +56,57 @@ void HttpUtility::checkPassword(std::string account, std::string password)
 
 }
 
-//œÚ∑˛ŒÒ∆˜…Í«Î◊¢≤·’À∫≈
+//checkPassword的回调函数
+void HttpUtility::onCheckPassword(HttpClient *sender, HttpResponse *response)
+{
+    
+    if (!response) {
+        return;
+    }
+    
+    int statusCode = response->getResponseCode();
+    
+    log("response code: %d", statusCode);
+    
+    if (!response->isSucceed()) {
+        log("response failed");
+        log("error buffer: %s", response->getErrorBuffer());
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接"
+                                                                    , AuthenticationScene::STATUS::LINK_ERROR);
+        return;
+    }
+    
+    __String *strTag = __String::create(response->getHttpRequest()->getTag());
+    int tag = strTag->uintValue();
+    log("request Action Code = %d", tag);
+    
+    std::vector<char> *responseData = response->getResponseData();
+    std::string responseDataStr = std::string(responseData->begin(), responseData->end());
+    
+    //以上为公共部分
+    
+    if (statusCode == 200) {
+        flag = DataUtility::decodeFlagData(responseDataStr);//解析返回的flag
+        flag ? log("password is true") : log("password is wrong");
+        if(flag)
+        {//登录成功
+            ((LogInScene*) this->callerLayer)->toHome();//密码正确，进入主页
+        }else
+        {//密码有误
+            ((LogInScene*) this->callerLayer)->promptDialogBox("密码有误，请核对后输入");
+        }
+    }
+    else {
+        //服务器异常
+        ((LogInScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
+    }
+    
+}
+
+
+
+
+/*******************注册账号********************/
 void HttpUtility::regeditAccount(std::string account,//’À∫≈
 	std::string password,//√‹¬Î
 	std::string name,//Í«≥∆
@@ -68,7 +119,7 @@ void HttpUtility::regeditAccount(std::string account,//’À∫≈
 	CCLOG("url = %s", url.c_str());
 	request->setUrl(url.c_str());
 	request->setRequestType(HttpRequest::Type::POST);
-	request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onHttpRequestCompleted, this));
+	request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onRegeditAccount, this));
 	char tag[5];
 	sprintf(tag, "%d", HttpEnum::REGEDITACCOUNT);
 	CCLOG("%s", tag);
@@ -86,6 +137,61 @@ void HttpUtility::regeditAccount(std::string account,//’À∫≈
 	request->release();
 }
 
+//regeditAccount的回调函数
+void HttpUtility::onRegeditAccount(HttpClient *sender, HttpResponse *response)
+{
+    
+    if (!response) {
+        return;
+    }
+    
+    int statusCode = response->getResponseCode();
+    
+    log("response code: %d", statusCode);
+    
+    if (!response->isSucceed()) {
+        log("response failed");
+        log("error buffer: %s", response->getErrorBuffer());
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接"
+                                                                    , AuthenticationScene::STATUS::LINK_ERROR);
+        return;
+    }
+    
+    __String *strTag = __String::create(response->getHttpRequest()->getTag());
+    int tag = strTag->uintValue();
+    log("request Action Code = %d", tag);
+    
+    std::vector<char> *responseData = response->getResponseData();
+    std::string responseDataStr = std::string(responseData->begin(), responseData->end());
+    
+    //以上为公共部分
+    
+    if (statusCode == 200) {
+        flag = DataUtility::decodeFlagData(responseDataStr);//是否注册成功
+        flag ? CCLOG("%s", "regedit succeed!") : CCLOG("%s", "regedit error!");
+        if (flag)
+        {//注册成功
+            
+            ((RegeditScene*) this->callerLayer)->promptDialogBox("注册成功，欢迎进入这个大家庭",
+                                                                 RegeditScene::STATUS::SUCCEED);//弹出对话框并进行回调
+        }
+        else
+        {//注册失败
+            ((RegeditScene*) this->callerLayer)->promptDialogBox("账号或昵称已存在（至于究竟是账号存在还是昵称已存在，开发者觉得判断实在是太麻烦了ZZZ）",
+                                                                 RegeditScene::STATUS::ACCOUNTEXIST);//弹出对话框并进行回调
+            
+        }
+    }
+    else {
+        //服务器连接异常
+        ((RegeditScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后重试",
+                                                             RegeditScene::STATUS::LINK_ERROR);
+    }
+    
+}
+
+
+/******************加载验证问题*****************/
 void HttpUtility::loadQuestion(int num_question)
 {
 	HttpRequest * request = new HttpRequest();
@@ -94,7 +200,7 @@ void HttpUtility::loadQuestion(int num_question)
 	CCLOG("url = %s", url.c_str());
 	request->setUrl(url.c_str());
 	request->setRequestType(HttpRequest::Type::POST);
-	request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onHttpRequestCompleted, this));
+    request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onLoadQuestion, this));
 	char tag[5];
 	sprintf(tag,"%d", HttpEnum::LOADQUESTION);
 	CCLOG("%s", tag);
@@ -110,8 +216,51 @@ void HttpUtility::loadQuestion(int num_question)
 	request->release();
 }
 
+//loadQuestion的回调函数
+void HttpUtility::onLoadQuestion(HttpClient *sender, HttpResponse *response)
+{
+    
+    if (!response) {
+        return;
+    }
+    
+    int statusCode = response->getResponseCode();
+    
+    log("response code: %d", statusCode);
+    
+    if (!response->isSucceed()) {
+        log("response failed");
+        log("error buffer: %s", response->getErrorBuffer());
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接"
+                                                                    , AuthenticationScene::STATUS::LINK_ERROR);
+        return;
+    }
+    
+    __String *strTag = __String::create(response->getHttpRequest()->getTag());
+    int tag = strTag->uintValue();
+    log("request Action Code = %d", tag);
+    
+    std::vector<char> *responseData = response->getResponseData();
+    std::string responseDataStr = std::string(responseData->begin(), responseData->end());
+    
+    //以上为公共部分
+    
+    if (statusCode == 200) {
+        //连接成功
+        std::pair<std::vector<std::string>, std::vector<std::string>> question_answer
+        = DataUtility::decodeQuestionData(responseDataStr);//解析问题
+        ((AuthenticationScene*) this->callerLayer)->setQuestion(question_answer);//设置问题
+    }
+    else {
+        //连接异常
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试"
+                                                                    ,AuthenticationScene::STATUS::LINK_ERROR);
+    }
 
-//µ«¬º ±∏˘æ›’À∫≈º”‘ÿ”√ªß–≈œ¢
+}
+
+
+/*****************读取玩家信息******************/
 void HttpUtility::loadPlayerInformation(std::string account)
 {
 	HttpRequest * request = new HttpRequest();
@@ -119,7 +268,7 @@ void HttpUtility::loadPlayerInformation(std::string account)
 	url += ip + "/php/account2information.php";
 	request->setUrl(url.c_str());
 	request->setRequestType(HttpRequest::Type::POST);
-	request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onHttpRequestCompleted, this));
+	request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onLoadPlayerInformation, this));
 	std::string tag("%d", HttpEnum::LOADACCOUNT);
 	request->setTag(tag.c_str());
 
@@ -131,7 +280,14 @@ void HttpUtility::loadPlayerInformation(std::string account)
 	request->release();
 }
 
-//Õ®π˝idº”‘ÿ”√ªß◊¥Ã¨
+//loadPlayerInformation的回调函数
+void HttpUtility::onLoadPlayerInformation(HttpClient *sender, HttpResponse *response)
+{
+    
+}
+
+
+//加载玩家状态
 void HttpUtility::loadPlayerStatus(int playerID)
 {
 	HttpRequest * request = new HttpRequest();
@@ -139,7 +295,7 @@ void HttpUtility::loadPlayerStatus(int playerID)
 	url += ip + "/php/load_player_status.php";
 	request->setUrl(url.c_str());
 	request->setRequestType(HttpRequest::Type::POST);
-	request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onHttpRequestCompleted, this));
+	request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onLoadPlayerStatus, this));
 	std::string tag("%d", HttpEnum::LOADSTATUS);
 	request->setTag(tag.c_str());
 	
@@ -153,116 +309,13 @@ void HttpUtility::loadPlayerStatus(int playerID)
 }
 
 
-/******************httpªÿµ˜************/
-void HttpUtility::onHttpRequestCompleted(HttpClient *sender, HttpResponse *response){
-
-	if (!response) {
-		return;
-	}
-
-	log("%s", response->getResponseHeader());
-
-	int statusCode = response->getResponseCode();
-
-	log("response code: %d", statusCode);
-
-	if (!response->isSucceed()) {
-		log("response failed");
-		log("error buffer: %s", response->getErrorBuffer());
-		((AuthenticationScene*) this->callerLayer)->promptDialogBox("there exist some error in Internet, please react"
-			, AuthenticationScene::STATUS::LINK_ERROR);
-		return;
-	}
-
-	__String *strTag = __String::create(response->getHttpRequest()->getTag());
-	int tag = strTag->uintValue();
-	log("request Action Code = %d", tag);
-
-	std::vector<char> *responseData = response->getResponseData();
-	std::string responseDataStr = std::string(responseData->begin(), responseData->end());
-	log("%s", responseDataStr.c_str());
-
-	switch (tag) {
-		/**********************检查密码是否正确*********************/
-	case HttpEnum::CHECKPASSWORD:
-		if (statusCode == 200) {
-			flag = DataUtility::decodeFlagData(responseDataStr);//解析返回的flag
-			flag ? log("password is true") : log("password is wrong");
-            if(flag)
-            {//登录成功
-                ((LogInScene*) this->callerLayer)->toHome();//密码正确，进入主页
-            }else
-            {//密码有误
-                ((LogInScene*) this->callerLayer)->promptDialogBox("密码有误，请核对后输入");
-            }
-		}
-		else {
-			//服务器异常
-			((LogInScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
-		}
-		break;
-		/******************加载验证问题*****************************/
-	case HttpEnum::LOADQUESTION:
-		if (statusCode == 200) {
-			//º”‘ÿŒ Ã‚≥…π¶
-			std::pair<std::vector<std::string>, std::vector<std::string>> question_answer 
-				= DataUtility::decodeQuestionData(responseDataStr);//Ω‚Œˆjson∏Ò ΩµƒŒ Ã‚
-			((AuthenticationScene*) this->callerLayer)->setQuestion(question_answer);//Ω´Œ Ã‚∫Õ¥∞∏¥´∏¯—È÷§“≥√Ê
-		}
-		else {
-			//∑˛ŒÒ∆˜“Ï≥£
-			((AuthenticationScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试"
-				,AuthenticationScene::STATUS::LINK_ERROR);
-		}
-		break;
-		/*****************************注册账号****************************/
-	case HttpEnum::REGEDITACCOUNT:
-		if (statusCode == 200) {
-			flag = DataUtility::decodeFlagData(responseDataStr);//是否注册成功
-			flag ? CCLOG("%s", "regedit succeed!") : CCLOG("%s", "regedit error!");
-			if (flag)
-			{//注册成功
-
-				((RegeditScene*) this->callerLayer)->promptDialogBox("注册成功，欢迎进入这个大家庭",
-					RegeditScene::STATUS::SUCCEED);//弹出对话框并进行回调
-			}
-			else
-			{//注册失败
-				((RegeditScene*) this->callerLayer)->promptDialogBox("账号或昵称已存在（至于究竟是账号存在还是昵称已存在，开发者觉得判断实在是太麻烦了ZZZ）",
-					RegeditScene::STATUS::ACCOUNTEXIST);//弹出对话框并进行回调
-
-			}
-		}
-		else {
-			//服务器连接异常
-			((RegeditScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后重试",
-				RegeditScene::STATUS::LINK_ERROR);
-		}
-		break;
-	case HttpEnum::LOADACCOUNT : 
-		if (statusCode == 200) {
-			DataUtility::getInstance()->decodeInformation(responseDataStr);
-		}
-		else {
-			//∑˛ŒÒ∆˜“Ï≥£
-			((RegeditScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后重试",
-				RegeditScene::STATUS::LINK_ERROR);
-		}
-		break;
-	case HttpEnum::LOADSTATUS:
-		if (statusCode == 200) {
-			DataUtility::getInstance()->decodeStatus(responseDataStr);
-		}
-		else {
-			//∑˛ŒÒ∆˜“Ï≥£
-			((RegeditScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后重试",
-				RegeditScene::STATUS::LINK_ERROR);
-		}
-		break;
-	default:
-		break;
-	}
+//loadPlayerStatus的回调函数
+void HttpUtility::onLoadPlayerStatus(HttpClient *sender, HttpResponse *response)
+{
+    
 }
+
+
 
 
 
