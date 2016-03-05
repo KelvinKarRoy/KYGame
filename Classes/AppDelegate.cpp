@@ -5,6 +5,7 @@
 #include "AuthenticationScene.h"
 #include "RegeditScene.h"
 #include "PropertyScene.hpp"
+#include "WaitLayer.hpp"
 
 #include <sys/stat.h>//系统库
 #include <dirent.h>
@@ -84,6 +85,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     register_all_packages();
     
+    //iOS将本地数据库移到沙盒
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_WIN32)
     createDownLoadUrl("db/");
     copyFile("db/radar.csv");

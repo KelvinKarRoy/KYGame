@@ -9,15 +9,6 @@ HttpUtility::HttpUtility() {
 
 }
 
-HttpUtility* HttpUtility::getInstance(){
-
-	if (httpUtility == nullptr)
-	{
-		httpUtility = new HttpUtility();
-	}
-	
-	return httpUtility;
-}
 
 
 HttpUtility* HttpUtility::getInstance(Layer* callerLayer){
@@ -55,12 +46,18 @@ void HttpUtility::checkPassword(std::string account, std::string password)
 	request->release();
     
     //加入等待转圈Layer，并吞噬下层事件
-
+    auto scene = WaitLayer::create();
+    callerLayer->addChild(scene);
+    scene->setName("WaitLayer");
+    
 }
 
 //checkPassword的回调函数
 void HttpUtility::onCheckPassword(HttpClient *sender, HttpResponse *response)
 {
+    //去掉WaitLayer
+    callerLayer->removeChildByName("WaitLayer");
+    
     
     if (!response) {
         return;
@@ -137,11 +134,21 @@ void HttpUtility::regeditAccount(std::string account,//’À∫≈
 	request->setRequestData(finalString.c_str(), finalString.length());
 	this->httpClient->send(request);
 	request->release();
+    
+    
+    //加入等待转圈Layer，并吞噬下层事件
+    auto scene = WaitLayer::create();
+    callerLayer->addChild(scene);
+    scene->setName("WaitLayer");
+    log("%s",scene->getName().c_str());
+    scene->setVisible(true);
 }
 
 //regeditAccount的回调函数
 void HttpUtility::onRegeditAccount(HttpClient *sender, HttpResponse *response)
 {
+    //去掉WaitLayer
+    callerLayer->removeChildByName("WaitLayer");
     
     if (!response) {
         return;
@@ -215,11 +222,20 @@ void HttpUtility::loadQuestion(int num_question)
 	request->setRequestData(finalString.c_str(), finalString.size()/sizeof(char));
 	this->httpClient->send(request);
 	request->release();
+    
+    
+    //加入等待转圈Layer，并吞噬下层事件
+    auto scene = WaitLayer::create();
+    callerLayer->addChild(scene);
+    scene->setName("WaitLayer");
+    scene->setVisible(true);
 }
 
 //loadQuestion的回调函数
 void HttpUtility::onLoadQuestion(HttpClient *sender, HttpResponse *response)
 {
+    //去掉WaitLayer
+    callerLayer->removeChildByName("WaitLayer");
     
     if (!response) {
         return;
@@ -279,6 +295,14 @@ void HttpUtility::loadPlayerInformation(std::string account)
 	request->setRequestData(finalString.c_str(), finalString.length());
 	this->httpClient->send(request);
 	request->release();
+    
+    
+    
+    //加入等待转圈Layer，并吞噬下层事件
+    auto scene = WaitLayer::create();
+    callerLayer->addChild(scene);
+    scene->setName("WaitLayer");
+    scene->setVisible(true);
 }
 
 //loadPlayerInformation的回调函数

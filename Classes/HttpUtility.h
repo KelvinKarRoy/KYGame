@@ -19,6 +19,7 @@
 #include "AuthenticationScene.h"
 #include "RegeditScene.h"
 #include "Player.h"
+#include "WaitLayer.hpp"
 
 using namespace cocos2d;
 using namespace cocos2d::network;
@@ -29,6 +30,7 @@ private:
     static HttpClient* httpClient;
     static HttpUtility* httpUtility;
     Layer* callerLayer;//调用它的对象
+    //Node* scene;
     
     //flag枚举
     enum HttpEnum
@@ -62,7 +64,6 @@ public:
     
     //单例类获取
     static HttpUtility* getInstance(Layer* callerLayer);//调用它的对象
-    static HttpUtility* getInstance();
     
     bool getFlag();
     

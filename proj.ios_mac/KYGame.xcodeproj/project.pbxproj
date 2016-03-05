@@ -52,6 +52,15 @@
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
+		B6063C4C1C8B339B003F9C9A /* WaitLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6063C4A1C8B339B003F9C9A /* WaitLayer.cpp */; };
+		B6063C561C8B3BC2003F9C9A /* wait1.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C4F1C8B3BC2003F9C9A /* wait1.png */; };
+		B6063C571C8B3BC2003F9C9A /* wait2.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C501C8B3BC2003F9C9A /* wait2.png */; };
+		B6063C581C8B3BC2003F9C9A /* wait3.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C511C8B3BC2003F9C9A /* wait3.png */; };
+		B6063C591C8B3BC2003F9C9A /* wait4.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C521C8B3BC2003F9C9A /* wait4.png */; };
+		B6063C5A1C8B3BC2003F9C9A /* wait5.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C531C8B3BC2003F9C9A /* wait5.png */; };
+		B6063C5B1C8B3BC2003F9C9A /* wait6.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C541C8B3BC2003F9C9A /* wait6.png */; };
+		B6063C5C1C8B3BC2003F9C9A /* wait7.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C551C8B3BC2003F9C9A /* wait7.png */; };
+		B6063C5E1C8B3C42003F9C9A /* wait8.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C5D1C8B3C42003F9C9A /* wait8.png */; };
 		B63A05A81C87388F0061C902 /* sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B63A05A71C87388F0061C902 /* sqlite */; };
 		B63A05AA1C8742D80061C902 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B63A05A91C8742D80061C902 /* libsqlite3.dylib */; };
 		B6567D671C8AA98700A4056B /* DataUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6567D661C8AA98700A4056B /* DataUtility.cpp */; };
@@ -191,6 +200,16 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B6063C4A1C8B339B003F9C9A /* WaitLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaitLayer.cpp; sourceTree = "<group>"; };
+		B6063C4B1C8B339B003F9C9A /* WaitLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WaitLayer.hpp; sourceTree = "<group>"; };
+		B6063C4F1C8B3BC2003F9C9A /* wait1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait1.png; sourceTree = "<group>"; };
+		B6063C501C8B3BC2003F9C9A /* wait2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait2.png; sourceTree = "<group>"; };
+		B6063C511C8B3BC2003F9C9A /* wait3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait3.png; sourceTree = "<group>"; };
+		B6063C521C8B3BC2003F9C9A /* wait4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait4.png; sourceTree = "<group>"; };
+		B6063C531C8B3BC2003F9C9A /* wait5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait5.png; sourceTree = "<group>"; };
+		B6063C541C8B3BC2003F9C9A /* wait6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait6.png; sourceTree = "<group>"; };
+		B6063C551C8B3BC2003F9C9A /* wait7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait7.png; sourceTree = "<group>"; };
+		B6063C5D1C8B3C42003F9C9A /* wait8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait8.png; sourceTree = "<group>"; };
 		B63A05A71C87388F0061C902 /* sqlite */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sqlite; sourceTree = "<group>"; };
 		B63A05A91C8742D80061C902 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
 		B64352251C8AA45A004ACFD6 /* HttpUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpUtility.h; sourceTree = "<group>"; };
@@ -386,6 +405,14 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6063C5D1C8B3C42003F9C9A /* wait8.png */,
+				B6063C4F1C8B3BC2003F9C9A /* wait1.png */,
+				B6063C501C8B3BC2003F9C9A /* wait2.png */,
+				B6063C511C8B3BC2003F9C9A /* wait3.png */,
+				B6063C521C8B3BC2003F9C9A /* wait4.png */,
+				B6063C531C8B3BC2003F9C9A /* wait5.png */,
+				B6063C541C8B3BC2003F9C9A /* wait6.png */,
+				B6063C551C8B3BC2003F9C9A /* wait7.png */,
 				B6E1EF721C89DFBF00D55420 /* db */,
 				B66C09C91C85505E002C8270 /* about1.png */,
 				B66C09CA1C85505E002C8270 /* about2.png */,
@@ -460,6 +487,8 @@
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				B66C0A0E1C858B6F002C8270 /* PropertyScene.cpp */,
 				B66C0A0F1C858B6F002C8270 /* PropertyScene.hpp */,
+				B6063C4A1C8B339B003F9C9A /* WaitLayer.cpp */,
+				B6063C4B1C8B339B003F9C9A /* WaitLayer.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -637,16 +666,23 @@
 				B66C09F91C85505F002C8270 /* LogInBackGround.png in Resources */,
 				B66C0A0A1C85505F002C8270 /* wending.TTF in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
+				B6063C5A1C8B3BC2003F9C9A /* wait5.png in Resources */,
+				B6063C571C8B3BC2003F9C9A /* wait2.png in Resources */,
 				B66C09EE1C85505F002C8270 /* back1.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
+				B6063C581C8B3BC2003F9C9A /* wait3.png in Resources */,
+				B6063C5B1C8B3BC2003F9C9A /* wait6.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				B66C09FC1C85505F002C8270 /* okbtn1.png in Resources */,
 				B66C09FE1C85505F002C8270 /* RegeditBackground.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
+				B6063C561C8B3BC2003F9C9A /* wait1.png in Resources */,
 				B66C09F21C85505F002C8270 /* dialogBackGround.png in Resources */,
+				B6063C5C1C8B3BC2003F9C9A /* wait7.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				B68F575B1C8928640008250A /* PropertyBackGround.png in Resources */,
+				B6063C5E1C8B3C42003F9C9A /* wait8.png in Resources */,
 				B66C09F61C85505F002C8270 /* giveupbtn2.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				B66C0A081C85505F002C8270 /* submitRegeditbtn2.png in Resources */,
@@ -662,6 +698,7 @@
 				B66C09F71C85505F002C8270 /* karryRolebtn1.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				B66C0A001C85505F002C8270 /* regeditbtn2.png in Resources */,
+				B6063C591C8B3BC2003F9C9A /* wait4.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				B66C0A021C85505F002C8270 /* RoleSelectBackground.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
@@ -696,6 +733,7 @@
 				B66C0A0D1C85537C002C8270 /* AboutScene.cpp in Sources */,
 				B66C0A101C858B6F002C8270 /* PropertyScene.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				B6063C4C1C8B339B003F9C9A /* WaitLayer.cpp in Sources */,
 				B66C09C41C854FA6002C8270 /* Player.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				B66C09C21C854FA6002C8270 /* HttpUtility.cpp in Sources */,
