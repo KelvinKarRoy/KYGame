@@ -29,7 +29,6 @@ void Player::expTolevel()
             break;
         }
     }
-    
     delete csv;
     
 }

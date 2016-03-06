@@ -120,53 +120,11 @@ void DataUtility::decodeInformation(std::string responseDataStr)
     
     //dataƒ⁄ «∑Ò”–
     CC_ASSERT(dataString.IsObject()
-              && dataString.HasMember("id")
               && dataString.HasMember("role")
               && dataString.HasMember("speakable")
               && dataString.HasMember("playable")
-              && dataString.HasMember("name"));
-    
-    //ªÒ»°
-    const rapidjson::Value & vID = dataString["id"];
-    const rapidjson::Value & vRole = dataString["role"];
-    const rapidjson::Value & vSpeakable = dataString["speakable"];
-    const rapidjson::Value & vPlayable = dataString["playable"];
-    const rapidjson::Value & vName = dataString["name"];
-    
-    
-    // «∑Ò « ˝◊È
-    CC_ASSERT(vID.IsInt()
-              && vRole.IsBool()
-              && vSpeakable.IsBool()
-              && vPlayable.IsBool()
-              && vName.IsString());
-    
-    Self::getInstance()->setPlayerID(vID.GetInt());
-    Self::getInstance()->setRole(vRole.GetBool());
-    Self::getInstance()->setSpeakable(vSpeakable.GetBool());
-    Self::getInstance()->setPlayable(vPlayable.GetBool());
-    Self::getInstance()->setName(vName.GetString());
-    
-}
-
-void DataUtility::decodeStatus(std::string responseDataStr)
-{
-    responseDataStr = StringUtility::WStrToUTF8(StringUtility::decodeUnicode(responseDataStr));//∂‘json◊÷∑˚¥Æ÷–µƒunicode±‡¬ÎΩ¯––◊™ªª
-    
-    CCLOG("%s", responseDataStr.c_str());
-    
-    document->Parse<0>(responseDataStr.c_str());
-    //Ω‚Œˆ¥ÌŒÛ
-    CCASSERT(!document->HasParseError(), "Parsing to document failure.");
-    
-    CCLOG("%s", "Parsing to document succeeded.");
-    // «∑Ò∫¨”–data
-    CC_ASSERT(document->IsObject() && document->HasMember("data"));
-    
-    const rapidjson::Value & dataString = (*document)["data"];
-    
-    //dataƒ⁄ «∑Ò”–
-    CC_ASSERT(dataString.IsObject()
+              && dataString.HasMember("name")
+              
               && dataString.HasMember("money")
               && dataString.HasMember("experiense")
               && dataString.HasMember("popularity")
@@ -182,6 +140,11 @@ void DataUtility::decodeStatus(std::string responseDataStr)
               && dataString.HasMember("top"));
     
     //ªÒ»°
+    const rapidjson::Value & vRole = dataString["role"];
+    const rapidjson::Value & vSpeakable = dataString["speakable"];
+    const rapidjson::Value & vPlayable = dataString["playable"];
+    const rapidjson::Value & vName = dataString["name"];
+    
     const rapidjson::Value & vMoney = dataString["money"];
     const rapidjson::Value & vExperiense = dataString["experiense"];
     const rapidjson::Value & vPopularity = dataString["popularity"];
@@ -195,18 +158,88 @@ void DataUtility::decodeStatus(std::string responseDataStr)
     const rapidjson::Value & vSkillID = dataString["skillID"];
     const rapidjson::Value & vCpID = dataString["cpID"];
     const rapidjson::Value & vTop = dataString["top"];
-    /*
-     //我觉得应该不是Self 而是Player，为了重复使用
-     CC_ASSERT(vID.IsInt()
-     && vRole.IsBool()
-     && vSpeakable.IsBool()
-     && vPlayable.IsBool()
-     && vName.IsString());
-     
-     Self::getInstance()->setPlayerID(vID.GetInt());
-     Self::getInstance()->setRole(vRole.GetBool());
-     Self::getInstance()->setSpeakable(vSpeakable.GetBool());
-     Self::getInstance()->setPlayable(vPlayable.GetBool());
-     Self::getInstance()->setName(vName.GetString());
-     */
+    
+    // «∑Ò « ˝◊È
+    CC_ASSERT( vRole.IsInt()
+              && vSpeakable.IsInt()
+              && vPlayable.IsInt()
+              && vName.IsString()
+              
+              && vMoney.IsInt()
+              && vExperiense.IsInt()
+              && vPopularity.IsInt()
+              && vBeauty.IsInt()
+              && vBoyablity.IsInt()
+              && vLeadership.IsInt()
+              && vAction.IsInt()
+              && vClothID.IsInt()
+              && vCardID.IsInt()
+              && vHonor.IsInt()
+              && vSkillID.IsArray()
+              && vCpID.IsInt()
+              && vTop.IsInt()
+              );
+    
+    HttpUtility::getInstance()->getPlayer()->setRole(vRole.GetInt());
+    HttpUtility::getInstance()->getPlayer()->setSpeakable(vSpeakable.GetInt());
+    HttpUtility::getInstance()->getPlayer()->setPlayable(vPlayable.GetInt());
+    HttpUtility::getInstance()->getPlayer()->setName(vName.GetString());
+    
+    HttpUtility::getInstance()->getPlayer()->setMoney(vMoney.GetInt());
+    HttpUtility::getInstance()->getPlayer()->setExp(vExperiense.GetInt());
+    
+    std::map<Player::ATTRIBUTE,int> attributes;
+    
+    attributes[Player::ATTRIBUTE::BASE_ACTION] = vAction.GetInt();
+    attributes[Player::ATTRIBUTE::BASE_BEAUTY] = vBeauty.GetInt();
+    attributes[Player::ATTRIBUTE::BASE_BOYABLITY] = vBoyablity.GetInt();
+    attributes[Player::ATTRIBUTE::BASE_LEADERSHIP] = vLeadership.GetInt();
+    attributes[Player::ATTRIBUTE::BASE_POPULARITY] = vPopularity.GetInt();
+    
+    HttpUtility::getInstance()->getPlayer()->setAttributes(attributes);
+    
+    HttpUtility::getInstance()->getPlayer()->setClothID(vClothID.GetInt());
+    HttpUtility::getInstance()->getPlayer()->setCardID(vCardID.GetInt());
+    HttpUtility::getInstance()->getPlayer()->setHonor(vHonor.GetInt());
+    
+    vector<int> vecSkills;
+    
+    for (int i = 0; i<vSkillID.Size(); ++i) {
+        vecSkills.push_back(vSkillID[i].GetInt());
+    }
+    HttpUtility::getInstance()->getPlayer()->setSkillsID(vecSkills);
+    HttpUtility::getInstance()->getPlayer()->setCpID(vCpID.GetInt());
+    HttpUtility::getInstance()->getPlayer()->setTop(vTop.GetInt());
+    
+    HttpUtility::getInstance()->getPlayer()->expTolevel();//经验值转等级
+    
+    //最后要将衣服的附加属性加上去
+}
+
+//解析玩家ID
+void DataUtility::decodePlayerID(std::string responseDataStr)
+{
+    responseDataStr = StringUtility::WStrToUTF8(StringUtility::decodeUnicode(responseDataStr));//∂‘json◊÷∑˚¥Æ÷–µƒunicode±‡¬ÎΩ¯––◊™ªª
+    
+    CCLOG("%s", responseDataStr.c_str());
+    
+    document->Parse<0>(responseDataStr.c_str());
+    //Ω‚Œˆ¥ÌŒÛ
+    CCASSERT(!document->HasParseError(), "Parsing to document failure.");
+    
+    CCLOG("%s", "Parsing to document succeeded.");
+    // «∑Ò∫¨”–data
+    CC_ASSERT(document->IsObject() && document->HasMember("data"));
+    
+    const rapidjson::Value & dataString = (*document)["data"];
+    
+    CC_ASSERT(dataString.IsObject() && dataString.HasMember("id"));
+    
+    const rapidjson::Value & vID = dataString["id"];
+    
+    CC_ASSERT(vID.IsInt());
+    
+    HttpUtility::getInstance()->getPlayer()->setPlayerID(vID.GetInt());
+    
+    
 }

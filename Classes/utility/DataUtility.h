@@ -8,6 +8,7 @@
 
 #include "cocos2d.h"
 
+#include "HttpUtility.h"
 #include "StringUtility.h"
 #include "../model/Self.h"
 
@@ -25,9 +26,9 @@ public:
 	static std::pair<std::vector<std::string>, std::vector<std::string>> 
 		decodeQuestionData(std::string responseDataStr);//Ω‚ŒˆŒ Ã‚∫Õ¥∞∏µƒjson◊÷∑˚¥Æ
 	
-	void decodeInformation(std::string responseDataStr);//Ω‚Œˆ–≈œ¢
-	void decodeStatus(std::string responseDataStr);//Ω‚Œˆ◊¥Ã¨
-
+	static void decodeInformation(std::string responseDataStr);//解析玩家信息
+    static void decodePlayerID(std::string responseDataStr);//解析玩家ID
+    
 private:
 	static DataUtility* dataUtility;
 	static rapidjson::Document* document;

@@ -1,4 +1,4 @@
-﻿#include "LogInScene.h"
+#include "LogInScene.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
@@ -180,8 +180,8 @@ void LogInScene::promptDialogBox(std::string strInfo)
 void LogInScene::toHome()
 {
     saveAccount();//记住账号密码
-    //promptDialogBox("登录成功");
-    cocos2d::Director::getInstance()->replaceScene(PropertyScene::createScene());//切换到属性页面
+    //获取自己的账号信息
+    HttpUtility::getInstance(this)->account2ID(((TextField*)rootNode->getChildByName("Panel_1")->getChildByName("TextField_account"))->getString());
 }
 
 //记住账号密码

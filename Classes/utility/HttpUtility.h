@@ -19,18 +19,18 @@
 #include "../scene/AuthenticationScene.h"
 #include "../scene/RegeditScene.h"
 #include "../model/Player.h"
+#include "../model/Self.h"
 #include "../scene/WaitLayer.hpp"
 
 using namespace cocos2d;
 using namespace cocos2d::network;
 
-class HttpUtility : public Node
+class HttpUtility
 {
 private:
     static HttpClient* httpClient;
     static HttpUtility* httpUtility;
     Layer* callerLayer;//调用它的对象
-    //Node* scene;
     
     //flag枚举
     enum HttpEnum
@@ -40,36 +40,35 @@ private:
         CHECKVERSION,//检查版本
         LOADPLAYERINFO,//加载用户账号信息
         REGEDITACCOUNT,//注册账号
-        LOADACCOUNT,//加载账号
-        LOADSTATUS//加载用户状态
+        LOADACCOUNT,//账号转ID
     };
     
     bool flag;
-    
-    
-    CREATE_FUNC(HttpUtility);
     
     static std::string ip;
     
     HttpUtility();
     
+    Player* player;
     //各种回调函数
-    void onCheckPassword(HttpClient *sender, HttpResponse *response);
-    void onLoadQuestion(HttpClient *sender, HttpResponse *response);
-    void onRegeditAccount(HttpClient *sender, HttpResponse *response);
-    void onLoadPlayerInformation(HttpClient *sender, HttpResponse *response);
-    void onLoadPlayerStatus(HttpClient *sender, HttpResponse *response);
+    void onCheckPassword(HttpClient *sender, HttpResponse *response);//检查账号密码是否匹配
+    void onLoadQuestion(HttpClient *sender, HttpResponse *response);//加载验证问题
+    void onRegeditAccount(HttpClient *sender, HttpResponse *response);//注册账号
+    void onLoadPlayerInformation(HttpClient *sender, HttpResponse *response);//加载用户信息
+    void onAccount2ID(HttpClient *sender, HttpResponse *response);//账号转化成id
     
 public:
     
     //单例类获取
     static HttpUtility* getInstance(Layer* callerLayer);//调用它的对象
+    static HttpUtility* getInstance();
     
     bool getFlag();
     
     ~HttpUtility();
     
-    
+    Player* getPlayer();
+    void setPlayer(Player* player){ this->player = player; }
     
     void checkPassword(std::string account, std::string password);//检查密码是否正确
     void loadQuestion(int num_question);//加载问题
@@ -78,8 +77,8 @@ public:
                         std::string password,
                         std::string name,
                         bool role);//注册账号
-    void loadPlayerInformation(std::string account);//加载玩家信息
-    void loadPlayerStatus(int playerID);//加载玩家状态
+    void loadPlayerInformation(int playerID,Player* player);//加载玩家信息
+    void account2ID(std::string account);//account转id
     
     //bool checkVersion(std::string version);
 };

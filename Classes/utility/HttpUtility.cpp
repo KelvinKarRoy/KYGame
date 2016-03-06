@@ -6,7 +6,7 @@ HttpUtility* HttpUtility::httpUtility = nullptr;
 std::string HttpUtility::ip = "121.42.8.206";//我的服务器ip
 
 HttpUtility::HttpUtility() {
-
+    player = nullptr;
 }
 
 
@@ -22,8 +22,22 @@ HttpUtility* HttpUtility::getInstance(Layer* callerLayer){
 	return httpUtility;
 }
 
+HttpUtility* HttpUtility::getInstance(){
+    
+    if (httpUtility == nullptr)
+    {
+        httpUtility = new HttpUtility();
+    }
+    
+    return httpUtility;
+}
+
 HttpUtility::~HttpUtility() {
 
+}
+
+Player* HttpUtility::getPlayer(){
+    return player;
 }
 
 /******************检查账号密码是否正确****************/
@@ -278,24 +292,29 @@ void HttpUtility::onLoadQuestion(HttpClient *sender, HttpResponse *response)
 
 
 /*****************读取玩家信息******************/
-void HttpUtility::loadPlayerInformation(std::string account)
+void HttpUtility::loadPlayerInformation(int playerID,Player* player)
 {
-	HttpRequest * request = new HttpRequest();
-	std::string url = "http://";
-	url += ip + "/php/account2information.php";
-	request->setUrl(url.c_str());
-	request->setRequestType(HttpRequest::Type::POST);
-	request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onLoadPlayerInformation, this));
-	std::string tag("%d", HttpEnum::LOADACCOUNT);
-	request->setTag(tag.c_str());
-
-	std::string finalString = "account=\'";
-	finalString = finalString + account + "\'&key=\'Kkdgx4cp\'";
-	log("%s", finalString.c_str());
-	request->setRequestData(finalString.c_str(), finalString.length());
-	this->httpClient->send(request);
-	request->release();
+    setPlayer(player);
+    HttpRequest * request = new HttpRequest();
+    std::string url = "http://";
+    url += ip + "/php/load_player_information.php";
+    CCLOG("url = %s", url.c_str());
+    request->setUrl(url.c_str());
+    request->setRequestType(HttpRequest::Type::POST);
+    request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onLoadPlayerInformation, this));
+    char tag[5];
+    sprintf(tag,"%d", HttpEnum::LOADPLAYERINFO);
+    CCLOG("%s", tag);
+    request->setTag(tag);
     
+    char temp[60];
+    std::string finalString = "id=";
+    sprintf(temp, "%s'%d'&key=\'Kkdgx4cp\'",finalString.c_str(), playerID);
+    finalString = temp;
+    CCLOG("%s", finalString.c_str());
+    request->setRequestData(finalString.c_str(), finalString.size()/sizeof(char));
+    this->httpClient->send(request);
+    request->release();
     
     
     //加入等待转圈Layer，并吞噬下层事件
@@ -308,39 +327,130 @@ void HttpUtility::loadPlayerInformation(std::string account)
 //loadPlayerInformation的回调函数
 void HttpUtility::onLoadPlayerInformation(HttpClient *sender, HttpResponse *response)
 {
+    //去掉WaitLayer
+    callerLayer->removeChildByName("WaitLayer");
+    
+    if (!response) {
+        return;
+    }
+    
+    int statusCode = response->getResponseCode();
+    
+    log("response code: %d", statusCode);
+    
+    if (!response->isSucceed()) {
+        log("response failed");
+        log("error buffer: %s", response->getErrorBuffer());
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接"
+                                                                    , AuthenticationScene::STATUS::LINK_ERROR);
+        return;
+    }
+    
+    __String *strTag = __String::create(response->getHttpRequest()->getTag());
+    int tag = strTag->uintValue();
+    log("request Action Code = %d", tag);
+    
+    std::vector<char> *responseData = response->getResponseData();
+    std::string responseDataStr = std::string(responseData->begin(), responseData->end());
+    
+    //以上为公共部分
+    
+    if (statusCode == 200) {
+        //连接成功
+        DataUtility::decodeInformation(responseDataStr);
+        if(typeid(LogInScene) == typeid(*callerLayer))
+        {//如果调用它的是登录页面
+            cocos2d::Director::getInstance()->replaceScene(PropertyScene::createScene());//切换到属性页面
+        }
+    }
+    else {
+        //连接异常
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试"
+                                                                    ,AuthenticationScene::STATUS::LINK_ERROR);
+    }
+
+}
+
+
+
+/*****************账号转ID******************/
+void HttpUtility::account2ID(std::string account)
+{
+    HttpRequest * request = new HttpRequest();
+    std::string url = "http://";
+    url += ip + "/php/account2id.php";
+    CCLOG("url = %s", url.c_str());
+    request->setUrl(url.c_str());
+    request->setRequestType(HttpRequest::Type::POST);
+    request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onAccount2ID, this));
+    char tag[5];
+    sprintf(tag,"%d", HttpEnum::LOADACCOUNT);
+    CCLOG("%s", tag);
+    request->setTag(tag);
+    
+    char temp[60];
+    std::string finalString = "account=";
+    sprintf(temp, "%s'%s'&key=\'Kkdgx4cp\'",finalString.c_str(), account.c_str());
+    finalString = temp;
+    CCLOG("%s", finalString.c_str());
+    request->setRequestData(finalString.c_str(), finalString.size()/sizeof(char));
+    this->httpClient->send(request);
+    request->release();
+    
+    
+    //加入等待转圈Layer，并吞噬下层事件
+    auto scene = WaitLayer::create();
+    callerLayer->addChild(scene);
+    scene->setName("WaitLayer");
+    scene->setVisible(true);
+}
+
+//loadPlayerInformation的回调函数
+void HttpUtility::onAccount2ID(HttpClient *sender, HttpResponse *response)
+{
+    //去掉WaitLayer
+    callerLayer->removeChildByName("WaitLayer");
+    
+    if (!response) {
+        return;
+    }
+    
+    int statusCode = response->getResponseCode();
+    
+    log("response code: %d", statusCode);
+    
+    if (!response->isSucceed()) {
+        log("response failed");
+        log("error buffer: %s", response->getErrorBuffer());
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接"
+                                                                    , AuthenticationScene::STATUS::LINK_ERROR);
+        return;
+    }
+    
+    __String *strTag = __String::create(response->getHttpRequest()->getTag());
+    int tag = strTag->uintValue();
+    log("request Action Code = %d", tag);
+    
+    std::vector<char> *responseData = response->getResponseData();
+    std::string responseDataStr = std::string(responseData->begin(), responseData->end());
+    
+    //以上为公共部分
+    
+    if (statusCode == 200) {
+        setPlayer(Self::getInstance());
+        //连接成功
+        DataUtility::decodePlayerID(responseDataStr);
+        
+        //以此ID加载用户其他信息
+        loadPlayerInformation(player->getPlayerID(),Self::getInstance());
+        
+    }
+    else {
+        //连接异常
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试"
+                                                                    ,AuthenticationScene::STATUS::LINK_ERROR);
+    }
     
 }
-
-
-//加载玩家状态
-void HttpUtility::loadPlayerStatus(int playerID)
-{
-	HttpRequest * request = new HttpRequest();
-	std::string url = "http://";
-	url += ip + "/php/load_player_status.php";
-	request->setUrl(url.c_str());
-	request->setRequestType(HttpRequest::Type::POST);
-	request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onLoadPlayerStatus, this));
-	std::string tag("%d", HttpEnum::LOADSTATUS);
-	request->setTag(tag.c_str());
-	
-	char temp[35];
-	sprintf(temp,"account=\'%d\'&key=\'Kkdgx4cp\'");
-	std::string finalString(temp);
-	log("%s", finalString.c_str());
-	request->setRequestData(finalString.c_str(), finalString.length());
-	this->httpClient->send(request);
-	request->release();
-}
-
-
-//loadPlayerStatus的回调函数
-void HttpUtility::onLoadPlayerStatus(HttpClient *sender, HttpResponse *response)
-{
-    
-}
-
-
-
 
 

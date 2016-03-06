@@ -5,7 +5,7 @@ Self* Self::self = nullptr;
 Self::Self()
 {
 	
-	//∂¡»°”√ªß◊ ¡œ
+	/*
 	std::map<Player::ATTRIBUTE, int> attribute;
 	attribute[Player::ATTRIBUTE::BASE_ACTION] = 110;
 	attribute[Player::ATTRIBUTE::BASE_BEAUTY] = 110;
@@ -20,12 +20,14 @@ Self::Self()
 
 	setAttributes(attribute);
 
+    setRole(true);
 	setHonor(50);
     setExp(5450);
     expTolevel();
 	setPlayerID(921118);
 	setName("Kelvin");
 	setCpID(1642127033);
+     */
 }
 
 Self::~Self()

@@ -160,6 +160,13 @@ void PropertyScene::drawRadar()
     rectangle[3] = ccp(210-130*rate4, 179-179*rate4);
     rectangle[4] = ccp(210-210*rate5,179+68*rate5);
     
-    frame->drawPolygon(rectangle, 5, ccc4f(0, 0.5, 0.5, 0.5), 1, ccc4f(0, 0.5, 0.5, 1));
+    if(player->getRole())
+    {//凯
+        frame->drawPolygon(rectangle, 5, ccc4f(0, 0.5, 0.7, 0.3), 1, ccc4f(0, 0.5, 0.7, 1));
+    }else
+    {//源
+        frame->drawPolygon(rectangle, 5, ccc4f(0, 0.7, 0.5, 0.3), 1, ccc4f(0, 0.7, 0.5, 1));
+    }
+    
 }
 
