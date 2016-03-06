@@ -269,6 +269,6 @@ bool RegeditScene::isRegeditLegal()
 void RegeditScene::promptDialogBox(std::string str)
 {
 	childLayer = DialogLayer::create();
-	((DialogLayer*)childLayer)->setText(str);// ‰≥ˆŒƒ◊÷
+	((DialogLayer*)childLayer)->setText(str);//设置文字
 	this->addChild(childLayer);
 }

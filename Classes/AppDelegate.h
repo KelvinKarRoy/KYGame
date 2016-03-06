@@ -37,6 +37,8 @@ public:
     
     std::string createDownLoadUrl(std::string path);
     bool copyFile(const std::string& filename);
+    bool isFileExist(const char* pFileName);
+
 };
 
 #endif // _APP_DELEGATE_H_

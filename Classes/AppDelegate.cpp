@@ -88,14 +88,14 @@ bool AppDelegate::applicationDidFinishLaunching() {
     //iOS将本地数据库移到沙盒
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_WIN32)
     createDownLoadUrl("db/");
-    copyFile("db/radar.csv");
-    copyFile("db/exp.csv");
-    copyFile("db/KYGame.db");
+    if(!isFileExist("db/radar.csv"))    copyFile("db/radar.csv");
+    if(!isFileExist("db/exp.csv"))    copyFile("db/exp.csv");
+    if(!isFileExist("db/KYGame.db"))    copyFile("db/KYGame.db");
     
 #endif
 
     // create a scene. it's an autorelease object
-	auto scene = RegeditScene::createScene();
+	auto scene = LogInScene::createScene();
 
     // run
     director->runWithScene(scene);
@@ -167,6 +167,22 @@ bool AppDelegate::copyFile(const std::string& filename)
         }
     }
     CCLOG("copy file %s failed.", filename.c_str());
+    return false;
+}
+
+//文件是否存在
+bool AppDelegate::isFileExist(const char* pFileName)
+{
+    if( !pFileName ) return false;
+    //strFilePathName is :/data/data/ + package name
+    std::string filePath = FileUtils::getInstance()->getWritablePath() + pFileName;
+
+    FILE *fp = fopen(filePath.c_str(),"r");
+    if(fp)
+    {
+        fclose(fp);
+        return true;
+    }
     return false;
 }
 

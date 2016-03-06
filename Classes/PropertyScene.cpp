@@ -129,6 +129,6 @@ void PropertyScene::fillText()
 //画雷达图
 void PropertyScene::drawRadar()
 {
-    
+    auto radar = static_cast<Layout*>(rootNode->getChildByName("Panel_radar"));
 }
 
