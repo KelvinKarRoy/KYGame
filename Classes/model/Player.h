@@ -6,7 +6,7 @@
 
 #include "cocos2d.h"
 
-#include "GCCsvHelper.hpp"
+#include "../utility/GCCsvHelper.hpp"
 
 class Player : cocos2d::Node
 {

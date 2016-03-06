@@ -9,7 +9,7 @@
 #include "cocos2d.h"
 
 #include "StringUtility.h"
-#include "Self.h"
+#include "../model/Self.h"
 
 using namespace std;
 
@@ -21,12 +21,12 @@ public:
 		std::string password;
 	}m_player;
 	static DataUtility* getInstance();
-	static bool decodeFlagData(std::string flagInfo);//解析返回值为bool的json字符串
+	static bool decodeFlagData(std::string flagInfo);//惟鈥毰捤嗏垜碌陋每梅碌艗鈩ool碌茠json鈼娒封垜藲楼脝
 	static std::pair<std::vector<std::string>, std::vector<std::string>> 
-		decodeQuestionData(std::string responseDataStr);//解析问题和答案的json字符串
+		decodeQuestionData(std::string responseDataStr);//惟鈥毰捤喤捖犆冣�氣埆脮楼铮库垶鈭徛灯抝son鈼娒封垜藲楼脝
 	
-	void decodeInformation(std::string responseDataStr);//解析信息
-	void decodeStatus(std::string responseDataStr);//解析状态
+	void decodeInformation(std::string responseDataStr);//惟鈥毰捤嗏�撯増艙垄
+	void decodeStatus(std::string responseDataStr);//惟鈥毰捤嗏棅楼脙篓
 
 private:
 	static DataUtility* dataUtility;

@@ -15,11 +15,11 @@
 
 #include "json/rapidjson.h"
 #include "DataUtility.h"
-#include "LogInScene.h"
-#include "AuthenticationScene.h"
-#include "RegeditScene.h"
-#include "Player.h"
-#include "WaitLayer.hpp"
+#include "../scene/LogInScene.h"
+#include "../scene/AuthenticationScene.h"
+#include "../scene/RegeditScene.h"
+#include "../model/Player.h"
+#include "../scene/WaitLayer.hpp"
 
 using namespace cocos2d;
 using namespace cocos2d::network;

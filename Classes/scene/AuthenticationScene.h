@@ -8,8 +8,7 @@
 #include "cocostudio/CocoStudio.h"//在CocosStudio.h 头文件中已经包含了Studio所需要的各个头文件(除CocosGUI)因此我们使用Studio仅需要包含他就可以 
 
 #include "RegeditScene.h"
-
-#include "HttpUtility.h"
+#include "../utility/HttpUtility.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;

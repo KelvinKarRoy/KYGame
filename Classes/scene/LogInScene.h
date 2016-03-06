@@ -15,12 +15,12 @@
 #include "RegeditScene.h"
 #include "AuthenticationScene.h"
 #include "DialogLayer.h"
-#include "HttpUtility.h"
-#include "utility.h"
-#include "StringUtility.h"
+#include "../utility/HttpUtility.h"
+#include "../utility/utility.h"
+#include "../utility/StringUtility.h"
 #include "PropertyScene.hpp"
 
-#include "sqlite/sqlite3.h"
+#include "../sqlite/sqlite3.h"
 
 
 using namespace cocos2d::ui;

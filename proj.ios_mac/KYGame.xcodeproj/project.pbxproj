@@ -52,7 +52,6 @@
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
-		B6063C4C1C8B339B003F9C9A /* WaitLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6063C4A1C8B339B003F9C9A /* WaitLayer.cpp */; };
 		B6063C561C8B3BC2003F9C9A /* wait1.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C4F1C8B3BC2003F9C9A /* wait1.png */; };
 		B6063C571C8B3BC2003F9C9A /* wait2.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C501C8B3BC2003F9C9A /* wait2.png */; };
 		B6063C581C8B3BC2003F9C9A /* wait3.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C511C8B3BC2003F9C9A /* wait3.png */; };
@@ -61,18 +60,40 @@
 		B6063C5B1C8B3BC2003F9C9A /* wait6.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C541C8B3BC2003F9C9A /* wait6.png */; };
 		B6063C5C1C8B3BC2003F9C9A /* wait7.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C551C8B3BC2003F9C9A /* wait7.png */; };
 		B6063C5E1C8B3C42003F9C9A /* wait8.png in Resources */ = {isa = PBXBuildFile; fileRef = B6063C5D1C8B3C42003F9C9A /* wait8.png */; };
+		B609BCAB1C8BF6C20067B838 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8519C43A87006E1F66 /* AppDelegate.h */; };
+		B609BCFA1C8BF88C0067B838 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BCF61C8BF88C0067B838 /* Player.cpp */; };
+		B609BCFB1C8BF88C0067B838 /* Player.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BCF71C8BF88C0067B838 /* Player.h */; };
+		B609BCFC1C8BF88C0067B838 /* Self.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BCF81C8BF88C0067B838 /* Self.cpp */; };
+		B609BCFD1C8BF88C0067B838 /* Self.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BCF91C8BF88C0067B838 /* Self.h */; };
+		B609BD0C1C8BF89B0067B838 /* AboutScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BCFE1C8BF89A0067B838 /* AboutScene.cpp */; };
+		B609BD0D1C8BF89B0067B838 /* AboutScene.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BCFF1C8BF89A0067B838 /* AboutScene.h */; };
+		B609BD0E1C8BF89B0067B838 /* AuthenticationScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD001C8BF89A0067B838 /* AuthenticationScene.cpp */; };
+		B609BD0F1C8BF89B0067B838 /* AuthenticationScene.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BD011C8BF89A0067B838 /* AuthenticationScene.h */; };
+		B609BD101C8BF89B0067B838 /* DialogLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD021C8BF89A0067B838 /* DialogLayer.cpp */; };
+		B609BD111C8BF89B0067B838 /* DialogLayer.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BD031C8BF89A0067B838 /* DialogLayer.h */; };
+		B609BD121C8BF89B0067B838 /* LogInScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD041C8BF89A0067B838 /* LogInScene.cpp */; };
+		B609BD131C8BF89B0067B838 /* LogInScene.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BD051C8BF89A0067B838 /* LogInScene.h */; };
+		B609BD141C8BF89B0067B838 /* PropertyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD061C8BF89A0067B838 /* PropertyScene.cpp */; };
+		B609BD151C8BF89B0067B838 /* PropertyScene.hpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD071C8BF89B0067B838 /* PropertyScene.hpp */; };
+		B609BD161C8BF89B0067B838 /* RegeditScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD081C8BF89B0067B838 /* RegeditScene.cpp */; };
+		B609BD171C8BF89B0067B838 /* RegeditScene.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BD091C8BF89B0067B838 /* RegeditScene.h */; };
+		B609BD181C8BF89B0067B838 /* WaitLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD0A1C8BF89B0067B838 /* WaitLayer.cpp */; };
+		B609BD191C8BF89B0067B838 /* WaitLayer.hpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD0B1C8BF89B0067B838 /* WaitLayer.hpp */; };
+		B609BD1D1C8BF8AD0067B838 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = B609BD1A1C8BF8AD0067B838 /* sqlite3.c */; };
+		B609BD1E1C8BF8AD0067B838 /* sqlite3.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BD1B1C8BF8AD0067B838 /* sqlite3.h */; };
+		B609BD1F1C8BF8AD0067B838 /* sqlite3ext.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BD1C1C8BF8AD0067B838 /* sqlite3ext.h */; };
+		B609BD2A1C8BF8C40067B838 /* DataUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD201C8BF8C40067B838 /* DataUtility.cpp */; };
+		B609BD2B1C8BF8C40067B838 /* DataUtility.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BD211C8BF8C40067B838 /* DataUtility.h */; };
+		B609BD2C1C8BF8C40067B838 /* GCCsvHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD221C8BF8C40067B838 /* GCCsvHelper.cpp */; };
+		B609BD2D1C8BF8C40067B838 /* GCCsvHelper.hpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD231C8BF8C40067B838 /* GCCsvHelper.hpp */; };
+		B609BD2E1C8BF8C40067B838 /* HttpUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD241C8BF8C40067B838 /* HttpUtility.cpp */; };
+		B609BD2F1C8BF8C40067B838 /* HttpUtility.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BD251C8BF8C40067B838 /* HttpUtility.h */; };
+		B609BD301C8BF8C40067B838 /* StringUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD261C8BF8C40067B838 /* StringUtility.cpp */; };
+		B609BD311C8BF8C40067B838 /* StringUtility.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BD271C8BF8C40067B838 /* StringUtility.h */; };
+		B609BD321C8BF8C40067B838 /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD281C8BF8C40067B838 /* utility.cpp */; };
+		B609BD331C8BF8C40067B838 /* utility.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BD291C8BF8C40067B838 /* utility.h */; };
 		B63A05A81C87388F0061C902 /* sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B63A05A71C87388F0061C902 /* sqlite */; };
 		B63A05AA1C8742D80061C902 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B63A05A91C8742D80061C902 /* libsqlite3.dylib */; };
-		B6567D671C8AA98700A4056B /* DataUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6567D661C8AA98700A4056B /* DataUtility.cpp */; };
-		B66C09BF1C854FA6002C8270 /* AuthenticationScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09AB1C854FA6002C8270 /* AuthenticationScene.cpp */; };
-		B66C09C11C854FA6002C8270 /* DialogLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09AF1C854FA6002C8270 /* DialogLayer.cpp */; };
-		B66C09C21C854FA6002C8270 /* HttpUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09B11C854FA6002C8270 /* HttpUtility.cpp */; };
-		B66C09C31C854FA6002C8270 /* LogInScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09B31C854FA6002C8270 /* LogInScene.cpp */; };
-		B66C09C41C854FA6002C8270 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09B51C854FA6002C8270 /* Player.cpp */; };
-		B66C09C51C854FA6002C8270 /* RegeditScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09B71C854FA6002C8270 /* RegeditScene.cpp */; };
-		B66C09C61C854FA6002C8270 /* Self.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09B91C854FA6002C8270 /* Self.cpp */; };
-		B66C09C71C854FA6002C8270 /* StringUtility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09BB1C854FA6002C8270 /* StringUtility.cpp */; };
-		B66C09C81C854FA6002C8270 /* utility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C09BD1C854FA6002C8270 /* utility.cpp */; };
 		B66C09EA1C85505F002C8270 /* about1.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09C91C85505E002C8270 /* about1.png */; };
 		B66C09EB1C85505F002C8270 /* about2.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09CA1C85505E002C8270 /* about2.png */; };
 		B66C09EC1C85505F002C8270 /* aboutScene.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09CB1C85505E002C8270 /* aboutScene.png */; };
@@ -106,10 +127,9 @@
 		B66C0A081C85505F002C8270 /* submitRegeditbtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E71C85505F002C8270 /* submitRegeditbtn2.png */; };
 		B66C0A091C85505F002C8270 /* TextField.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E81C85505F002C8270 /* TextField.png */; };
 		B66C0A0A1C85505F002C8270 /* wending.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E91C85505F002C8270 /* wending.TTF */; };
-		B66C0A0D1C85537C002C8270 /* AboutScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C0A0B1C85537C002C8270 /* AboutScene.cpp */; };
-		B66C0A101C858B6F002C8270 /* PropertyScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66C0A0E1C858B6F002C8270 /* PropertyScene.cpp */; };
-		B68806EF1C89DD45009D28D8 /* GCCsvHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B68806ED1C89DD45009D28D8 /* GCCsvHelper.cpp */; };
 		B68F575B1C8928640008250A /* PropertyBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B68F575A1C8928640008250A /* PropertyBackGround.png */; };
+		B6983C6E1C8BF21D00CA0AFE /* cocosproject in Resources */ = {isa = PBXBuildFile; fileRef = B6983C6C1C8BF21C00CA0AFE /* cocosproject */; };
+		B6983C6F1C8BF21D00CA0AFE /* proj.android in Resources */ = {isa = PBXBuildFile; fileRef = B6983C6D1C8BF21D00CA0AFE /* proj.android */; };
 		B6E1EF731C89DFBF00D55420 /* db in Resources */ = {isa = PBXBuildFile; fileRef = B6E1EF721C89DFBF00D55420 /* db */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -200,8 +220,6 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		B6063C4A1C8B339B003F9C9A /* WaitLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaitLayer.cpp; sourceTree = "<group>"; };
-		B6063C4B1C8B339B003F9C9A /* WaitLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WaitLayer.hpp; sourceTree = "<group>"; };
 		B6063C4F1C8B3BC2003F9C9A /* wait1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait1.png; sourceTree = "<group>"; };
 		B6063C501C8B3BC2003F9C9A /* wait2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait2.png; sourceTree = "<group>"; };
 		B6063C511C8B3BC2003F9C9A /* wait3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait3.png; sourceTree = "<group>"; };
@@ -210,28 +228,39 @@
 		B6063C541C8B3BC2003F9C9A /* wait6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait6.png; sourceTree = "<group>"; };
 		B6063C551C8B3BC2003F9C9A /* wait7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait7.png; sourceTree = "<group>"; };
 		B6063C5D1C8B3C42003F9C9A /* wait8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait8.png; sourceTree = "<group>"; };
-		B63A05A71C87388F0061C902 /* sqlite */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sqlite; sourceTree = "<group>"; };
+		B609BCF61C8BF88C0067B838 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = model/Player.cpp; sourceTree = "<group>"; };
+		B609BCF71C8BF88C0067B838 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Player.h; path = model/Player.h; sourceTree = "<group>"; };
+		B609BCF81C8BF88C0067B838 /* Self.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Self.cpp; path = model/Self.cpp; sourceTree = "<group>"; };
+		B609BCF91C8BF88C0067B838 /* Self.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Self.h; path = model/Self.h; sourceTree = "<group>"; };
+		B609BCFE1C8BF89A0067B838 /* AboutScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AboutScene.cpp; path = scene/AboutScene.cpp; sourceTree = "<group>"; };
+		B609BCFF1C8BF89A0067B838 /* AboutScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AboutScene.h; path = scene/AboutScene.h; sourceTree = "<group>"; };
+		B609BD001C8BF89A0067B838 /* AuthenticationScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AuthenticationScene.cpp; path = scene/AuthenticationScene.cpp; sourceTree = "<group>"; };
+		B609BD011C8BF89A0067B838 /* AuthenticationScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AuthenticationScene.h; path = scene/AuthenticationScene.h; sourceTree = "<group>"; };
+		B609BD021C8BF89A0067B838 /* DialogLayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DialogLayer.cpp; path = scene/DialogLayer.cpp; sourceTree = "<group>"; };
+		B609BD031C8BF89A0067B838 /* DialogLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DialogLayer.h; path = scene/DialogLayer.h; sourceTree = "<group>"; };
+		B609BD041C8BF89A0067B838 /* LogInScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = LogInScene.cpp; path = scene/LogInScene.cpp; sourceTree = "<group>"; };
+		B609BD051C8BF89A0067B838 /* LogInScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LogInScene.h; path = scene/LogInScene.h; sourceTree = "<group>"; };
+		B609BD061C8BF89A0067B838 /* PropertyScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PropertyScene.cpp; path = scene/PropertyScene.cpp; sourceTree = "<group>"; };
+		B609BD071C8BF89B0067B838 /* PropertyScene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = PropertyScene.hpp; path = scene/PropertyScene.hpp; sourceTree = "<group>"; };
+		B609BD081C8BF89B0067B838 /* RegeditScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = RegeditScene.cpp; path = scene/RegeditScene.cpp; sourceTree = "<group>"; };
+		B609BD091C8BF89B0067B838 /* RegeditScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RegeditScene.h; path = scene/RegeditScene.h; sourceTree = "<group>"; };
+		B609BD0A1C8BF89B0067B838 /* WaitLayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = WaitLayer.cpp; path = scene/WaitLayer.cpp; sourceTree = "<group>"; };
+		B609BD0B1C8BF89B0067B838 /* WaitLayer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = WaitLayer.hpp; path = scene/WaitLayer.hpp; sourceTree = "<group>"; };
+		B609BD1A1C8BF8AD0067B838 /* sqlite3.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = sqlite3.c; path = sqlite/sqlite3.c; sourceTree = "<group>"; };
+		B609BD1B1C8BF8AD0067B838 /* sqlite3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = sqlite/sqlite3.h; sourceTree = "<group>"; };
+		B609BD1C1C8BF8AD0067B838 /* sqlite3ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = sqlite3ext.h; path = sqlite/sqlite3ext.h; sourceTree = "<group>"; };
+		B609BD201C8BF8C40067B838 /* DataUtility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DataUtility.cpp; path = utility/DataUtility.cpp; sourceTree = "<group>"; };
+		B609BD211C8BF8C40067B838 /* DataUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DataUtility.h; path = utility/DataUtility.h; sourceTree = "<group>"; };
+		B609BD221C8BF8C40067B838 /* GCCsvHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = GCCsvHelper.cpp; path = utility/GCCsvHelper.cpp; sourceTree = "<group>"; };
+		B609BD231C8BF8C40067B838 /* GCCsvHelper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = GCCsvHelper.hpp; path = utility/GCCsvHelper.hpp; sourceTree = "<group>"; };
+		B609BD241C8BF8C40067B838 /* HttpUtility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HttpUtility.cpp; path = utility/HttpUtility.cpp; sourceTree = "<group>"; };
+		B609BD251C8BF8C40067B838 /* HttpUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HttpUtility.h; path = utility/HttpUtility.h; sourceTree = "<group>"; };
+		B609BD261C8BF8C40067B838 /* StringUtility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = StringUtility.cpp; path = utility/StringUtility.cpp; sourceTree = "<group>"; };
+		B609BD271C8BF8C40067B838 /* StringUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StringUtility.h; path = utility/StringUtility.h; sourceTree = "<group>"; };
+		B609BD281C8BF8C40067B838 /* utility.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = utility.cpp; path = utility/utility.cpp; sourceTree = "<group>"; };
+		B609BD291C8BF8C40067B838 /* utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = utility.h; path = utility/utility.h; sourceTree = "<group>"; };
+		B63A05A71C87388F0061C902 /* sqlite */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sqlite; path = /Users/kelvin/Desktop/KYGame/Classes/sqlite; sourceTree = "<absolute>"; };
 		B63A05A91C8742D80061C902 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
-		B64352251C8AA45A004ACFD6 /* HttpUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpUtility.h; sourceTree = "<group>"; };
-		B6567D661C8AA98700A4056B /* DataUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataUtility.cpp; sourceTree = "<group>"; };
-		B66C09AB1C854FA6002C8270 /* AuthenticationScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AuthenticationScene.cpp; sourceTree = "<group>"; };
-		B66C09AC1C854FA6002C8270 /* AuthenticationScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationScene.h; sourceTree = "<group>"; };
-		B66C09AE1C854FA6002C8270 /* DataUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataUtility.h; sourceTree = "<group>"; };
-		B66C09AF1C854FA6002C8270 /* DialogLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DialogLayer.cpp; sourceTree = "<group>"; };
-		B66C09B01C854FA6002C8270 /* DialogLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogLayer.h; sourceTree = "<group>"; };
-		B66C09B11C854FA6002C8270 /* HttpUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HttpUtility.cpp; sourceTree = "<group>"; };
-		B66C09B31C854FA6002C8270 /* LogInScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogInScene.cpp; sourceTree = "<group>"; };
-		B66C09B41C854FA6002C8270 /* LogInScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInScene.h; sourceTree = "<group>"; };
-		B66C09B51C854FA6002C8270 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
-		B66C09B61C854FA6002C8270 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
-		B66C09B71C854FA6002C8270 /* RegeditScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RegeditScene.cpp; sourceTree = "<group>"; };
-		B66C09B81C854FA6002C8270 /* RegeditScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegeditScene.h; sourceTree = "<group>"; };
-		B66C09B91C854FA6002C8270 /* Self.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Self.cpp; sourceTree = "<group>"; };
-		B66C09BA1C854FA6002C8270 /* Self.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Self.h; sourceTree = "<group>"; };
-		B66C09BB1C854FA6002C8270 /* StringUtility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringUtility.cpp; sourceTree = "<group>"; };
-		B66C09BC1C854FA6002C8270 /* StringUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringUtility.h; sourceTree = "<group>"; };
-		B66C09BD1C854FA6002C8270 /* utility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utility.cpp; sourceTree = "<group>"; };
-		B66C09BE1C854FA6002C8270 /* utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utility.h; sourceTree = "<group>"; };
 		B66C09C91C85505E002C8270 /* about1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about1.png; sourceTree = "<group>"; };
 		B66C09CA1C85505E002C8270 /* about2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about2.png; sourceTree = "<group>"; };
 		B66C09CB1C85505E002C8270 /* aboutScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutScene.png; sourceTree = "<group>"; };
@@ -265,13 +294,9 @@
 		B66C09E71C85505F002C8270 /* submitRegeditbtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submitRegeditbtn2.png; sourceTree = "<group>"; };
 		B66C09E81C85505F002C8270 /* TextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextField.png; sourceTree = "<group>"; };
 		B66C09E91C85505F002C8270 /* wending.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = wending.TTF; sourceTree = "<group>"; };
-		B66C0A0B1C85537C002C8270 /* AboutScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AboutScene.cpp; sourceTree = "<group>"; };
-		B66C0A0C1C85537C002C8270 /* AboutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutScene.h; sourceTree = "<group>"; };
-		B66C0A0E1C858B6F002C8270 /* PropertyScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PropertyScene.cpp; sourceTree = "<group>"; };
-		B66C0A0F1C858B6F002C8270 /* PropertyScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PropertyScene.hpp; sourceTree = "<group>"; };
-		B68806ED1C89DD45009D28D8 /* GCCsvHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GCCsvHelper.cpp; sourceTree = "<group>"; };
-		B68806EE1C89DD45009D28D8 /* GCCsvHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GCCsvHelper.hpp; sourceTree = "<group>"; };
 		B68F575A1C8928640008250A /* PropertyBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PropertyBackGround.png; sourceTree = "<group>"; };
+		B6983C6C1C8BF21C00CA0AFE /* cocosproject */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cocosproject; path = ../cocosproject; sourceTree = "<group>"; };
+		B6983C6D1C8BF21D00CA0AFE /* proj.android */ = {isa = PBXFileReference; lastKnownFileType = folder; name = proj.android; path = ../proj.android; sourceTree = "<group>"; };
 		B6E1EF721C89DFBF00D55420 /* db */ = {isa = PBXFileReference; lastKnownFileType = folder; path = db; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -364,6 +389,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B6983C6C1C8BF21C00CA0AFE /* cocosproject */,
+				B6983C6D1C8BF21D00CA0AFE /* proj.android */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
@@ -458,37 +485,12 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B68806ED1C89DD45009D28D8 /* GCCsvHelper.cpp */,
-				B68806EE1C89DD45009D28D8 /* GCCsvHelper.hpp */,
-				B63A05A71C87388F0061C902 /* sqlite */,
-				B66C0A0B1C85537C002C8270 /* AboutScene.cpp */,
-				B66C0A0C1C85537C002C8270 /* AboutScene.h */,
-				B66C09AB1C854FA6002C8270 /* AuthenticationScene.cpp */,
-				B66C09AC1C854FA6002C8270 /* AuthenticationScene.h */,
-				B6567D661C8AA98700A4056B /* DataUtility.cpp */,
-				B66C09AE1C854FA6002C8270 /* DataUtility.h */,
-				B66C09AF1C854FA6002C8270 /* DialogLayer.cpp */,
-				B66C09B01C854FA6002C8270 /* DialogLayer.h */,
-				B66C09B11C854FA6002C8270 /* HttpUtility.cpp */,
-				B64352251C8AA45A004ACFD6 /* HttpUtility.h */,
-				B66C09B31C854FA6002C8270 /* LogInScene.cpp */,
-				B66C09B41C854FA6002C8270 /* LogInScene.h */,
-				B66C09B51C854FA6002C8270 /* Player.cpp */,
-				B66C09B61C854FA6002C8270 /* Player.h */,
-				B66C09B71C854FA6002C8270 /* RegeditScene.cpp */,
-				B66C09B81C854FA6002C8270 /* RegeditScene.h */,
-				B66C09B91C854FA6002C8270 /* Self.cpp */,
-				B66C09BA1C854FA6002C8270 /* Self.h */,
-				B66C09BB1C854FA6002C8270 /* StringUtility.cpp */,
-				B66C09BC1C854FA6002C8270 /* StringUtility.h */,
-				B66C09BD1C854FA6002C8270 /* utility.cpp */,
-				B66C09BE1C854FA6002C8270 /* utility.h */,
+				B609BD371C8BF9500067B838 /* scene */,
+				B609BD361C8BF9390067B838 /* utility */,
+				B609BD351C8BF91A0067B838 /* sqlite3 */,
+				B609BD341C8BF8F70067B838 /* model */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
-				B66C0A0E1C858B6F002C8270 /* PropertyScene.cpp */,
-				B66C0A0F1C858B6F002C8270 /* PropertyScene.hpp */,
-				B6063C4A1C8B339B003F9C9A /* WaitLayer.cpp */,
-				B6063C4B1C8B339B003F9C9A /* WaitLayer.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -540,6 +542,65 @@
 			name = Icons;
 			path = ios;
 			sourceTree = SOURCE_ROOT;
+		};
+		B609BD341C8BF8F70067B838 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B609BCF61C8BF88C0067B838 /* Player.cpp */,
+				B609BCF71C8BF88C0067B838 /* Player.h */,
+				B609BCF81C8BF88C0067B838 /* Self.cpp */,
+				B609BCF91C8BF88C0067B838 /* Self.h */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		B609BD351C8BF91A0067B838 /* sqlite3 */ = {
+			isa = PBXGroup;
+			children = (
+				B609BD1A1C8BF8AD0067B838 /* sqlite3.c */,
+				B609BD1B1C8BF8AD0067B838 /* sqlite3.h */,
+				B609BD1C1C8BF8AD0067B838 /* sqlite3ext.h */,
+			);
+			name = sqlite3;
+			sourceTree = "<group>";
+		};
+		B609BD361C8BF9390067B838 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				B609BD201C8BF8C40067B838 /* DataUtility.cpp */,
+				B609BD211C8BF8C40067B838 /* DataUtility.h */,
+				B609BD221C8BF8C40067B838 /* GCCsvHelper.cpp */,
+				B609BD231C8BF8C40067B838 /* GCCsvHelper.hpp */,
+				B609BD241C8BF8C40067B838 /* HttpUtility.cpp */,
+				B609BD251C8BF8C40067B838 /* HttpUtility.h */,
+				B609BD261C8BF8C40067B838 /* StringUtility.cpp */,
+				B609BD271C8BF8C40067B838 /* StringUtility.h */,
+				B609BD281C8BF8C40067B838 /* utility.cpp */,
+				B609BD291C8BF8C40067B838 /* utility.h */,
+			);
+			name = utility;
+			sourceTree = "<group>";
+		};
+		B609BD371C8BF9500067B838 /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				B609BCFE1C8BF89A0067B838 /* AboutScene.cpp */,
+				B609BCFF1C8BF89A0067B838 /* AboutScene.h */,
+				B609BD001C8BF89A0067B838 /* AuthenticationScene.cpp */,
+				B609BD011C8BF89A0067B838 /* AuthenticationScene.h */,
+				B609BD021C8BF89A0067B838 /* DialogLayer.cpp */,
+				B609BD031C8BF89A0067B838 /* DialogLayer.h */,
+				B609BD041C8BF89A0067B838 /* LogInScene.cpp */,
+				B609BD051C8BF89A0067B838 /* LogInScene.h */,
+				B609BD061C8BF89A0067B838 /* PropertyScene.cpp */,
+				B609BD071C8BF89B0067B838 /* PropertyScene.hpp */,
+				B609BD081C8BF89B0067B838 /* RegeditScene.cpp */,
+				B609BD091C8BF89B0067B838 /* RegeditScene.h */,
+				B609BD0A1C8BF89B0067B838 /* WaitLayer.cpp */,
+				B609BD0B1C8BF89B0067B838 /* WaitLayer.hpp */,
+			);
+			name = scene;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -691,9 +752,11 @@
 				B63A05A81C87388F0061C902 /* sqlite in Resources */,
 				B66C09EA1C85505F002C8270 /* about1.png in Resources */,
 				B66C09EF1C85505F002C8270 /* back2.png in Resources */,
+				B6983C6E1C8BF21D00CA0AFE /* cocosproject in Resources */,
 				B66C0A041C85505F002C8270 /* royRolebtn2.png in Resources */,
 				B66C09FA1C85505F002C8270 /* loginbtn1.png in Resources */,
 				B66C09FF1C85505F002C8270 /* regeditbtn1.png in Resources */,
+				B6983C6F1C8BF21D00CA0AFE /* proj.android in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				B66C09F71C85505F002C8270 /* karryRolebtn1.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
@@ -725,24 +788,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B66C09C11C854FA6002C8270 /* DialogLayer.cpp in Sources */,
-				B68806EF1C89DD45009D28D8 /* GCCsvHelper.cpp in Sources */,
-				B66C09C31C854FA6002C8270 /* LogInScene.cpp in Sources */,
-				B6567D671C8AA98700A4056B /* DataUtility.cpp in Sources */,
-				B66C09C61C854FA6002C8270 /* Self.cpp in Sources */,
-				B66C0A0D1C85537C002C8270 /* AboutScene.cpp in Sources */,
-				B66C0A101C858B6F002C8270 /* PropertyScene.cpp in Sources */,
+				B609BD2A1C8BF8C40067B838 /* DataUtility.cpp in Sources */,
+				B609BD2B1C8BF8C40067B838 /* DataUtility.h in Sources */,
+				B609BD2C1C8BF8C40067B838 /* GCCsvHelper.cpp in Sources */,
+				B609BD2D1C8BF8C40067B838 /* GCCsvHelper.hpp in Sources */,
+				B609BD2E1C8BF8C40067B838 /* HttpUtility.cpp in Sources */,
+				B609BD2F1C8BF8C40067B838 /* HttpUtility.h in Sources */,
+				B609BD301C8BF8C40067B838 /* StringUtility.cpp in Sources */,
+				B609BD311C8BF8C40067B838 /* StringUtility.h in Sources */,
+				B609BD321C8BF8C40067B838 /* utility.cpp in Sources */,
+				B609BD331C8BF8C40067B838 /* utility.h in Sources */,
+				B609BD1D1C8BF8AD0067B838 /* sqlite3.c in Sources */,
+				B609BD1E1C8BF8AD0067B838 /* sqlite3.h in Sources */,
+				B609BD1F1C8BF8AD0067B838 /* sqlite3ext.h in Sources */,
+				B609BD0C1C8BF89B0067B838 /* AboutScene.cpp in Sources */,
+				B609BD0D1C8BF89B0067B838 /* AboutScene.h in Sources */,
+				B609BD0E1C8BF89B0067B838 /* AuthenticationScene.cpp in Sources */,
+				B609BD0F1C8BF89B0067B838 /* AuthenticationScene.h in Sources */,
+				B609BD101C8BF89B0067B838 /* DialogLayer.cpp in Sources */,
+				B609BD111C8BF89B0067B838 /* DialogLayer.h in Sources */,
+				B609BD121C8BF89B0067B838 /* LogInScene.cpp in Sources */,
+				B609BD131C8BF89B0067B838 /* LogInScene.h in Sources */,
+				B609BD141C8BF89B0067B838 /* PropertyScene.cpp in Sources */,
+				B609BD151C8BF89B0067B838 /* PropertyScene.hpp in Sources */,
+				B609BD161C8BF89B0067B838 /* RegeditScene.cpp in Sources */,
+				B609BD171C8BF89B0067B838 /* RegeditScene.h in Sources */,
+				B609BD181C8BF89B0067B838 /* WaitLayer.cpp in Sources */,
+				B609BD191C8BF89B0067B838 /* WaitLayer.hpp in Sources */,
+				B609BCFA1C8BF88C0067B838 /* Player.cpp in Sources */,
+				B609BCFB1C8BF88C0067B838 /* Player.h in Sources */,
+				B609BCFC1C8BF88C0067B838 /* Self.cpp in Sources */,
+				B609BCFD1C8BF88C0067B838 /* Self.h in Sources */,
+				B609BCAB1C8BF6C20067B838 /* AppDelegate.h in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				B6063C4C1C8B339B003F9C9A /* WaitLayer.cpp in Sources */,
-				B66C09C41C854FA6002C8270 /* Player.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
-				B66C09C21C854FA6002C8270 /* HttpUtility.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
-				B66C09BF1C854FA6002C8270 /* AuthenticationScene.cpp in Sources */,
-				B66C09C81C854FA6002C8270 /* utility.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				B66C09C51C854FA6002C8270 /* RegeditScene.cpp in Sources */,
-				B66C09C71C854FA6002C8270 /* StringUtility.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

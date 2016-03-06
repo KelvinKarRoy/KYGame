@@ -1,11 +1,11 @@
 #include "AppDelegate.h"
 //#include "HelloWorldScene.h"
-#include "LogInScene.h"
-#include "AboutScene.h"
-#include "AuthenticationScene.h"
-#include "RegeditScene.h"
-#include "PropertyScene.hpp"
-#include "WaitLayer.hpp"
+#include "scene/LogInScene.h"
+#include "scene/AboutScene.h"
+#include "scene/AuthenticationScene.h"
+#include "scene/RegeditScene.h"
+#include "scene/PropertyScene.hpp"
+#include "scene/WaitLayer.hpp"
 
 #include <sys/stat.h>//系统库
 #include <dirent.h>

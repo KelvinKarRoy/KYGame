@@ -16,7 +16,7 @@
 
 #include "sqlite3.h"
 
-#include "Self.h"
+#include "../model/Self.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
