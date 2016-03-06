@@ -1,0 +1,18 @@
+<Solution>
+  <PropertyGroup Name="WaitLayer" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Image Name="wait1.png" />
+        <Image Name="wait2.png" />
+        <Image Name="wait3.png" />
+        <Image Name="wait4.png" />
+        <Image Name="wait5.png" />
+        <Image Name="wait6.png" />
+        <Image Name="wait7.png" />
+        <Image Name="wait8.png" />
+        <Project Name="WaitLayer.csd" Type="Scene" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

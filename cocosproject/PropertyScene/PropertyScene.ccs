@@ -1,0 +1,13 @@
+<Solution>
+  <PropertyGroup Name="PropertyScene" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Image Name="PropertyBackGround.png" />
+        <File Name="PropertyScene.csb" />
+        <Project Name="PropertyScene.csd" Type="Scene" />
+        <TTF Name="wending.TTF" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
