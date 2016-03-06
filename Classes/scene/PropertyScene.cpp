@@ -130,5 +130,36 @@ void PropertyScene::fillText()
 void PropertyScene::drawRadar()
 {
     auto radar = static_cast<Layout*>(rootNode->getChildByName("Panel_radar"));
+    
+    // 填充的多边形
+    CCDrawNode* frame = CCDrawNode::create();
+    radar->addChild(frame, 2);
+    frame->setPosition(cocos2d::Vec2(0,0));
+    
+    //读取radar获得对应的值
+    GCCsvHelper *csv = new GCCsvHelper();
+    std::string path= FileUtils::getInstance()->getWritablePath();
+    path+="db/radar.csv";
+    csv->openAndResolveFile(path.c_str());
+    
+    auto attributes = player->getAttributes();
+    
+    auto rate1 = atof(csv->getData(attributes[Player::ATTRIBUTE::BASE_ACTION]+attributes[Player::ATTRIBUTE::EXP_ACTION], 1));
+    auto rate2 = atof(csv->getData(attributes[Player::ATTRIBUTE::BASE_BEAUTY]+attributes[Player::ATTRIBUTE::EXP_BEAUTY], 1));
+    auto rate3 = atof(csv->getData(attributes[Player::ATTRIBUTE::BASE_BOYABLITY]+attributes[Player::ATTRIBUTE::EXP_BOYABLITY], 1));
+    auto rate4 = atof(csv->getData(attributes[Player::ATTRIBUTE::BASE_LEADERSHIP]+attributes[Player::ATTRIBUTE::EXP_LEADERSHIP], 1));
+    auto rate5 = atof(csv->getData(attributes[Player::ATTRIBUTE::BASE_POPULARITY]+attributes[Player::ATTRIBUTE::EXP_POPULARITY], 1));
+    
+    
+    delete csv;
+    
+    CCPoint rectangle[5];
+    rectangle[0] = ccp(210, 179+210*rate1);
+    rectangle[1] = ccp(210+210*rate2, 179+68*rate2);
+    rectangle[2] = ccp(210+130*rate3, 179-179*rate3);
+    rectangle[3] = ccp(210-130*rate4, 179-179*rate4);
+    rectangle[4] = ccp(210-210*rate5,179+68*rate5);
+    
+    frame->drawPolygon(rectangle, 5, ccc4f(0, 0.5, 0.5, 0.5), 1, ccc4f(0, 0.5, 0.5, 1));
 }
 
