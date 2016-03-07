@@ -1,29 +1,43 @@
-#pragma once
+//
+//  Self.h
+//  KYGame
+//
+//  Created by Kelvin on 16/3/7.
+//
+//
+
+#ifndef Self_h
+#define Self_h
+
+
 
 #include "Player.h"
-#include "../utility/HttpUtility.h"
 
-/*Íæ¼Ò×ÔÉí£¬µ¥ÀıÀà*/
-class Self :public Player 
+/*å•ä¾‹ç±»ï¼Œç©å®¶è‡ªèº«*/
+class Self :
+    public Player
 {
 public:
-	~Self();
-	static Self* getInstance();//»ñÈ¡ÊµÀı
-	
-	void loadInformationFromInternet();//´Ó·şÎñÆ÷ÉÏ¼ÓÔØÓÃ»§ĞÅÏ¢
-	void loadStatusFromInternet();//´Ó·şÎñÆ÷ÉÏ¼ÓÔØÓÃ»§×´Ì¬
-
-	void saveStatusToInternet();//ÉÏ´«ÓÃ»§ĞÅÏ¢µ½·şÎñÆ÷
-
-	//void loadInforamtionFromLocal();//´Ó±¾µØ¼ÇÔØÓÃ»§ĞÅÏ¢
-
-
-	//bool PKWithByID(int otherPlayerID);//Í¨¹ıIDÓëÁíÒ»Íæ¼ÒPK
-	//bool PKWithByPlayer(Player otherPlayer);//Í¨¹ıPlayerÀàÓëÁíÒ»Íæ¼ÒPK
-	//void updateData();
+    ~Self();
+    static Self* getInstance();//ÂªÃ’Â»Â°Â ÂµÂ¿Ë
+    
+    //void loadInformationFromInternet();//Â¥â€âˆ‘Ë›Å’Ã’âˆ†Ëœâ€¦Å“Âºâ€â€˜Ã¿â€âˆšÂªÃŸâ€“â‰ˆÅ“Â¢
+    //void loadStatusFromInternet();//Â¥â€âˆ‘Ë›Å’Ã’âˆ†Ëœâ€¦Å“Âºâ€â€˜Ã¿â€âˆšÂªÃŸâ—ŠÂ¥ÃƒÂ¨
+    
+    //void saveStatusToInternet();//â€¦Å“Â¥Â´â€âˆšÂªÃŸâ€“â‰ˆÅ“Â¢ÂµÎ©âˆ‘Ë›Å’Ã’âˆ†Ëœ
+    
+    //void loadInforamtionFromLocal();//Â¥â€Â±Ã¦ÂµÃ¿ÂºÂ«â€˜Ã¿â€âˆšÂªÃŸâ€“â‰ˆÅ“Â¢
+    
+    
+    //bool PKWithByID(int otherPlayerID);//Ã•Â®Ï€ËIDâ€ÃÂ¡ÃŒâ€œÂªÃ•ÃŠÂºâ€œPK
+    //bool PKWithByPlayer(Player otherPlayer);//Ã•Â®Ï€ËPlayerÂ¿â€¡â€ÃÂ¡ÃŒâ€œÂªÃ•ÃŠÂºâ€œPK
+    //void updateData();
 private:
-	Player* player;
-	Self();
-	static Self* self;
+    Player* player;
+    Self();
+    static Self* self;
 };
 
+
+
+#endif /* Self_h */

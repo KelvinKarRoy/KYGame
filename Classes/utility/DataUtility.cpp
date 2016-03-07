@@ -8,6 +8,8 @@
 
 #include "DataUtility.h"
 
+#include "Player.h"
+
 DataUtility* DataUtility::dataUtility = DataUtility::getInstance();
 
 rapidjson::Document* DataUtility::document = new rapidjson::Document();

@@ -63,20 +63,4 @@ bool Self::PKWithByPlayer(Player otherPlayer)
 
  */
 
-//¥”∑˛ŒÒ∆˜…œº”‘ÿ”√ªß–≈œ¢
-void Self::loadInformationFromInternet()
-{
-	
-}
 
-//¥”∑˛ŒÒ∆˜…œº”‘ÿ”√ªß◊¥Ã¨
-void loadStatusFromInternet()
-{
-
-}
-
-//…œ¥´”√ªß–≈œ¢µΩ∑˛ŒÒ∆˜
-void saveStatusToInternet()
-{
-
-}

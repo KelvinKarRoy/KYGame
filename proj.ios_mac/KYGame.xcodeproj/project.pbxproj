@@ -63,7 +63,6 @@
 		B609BCAB1C8BF6C20067B838 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8519C43A87006E1F66 /* AppDelegate.h */; };
 		B609BCFA1C8BF88C0067B838 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BCF61C8BF88C0067B838 /* Player.cpp */; };
 		B609BCFC1C8BF88C0067B838 /* Self.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BCF81C8BF88C0067B838 /* Self.cpp */; };
-		B609BCFD1C8BF88C0067B838 /* Self.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BCF91C8BF88C0067B838 /* Self.h */; };
 		B609BD0C1C8BF89B0067B838 /* AboutScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BCFE1C8BF89A0067B838 /* AboutScene.cpp */; };
 		B609BD0D1C8BF89B0067B838 /* AboutScene.h in Sources */ = {isa = PBXBuildFile; fileRef = B609BCFF1C8BF89A0067B838 /* AboutScene.h */; };
 		B609BD0E1C8BF89B0067B838 /* AuthenticationScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B609BD001C8BF89A0067B838 /* AuthenticationScene.cpp */; };
@@ -229,7 +228,6 @@
 		B6063C5D1C8B3C42003F9C9A /* wait8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait8.png; sourceTree = "<group>"; };
 		B609BCF61C8BF88C0067B838 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = model/Player.cpp; sourceTree = "<group>"; };
 		B609BCF81C8BF88C0067B838 /* Self.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Self.cpp; path = model/Self.cpp; sourceTree = "<group>"; };
-		B609BCF91C8BF88C0067B838 /* Self.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Self.h; path = model/Self.h; sourceTree = "<group>"; };
 		B609BCFE1C8BF89A0067B838 /* AboutScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AboutScene.cpp; path = scene/AboutScene.cpp; sourceTree = "<group>"; };
 		B609BCFF1C8BF89A0067B838 /* AboutScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AboutScene.h; path = scene/AboutScene.h; sourceTree = "<group>"; };
 		B609BD001C8BF89A0067B838 /* AuthenticationScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AuthenticationScene.cpp; path = scene/AuthenticationScene.cpp; sourceTree = "<group>"; };
@@ -297,6 +295,7 @@
 		B6983C6D1C8BF21D00CA0AFE /* proj.android */ = {isa = PBXFileReference; lastKnownFileType = folder; name = proj.android; path = ../proj.android; sourceTree = "<group>"; };
 		B69B1BCD1C8C7E8C00BB77F5 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = model/Player.h; sourceTree = "<group>"; };
 		B6E1EF721C89DFBF00D55420 /* db */ = {isa = PBXFileReference; lastKnownFileType = folder; path = db; sourceTree = "<group>"; };
+		B6F4731E1C8D003A00CD5804 /* Self.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Self.h; path = model/Self.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -548,7 +547,7 @@
 				B69B1BCD1C8C7E8C00BB77F5 /* Player.h */,
 				B609BCF61C8BF88C0067B838 /* Player.cpp */,
 				B609BCF81C8BF88C0067B838 /* Self.cpp */,
-				B609BCF91C8BF88C0067B838 /* Self.h */,
+				B6F4731E1C8D003A00CD5804 /* Self.h */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -816,7 +815,6 @@
 				B609BD191C8BF89B0067B838 /* WaitLayer.hpp in Sources */,
 				B609BCFA1C8BF88C0067B838 /* Player.cpp in Sources */,
 				B609BCFC1C8BF88C0067B838 /* Self.cpp in Sources */,
-				B609BCFD1C8BF88C0067B838 /* Self.h in Sources */,
 				B609BCAB1C8BF6C20067B838 /* AppDelegate.h in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,

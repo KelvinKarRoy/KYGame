@@ -16,8 +16,8 @@
 
 #include "sqlite3.h"
 
+#include "../model/Player.h"
 #include "../model/Self.h"
-
 using namespace cocos2d;
 using namespace cocos2d::ui;
 
@@ -64,6 +64,8 @@ private:
     {
         this->player = player;
     }
+    
+    void onBackClicked(Ref*, TouchEventType type);
     
     //读取各属性值
     void loadPeoperty();

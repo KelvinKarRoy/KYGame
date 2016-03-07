@@ -198,7 +198,7 @@ void LogInScene::saveAccount()
     sqlite3_open(path.c_str(), &pDB);//打开数据库
     
     //保存账号信息
-std:string sql = "update information set value = '";
+    std:string sql = "update information set value = '";
     sql += account+"' where name = 'account'";//添加语句
     sqlite3_exec(pDB, sql.c_str(), nullptr, nullptr, nullptr);
     

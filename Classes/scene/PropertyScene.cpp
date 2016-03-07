@@ -8,10 +8,15 @@
 
 #include "PropertyScene.hpp"
 
+#include "LogInScene.h"
+
+#include "../model/Player.h"
+
 
 PropertyScene::PropertyScene()
 {
-    setPlayer(Self::getInstance());
+    Player* player = Self::getInstance();
+    setPlayer(player);
 }
 
 
@@ -48,6 +53,11 @@ bool PropertyScene::init()
     rootNode->setScale(visibleSize.width / rootNode->getContentSize().width, visibleSize.height / rootNode->getContentSize().height);
     
     addChild(rootNode);
+    
+    //绑定返回按钮回调
+    auto backButton = static_cast<Button*>(rootNode->getChildByName("Button_back"));
+    
+    backButton->addTouchEventListener(this,toucheventselector(PropertyScene::onBackClicked));
     
     //读取各属性值
     loadPeoperty();
@@ -166,6 +176,27 @@ void PropertyScene::drawRadar()
     }else
     {//源
         frame->drawPolygon(rectangle, 5, ccc4f(0, 0.7, 0.5, 0.3), 1, ccc4f(0, 0.7, 0.5, 1));
+    }
+    
+}
+
+
+//返回按钮的回调函数
+void PropertyScene::onBackClicked(Ref*, TouchEventType type)
+{
+    switch (type)
+    {
+        case TouchEventType::TOUCH_EVENT_MOVED:
+            break;
+        case TouchEventType::TOUCH_EVENT_BEGAN:
+            break;
+        case TouchEventType::TOUCH_EVENT_CANCELED:
+            break;
+        case TouchEventType::TOUCH_EVENT_ENDED:
+            Scene* scene = LogInScene::createScene();
+            cocos2d::Director::getInstance()->replaceScene(scene);//回到登录页面
+            break;
+           
     }
     
 }

@@ -14,13 +14,12 @@
 #include "cstdio"
 
 #include "json/rapidjson.h"
+
+
 #include "DataUtility.h"
-#include "../scene/LogInScene.h"
-#include "../scene/AuthenticationScene.h"
-#include "../scene/RegeditScene.h"
-#include "../model/Player.h"
-#include "../model/Self.h"
 #include "../scene/WaitLayer.hpp"
+
+class Player;
 
 using namespace cocos2d;
 using namespace cocos2d::network;

@@ -1,5 +1,10 @@
 #include "HttpUtility.h"
 
+#include "Player.h"
+#include "../scene/LogInScene.h"
+#include "../scene/AuthenticationScene.h"
+#include "../scene/RegeditScene.h"
+
 
 HttpClient* HttpUtility::httpClient = HttpClient::getInstance();
 HttpUtility* HttpUtility::httpUtility = nullptr;

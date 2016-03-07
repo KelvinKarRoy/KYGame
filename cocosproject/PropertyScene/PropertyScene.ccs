@@ -3,6 +3,8 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Image Name="back1.png" />
+        <Image Name="back2.png" />
         <Image Name="PropertyBackGround.png" />
         <File Name="PropertyScene.csb" />
         <Project Name="PropertyScene.csd" Type="Scene" />

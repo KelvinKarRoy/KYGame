@@ -20,7 +20,7 @@
 #include "../utility/HttpUtility.h"
 
 
-class Player : cocos2d::Node
+class Player :public cocos2d::Node
 {
 public:
     Player();
@@ -70,8 +70,8 @@ public:
     void setHonor(int honor){ this->honor = honor; }
     
     
-    //∏˜ Ù–‘÷µ√∂æŸ
-    static enum ATTRIBUTE
+    //各个属性
+    enum ATTRIBUTE
     {
         BASE_POPULARITY,//
         BASE_BEAUTY,//

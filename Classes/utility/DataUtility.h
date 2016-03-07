@@ -10,7 +10,7 @@
 
 #include "HttpUtility.h"
 #include "StringUtility.h"
-#include "../model/Self.h"
+//#include "../model/Self.h"
 
 using namespace std;
 

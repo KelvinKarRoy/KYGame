@@ -17,7 +17,7 @@
             <FileData Type="Normal" Path="PropertyBackGround.png" Plist="" />
             <BlendFunc Src="770" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_text" ActionTag="-139802692" Tag="3" IconVisible="False" LeftMargin="1100.0000" RightMargin="108.0000" TopMargin="242.0000" BottomMargin="600.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="33" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_text" ActionTag="-139802692" Tag="3" IconVisible="False" LeftMargin="1100.0000" RightMargin="108.0000" TopMargin="242.0000" BottomMargin="600.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="33" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1000.0000" Y="400.0000" />
             <Children>
               <AbstractNodeData Name="Text_name" ActionTag="-2109038838" Tag="4" IconVisible="False" LeftMargin="20.0000" RightMargin="743.0000" TopMargin="26.0000" BottomMargin="326.0000" FontSize="48" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -164,7 +164,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_radar" ActionTag="1724886562" Tag="15" IconVisible="False" LeftMargin="1290.0000" RightMargin="498.0000" TopMargin="692.0000" BottomMargin="150.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_radar" ActionTag="1724886562" Tag="15" IconVisible="False" LeftMargin="1290.0000" RightMargin="498.0000" TopMargin="692.0000" BottomMargin="150.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="420.0000" Y="400.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1500.0000" Y="350.0000" />
@@ -176,6 +176,21 @@
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Button_back" ActionTag="-1980631392" Tag="16" IconVisible="False" LeftMargin="1940.0000" RightMargin="148.0000" TopMargin="82.0000" BottomMargin="1040.0000" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="90" Scale9Height="98" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="120.0000" Y="120.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="2000.0000" Y="1100.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9058" Y="0.8857" />
+            <PreSize X="0.0543" Y="0.0966" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="back2.png" Plist="" />
+            <NormalFileData Type="Normal" Path="back1.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>
