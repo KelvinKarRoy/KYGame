@@ -1,0 +1,13 @@
+<Solution>
+  <PropertyGroup Name="HomeScene" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Image Name="exit1.png" />
+        <Image Name="exit2.png" />
+        <Image Name="HelloWorld.png" />
+        <Project Name="HomeScene.csd" Type="Scene" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

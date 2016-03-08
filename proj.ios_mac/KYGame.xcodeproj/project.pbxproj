@@ -125,9 +125,13 @@
 		B66C0A081C85505F002C8270 /* submitRegeditbtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E71C85505F002C8270 /* submitRegeditbtn2.png */; };
 		B66C0A091C85505F002C8270 /* TextField.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E81C85505F002C8270 /* TextField.png */; };
 		B66C0A0A1C85505F002C8270 /* wending.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E91C85505F002C8270 /* wending.TTF */; };
+		B67BB77A1C8D16820063DED5 /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B67BB7781C8D16820063DED5 /* HomeScene.cpp */; };
+		B67BB77E1C8D20A80063DED5 /* exit1.png in Resources */ = {isa = PBXBuildFile; fileRef = B67BB77C1C8D20A80063DED5 /* exit1.png */; };
+		B67BB77F1C8D20A90063DED5 /* exit2.png in Resources */ = {isa = PBXBuildFile; fileRef = B67BB77D1C8D20A80063DED5 /* exit2.png */; };
+		B67BB7811C8D20B60063DED5 /* HomeScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = B67BB7801C8D20B60063DED5 /* HomeScene.csb */; };
+		B67BB7831C8D20C40063DED5 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = B67BB7821C8D20C30063DED5 /* HelloWorld.png */; };
 		B68F575B1C8928640008250A /* PropertyBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B68F575A1C8928640008250A /* PropertyBackGround.png */; };
 		B6983C6E1C8BF21D00CA0AFE /* cocosproject in Resources */ = {isa = PBXBuildFile; fileRef = B6983C6C1C8BF21C00CA0AFE /* cocosproject */; };
-		B6983C6F1C8BF21D00CA0AFE /* proj.android in Resources */ = {isa = PBXBuildFile; fileRef = B6983C6D1C8BF21D00CA0AFE /* proj.android */; };
 		B6E1EF731C89DFBF00D55420 /* db in Resources */ = {isa = PBXBuildFile; fileRef = B6E1EF721C89DFBF00D55420 /* db */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -290,9 +294,14 @@
 		B66C09E71C85505F002C8270 /* submitRegeditbtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submitRegeditbtn2.png; sourceTree = "<group>"; };
 		B66C09E81C85505F002C8270 /* TextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextField.png; sourceTree = "<group>"; };
 		B66C09E91C85505F002C8270 /* wending.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = wending.TTF; sourceTree = "<group>"; };
+		B67BB7781C8D16820063DED5 /* HomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HomeScene.cpp; path = scene/HomeScene.cpp; sourceTree = "<group>"; };
+		B67BB7791C8D16820063DED5 /* HomeScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = HomeScene.hpp; path = scene/HomeScene.hpp; sourceTree = "<group>"; };
+		B67BB77C1C8D20A80063DED5 /* exit1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exit1.png; sourceTree = "<group>"; };
+		B67BB77D1C8D20A80063DED5 /* exit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exit2.png; sourceTree = "<group>"; };
+		B67BB7801C8D20B60063DED5 /* HomeScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; name = HomeScene.csb; path = csb/HomeScene.csb; sourceTree = "<group>"; };
+		B67BB7821C8D20C30063DED5 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
 		B68F575A1C8928640008250A /* PropertyBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PropertyBackGround.png; sourceTree = "<group>"; };
 		B6983C6C1C8BF21C00CA0AFE /* cocosproject */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cocosproject; path = ../cocosproject; sourceTree = "<group>"; };
-		B6983C6D1C8BF21D00CA0AFE /* proj.android */ = {isa = PBXFileReference; lastKnownFileType = folder; name = proj.android; path = ../proj.android; sourceTree = "<group>"; };
 		B69B1BCD1C8C7E8C00BB77F5 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = model/Player.h; sourceTree = "<group>"; };
 		B6E1EF721C89DFBF00D55420 /* db */ = {isa = PBXFileReference; lastKnownFileType = folder; path = db; sourceTree = "<group>"; };
 		B6F4731E1C8D003A00CD5804 /* Self.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Self.h; path = model/Self.h; sourceTree = "<group>"; };
@@ -388,7 +397,6 @@
 			isa = PBXGroup;
 			children = (
 				B6983C6C1C8BF21C00CA0AFE /* cocosproject */,
-				B6983C6D1C8BF21D00CA0AFE /* proj.android */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
@@ -430,6 +438,10 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B67BB7821C8D20C30063DED5 /* HelloWorld.png */,
+				B67BB7801C8D20B60063DED5 /* HomeScene.csb */,
+				B67BB77C1C8D20A80063DED5 /* exit1.png */,
+				B67BB77D1C8D20A80063DED5 /* exit2.png */,
 				B6063C5D1C8B3C42003F9C9A /* wait8.png */,
 				B6063C4F1C8B3BC2003F9C9A /* wait1.png */,
 				B6063C501C8B3BC2003F9C9A /* wait2.png */,
@@ -596,6 +608,8 @@
 				B609BD091C8BF89B0067B838 /* RegeditScene.h */,
 				B609BD0A1C8BF89B0067B838 /* WaitLayer.cpp */,
 				B609BD0B1C8BF89B0067B838 /* WaitLayer.hpp */,
+				B67BB7781C8D16820063DED5 /* HomeScene.cpp */,
+				B67BB7791C8D16820063DED5 /* HomeScene.hpp */,
 			);
 			name = scene;
 			sourceTree = "<group>";
@@ -708,6 +722,7 @@
 				B66C09EB1C85505F002C8270 /* about2.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				B66C09F11C85505F002C8270 /* Default in Resources */,
+				B67BB77F1C8D20A90063DED5 /* exit2.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				B66C09F51C85505F002C8270 /* giveupbtn1.png in Resources */,
 				B66C09FB1C85505F002C8270 /* loginbtn2.png in Resources */,
@@ -721,8 +736,10 @@
 				B66C0A091C85505F002C8270 /* TextField.png in Resources */,
 				B66C09F01C85505F002C8270 /* csb in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
+				B67BB7811C8D20B60063DED5 /* HomeScene.csb in Resources */,
 				B66C0A061C85505F002C8270 /* submitbtn2.png in Resources */,
 				B66C09F91C85505F002C8270 /* LogInBackGround.png in Resources */,
+				B67BB7831C8D20C40063DED5 /* HelloWorld.png in Resources */,
 				B66C0A0A1C85505F002C8270 /* wending.TTF in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				B6063C5A1C8B3BC2003F9C9A /* wait5.png in Resources */,
@@ -730,6 +747,7 @@
 				B66C09EE1C85505F002C8270 /* back1.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
+				B67BB77E1C8D20A80063DED5 /* exit1.png in Resources */,
 				B6063C581C8B3BC2003F9C9A /* wait3.png in Resources */,
 				B6063C5B1C8B3BC2003F9C9A /* wait6.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
@@ -754,7 +772,6 @@
 				B66C0A041C85505F002C8270 /* royRolebtn2.png in Resources */,
 				B66C09FA1C85505F002C8270 /* loginbtn1.png in Resources */,
 				B66C09FF1C85505F002C8270 /* regeditbtn1.png in Resources */,
-				B6983C6F1C8BF21D00CA0AFE /* proj.android in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				B66C09F71C85505F002C8270 /* karryRolebtn1.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
@@ -796,6 +813,7 @@
 				B609BD311C8BF8C40067B838 /* StringUtility.h in Sources */,
 				B609BD321C8BF8C40067B838 /* utility.cpp in Sources */,
 				B609BD331C8BF8C40067B838 /* utility.h in Sources */,
+				B67BB77A1C8D16820063DED5 /* HomeScene.cpp in Sources */,
 				B609BD1D1C8BF8AD0067B838 /* sqlite3.c in Sources */,
 				B609BD1E1C8BF8AD0067B838 /* sqlite3.h in Sources */,
 				B609BD1F1C8BF8AD0067B838 /* sqlite3ext.h in Sources */,
@@ -852,8 +870,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 1642127033@qq.com (4H9J3QADQ5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 1642127033@qq.com (4H9J3QADQ5)";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -875,6 +893,7 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -884,7 +903,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -892,8 +911,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 1642127033@qq.com (4H9J3QADQ5)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: 1642127033@qq.com (4H9J3QADQ5)";
 				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -913,6 +932,7 @@
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -922,7 +942,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

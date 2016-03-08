@@ -26,8 +26,8 @@ bool GCCsvHelper::openAndResolveFile(const char *fileName)
 {
     std::string pathKey = CCFileUtils::sharedFileUtils()->fullPathForFilename(fileName);
     unsigned char* pBuffer = NULL;
-    long bufferSize = 0;
-    log(pathKey.c_str());
+    ssize_t bufferSize = 0;
+    log("%s",pathKey.c_str());
     pBuffer = CCFileUtils::sharedFileUtils()->getFileData(pathKey.c_str(), "r", &bufferSize);
     
     std::string tmpStr = (char*)pBuffer;

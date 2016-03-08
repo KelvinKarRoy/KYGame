@@ -1,6 +1,6 @@
 #include "HttpUtility.h"
 
-#include "Player.h"
+#include "../model/Player.h"
 #include "../scene/LogInScene.h"
 #include "../scene/AuthenticationScene.h"
 #include "../scene/RegeditScene.h"

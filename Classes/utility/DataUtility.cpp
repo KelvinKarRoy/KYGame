@@ -8,7 +8,7 @@
 
 #include "DataUtility.h"
 
-#include "Player.h"
+#include "../model/Player.h"
 
 DataUtility* DataUtility::dataUtility = DataUtility::getInstance();
 

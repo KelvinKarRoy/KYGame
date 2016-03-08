@@ -207,7 +207,7 @@ void LogInScene::saveAccount()
     {
         sql = "update information set value = '";
         sql += passwd+"' where name = 'passwd'";//添加语句
-        log(sql.c_str());
+        log("%s",sql.c_str());
         sqlite3_exec(pDB, sql.c_str(), nullptr, nullptr, nullptr);
     }else
     {//不需要保存 将密码设为空

@@ -2,8 +2,16 @@
 <classpath>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/libcocos2dx"/>
+	<classpathentry kind="lib" path="/libcocos2dx/libs/android-async-http-1.4.8.jar"/>
+	<classpathentry kind="lib" path="cocos2d/cocos/platform/android/java/libs/android-async-http-1.4.8.jar"/>
+	<classpathentry kind="lib" path="cocos2d/cocos/platform/android/java/bin/libcocos2dx.jar"/>
+	<classpathentry kind="lib" path="cocos2d/cocos/platform/android/ControllerManualAdapter/libs/com.bda.controller.jar"/>
+	<classpathentry kind="lib" path="cocos2d/cocos/platform/android/ControllerManualAdapter/libs/nibiru_lib.jar"/>
+	<classpathentry kind="lib" path="cocos2d/cocos/platform/android/ControllerManualAdapter/libs/ouya-sdk.jar"/>
+	<classpathentry kind="lib" path="cocos2d/cocos/platform/android/java/bin/classes.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

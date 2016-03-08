@@ -15,7 +15,7 @@ void Player::expTolevel()
 {//经验值转化为等级
     GCCsvHelper *csv = new GCCsvHelper();
     std::string path= FileUtils::getInstance()->getWritablePath();
-    log(path.c_str());
+    log("%s",path.c_str());
     path+="db/exp.csv";
     csv->openAndResolveFile(path.c_str());
     

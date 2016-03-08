@@ -20,8 +20,13 @@
 #include "../utility/StringUtility.h"
 #include "PropertyScene.hpp"
 
-#include "../sqlite/sqlite3.h"
 
+#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
+#include "../sqlite/sqlite3.h"
+//#include "../sqlite/sqlite3.c"
+#else
+#include "sqlite3.h"
+#endif
 
 using namespace cocos2d::ui;
 

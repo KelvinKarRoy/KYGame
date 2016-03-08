@@ -14,7 +14,12 @@
 #include "ui/CocosGUI.h"//UI读取类
 #include "cocostudio/CocoStudio.h"//‘⁄CocosStudio.h
 
+#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
+#include "../sqlite/sqlite3.h"
+//#include "../sqlite/sqlite3.c"
+#else
 #include "sqlite3.h"
+#endif
 
 #include "../model/Player.h"
 #include "../model/Self.h"

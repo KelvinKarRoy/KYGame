@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 //#include "HelloWorldScene.h"
+#include "scene/HomeScene.hpp"
 #include "scene/LogInScene.h"
 #include "scene/AboutScene.h"
 #include "scene/AuthenticationScene.h"
@@ -12,8 +13,8 @@
 
 USING_NS_CC;
 
-//static cocos2d::Size designResolutionSize = cocos2d::Size(2208, 1242);
-static cocos2d::Size designResolutionSize = cocos2d::Size(1024, 576);
+static cocos2d::Size designResolutionSize = cocos2d::Size(2208, 1242);
+//static cocos2d::Size designResolutionSize = cocos2d::Size(1024, 576);
 
 static cocos2d::Size smallResolutionSize = cocos2d::Size(480, 320);
 static cocos2d::Size mediumResolutionSize = cocos2d::Size(1024, 768);
@@ -59,7 +60,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     }
 
     // turn on display FPS
-    director->setDisplayStats(true);
+    director->setDisplayStats(false);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     //director->setAnimationInterval(1.0 / 60);
@@ -68,7 +69,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
     Size frameSize = glview->getFrameSize();
     // if the frame's height is larger than the height of medium size.
-    if (frameSize.height > mediumResolutionSize.height)
+    /*if (frameSize.height > mediumResolutionSize.height)
     {        
         director->setContentScaleFactor(MIN(largeResolutionSize.height/designResolutionSize.height, largeResolutionSize.width/designResolutionSize.width));
     }
@@ -81,8 +82,10 @@ bool AppDelegate::applicationDidFinishLaunching() {
     else
     {        
         director->setContentScaleFactor(MIN(smallResolutionSize.height/designResolutionSize.height, smallResolutionSize.width/designResolutionSize.width));
-    }
-
+    }*/
+        //director->setContentScaleFactor(MIN(designResolutionSize.height/frameSize.height, designResolutionSize.width/frameSize.width));
+    //log("%f",MIN(designResolutionSize.height/frameSize.height, designResolutionSize.width/frameSize.width));
+    log("%f:%f",frameSize.height,frameSize.width);
     register_all_packages();
     
     //iOS将本地数据库移到沙盒
@@ -95,7 +98,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #endif
 
     // create a scene. it's an autorelease object
-	auto scene = LogInScene::createScene();
+	auto scene = HomeScene::createScene();
 
     // run
     director->runWithScene(scene);

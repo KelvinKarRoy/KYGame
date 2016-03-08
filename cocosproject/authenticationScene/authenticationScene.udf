@@ -16,7 +16,7 @@
         <AndroidkeyStore Value="" />
         <AndroidVersion Value="" />
         <iOS_Target Value="authenticationScene-mobile" />
-        <iOS_BundleID Value="" />
+        <iOS_BundleID Value="iPhone Developer: 1642127033@qq.com (4H9J3QADQ5)" />
         <Platform Value="None" />
         <RunPlatform Value="None" />
         <FrameworkVersion Value="cocos2d-x-3.7" />
@@ -26,6 +26,14 @@
         <KeystoreAliasPassword Value="" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="AuthenticationScene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="AuthenticationScene.csd" />
       </Value>
     </Item>
   </Properties>
