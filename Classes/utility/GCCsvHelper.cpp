@@ -69,8 +69,6 @@ bool GCCsvHelper::openAndResolveFile(const char *fileName)
 
 
 
-#pragma region end.
-
 ///////search data
 const char *GCCsvHelper::getData(unsigned int rowIndex, unsigned int colIndex)
 {

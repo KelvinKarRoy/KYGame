@@ -130,6 +130,7 @@
 		B67BB77F1C8D20A90063DED5 /* exit2.png in Resources */ = {isa = PBXBuildFile; fileRef = B67BB77D1C8D20A80063DED5 /* exit2.png */; };
 		B67BB7811C8D20B60063DED5 /* HomeScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = B67BB7801C8D20B60063DED5 /* HomeScene.csb */; };
 		B67BB7831C8D20C40063DED5 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = B67BB7821C8D20C30063DED5 /* HelloWorld.png */; };
+		B68C36C01C96EBD1003595B2 /* radar.png in Resources */ = {isa = PBXBuildFile; fileRef = B68C36BF1C96EBD1003595B2 /* radar.png */; };
 		B68F575B1C8928640008250A /* PropertyBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B68F575A1C8928640008250A /* PropertyBackGround.png */; };
 		B6983C6E1C8BF21D00CA0AFE /* cocosproject in Resources */ = {isa = PBXBuildFile; fileRef = B6983C6C1C8BF21C00CA0AFE /* cocosproject */; };
 		B6E1EF731C89DFBF00D55420 /* db in Resources */ = {isa = PBXBuildFile; fileRef = B6E1EF721C89DFBF00D55420 /* db */; };
@@ -300,6 +301,7 @@
 		B67BB77D1C8D20A80063DED5 /* exit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exit2.png; sourceTree = "<group>"; };
 		B67BB7801C8D20B60063DED5 /* HomeScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; name = HomeScene.csb; path = csb/HomeScene.csb; sourceTree = "<group>"; };
 		B67BB7821C8D20C30063DED5 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
+		B68C36BF1C96EBD1003595B2 /* radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radar.png; sourceTree = "<group>"; };
 		B68F575A1C8928640008250A /* PropertyBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PropertyBackGround.png; sourceTree = "<group>"; };
 		B6983C6C1C8BF21C00CA0AFE /* cocosproject */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cocosproject; path = ../cocosproject; sourceTree = "<group>"; };
 		B69B1BCD1C8C7E8C00BB77F5 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = model/Player.h; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				B66C09D71C85505F002C8270 /* karryRolebtn2.png */,
 				B66C09D81C85505F002C8270 /* LogInBackGround.png */,
 				B66C09D91C85505F002C8270 /* loginbtn1.png */,
+				B68C36BF1C96EBD1003595B2 /* radar.png */,
 				B66C09DA1C85505F002C8270 /* loginbtn2.png */,
 				B66C09DB1C85505F002C8270 /* okbtn1.png */,
 				B66C09DC1C85505F002C8270 /* okbtn2.png */,
@@ -744,6 +747,7 @@
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				B6063C5A1C8B3BC2003F9C9A /* wait5.png in Resources */,
 				B6063C571C8B3BC2003F9C9A /* wait2.png in Resources */,
+				B68C36C01C96EBD1003595B2 /* radar.png in Resources */,
 				B66C09EE1C85505F002C8270 /* back1.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,

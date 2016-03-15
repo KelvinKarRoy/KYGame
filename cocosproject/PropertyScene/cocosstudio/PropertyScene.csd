@@ -164,20 +164,83 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_radar" ActionTag="1724886562" Tag="15" IconVisible="False" LeftMargin="1290.0000" RightMargin="498.0000" TopMargin="692.0000" BottomMargin="150.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_radar" ActionTag="1724886562" Tag="15" IconVisible="False" LeftMargin="1290.0000" RightMargin="498.0000" TopMargin="692.0000" BottomMargin="150.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" LeftEage="138" RightEage="138" TopEage="132" BottomEage="132" Scale9OriginX="138" Scale9OriginY="132" Scale9Width="144" Scale9Height="136" ctype="PanelObjectData">
             <Size X="420.0000" Y="400.0000" />
+            <Children>
+              <AbstractNodeData Name="Text_action" ActionTag="657342199" Tag="17" IconVisible="False" LeftMargin="158.3286" RightMargin="163.6714" TopMargin="-53.6372" BottomMargin="405.6372" FontSize="48" LabelText="演技" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="98.0000" Y="48.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="207.3286" Y="429.6372" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="0" G="200" B="200" />
+                <PrePosition X="0.4936" Y="1.0741" />
+                <PreSize X="0.2333" Y="0.1200" />
+                <FontResource Type="Normal" Path="wending.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Text_popularity" ActionTag="1306999868" Tag="18" IconVisible="False" LeftMargin="-100.5540" RightMargin="424.5540" TopMargin="119.2337" BottomMargin="232.7663" FontSize="48" LabelText="人气" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="96.0000" Y="48.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-52.5540" Y="256.7663" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="0" G="200" B="200" />
+                <PrePosition X="-0.1251" Y="0.6419" />
+                <PreSize X="0.2286" Y="0.1200" />
+                <FontResource Type="Normal" Path="wending.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Text_boyablity" ActionTag="-474686864" Tag="19" IconVisible="False" LeftMargin="325.1889" RightMargin="-44.1889" TopMargin="410.9982" BottomMargin="-58.9982" FontSize="48" LabelText="男友力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="139.0000" Y="48.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="394.6889" Y="-34.9982" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="0" G="200" B="200" />
+                <PrePosition X="0.9397" Y="-0.0875" />
+                <PreSize X="0.3310" Y="0.1200" />
+                <FontResource Type="Normal" Path="wending.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Text_leadership" ActionTag="1886558168" Tag="20" IconVisible="False" LeftMargin="10.6900" RightMargin="270.3100" TopMargin="413.5000" BottomMargin="-61.5000" FontSize="48" LabelText="领导力" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="139.0000" Y="48.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="80.1900" Y="-37.5000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="0" G="200" B="200" />
+                <PrePosition X="0.1909" Y="-0.0938" />
+                <PreSize X="0.3310" Y="0.1200" />
+                <FontResource Type="Normal" Path="wending.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Text_beauty_0" ActionTag="1474504209" Tag="21" IconVisible="False" LeftMargin="435.6154" RightMargin="-113.6154" TopMargin="121.2365" BottomMargin="230.7635" FontSize="48" LabelText="颜值" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="98.0000" Y="48.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="484.6154" Y="254.7635" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="0" G="200" B="200" />
+                <PrePosition X="1.1538" Y="0.6369" />
+                <PreSize X="0.2333" Y="0.1200" />
+                <FontResource Type="Normal" Path="wending.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1500.0000" Y="350.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.6793" Y="0.2818" />
             <PreSize X="0.1902" Y="0.3221" />
+            <FileData Type="Normal" Path="radar.png" Plist="" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_back" ActionTag="-1980631392" Tag="16" IconVisible="False" LeftMargin="1940.0000" RightMargin="148.0000" TopMargin="82.0000" BottomMargin="1040.0000" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="90" Scale9Height="98" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_back" ActionTag="-1980631392" Tag="16" IconVisible="False" LeftMargin="1940.0000" RightMargin="148.0000" TopMargin="82.0000" BottomMargin="1040.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="90" Scale9Height="98" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="120.0000" Y="120.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="2000.0000" Y="1100.0000" />

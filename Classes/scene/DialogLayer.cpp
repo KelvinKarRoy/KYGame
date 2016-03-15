@@ -68,7 +68,7 @@ void DialogLayer::clickOKCallback(Ref*, TouchEventType type)
 		}
 		this->setVisible(false);
 		//÷ÿ–¬º§ªÓœ¬≤„
-		utility::setEnable(true, static_cast<Layer*>(this->getParent()));
+		if(this->getParent() != nullptr) utility::setEnable(true, static_cast<Layer*>(this->getParent()));
 		break;
 	case TouchEventType::TOUCH_EVENT_MOVED:
 		break;

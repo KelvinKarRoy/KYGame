@@ -145,11 +145,11 @@ void HttpUtility::regeditAccount(std::string account,//’À∫≈
 
 	std::string finalString;
 	char temp[100];
-	sprintf(temp, "account=\'%s\'&password=\'%s\'&key=\'Kkdgx4cp\'&name=\'%s\'&role=%s",
-		account.c_str(), password.c_str(), name.c_str(), role ? "true" : "false");
+	sprintf(temp, "account=\'%s\'&password=\'%s\'&key=\'Kkdgx4cp\'&name=\'%s\'&role=\'%s\'",
+		account.c_str(), password.c_str(), name.c_str(), role ? "1" : "0");
 	finalString = temp;
 
-	CCLOG("%s", finalString.c_str());
+	log("%s", finalString.c_str());
 	request->setRequestData(finalString.c_str(), finalString.length());
 	this->httpClient->send(request);
 	request->release();

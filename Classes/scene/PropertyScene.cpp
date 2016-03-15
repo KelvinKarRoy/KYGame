@@ -164,11 +164,11 @@ void PropertyScene::drawRadar()
     delete csv;
     
     CCPoint rectangle[5];
-    rectangle[0] = ccp(210, 179+210*rate1);
-    rectangle[1] = ccp(210+210*rate2, 179+68*rate2);
-    rectangle[2] = ccp(210+130*rate3, 179-179*rate3);
-    rectangle[3] = ccp(210-130*rate4, 179-179*rate4);
-    rectangle[4] = ccp(210-210*rate5,179+68*rate5);
+    rectangle[0] = ccp(210, 184+210*rate1);
+    rectangle[1] = ccp(210+210*rate2, 184+68*rate2);
+    rectangle[2] = ccp(210+130*rate3, 184-179*rate3);
+    rectangle[3] = ccp(210-130*rate4, 184-179*rate4);
+    rectangle[4] = ccp(210-210*rate5,184+68*rate5);
     
     if(player->getRole())
     {//凯

@@ -5,9 +5,11 @@
       <RootFolder Name=".">
         <Image Name="back1.png" />
         <Image Name="back2.png" />
+        <Image Name="property.jpg" />
         <Image Name="PropertyBackGround.png" />
         <File Name="PropertyScene.csb" />
         <Project Name="PropertyScene.csd" Type="Scene" />
+        <Image Name="radar.png" />
         <TTF Name="wending.TTF" />
       </RootFolder>
     </Group>
