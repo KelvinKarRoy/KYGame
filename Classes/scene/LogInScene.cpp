@@ -1,5 +1,11 @@
 #include "LogInScene.h"
 
+#include "AboutScene.h"
+#include "RegeditScene.h"
+#include "AuthenticationScene.h"
+#include "DialogLayer.h"
+#include "PropertyScene.hpp"
+
 USING_NS_CC;
 using namespace cocos2d::ui;
 using namespace cocostudio;
@@ -165,14 +171,6 @@ void LogInScene::clickRegeditCallback(Ref*, TouchEventType type)
 	case TouchEventType::TOUCH_EVENT_MOVED:
 		break;
 	}
-}
-
-void LogInScene::promptDialogBox(std::string strInfo)
-{
-	childLayer = DialogLayer::create();
-	((DialogLayer*)childLayer)->setText(strInfo);//弹出对话框
-	this->addChild((DialogLayer*)childLayer);
-	utility::setEnable(false, this);
 }
 
 

@@ -80,34 +80,6 @@ bool RegeditScene::init()
 	return true;
 }
 
-void RegeditScene::promptDialogBox(std::string text, RegeditScene::STATUS status)
-{
-	Scene* scene;
-	switch (status)
-	{
-	case RegeditScene::STATUS::LINK_ERROR:
-		childLayer = DialogLayer::create();
-		((DialogLayer*)childLayer)->setText(text);// ‰≥ˆŒƒ◊÷
-		this->addChild(childLayer);
-		break;
-	case RegeditScene::STATUS::ACCOUNTEXIST:
-		childLayer = DialogLayer::create();
-		((DialogLayer*)childLayer)->setText(text);// ‰≥ˆŒƒ◊÷
-		this->addChild(childLayer);
-		break;
-	case RegeditScene::STATUS::SUCCEED:
-		childLayer = DialogLayer::create();
-		scene = LogInScene::createScene();
-		((DialogLayer*)childLayer)->setText(text);// ‰≥ˆŒƒ◊÷
-		scene->addChild(childLayer);
-		Director::getInstance()->replaceScene(scene);//◊™÷¡µ«¬º“≥√Ê
-		break;
-	default:
-		break;
-	}
-
-}
-
 void RegeditScene::onClickBackCallback(Ref*, TouchEventType type)
 {
 	switch (type)
@@ -264,11 +236,4 @@ bool RegeditScene::isRegeditLegal()
 	}
 
 	return true;
-}
-
-void RegeditScene::promptDialogBox(std::string str)
-{
-	childLayer = DialogLayer::create();
-	((DialogLayer*)childLayer)->setText(str);//设置文字
-	this->addChild(childLayer);
 }

@@ -19,6 +19,8 @@
 #include "DataUtility.h"
 #include "../scene/WaitLayer.hpp"
 
+#include "../interface/Promptable.hpp"
+
 class Player;
 
 using namespace cocos2d;
@@ -29,7 +31,7 @@ class HttpUtility
 private:
     static HttpClient* httpClient;
     static HttpUtility* httpUtility;
-    Layer* callerLayer;//调用它的对象
+    Promptable* callerLayer;//调用它的对象
     
     //flag枚举
     enum HttpEnum
@@ -55,11 +57,12 @@ private:
     void onRegeditAccount(HttpClient *sender, HttpResponse *response);//注册账号
     void onLoadPlayerInformation(HttpClient *sender, HttpResponse *response);//加载用户信息
     void onAccount2ID(HttpClient *sender, HttpResponse *response);//账号转化成id
+    void onSaveStatus(HttpClient *sender, HttpResponse *response);//存储用户信息到服务器
     
 public:
     
     //单例类获取
-    static HttpUtility* getInstance(Layer* callerLayer);//调用它的对象
+    static HttpUtility* getInstance(Promptable* callerLayer);//调用它的对象
     static HttpUtility* getInstance();
     
     bool getFlag();
@@ -78,6 +81,7 @@ public:
                         bool role);//注册账号
     void loadPlayerInformation(int playerID,Player* player);//加载玩家信息
     void account2ID(std::string account);//account转id
+    void saveStatus();//存储用户信息到服务器
     
     //bool checkVersion(std::string version);
 };

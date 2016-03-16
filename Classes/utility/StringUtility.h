@@ -23,4 +23,5 @@ public:
 	
 	//static std::wstring str2wstr(std::string str);
 
+    
 };

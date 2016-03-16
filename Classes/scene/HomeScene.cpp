@@ -58,6 +58,7 @@ bool HomeScene::init()
 }
 
 
+
 void HomeScene::onExitClicked(Ref*,TouchEventType type)
 {
     switch (type)

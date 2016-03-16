@@ -2,12 +2,11 @@
 /*
 	注册页面
 */
-#include "cocos2d.h"
-#include "editor-support/cocostudio/CCSGUIReader.h"
-#include "ui/CocosGUI.h"//UI相关的头文件 
-#include "cocostudio/CocoStudio.h"//在CocosStudio.h 头文件中已经包含了Studio所需要的各个头文件(除CocosGUI)因此我们使用Studio仅需要包含他就可以 
+
 
 #include "DialogLayer.h"
+
+#include "../interface/Promptable.hpp"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -17,8 +16,7 @@ using namespace cocos2d::ui;
 using namespace cocos2d;
 
 
-class RegeditScene :
-	public Layer
+class RegeditScene :public Promptable
 {
 public:
 	RegeditScene();
@@ -39,9 +37,7 @@ public:
 	//实现 static create()函数的宏
 	CREATE_FUNC(RegeditScene);
 
-	void promptDialogBox(std::string text,RegeditScene::STATUS status);
-
-	void promptDialogBox(std::string str);
+    
 private:
 	Layer* childLayer;//子页面
 

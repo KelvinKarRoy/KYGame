@@ -9,6 +9,7 @@
 #include "PropertyScene.hpp"
 
 #include "LogInScene.h"
+#include "DialogLayer.h"
 
 #include "../model/Player.h"
 
@@ -86,7 +87,6 @@ bool PropertyScene::init()
     
     return true;
 }
-
 
 
 //读取各属性值
@@ -300,7 +300,10 @@ void PropertyScene::onAddClicked(Ref* ref, TouchEventType type)
 void PropertyScene::onOKClicked(Ref*, TouchEventType type)
 {
     //将属性从attributes覆盖到player->getAttributes()
+    player->setAttributes(attributes);
     //将Self->getAttributes上传服务器
+    HttpUtility::getInstance(this)->saveStatus();
+    //如果失败了，回到登录页面
     //重绘图像
     fillText();
     drawRadar();

@@ -4,22 +4,16 @@
 	µ«¬º“≥√Ê
 */
 
-#include "cocos2d.h"
-#include "editor-support/cocostudio/CCSGUIReader.h"
-#include "ui/CocosGUI.h"//UI读取类
-#include "cocostudio/CocoStudio.h"//‘⁄CocosStudio.h Õ∑Œƒº˛÷–“—æ≠∞¸∫¨¡ÀStudioÀ˘–Ë“™µƒ∏˜∏ˆÕ∑Œƒº˛(≥˝CocosGUI)“Ú¥ÀŒ“√« π”√StudioΩˆ–Ë“™∞¸∫¨À˚æÕø…“‘ 
 
 #include "cocos-ext.h"
 //“ª–©œ‡πÿ“≥√Ê
-#include "AboutScene.h"
-#include "RegeditScene.h"
-#include "AuthenticationScene.h"
-#include "DialogLayer.h"
+
 #include "../utility/HttpUtility.h"
 #include "../utility/utility.h"
 #include "../utility/StringUtility.h"
-#include "PropertyScene.hpp"
 
+
+#include "../interface/Promptable.hpp"
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 #include "../sqlite/sqlite3.h"
@@ -30,7 +24,9 @@
 
 using namespace cocos2d::ui;
 
-class LogInScene : public cocos2d::Layer
+
+
+class LogInScene : public Promptable
 {
 public:
 	static cocos2d::Scene* createScene();
@@ -40,9 +36,7 @@ public:
 	// µœ÷ static create()∫Ø ˝µƒ∫Í
 	CREATE_FUNC(LogInScene);
 
-	void promptDialogBox(std::string strInfo);//µØ≥ˆÃ· æ∂‘ª∞øÚ
-
-
+	
 private:
 	Node* rootNode;
 	Layer* childLayer;//∏˜÷÷“≥√Ê

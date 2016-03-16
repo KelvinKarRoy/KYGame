@@ -29,7 +29,6 @@ public:
     CREATE_FUNC(WaitLayer);
     
 private:
-    Layer* childLayer;//子层
     
     Node* rootNode;//csb
 

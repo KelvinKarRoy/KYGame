@@ -14,12 +14,14 @@
 #include "ui/CocosGUI.h"//UI读取类
 #include "cocostudio/CocoStudio.h"//‘⁄CocosStudio.h
 
+#include "../interface/Promptable.hpp"
+
 using namespace cocos2d;
 using namespace cocos2d::ui;
 using namespace cocostudio;
 
 
-class HomeScene :public Layer
+class HomeScene :public Promptable
 {
 public:
     HomeScene();

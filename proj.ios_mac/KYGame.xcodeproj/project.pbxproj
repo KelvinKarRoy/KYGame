@@ -134,6 +134,7 @@
 		B68F575B1C8928640008250A /* PropertyBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B68F575A1C8928640008250A /* PropertyBackGround.png */; };
 		B6983C6E1C8BF21D00CA0AFE /* cocosproject in Resources */ = {isa = PBXBuildFile; fileRef = B6983C6C1C8BF21C00CA0AFE /* cocosproject */; };
 		B6E1EF731C89DFBF00D55420 /* db in Resources */ = {isa = PBXBuildFile; fileRef = B6E1EF721C89DFBF00D55420 /* db */; };
+		B6EC36681C998992006AC374 /* Promptable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6EC36661C998992006AC374 /* Promptable.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -306,6 +307,8 @@
 		B6983C6C1C8BF21C00CA0AFE /* cocosproject */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cocosproject; path = ../cocosproject; sourceTree = "<group>"; };
 		B69B1BCD1C8C7E8C00BB77F5 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = model/Player.h; sourceTree = "<group>"; };
 		B6E1EF721C89DFBF00D55420 /* db */ = {isa = PBXFileReference; lastKnownFileType = folder; path = db; sourceTree = "<group>"; };
+		B6EC36661C998992006AC374 /* Promptable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Promptable.cpp; path = interface/Promptable.cpp; sourceTree = "<group>"; };
+		B6EC36671C998992006AC374 /* Promptable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Promptable.hpp; path = interface/Promptable.hpp; sourceTree = "<group>"; };
 		B6F4731E1C8D003A00CD5804 /* Self.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Self.h; path = model/Self.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -498,6 +501,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B6EC36651C99896B006AC374 /* interface */,
 				B609BD371C8BF9500067B838 /* scene */,
 				B609BD361C8BF9390067B838 /* utility */,
 				B609BD351C8BF91A0067B838 /* sqlite3 */,
@@ -615,6 +619,15 @@
 				B67BB7791C8D16820063DED5 /* HomeScene.hpp */,
 			);
 			name = scene;
+			sourceTree = "<group>";
+		};
+		B6EC36651C99896B006AC374 /* interface */ = {
+			isa = PBXGroup;
+			children = (
+				B6EC36661C998992006AC374 /* Promptable.cpp */,
+				B6EC36671C998992006AC374 /* Promptable.hpp */,
+			);
+			name = interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -840,6 +853,7 @@
 				B609BCAB1C8BF6C20067B838 /* AppDelegate.h in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				B6EC36681C998992006AC374 /* Promptable.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);

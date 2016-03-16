@@ -9,10 +9,6 @@
 #ifndef PropertyScene_hpp
 #define PropertyScene_hpp
 
-#include "cocos2d.h"
-#include "editor-support/cocostudio/CCSGUIReader.h"
-#include "ui/CocosGUI.h"//UI读取类
-#include "cocostudio/CocoStudio.h"//‘⁄CocosStudio.h
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 #include "../sqlite/sqlite3.h"
@@ -23,6 +19,9 @@
 
 #include "../model/Player.h"
 #include "../model/Self.h"
+
+#include "../interface/Promptable.hpp"
+
 using namespace cocos2d;
 using namespace cocos2d::ui;
 
@@ -31,8 +30,7 @@ using namespace cocos2d::ui;
 using namespace cocos2d;
 
 
-class PropertyScene :
-public Layer
+class PropertyScene :public Promptable
 {
 public:
     PropertyScene();
