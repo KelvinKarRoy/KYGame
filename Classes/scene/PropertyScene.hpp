@@ -81,6 +81,23 @@ private:
     //画雷达图
     void drawRadar();
     
+    //判断是否可以加点
+    bool isAddable();
+    
+    //enable（参数为true）或unable（参数为false）加点按钮
+    void enableAddButtons(bool isAddable);
+    
+    //判断是否有加点
+    bool isPropertyChanged();
+    
+    //点击了加点按钮
+    void onAddClicked(Ref*, TouchEventType type);
+
+    //点击了加点确定按钮
+    void onOKClicked(Ref*, TouchEventType type);
+    
+    //点击了加点取消按钮
+    void onCancelClicked(Ref*, TouchEventType type);
 };
 
 

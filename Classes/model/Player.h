@@ -73,17 +73,18 @@ public:
     //各个属性
     enum ATTRIBUTE
     {
-        BASE_POPULARITY,//
-        BASE_BEAUTY,//
-        BASE_BOYABLITY,//
-        BASE_LEADERSHIP,//
-        BASE_ACTION, //
+        BASE_ACTION = 1, //
+        BASE_BEAUTY = 2,//
+        BASE_BOYABLITY = 3,//
+        BASE_LEADERSHIP = 4,//
+        BASE_POPULARITY = 5,//
         
-        EXP_POPULARITY,//
-        EXP_BEAUTY,//
-        EXP_BOYABLITY,//
-        EXP_LEADERSHIP,//
-        EXP_ACTION //
+        EXP_ACTION = 6,//
+        EXP_BEAUTY = 7,//
+        EXP_BOYABLITY = 8,//
+        EXP_LEADERSHIP = 9,//
+        EXP_POPULARITY = 10//
+        
     };
     std::map<Player::ATTRIBUTE, int> getAttributes(){ return attributes; }
     void setAttributes(std::map<Player::ATTRIBUTE, int> attributes){ this->attributes = attributes; }

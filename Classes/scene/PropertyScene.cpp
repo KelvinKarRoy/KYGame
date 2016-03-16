@@ -68,6 +68,22 @@ bool PropertyScene::init()
     //画雷达图
     drawRadar();
     
+    //计算是否可以加点，enable或者unable加点按钮
+    enableAddButtons((player==Self::getInstance())&&isAddable());
+    
+    //获取加点按钮，绑定回调
+    for(int i=1;i<=5;++i)
+    {
+        static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByTag(10000+i))
+        ->addTouchEventListener(this,toucheventselector(PropertyScene::onAddClicked));
+    }
+    
+    //获取加点确定和取消按钮，绑定回调
+    static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_ok"))
+    ->addTouchEventListener(this,toucheventselector(PropertyScene::onOKClicked));
+    static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_cancel"))
+    ->addTouchEventListener(this,toucheventselector(PropertyScene::onCancelClicked));
+    
     return true;
 }
 
@@ -141,8 +157,11 @@ void PropertyScene::drawRadar()
 {
     auto radar = static_cast<Layout*>(rootNode->getChildByName("Panel_radar"));
     
+    if(radar->getChildByName("radar")!=nullptr) radar->removeChildByName("radar");
+    
     // 填充的多边形
     CCDrawNode* frame = CCDrawNode::create();
+    frame->setName("radar");
     radar->addChild(frame, 2);
     frame->setPosition(cocos2d::Vec2(0,0));
     
@@ -152,7 +171,7 @@ void PropertyScene::drawRadar()
     path+="db/radar.csv";
     csv->openAndResolveFile(path.c_str());
     
-    auto attributes = player->getAttributes();
+    //auto attributes = player->getAttributes();
     
     auto rate1 = atof(csv->getData(attributes[Player::ATTRIBUTE::BASE_ACTION]+attributes[Player::ATTRIBUTE::EXP_ACTION], 1));
     auto rate2 = atof(csv->getData(attributes[Player::ATTRIBUTE::BASE_BEAUTY]+attributes[Player::ATTRIBUTE::EXP_BEAUTY], 1));
@@ -201,3 +220,100 @@ void PropertyScene::onBackClicked(Ref*, TouchEventType type)
     
 }
 
+
+//判断是否可以加点
+bool PropertyScene::isAddable()
+{
+    //计算总基础属性
+    int totalBaseProperty = 5+4*Self::getInstance()->getLevel();
+    return attributes[Self::ATTRIBUTE::BASE_ACTION]
+    +attributes[Self::ATTRIBUTE::BASE_BEAUTY]
+    +attributes[Self::ATTRIBUTE::BASE_BOYABLITY]
+    +attributes[Self::ATTRIBUTE::BASE_LEADERSHIP]
+    +attributes[Self::ATTRIBUTE::BASE_POPULARITY]< totalBaseProperty;
+    
+}
+
+//enable（参数为true）或unable（参数为false）加点按钮
+void PropertyScene::enableAddButtons(bool isAddable)
+{
+    auto addActionButton = static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_addAction"));
+    addActionButton->setEnabled(isAddable);
+    addActionButton->setVisible(isAddable);
+    
+    auto addBeautyButton = static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_addBeauty"));
+    addBeautyButton->setEnabled(isAddable);
+    addBeautyButton->setVisible(isAddable);
+
+    auto addBoyablityButton = static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_addBoyablity"));
+    addBoyablityButton->setEnabled(isAddable);
+    addBoyablityButton->setVisible(isAddable);
+
+    auto addLeadershipButton = static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_addLeadership"));
+    addLeadershipButton->setEnabled(isAddable);
+    addLeadershipButton->setVisible(isAddable);
+
+    auto addPopularityButton = static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_addPopularity"));
+    addPopularityButton->setEnabled(isAddable);
+    addPopularityButton->setVisible(isAddable);
+    
+    auto addOKButton = static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_ok"));
+    addOKButton->setVisible(isPropertyChanged());
+    addOKButton->setEnabled(isPropertyChanged());
+    
+    auto addCancelButton = static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_cancel"));
+    addCancelButton->setVisible(isPropertyChanged());
+    addCancelButton->setEnabled(isPropertyChanged());
+    
+}
+
+
+//判断是否有加点
+bool PropertyScene::isPropertyChanged()
+{
+    //原来的属性
+    auto origin_attributes = player->getAttributes();
+    return (origin_attributes[Self::ATTRIBUTE::BASE_ACTION] < attributes[Self::ATTRIBUTE::BASE_ACTION]
+            ||origin_attributes[Self::ATTRIBUTE::BASE_BEAUTY] < attributes[Self::ATTRIBUTE::BASE_BEAUTY]
+            ||origin_attributes[Self::ATTRIBUTE::BASE_BOYABLITY] < attributes[Self::ATTRIBUTE::BASE_BOYABLITY]
+            ||origin_attributes[Self::ATTRIBUTE::BASE_LEADERSHIP] < attributes[Self::ATTRIBUTE::BASE_LEADERSHIP]
+            ||origin_attributes[Self::ATTRIBUTE::BASE_POPULARITY] < attributes[Self::ATTRIBUTE::BASE_POPULARITY]);
+    
+}
+
+
+//点击了加点按钮
+void PropertyScene::onAddClicked(Ref* ref, TouchEventType type)
+{
+    if(type == TouchEventType::TOUCH_EVENT_ENDED)
+    {
+        int id = static_cast<Button*>(ref)->getTag();
+        attributes[static_cast<Player::ATTRIBUTE>(id%10000)] +=1;
+        fillText();
+        drawRadar();
+        enableAddButtons(isAddable());
+    }
+}
+
+
+//点击了加点确定按钮
+void PropertyScene::onOKClicked(Ref*, TouchEventType type)
+{
+    //将属性从attributes覆盖到player->getAttributes()
+    //将Self->getAttributes上传服务器
+    //重绘图像
+    fillText();
+    drawRadar();
+    enableAddButtons(isAddable());
+}
+
+//点击了加点取消按钮
+void PropertyScene::onCancelClicked(Ref*, TouchEventType type)
+{
+    //恢复Self上的状态
+    attributes=player->getAttributes();
+    //重绘图像
+    fillText();
+    drawRadar();
+    enableAddButtons(isAddable());
+}
