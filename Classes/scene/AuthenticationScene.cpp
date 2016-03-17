@@ -82,14 +82,14 @@ void AuthenticationScene::updateQuestion()
 		sprintf(childName, "Text_Qestion%d", i);
 		Text* questionText = (Text*)page->getChildByName(childName);
 
+        //Ω´Œ Ã‚»°≥ˆ∑≈µΩ“≥√Ê…œ
+        std::string questionStr = questionVector[i - 1];
+        questionText->setText(questionStr);
+        
 		//“‘œ¬¥˙¬Î «…Ë÷√◊‘∂Øªª––
 		questionText->setTextHorizontalAlignment(cocos2d::TextHAlignment::LEFT);
 		questionText->setTextVerticalAlignment(cocos2d::TextVAlignment::TOP);
 		utility::setTextAuto(questionText);
-
-		//Ω´Œ Ã‚»°≥ˆ∑≈µΩ“≥√Ê…œ
-		std::string questionStr = questionVector[i - 1];
-		questionText->setText(questionStr);
 	}
 
 }

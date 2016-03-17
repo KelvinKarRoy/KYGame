@@ -1,16 +1,12 @@
 <Solution>
-  <PropertyGroup Name="RegeditScene" Version="2.3.3.0" Type="CocosStudio" />
+  <PropertyGroup Name="RegeditScene" Version="3.10.0.0" Type="CocosStudio" />
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Project Name="RegeditScene.csd" Type="Scene" />
-        <Image Name="RegeditBackground.png" />
         <TTF Name="FZMWFont.ttf" />
+        <Image Name="RegeditBackground.png" />
+        <Project Name="RegeditScene.csd" Type="Scene" />
         <Image Name="TextField.png" />
-        <Image Name="back1.png" />
-        <Image Name="back2.png" />
-        <Image Name="submitRegeditbtn1.png" />
-        <Image Name="submitRegeditbtn2.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

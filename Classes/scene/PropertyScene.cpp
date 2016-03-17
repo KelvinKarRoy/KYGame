@@ -8,8 +8,9 @@
 
 #include "PropertyScene.hpp"
 
-#include "LogInScene.h"
+#include "HomeScene.hpp"
 #include "DialogLayer.h"
+
 
 #include "../model/Player.h"
 
@@ -212,8 +213,8 @@ void PropertyScene::onBackClicked(Ref*, TouchEventType type)
         case TouchEventType::TOUCH_EVENT_CANCELED:
             break;
         case TouchEventType::TOUCH_EVENT_ENDED:
-            Scene* scene = LogInScene::createScene();
-            cocos2d::Director::getInstance()->replaceScene(scene);//回到登录页面
+            Scene* scene = HomeScene::createScene();
+            cocos2d::Director::getInstance()->replaceScene(scene);//回到主页面
             break;
            
     }
@@ -303,7 +304,6 @@ void PropertyScene::onOKClicked(Ref*, TouchEventType type)
     player->setAttributes(attributes);
     //将Self->getAttributes上传服务器
     HttpUtility::getInstance(this)->saveStatus();
-    //如果失败了，回到登录页面
     //重绘图像
     fillText();
     drawRadar();
@@ -320,3 +320,5 @@ void PropertyScene::onCancelClicked(Ref*, TouchEventType type)
     drawRadar();
     enableAddButtons(isAddable());
 }
+
+

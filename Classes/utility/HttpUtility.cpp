@@ -5,6 +5,8 @@
 #include "../scene/AuthenticationScene.h"
 #include "../scene/RegeditScene.h"
 #include "../scene/PropertyScene.hpp"
+#include "../scene/HomeScene.hpp"
+
 
 HttpClient* HttpUtility::httpClient = HttpClient::getInstance();
 HttpUtility* HttpUtility::httpUtility = nullptr;
@@ -368,7 +370,7 @@ void HttpUtility::onLoadPlayerInformation(HttpClient *sender, HttpResponse *resp
         DataUtility::decodeInformation(responseDataStr);
         if(typeid(LogInScene) == typeid(*callerLayer))
         {//如果调用它的是登录页面
-            cocos2d::Director::getInstance()->replaceScene(PropertyScene::createScene());//切换到属性页面
+            cocos2d::Director::getInstance()->replaceScene(HomeScene::createScene());//切换到主页面
         }
     }
     else {
@@ -481,7 +483,7 @@ void HttpUtility::saveStatus()
     auto attributes = player->getAttributes();
     auto skills = player->getSkillsID();
     log("%lu",skills.size());
-    sprintf(temp, "query='UPDATE player_status SET money = \134\047%d\134\047, experiense = \134\047%d\134\047, popularity = \134\047%d\134\047, beauty = \134\047%d\134\047, boyablity = \134\047%d\134\047, leadership = \134\047%d\134\047, action = \134\047%d\134\047, clothID = \134\047%d\134\047, cardID = \134\047%d\134\047, honor = \134\047%d\134\047, skill_1_ID = \134\047%d\134\047, skill_2_ID = \134\047%d\134\047, skill_3_ID = \134\047%d\134\047, skill_4_ID = \134\047%d\134\047, skill_5_ID = \134\047%d\134\047, cpID = \134\047%d\134\047, top = \134\047%d\134\047 WHERE playerID = \134\047%d\134\047 '",
+    sprintf(temp, "key=Kkdgx4cp&money=%d&experiense=%d&popularity=%d&beauty=%d&boyablity=%d&leadership=%d&action=%d&clothID=%d&cardID=%d&honor=%d&skill_1_ID=%d&skill_2_ID=%d&skill_3_ID=%d&skill_4_ID=%d&skill_5_ID=%d&cpID=%d&top=%d&playerID=%d",
             player->getMoney(),player->getExp(),
             attributes[Player::ATTRIBUTE::BASE_POPULARITY]+attributes[Player::ATTRIBUTE::EXP_POPULARITY],
             attributes[Player::ATTRIBUTE::BASE_BEAUTY]+attributes[Player::ATTRIBUTE::EXP_BEAUTY],
@@ -538,10 +540,10 @@ void HttpUtility::onSaveStatus(HttpClient *sender, HttpResponse *response)
     if (statusCode == 200) {
         //连接成功
         bool flag = DataUtility::decodeFlagData(responseDataStr);
-        if(!flag)
-        {//连接服务器失败
-            static_cast<Promptable*>(callerLayer)->promptDialogBox("网络或服务器有屎，请倒立十分钟后重试");
-        }
+        //if(!flag)
+        //{//连接服务器失败
+         //   static_cast<Promptable*>(callerLayer)->promptDialogBox("网络或服务器有屎，请倒立十分钟后重试");
+        //}
     }
     else {
         //连接异常

@@ -3,10 +3,8 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Image Name="exit1.png" />
-        <Image Name="exit2.png" />
-        <Image Name="HelloWorld.png" />
         <Project Name="HomeScene.csd" Type="Scene" />
+        <TTF Name="wending.TTF" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -8,7 +8,7 @@
 
 #include "HomeScene.hpp"
 #include "LogInScene.h"
-
+#include "MenuLayer.hpp"
 
 HomeScene::HomeScene()
 {
@@ -44,10 +44,13 @@ bool HomeScene::init()
     
     /**************加载UI***************/
     rootNode = cocos2d::CSLoader::createNode("csb/HomeScene.csb");
+    
     //调整UI大小
     rootNode->setScale(visibleSize.width / rootNode->getContentSize().width, visibleSize.height / rootNode->getContentSize().height);
     
     this->addChild(rootNode);
+    
+    this->addChild(MenuLayer::create());//添加菜单layer
     
     auto exitButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_exit"));
 

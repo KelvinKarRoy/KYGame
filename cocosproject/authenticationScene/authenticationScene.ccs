@@ -6,10 +6,6 @@
         <Image Name="authenticationBackGround.png" />
         <Project Name="AuthenticationScene.csd" Type="Scene" />
         <TTF Name="FZMWFont.ttf" />
-        <Image Name="giveupbtn1.png" />
-        <Image Name="giveupbtn2.png" />
-        <Image Name="submitbtn1.png" />
-        <Image Name="submitbtn2.png" />
         <Image Name="TextField.png" />
         <TTF Name="wending.TTF" />
       </RootFolder>

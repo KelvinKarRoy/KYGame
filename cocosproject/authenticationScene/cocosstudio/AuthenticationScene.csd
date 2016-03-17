@@ -16,7 +16,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="authenticationBackGround.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="PageView" ActionTag="1961705261" Tag="1882" IconVisible="False" LeftMargin="454.0000" RightMargin="454.0000" TopMargin="242.0000" BottomMargin="200.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ctype="PageViewObjectData">
+          <AbstractNodeData Name="PageView" ActionTag="1961705261" Tag="1882" IconVisible="False" LeftMargin="454.0000" RightMargin="454.0000" TopMargin="322.0000" BottomMargin="120.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ctype="PageViewObjectData">
             <Size X="1300.0000" Y="800.0000" />
             <Children>
               <AbstractNodeData Name="Panel_1" ActionTag="-687706828" Tag="1886" IconVisible="False" RightMargin="5200.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -43,25 +43,25 @@
                     <PrePosition X="0.8492" Y="0.0750" />
                     <PreSize X="0.0131" Y="0.0188" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_q1" ActionTag="1088758733" Tag="1902" IconVisible="False" LeftMargin="100.0000" RightMargin="912.0000" TopMargin="80.0000" BottomMargin="638.0000" FontSize="72" LabelText="Question1：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_q1" ActionTag="1088758733" Tag="1902" IconVisible="False" RightMargin="1012.0000" TopMargin="80.0000" BottomMargin="638.0000" FontSize="72" LabelText="Question1：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="288.0000" Y="82.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position X="100.0000" Y="720.0000" />
+                    <Position Y="720.0000" />
                     <Scale ScaleX="1.2000" ScaleY="1.2000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.0769" Y="0.9000" />
+                    <PrePosition Y="0.9000" />
                     <PreSize X="0.2215" Y="0.1025" />
                     <FontResource Type="Normal" Path="FZMWFont.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_Qestion1" ActionTag="750332997" Tag="1907" IconVisible="False" LeftMargin="150.0000" RightMargin="-150.0000" TopMargin="180.0000" BottomMargin="464.0000" IsCustomSize="True" FontSize="52" LabelText="Text_Qestion1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_Qestion1" ActionTag="750332997" Tag="1907" IconVisible="False" LeftMargin="50.0000" RightMargin="-50.0000" TopMargin="180.0000" BottomMargin="464.0000" IsCustomSize="True" FontSize="52" LabelText="Text_Qestion1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="1300.0000" Y="156.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position X="150.0000" Y="620.0000" />
+                    <Position X="50.0000" Y="620.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1154" Y="0.7750" />
+                    <PrePosition X="0.0385" Y="0.7750" />
                     <PreSize X="1.0000" Y="0.1950" />
                     <FontResource Type="Normal" Path="wending.TTF" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
@@ -117,25 +117,25 @@
                     <PrePosition X="0.8492" Y="0.0750" />
                     <PreSize X="0.0131" Y="0.0188" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_q2" ActionTag="-1376728179" Tag="1903" IconVisible="False" LeftMargin="100.0000" RightMargin="903.0000" TopMargin="80.0000" BottomMargin="638.0000" FontSize="72" LabelText="Question2：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_q2" ActionTag="-1376728179" Tag="1903" IconVisible="False" RightMargin="1003.0000" TopMargin="80.0000" BottomMargin="638.0000" FontSize="72" LabelText="Question2：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="297.0000" Y="82.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position X="100.0000" Y="720.0000" />
+                    <Position Y="720.0000" />
                     <Scale ScaleX="1.2000" ScaleY="1.2000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.0769" Y="0.9000" />
+                    <PrePosition Y="0.9000" />
                     <PreSize X="0.2285" Y="0.1025" />
                     <FontResource Type="Normal" Path="FZMWFont.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_Qestion2" ActionTag="1099894765" Tag="1908" IconVisible="False" LeftMargin="150.0000" RightMargin="-150.0000" TopMargin="180.0000" BottomMargin="464.0000" IsCustomSize="True" FontSize="52" LabelText="Text_Qestion2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_Qestion2" ActionTag="1099894765" Tag="1908" IconVisible="False" LeftMargin="50.0000" RightMargin="-50.0000" TopMargin="180.0000" BottomMargin="464.0000" IsCustomSize="True" FontSize="52" LabelText="Text_Qestion2" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="1300.0000" Y="156.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position X="150.0000" Y="620.0000" />
+                    <Position X="50.0000" Y="620.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1154" Y="0.7750" />
+                    <PrePosition X="0.0385" Y="0.7750" />
                     <PreSize X="1.0000" Y="0.1950" />
                     <FontResource Type="Normal" Path="wending.TTF" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
@@ -203,25 +203,25 @@
                     <PrePosition X="0.8492" Y="0.0750" />
                     <PreSize X="0.0131" Y="0.0188" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_q3" ActionTag="864738972" Tag="1904" IconVisible="False" LeftMargin="100.0000" RightMargin="906.0000" TopMargin="80.0000" BottomMargin="638.0000" FontSize="72" LabelText="Question3：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_q3" ActionTag="864738972" Tag="1904" IconVisible="False" RightMargin="1006.0000" TopMargin="80.0000" BottomMargin="638.0000" FontSize="72" LabelText="Question3：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="294.0000" Y="82.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position X="100.0000" Y="720.0000" />
+                    <Position Y="720.0000" />
                     <Scale ScaleX="1.2000" ScaleY="1.2000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.0769" Y="0.9000" />
+                    <PrePosition Y="0.9000" />
                     <PreSize X="0.2262" Y="0.1025" />
                     <FontResource Type="Normal" Path="FZMWFont.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_Qestion3" ActionTag="-345955891" Tag="1909" IconVisible="False" LeftMargin="150.0000" RightMargin="-150.0000" TopMargin="180.0000" BottomMargin="464.0000" IsCustomSize="True" FontSize="52" LabelText="Text_Qestion3" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_Qestion3" ActionTag="-345955891" Tag="1909" IconVisible="False" LeftMargin="50.0000" RightMargin="-50.0000" TopMargin="180.0000" BottomMargin="464.0000" IsCustomSize="True" FontSize="52" LabelText="Text_Qestion3" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="1300.0000" Y="156.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position X="150.0000" Y="620.0000" />
+                    <Position X="50.0000" Y="620.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1154" Y="0.7750" />
+                    <PrePosition X="0.0385" Y="0.7750" />
                     <PreSize X="1.0000" Y="0.1950" />
                     <FontResource Type="Normal" Path="wending.TTF" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
@@ -289,25 +289,25 @@
                     <PrePosition X="0.8492" Y="0.0750" />
                     <PreSize X="0.0131" Y="0.0188" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_q4" ActionTag="602225970" Tag="1905" IconVisible="False" LeftMargin="100.0000" RightMargin="901.0000" TopMargin="80.0000" BottomMargin="638.0000" FontSize="72" LabelText="Question4：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_q4" ActionTag="602225970" Tag="1905" IconVisible="False" RightMargin="1001.0000" TopMargin="80.0000" BottomMargin="638.0000" FontSize="72" LabelText="Question4：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="299.0000" Y="82.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position X="100.0000" Y="720.0000" />
+                    <Position Y="720.0000" />
                     <Scale ScaleX="1.2000" ScaleY="1.2000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.0769" Y="0.9000" />
+                    <PrePosition Y="0.9000" />
                     <PreSize X="0.2300" Y="0.1025" />
                     <FontResource Type="Normal" Path="FZMWFont.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_Qestion4" ActionTag="785318582" Tag="1910" IconVisible="False" LeftMargin="150.0000" RightMargin="-150.0000" TopMargin="180.0000" BottomMargin="464.0000" IsCustomSize="True" FontSize="52" LabelText="Text_Qestion4" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_Qestion4" ActionTag="785318582" Tag="1910" IconVisible="False" LeftMargin="50.0000" RightMargin="-50.0000" TopMargin="180.0000" BottomMargin="464.0000" IsCustomSize="True" FontSize="52" LabelText="Text_Qestion4" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="1300.0000" Y="156.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position X="150.0000" Y="620.0000" />
+                    <Position X="50.0000" Y="620.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1154" Y="0.7750" />
+                    <PrePosition X="0.0385" Y="0.7750" />
                     <PreSize X="1.0000" Y="0.1950" />
                     <FontResource Type="Normal" Path="wending.TTF" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
@@ -375,25 +375,25 @@
                     <PrePosition X="0.7800" Y="0.0750" />
                     <PreSize X="0.0131" Y="0.0188" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_q5" ActionTag="1638771184" Tag="1906" IconVisible="False" LeftMargin="100.0000" RightMargin="910.0000" TopMargin="80.0000" BottomMargin="638.0000" FontSize="72" LabelText="Question5：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_q5" ActionTag="1638771184" Tag="1906" IconVisible="False" RightMargin="1010.0000" TopMargin="80.0000" BottomMargin="638.0000" FontSize="72" LabelText="Question5：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="290.0000" Y="82.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position X="100.0000" Y="720.0000" />
+                    <Position Y="720.0000" />
                     <Scale ScaleX="1.2000" ScaleY="1.2000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.0769" Y="0.9000" />
+                    <PrePosition Y="0.9000" />
                     <PreSize X="0.2231" Y="0.1025" />
                     <FontResource Type="Normal" Path="FZMWFont.ttf" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_Qestion5" ActionTag="1801015277" Tag="1911" IconVisible="False" LeftMargin="150.0000" RightMargin="-150.0000" TopMargin="180.0000" BottomMargin="464.0000" IsCustomSize="True" FontSize="52" LabelText="Text_Qestion5" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_Qestion5" ActionTag="1801015277" Tag="1911" IconVisible="False" LeftMargin="50.0000" RightMargin="-50.0000" TopMargin="180.0000" BottomMargin="464.0000" IsCustomSize="True" FontSize="52" LabelText="Text_Qestion5" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="1300.0000" Y="156.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position X="150.0000" Y="620.0000" />
+                    <Position X="50.0000" Y="620.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1154" Y="0.7750" />
+                    <PrePosition X="0.0385" Y="0.7750" />
                     <PreSize X="1.0000" Y="0.1950" />
                     <FontResource Type="Normal" Path="wending.TTF" Plist="" />
                     <OutlineColor A="255" R="255" G="0" B="0" />
@@ -451,43 +451,41 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-            <Position X="1104.0000" Y="1000.0000" />
+            <Position X="1104.0000" Y="920.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.8052" />
+            <PrePosition X="0.5000" Y="0.7407" />
             <PreSize X="0.5888" Y="0.6441" />
             <SingleColor A="255" R="150" G="150" B="100" />
             <FirstColor A="255" R="150" G="150" B="100" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_giveup" ActionTag="-254399892" Tag="1914" IconVisible="False" LeftMargin="83.0000" RightMargin="1775.0000" TopMargin="967.0000" BottomMargin="125.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="320" Scale9Height="128" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="350.0000" Y="150.0000" />
+          <AbstractNodeData Name="Button_giveup" ActionTag="-254399892" Tag="1914" IconVisible="False" LeftMargin="158.0000" RightMargin="1850.0000" TopMargin="992.0000" BottomMargin="150.0000" TouchEnable="True" FontSize="64" ButtonText="放弃" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="320" Scale9Height="128" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="200.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="258.0000" Y="200.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1168" Y="0.1610" />
-            <PreSize X="0.1585" Y="0.1208" />
+            <PreSize X="0.0906" Y="0.0805" />
+            <FontResource Type="Normal" Path="wending.TTF" Plist="" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="giveupbtn2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="giveupbtn1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_submit" ActionTag="-633272771" Tag="1898" IconVisible="False" LeftMargin="1775.0000" RightMargin="83.0000" TopMargin="967.0000" BottomMargin="125.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="320" Scale9Height="128" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="350.0000" Y="150.0000" />
+          <AbstractNodeData Name="Button_submit" ActionTag="-633272771" Tag="1898" IconVisible="False" LeftMargin="1875.0000" RightMargin="183.0000" TopMargin="992.0000" BottomMargin="150.0000" TouchEnable="True" FontSize="64" ButtonText="提交" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="320" Scale9Height="128" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="150.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1950.0000" Y="200.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.8832" Y="0.1610" />
-            <PreSize X="0.1585" Y="0.1208" />
+            <PreSize X="0.0679" Y="0.0805" />
+            <FontResource Type="Normal" Path="wending.TTF" Plist="" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="submitbtn2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="submitbtn1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

@@ -16,7 +16,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="LogInBackGround.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_1" ActionTag="-2030366082" Tag="62" IconVisible="False" LeftMargin="644.0033" RightMargin="713.9967" TopMargin="417.6654" BottomMargin="734.3346" TouchEnable="True" ClipAble="False" BackColorAlpha="103" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="850" Scale9Height="90" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_1" ActionTag="-2030366082" Tag="62" IconVisible="False" LeftMargin="655.0000" RightMargin="703.0000" TopMargin="417.6654" BottomMargin="734.3346" TouchEnable="True" ClipAble="False" BackColorAlpha="103" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="850" Scale9Height="90" ctype="PanelObjectData">
             <Size X="850.0000" Y="90.0000" />
             <Children>
               <AbstractNodeData Name="TextField_account" ActionTag="18092142" Tag="64" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="32.3383" RightMargin="35.6617" TopMargin="15.4026" BottomMargin="-6.4026" TouchEnable="True" FontSize="54" IsCustomSize="True" LabelText="" PlaceHolderText="account" MaxLengthText="10" ctype="TextFieldObjectData">
@@ -30,10 +30,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="644.0033" Y="734.3346" />
+            <Position X="655.0000" Y="734.3346" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.2917" Y="0.5913" />
+            <PrePosition X="0.2966" Y="0.5913" />
             <PreSize X="0.3850" Y="0.0725" />
             <FileData Type="Normal" Path="TextField.png" Plist="" />
             <SingleColor A="255" R="150" G="200" B="255" />
@@ -41,7 +41,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_2" ActionTag="-1000170520" Tag="67" IconVisible="False" LeftMargin="640.6699" RightMargin="717.3301" TopMargin="564.3331" BottomMargin="587.6669" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="850" Scale9Height="90" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_2" ActionTag="-1000170520" Tag="67" IconVisible="False" LeftMargin="655.0000" RightMargin="703.0000" TopMargin="564.3331" BottomMargin="587.6669" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="850" Scale9Height="90" ctype="PanelObjectData">
             <Size X="850.0000" Y="90.0000" />
             <Children>
               <AbstractNodeData Name="TextField_password" ActionTag="-28638643" Tag="68" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="35.6716" RightMargin="32.3284" TopMargin="15.5753" BottomMargin="2.4247" TouchEnable="True" FontSize="54" IsCustomSize="True" LabelText="" PlaceHolderText="password" MaxLengthText="10" PasswordEnable="True" ctype="TextFieldObjectData">
@@ -55,10 +55,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="640.6699" Y="587.6669" />
+            <Position X="655.0000" Y="587.6669" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.2902" Y="0.4732" />
+            <PrePosition X="0.2966" Y="0.4732" />
             <PreSize X="0.3850" Y="0.0725" />
             <FileData Type="Normal" Path="TextField.png" Plist="" />
             <SingleColor A="255" R="150" G="200" B="255" />
@@ -66,18 +66,17 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_login" ActionTag="-1194341364" Tag="69" IconVisible="False" LeftMargin="649.6714" RightMargin="1258.3286" TopMargin="856.9973" BottomMargin="285.0027" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="270" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_login" ActionTag="-1194341364" Tag="69" IconVisible="False" LeftMargin="660.0000" RightMargin="1248.0000" TopMargin="856.9973" BottomMargin="285.0027" TouchEnable="True" FontSize="64" ButtonText="登录" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="270" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="300.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="799.6714" Y="335.0027" />
+            <Position X="810.0000" Y="335.0027" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3622" Y="0.2697" />
+            <PrePosition X="0.3668" Y="0.2697" />
             <PreSize X="0.1359" Y="0.0805" />
+            <FontResource Type="Normal" Path="wending.TTF" Plist="" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="loginbtn2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="loginbtn1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -95,44 +94,42 @@
             <NodeNormalFileData Type="Default" Path="Default/CheckBoxNode_Normal.png" Plist="" />
             <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_1" ActionTag="405993170" Tag="71" IconVisible="False" LeftMargin="1287.6810" RightMargin="728.3190" TopMargin="716.9978" BottomMargin="477.0022" FontSize="48" LabelText="记住密码" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="192.0000" Y="48.0000" />
+          <AbstractNodeData Name="Text_1" ActionTag="405993170" Tag="71" IconVisible="False" LeftMargin="1287.6810" RightMargin="728.3190" TopMargin="713.9978" BottomMargin="474.0022" FontSize="48" LabelText="记住密码" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="192.0000" Y="54.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="1383.6810" Y="501.0022" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="34" G="27" B="27" />
             <PrePosition X="0.6267" Y="0.4034" />
-            <PreSize X="0.0870" Y="0.0386" />
+            <PreSize X="0.0870" Y="0.0435" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_regedit" ActionTag="-1013052904" Tag="72" IconVisible="False" LeftMargin="1177.0085" RightMargin="730.9915" TopMargin="856.9973" BottomMargin="285.0027" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="270" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_regedit" ActionTag="-1013052904" Tag="72" IconVisible="False" LeftMargin="1185.0000" RightMargin="723.0000" TopMargin="856.9973" BottomMargin="285.0027" TouchEnable="True" FontSize="64" ButtonText="注册" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="270" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="300.0000" Y="100.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1327.0085" Y="335.0027" />
+            <Position X="1335.0000" Y="335.0027" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.6010" Y="0.2697" />
+            <PrePosition X="0.6046" Y="0.2697" />
             <PreSize X="0.1359" Y="0.0805" />
+            <FontResource Type="Normal" Path="wending.TTF" Plist="" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="regeditbtn2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="regeditbtn1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_about" ActionTag="1122400065" Tag="73" IconVisible="False" LeftMargin="2040.6746" RightMargin="67.3254" TopMargin="34.3309" BottomMargin="1107.6691" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="70" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="100.0000" Y="100.0000" />
+          <AbstractNodeData Name="Button_about" ActionTag="1122400065" Tag="73" IconVisible="False" LeftMargin="2020.6746" RightMargin="47.3254" TopMargin="14.3309" BottomMargin="1087.6691" TouchEnable="True" FontSize="64" ButtonText="关于" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="70" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="140.0000" Y="140.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="2090.6746" Y="1157.6691" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.9469" Y="0.9321" />
-            <PreSize X="0.0453" Y="0.0805" />
+            <PreSize X="0.0634" Y="0.1127" />
+            <FontResource Type="Normal" Path="wending.TTF" Plist="" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="about2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="about1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

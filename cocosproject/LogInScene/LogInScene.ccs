@@ -3,18 +3,13 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Image Name="about1.png" />
-        <Image Name="about2.png" />
         <Image Name="aboutScene.png" />
         <Image Name="back1.png" />
         <Image Name="back2.png" />
         <Image Name="LogInBackGround.png" />
-        <Image Name="loginbtn1.png" />
-        <Image Name="loginbtn2.png" />
         <Project Name="LogInScene.csd" Type="Scene" />
-        <Image Name="regeditbtn1.png" />
-        <Image Name="regeditbtn2.png" />
         <Image Name="TextField.png" />
+        <TTF Name="wending.TTF" />
       </RootFolder>
     </Group>
   </SolutionFolder>
