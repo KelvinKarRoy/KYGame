@@ -89,7 +89,6 @@ void AuthenticationScene::updateQuestion()
 		//“‘œ¬¥˙¬Î «…Ë÷√◊‘∂Øªª––
 		questionText->setTextHorizontalAlignment(cocos2d::TextHAlignment::LEFT);
 		questionText->setTextVerticalAlignment(cocos2d::TextVAlignment::TOP);
-		utility::setTextAuto(questionText);
 	}
 
 }

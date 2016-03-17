@@ -54,7 +54,7 @@ void utility::setTextAuto(Text* text)
 			count += 1;
 		}
 		++i;
-		if (count >= num_row-3)
+		if (count >= num_row)
 		{//»»ÐÐ
 			new_str += "\n";
 			count = 0;
