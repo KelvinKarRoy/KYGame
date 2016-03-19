@@ -10,6 +10,8 @@
 
 #include "../model/Player.h"
 
+#include "../scene/NoticeScene.hpp"
+
 DataUtility* DataUtility::dataUtility = DataUtility::getInstance();
 
 rapidjson::Document* DataUtility::document = new rapidjson::Document();
@@ -245,3 +247,59 @@ void DataUtility::decodePlayerID(std::string responseDataStr)
     
     
 }
+
+
+//解析公告
+void DataUtility::decodeNotice(std::string responseDataStr)
+{
+    responseDataStr = StringUtility::WStrToUTF8(StringUtility::decodeUnicode(responseDataStr));//将json数据转成utf编码
+    
+    CCLOG("%s", responseDataStr.c_str());
+    
+    document->Parse<0>(responseDataStr.c_str());
+    //是否解析错误
+    CCASSERT(!document->HasParseError(), "Parsing to document failure.");
+    
+    CCLOG("%s", "Parsing to document succeeded.");
+    //是否有成员“data”
+    CC_ASSERT(document->IsObject() && document->HasMember("data"));
+    
+    const rapidjson::Value & dataString = (*document)["data"];
+    
+    CC_ASSERT(dataString.IsObject() && dataString.HasMember("notice"));
+    
+    const rapidjson::Value & noticeVector = dataString["notice"];
+    
+    CC_ASSERT(noticeVector.IsArray());
+    
+    std::vector<NoticeScene::Notice> notices;
+    
+    for (unsigned int i = 0; i < noticeVector.Size(); i++) {
+        
+        const rapidjson::Value & temp = noticeVector[i];
+        
+        CC_ASSERT(temp.HasMember("title") && temp.HasMember("text") && temp.HasMember("time"));
+        
+        const rapidjson::Value & vTitle = temp["title"];
+        const rapidjson::Value & vText = temp["text"];
+        const rapidjson::Value & vTime = temp["time"];
+        
+        CC_ASSERT(vTitle.IsString());
+        CC_ASSERT(vText.IsString());
+        CC_ASSERT(vTime.IsString());
+        
+        std::string title=vTitle.GetString(),text=vText.GetString(),time=vTime.GetString();
+        
+        NoticeScene::Notice notice;
+        notice.m_title=title;
+        notice.m_text=text;
+        notice.m_time=time;
+        
+        notices.push_back(notice);
+        
+    }
+    
+    static_cast<NoticeScene*>(HttpUtility::getInstance()->getCallerLayer())->setNotice(notices);
+    
+}
+

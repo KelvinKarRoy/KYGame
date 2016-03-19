@@ -482,7 +482,8 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/model/Self.o: \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCSkeletonNode.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../renderer/CCRenderer.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h \
+ jni/../../Classes/model/../utility/../interface/Promptable.hpp
 
 jni/../../Classes/model/Self.h:
 
@@ -1451,3 +1452,5 @@ jni/../../Classes/model/../utility/../scene/WaitLayer.hpp:
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h:
+
+jni/../../Classes/model/../utility/../interface/Promptable.hpp:

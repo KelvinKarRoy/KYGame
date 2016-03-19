@@ -58,6 +58,7 @@ private:
     void onLoadPlayerInformation(HttpClient *sender, HttpResponse *response);//加载用户信息
     void onAccount2ID(HttpClient *sender, HttpResponse *response);//账号转化成id
     void onSaveStatus(HttpClient *sender, HttpResponse *response);//存储用户信息到服务器
+    void onLoadNotice(HttpClient *sender, HttpResponse *response);//加载通知 公告
     
 public:
     
@@ -66,6 +67,7 @@ public:
     static HttpUtility* getInstance();
     
     bool getFlag();
+    Promptable* getCallerLayer(){ return callerLayer; }
     
     ~HttpUtility();
     
@@ -82,6 +84,8 @@ public:
     void loadPlayerInformation(int playerID,Player* player);//加载玩家信息
     void account2ID(std::string account);//account转id
     void saveStatus();//存储用户信息到服务器
+    void loadNotice();//加载通知 公告
+    
     
     //bool checkVersion(std::string version);
 };

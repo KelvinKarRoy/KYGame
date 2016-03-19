@@ -65,10 +65,10 @@ bool AuthenticationScene::init()
 void AuthenticationScene::updateQuestion()
 {
 
-	//∑≠“≥»›∆˜
+	//翻页容器
 	auto pageView = (PageView*)rootNode->getChildByName("PageView");
 
-	//Œ Ã‚vector
+	//问题vector
 	std::vector<std::string> questionVector = question_answer.first;
 
 	for (int i = 1; i <= questionVector.size(); ++i)

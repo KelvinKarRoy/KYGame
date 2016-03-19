@@ -1,0 +1,12 @@
+<Solution>
+  <PropertyGroup Name="NoticeScene" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <TTF Name="FZMWFont.ttf" />
+        <Project Name="NoticeScene.csd" Type="Scene" />
+        <TTF Name="wending.TTF" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

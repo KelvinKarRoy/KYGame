@@ -9,11 +9,6 @@
 #ifndef HomeScene_hpp
 #define HomeScene_hpp
 
-#include "cocos2d.h"
-#include "editor-support/cocostudio/CCSGUIReader.h"
-#include "ui/CocosGUI.h"//UI读取类
-#include "cocostudio/CocoStudio.h"//‘⁄CocosStudio.h
-
 #include "../interface/Promptable.hpp"
 
 using namespace cocos2d;

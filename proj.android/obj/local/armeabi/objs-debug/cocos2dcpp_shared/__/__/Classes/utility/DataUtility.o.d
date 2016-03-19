@@ -474,6 +474,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/utility/DataUtility
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../renderer/CCRenderer.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h \
+ jni/../../Classes/utility/../interface/Promptable.hpp \
  jni/../../Classes/utility/StringUtility.h \
  jni/../../Classes/utility/../model/Player.h \
  jni/../../Classes/utility/../model/../utility/GCCsvHelper.hpp \
@@ -1427,6 +1428,8 @@ jni/../../Classes/utility/../scene/WaitLayer.hpp:
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h:
+
+jni/../../Classes/utility/../interface/Promptable.hpp:
 
 jni/../../Classes/utility/StringUtility.h:
 

@@ -86,6 +86,9 @@ bool PropertyScene::init()
     static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_cancel"))
     ->addTouchEventListener(this,toucheventselector(PropertyScene::onCancelClicked));
     
+    //从服务器读取用户信息
+    HttpUtility::getInstance(this)->loadPlayerInformation(Self::getInstance()->getPlayerID(), Self::getInstance());
+    
     return true;
 }
 
@@ -116,7 +119,8 @@ void PropertyScene::fillText()
     static_cast<Text*>(rootNode->getChildByName("Panel_text")->getChildByName("Text_name"))->setString(temp);
     
     //cpID
-    std::sprintf(temp, "cp：%d",cpid);
+    if(cpid == 0) strcmp(temp,"cp：无");
+        else std::sprintf(temp, "cp：%d",cpid);
     static_cast<Text*>(rootNode->getChildByName("Panel_text")->getChildByName("Text_cpid"))->setString(temp);
     
     //等级
@@ -132,7 +136,7 @@ void PropertyScene::fillText()
     static_cast<Text*>(rootNode->getChildByName("Panel_text")->getChildByName("Text_role"))->setString(temp);
     
     //攻受
-    std::sprintf(temp, "攻/受：%s",role?"攻":"受");
+    std::sprintf(temp, "攻/受：%s",cpid==0?"":role?"攻":"受");
     static_cast<Text*>(rootNode->getChildByName("Panel_text")->getChildByName("Text_top"))->setString(temp);
     
     //各个属性

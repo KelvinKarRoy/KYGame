@@ -6,7 +6,7 @@
 #include "../scene/RegeditScene.h"
 #include "../scene/PropertyScene.hpp"
 #include "../scene/HomeScene.hpp"
-
+#include "../scene/NoticeScene.hpp"
 
 HttpClient* HttpUtility::httpClient = HttpClient::getInstance();
 HttpUtility* HttpUtility::httpUtility = nullptr;
@@ -551,4 +551,77 @@ void HttpUtility::onSaveStatus(HttpClient *sender, HttpResponse *response)
     }
 }
 
+
+
+/**********************************加载通知 公告*******************************/
+void HttpUtility::loadNotice()
+{
+    HttpRequest * request = new HttpRequest();
+    std::string url = "http://";
+    url += ip + "/php/load_notice.php";
+    CCLOG("url = %s", url.c_str());
+    request->setUrl(url.c_str());
+    request->setRequestType(HttpRequest::Type::POST);
+    request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onLoadNotice, this));
+    char tag[5];
+    sprintf(tag,"%d", HttpEnum::LOADACCOUNT);
+    CCLOG("%s", tag);
+    request->setTag(tag);
+    
+    std::string finalString = "key=Kkdgx4cp";
+    CCLOG("%s", finalString.c_str());
+    request->setRequestData(finalString.c_str(), finalString.size()/sizeof(char));
+    this->httpClient->send(request);
+    request->release();
+    
+    
+    //加入等待转圈Layer，并吞噬下层事件
+    auto scene = WaitLayer::create();
+    callerLayer->addChild(scene);
+    scene->setName("WaitLayer");
+    scene->setVisible(true);
+}
+
+//loadNotice回调函数
+void HttpUtility::onLoadNotice(HttpClient *sender, HttpResponse *response)
+{
+    
+    
+    int statusCode = response->getResponseCode();
+    
+    log("response code: %d", statusCode);
+    
+    if (!response->isSucceed()) {
+        log("response failed");
+        log("error buffer: %s", response->getErrorBuffer());
+        ((Promptable*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接");
+        return;
+    }
+    
+    __String *strTag = __String::create(response->getHttpRequest()->getTag());
+    int tag = strTag->uintValue();
+    log("request Action Code = %d", tag);
+    
+    std::vector<char> *responseData = response->getResponseData();
+    std::string responseDataStr = std::string(responseData->begin(), responseData->end());
+    
+    //以上为公共部分
+    if (statusCode == 200) {
+        //连接成功
+        DataUtility::decodeNotice(responseDataStr);
+        static_cast<NoticeScene*>(callerLayer)->updateNotice();
+    }
+    else {
+        //连接异常
+        ((Promptable*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
+    }
+    
+    //去掉WaitLayer
+    callerLayer->removeChildByName("WaitLayer");
+    
+    if (!response) {
+        return;
+    }
+    
+}
 

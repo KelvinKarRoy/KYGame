@@ -102,8 +102,6 @@
 		B66C09F21C85505F002C8270 /* dialogBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09D11C85505F002C8270 /* dialogBackGround.png */; };
 		B66C09F31C85505F002C8270 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = B66C09D21C85505F002C8270 /* fonts */; };
 		B66C09F41C85505F002C8270 /* FZMWFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B66C09D31C85505F002C8270 /* FZMWFont.ttf */; };
-		B66C09F51C85505F002C8270 /* giveupbtn1.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09D41C85505F002C8270 /* giveupbtn1.png */; };
-		B66C09F61C85505F002C8270 /* giveupbtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09D51C85505F002C8270 /* giveupbtn2.png */; };
 		B66C09F71C85505F002C8270 /* karryRolebtn1.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09D61C85505F002C8270 /* karryRolebtn1.png */; };
 		B66C09F81C85505F002C8270 /* karryRolebtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09D71C85505F002C8270 /* karryRolebtn2.png */; };
 		B66C09F91C85505F002C8270 /* LogInBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09D81C85505F002C8270 /* LogInBackGround.png */; };
@@ -114,10 +112,6 @@
 		B66C0A021C85505F002C8270 /* RoleSelectBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E11C85505F002C8270 /* RoleSelectBackground.png */; };
 		B66C0A031C85505F002C8270 /* royRolebtn1.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E21C85505F002C8270 /* royRolebtn1.png */; };
 		B66C0A041C85505F002C8270 /* royRolebtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E31C85505F002C8270 /* royRolebtn2.png */; };
-		B66C0A051C85505F002C8270 /* submitbtn1.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E41C85505F002C8270 /* submitbtn1.png */; };
-		B66C0A061C85505F002C8270 /* submitbtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E51C85505F002C8270 /* submitbtn2.png */; };
-		B66C0A071C85505F002C8270 /* submitRegeditbtn1.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E61C85505F002C8270 /* submitRegeditbtn1.png */; };
-		B66C0A081C85505F002C8270 /* submitRegeditbtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E71C85505F002C8270 /* submitRegeditbtn2.png */; };
 		B66C0A091C85505F002C8270 /* TextField.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E81C85505F002C8270 /* TextField.png */; };
 		B66C0A0A1C85505F002C8270 /* wending.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B66C09E91C85505F002C8270 /* wending.TTF */; };
 		B67BB77A1C8D16820063DED5 /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B67BB7781C8D16820063DED5 /* HomeScene.cpp */; };
@@ -127,6 +121,7 @@
 		B68C36C01C96EBD1003595B2 /* radar.png in Resources */ = {isa = PBXBuildFile; fileRef = B68C36BF1C96EBD1003595B2 /* radar.png */; };
 		B68F575B1C8928640008250A /* PropertyBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B68F575A1C8928640008250A /* PropertyBackGround.png */; };
 		B6983C6E1C8BF21D00CA0AFE /* cocosproject in Resources */ = {isa = PBXBuildFile; fileRef = B6983C6C1C8BF21C00CA0AFE /* cocosproject */; };
+		B6A808151C9BF19800F425F2 /* NoticeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A808131C9BF19800F425F2 /* NoticeScene.cpp */; };
 		B6E1EF731C89DFBF00D55420 /* db in Resources */ = {isa = PBXBuildFile; fileRef = B6E1EF721C89DFBF00D55420 /* db */; };
 		B6EC36681C998992006AC374 /* Promptable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6EC36661C998992006AC374 /* Promptable.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -268,8 +263,6 @@
 		B66C09D11C85505F002C8270 /* dialogBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialogBackGround.png; sourceTree = "<group>"; };
 		B66C09D21C85505F002C8270 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		B66C09D31C85505F002C8270 /* FZMWFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZMWFont.ttf; sourceTree = "<group>"; };
-		B66C09D41C85505F002C8270 /* giveupbtn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giveupbtn1.png; sourceTree = "<group>"; };
-		B66C09D51C85505F002C8270 /* giveupbtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = giveupbtn2.png; sourceTree = "<group>"; };
 		B66C09D61C85505F002C8270 /* karryRolebtn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = karryRolebtn1.png; sourceTree = "<group>"; };
 		B66C09D71C85505F002C8270 /* karryRolebtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = karryRolebtn2.png; sourceTree = "<group>"; };
 		B66C09D81C85505F002C8270 /* LogInBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LogInBackGround.png; sourceTree = "<group>"; };
@@ -280,10 +273,6 @@
 		B66C09E11C85505F002C8270 /* RoleSelectBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RoleSelectBackground.png; sourceTree = "<group>"; };
 		B66C09E21C85505F002C8270 /* royRolebtn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = royRolebtn1.png; sourceTree = "<group>"; };
 		B66C09E31C85505F002C8270 /* royRolebtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = royRolebtn2.png; sourceTree = "<group>"; };
-		B66C09E41C85505F002C8270 /* submitbtn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submitbtn1.png; sourceTree = "<group>"; };
-		B66C09E51C85505F002C8270 /* submitbtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submitbtn2.png; sourceTree = "<group>"; };
-		B66C09E61C85505F002C8270 /* submitRegeditbtn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submitRegeditbtn1.png; sourceTree = "<group>"; };
-		B66C09E71C85505F002C8270 /* submitRegeditbtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submitRegeditbtn2.png; sourceTree = "<group>"; };
 		B66C09E81C85505F002C8270 /* TextField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TextField.png; sourceTree = "<group>"; };
 		B66C09E91C85505F002C8270 /* wending.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = wending.TTF; sourceTree = "<group>"; };
 		B67BB7781C8D16820063DED5 /* HomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HomeScene.cpp; path = scene/HomeScene.cpp; sourceTree = "<group>"; };
@@ -295,6 +284,8 @@
 		B68F575A1C8928640008250A /* PropertyBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PropertyBackGround.png; sourceTree = "<group>"; };
 		B6983C6C1C8BF21C00CA0AFE /* cocosproject */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cocosproject; path = ../cocosproject; sourceTree = "<group>"; };
 		B69B1BCD1C8C7E8C00BB77F5 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = model/Player.h; sourceTree = "<group>"; };
+		B6A808131C9BF19800F425F2 /* NoticeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoticeScene.cpp; path = scene/NoticeScene.cpp; sourceTree = "<group>"; };
+		B6A808141C9BF19800F425F2 /* NoticeScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NoticeScene.hpp; path = scene/NoticeScene.hpp; sourceTree = "<group>"; };
 		B6E1EF721C89DFBF00D55420 /* db */ = {isa = PBXFileReference; lastKnownFileType = folder; path = db; sourceTree = "<group>"; };
 		B6EC36661C998992006AC374 /* Promptable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Promptable.cpp; path = interface/Promptable.cpp; sourceTree = "<group>"; };
 		B6EC36671C998992006AC374 /* Promptable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Promptable.hpp; path = interface/Promptable.hpp; sourceTree = "<group>"; };
@@ -453,8 +444,6 @@
 				B66C09D11C85505F002C8270 /* dialogBackGround.png */,
 				B66C09D21C85505F002C8270 /* fonts */,
 				B66C09D31C85505F002C8270 /* FZMWFont.ttf */,
-				B66C09D41C85505F002C8270 /* giveupbtn1.png */,
-				B66C09D51C85505F002C8270 /* giveupbtn2.png */,
 				B66C09D61C85505F002C8270 /* karryRolebtn1.png */,
 				B66C09D71C85505F002C8270 /* karryRolebtn2.png */,
 				B66C09D81C85505F002C8270 /* LogInBackGround.png */,
@@ -466,10 +455,6 @@
 				B66C09E11C85505F002C8270 /* RoleSelectBackground.png */,
 				B66C09E21C85505F002C8270 /* royRolebtn1.png */,
 				B66C09E31C85505F002C8270 /* royRolebtn2.png */,
-				B66C09E41C85505F002C8270 /* submitbtn1.png */,
-				B66C09E51C85505F002C8270 /* submitbtn2.png */,
-				B66C09E61C85505F002C8270 /* submitRegeditbtn1.png */,
-				B66C09E71C85505F002C8270 /* submitRegeditbtn2.png */,
 				B66C09E81C85505F002C8270 /* TextField.png */,
 				B66C09E91C85505F002C8270 /* wending.TTF */,
 				B68F575A1C8928640008250A /* PropertyBackGround.png */,
@@ -601,6 +586,8 @@
 				B67BB7791C8D16820063DED5 /* HomeScene.hpp */,
 				B6190C401C9AE5CD00903FF4 /* MenuLayer.cpp */,
 				B6190C411C9AE5CD00903FF4 /* MenuLayer.hpp */,
+				B6A808131C9BF19800F425F2 /* NoticeScene.cpp */,
+				B6A808141C9BF19800F425F2 /* NoticeScene.hpp */,
 			);
 			name = scene;
 			sourceTree = "<group>";
@@ -718,14 +705,11 @@
 				B6E1EF731C89DFBF00D55420 /* db in Resources */,
 				B66C0A011C85505F002C8270 /* res in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
-				B66C0A071C85505F002C8270 /* submitRegeditbtn1.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				B66C09F11C85505F002C8270 /* Default in Resources */,
 				B67BB77F1C8D20A90063DED5 /* exit2.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
-				B66C09F51C85505F002C8270 /* giveupbtn1.png in Resources */,
 				B66C09F41C85505F002C8270 /* FZMWFont.ttf in Resources */,
-				B66C0A051C85505F002C8270 /* submitbtn1.png in Resources */,
 				B66C09F81C85505F002C8270 /* karryRolebtn2.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
@@ -734,7 +718,6 @@
 				B66C0A091C85505F002C8270 /* TextField.png in Resources */,
 				B66C09F01C85505F002C8270 /* csb in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
-				B66C0A061C85505F002C8270 /* submitbtn2.png in Resources */,
 				B66C09F91C85505F002C8270 /* LogInBackGround.png in Resources */,
 				B67BB7831C8D20C40063DED5 /* HelloWorld.png in Resources */,
 				B66C0A0A1C85505F002C8270 /* wending.TTF in Resources */,
@@ -758,9 +741,7 @@
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				B68F575B1C8928640008250A /* PropertyBackGround.png in Resources */,
 				B6063C5E1C8B3C42003F9C9A /* wait8.png in Resources */,
-				B66C09F61C85505F002C8270 /* giveupbtn2.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
-				B66C0A081C85505F002C8270 /* submitRegeditbtn2.png in Resources */,
 				B66C09F31C85505F002C8270 /* fonts in Resources */,
 				B66C0A031C85505F002C8270 /* royRolebtn1.png in Resources */,
 				B63A05A81C87388F0061C902 /* sqlite in Resources */,
@@ -831,6 +812,7 @@
 				B609BCAB1C8BF6C20067B838 /* AppDelegate.h in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				B6A808151C9BF19800F425F2 /* NoticeScene.cpp in Sources */,
 				B6EC36681C998992006AC374 /* Promptable.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,

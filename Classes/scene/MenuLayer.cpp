@@ -8,7 +8,7 @@
 
 #include "MenuLayer.hpp"
 #include "PropertyScene.hpp"
-
+#include "NoticeScene.hpp"
 
 
 MenuLayer::MenuLayer()
@@ -50,9 +50,12 @@ bool MenuLayer::init()
     
     addChild(rootNode);
     
+    //菜单按钮回调
     auto propertyButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Panel_menu")->getChildByName("Button_property"));
     propertyButton->addTouchEventListener(this,toucheventselector(MenuLayer::clickPropertyCallback));
     
+    auto noticeButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Panel_menu")->getChildByName("Button_notice"));
+    noticeButton->addTouchEventListener(this,toucheventselector(MenuLayer::clickNoticeCallback));
     
     
     return true;
@@ -60,7 +63,7 @@ bool MenuLayer::init()
 
 
 
-
+//点击属性按钮
 void MenuLayer::clickPropertyCallback(Ref*, TouchEventType type)
 {
     
@@ -71,7 +74,7 @@ void MenuLayer::clickPropertyCallback(Ref*, TouchEventType type)
         case TouchEventType::TOUCH_EVENT_CANCELED:
             break;
         case TouchEventType::TOUCH_EVENT_ENDED:
-            cocos2d::Director::getInstance()->replaceScene(PropertyScene::createScene());//切换到验证页面
+            cocos2d::Director::getInstance()->replaceScene(PropertyScene::createScene());//切换到属性页面
             break;
         case TouchEventType::TOUCH_EVENT_MOVED:
             break;
@@ -79,3 +82,19 @@ void MenuLayer::clickPropertyCallback(Ref*, TouchEventType type)
     
 }
 
+//点击公告按钮
+void MenuLayer::clickNoticeCallback(Ref*, TouchEventType type)
+{
+    switch (type)
+    {
+        case TouchEventType::TOUCH_EVENT_BEGAN:
+            break;
+        case TouchEventType::TOUCH_EVENT_CANCELED:
+            break;
+        case TouchEventType::TOUCH_EVENT_ENDED:
+            cocos2d::Director::getInstance()->replaceScene(NoticeScene::createScene());//切换到公告页面
+            break;
+        case TouchEventType::TOUCH_EVENT_MOVED:
+            break;
+    }
+}

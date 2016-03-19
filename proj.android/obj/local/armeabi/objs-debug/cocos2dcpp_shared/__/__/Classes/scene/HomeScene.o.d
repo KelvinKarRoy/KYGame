@@ -460,6 +460,7 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/scene/HomeScene.o: 
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../renderer/CCRenderer.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h \
+ jni/../../Classes/scene/../interface/Promptable.hpp \
  jni/../../Classes/scene/LogInScene.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/./cocos-ext.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/./ExtensionMacros.h \
@@ -500,11 +501,6 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/scene/HomeScene.o: 
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/./Particle3D/CCParticleSystem3D.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/./Particle3D/PU/CCPUParticleSystem3D.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../extensions/Particle3D/CCParticleSystem3D.h \
- jni/../../Classes/scene/AboutScene.h \
- jni/../../Classes/scene/RegeditScene.h \
- jni/../../Classes/scene/DialogLayer.h \
- jni/../../Classes/scene/../utility/StringUtility.h \
- jni/../../Classes/scene/AuthenticationScene.h \
  jni/../../Classes/scene/../utility/HttpUtility.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpClient.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpRequest.h \
@@ -527,16 +523,12 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/scene/HomeScene.o: 
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/reader.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/stringbuffer.h \
  jni/../../Classes/scene/../utility/HttpUtility.h \
+ jni/../../Classes/scene/../utility/StringUtility.h \
  jni/../../Classes/scene/../utility/../scene/WaitLayer.hpp \
+ jni/../../Classes/scene/../utility/../interface/Promptable.hpp \
  jni/../../Classes/scene/../utility/utility.h \
- jni/../../Classes/scene/PropertyScene.hpp \
  jni/../../Classes/scene/../sqlite/sqlite3.h \
- jni/../../Classes/scene/../model/Player.h \
- jni/../../Classes/scene/../model/../utility/GCCsvHelper.hpp \
- /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/iostream \
- jni/../../Classes/scene/../model/../utility/HttpUtility.h \
- jni/../../Classes/scene/../model/Self.h \
- jni/../../Classes/scene/../model/Player.h
+ jni/../../Classes/scene/MenuLayer.hpp
 
 jni/../../Classes/scene/HomeScene.hpp:
 
@@ -1458,6 +1450,8 @@ jni/../../Classes/scene/HomeScene.hpp:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h:
 
+jni/../../Classes/scene/../interface/Promptable.hpp:
+
 jni/../../Classes/scene/LogInScene.h:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/./cocos-ext.h:
@@ -1538,16 +1532,6 @@ jni/../../Classes/scene/LogInScene.h:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../extensions/Particle3D/CCParticleSystem3D.h:
 
-jni/../../Classes/scene/AboutScene.h:
-
-jni/../../Classes/scene/RegeditScene.h:
-
-jni/../../Classes/scene/DialogLayer.h:
-
-jni/../../Classes/scene/../utility/StringUtility.h:
-
-jni/../../Classes/scene/AuthenticationScene.h:
-
 jni/../../Classes/scene/../utility/HttpUtility.h:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpClient.h:
@@ -1592,22 +1576,14 @@ jni/../../Classes/scene/../utility/DataUtility.h:
 
 jni/../../Classes/scene/../utility/HttpUtility.h:
 
+jni/../../Classes/scene/../utility/StringUtility.h:
+
 jni/../../Classes/scene/../utility/../scene/WaitLayer.hpp:
+
+jni/../../Classes/scene/../utility/../interface/Promptable.hpp:
 
 jni/../../Classes/scene/../utility/utility.h:
 
-jni/../../Classes/scene/PropertyScene.hpp:
-
 jni/../../Classes/scene/../sqlite/sqlite3.h:
 
-jni/../../Classes/scene/../model/Player.h:
-
-jni/../../Classes/scene/../model/../utility/GCCsvHelper.hpp:
-
-/Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/iostream:
-
-jni/../../Classes/scene/../model/../utility/HttpUtility.h:
-
-jni/../../Classes/scene/../model/Self.h:
-
-jni/../../Classes/scene/../model/Player.h:
+jni/../../Classes/scene/MenuLayer.hpp:

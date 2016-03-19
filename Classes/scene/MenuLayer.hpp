@@ -31,7 +31,9 @@ public:
     
     CREATE_FUNC(MenuLayer);
     
-    void clickPropertyCallback(Ref*, TouchEventType type);
+    void clickPropertyCallback(Ref*, TouchEventType type);//点击属性按钮
+    
+    void clickNoticeCallback(Ref*, TouchEventType type);//点击公告按钮
     
 private:
     Node* rootNode;

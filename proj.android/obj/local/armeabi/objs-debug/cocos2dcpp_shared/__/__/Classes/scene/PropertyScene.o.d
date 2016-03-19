@@ -1,6 +1,11 @@
 obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/scene/PropertyScene.o: \
  jni/../../Classes/scene/PropertyScene.cpp \
  jni/../../Classes/scene/PropertyScene.hpp \
+ jni/../../Classes/scene/../sqlite/sqlite3.h \
+ jni/../../Classes/scene/../model/Player.h \
+ /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/string \
+ /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/vector \
+ /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/map \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../cocos2d.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../base/ccConfig.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../platform/CCPlatformConfig.h \
@@ -18,8 +23,6 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/scene/PropertyScene
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../base/ccMacros.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../base/CCConsole.h \
  /Users/Kelvin/Downloads/android-ndk-r10b/platforms/android-19/arch-arm/usr/include/sys/select.h \
- /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/vector \
- /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/map \
  /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/mutex \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../platform/CCStdC.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../platform/android/CCStdC-android.h \
@@ -348,6 +351,45 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/scene/PropertyScene
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../deprecated/CCSet.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../deprecated/CCString.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../deprecated/CCDeprecated.h \
+ jni/../../Classes/scene/../model/../utility/GCCsvHelper.hpp \
+ /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/iostream \
+ jni/../../Classes/scene/../model/../utility/HttpUtility.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpClient.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpRequest.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpResponse.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpCookie.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/rapidjson.h \
+ /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/allocators.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/rapidjson.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/encodings.h \
+ jni/../../Classes/scene/../model/../utility/DataUtility.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/document.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/reader.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/rapidjson.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/encodings.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/meta.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/../rapidjson.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/stack.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/strtod.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/ieee754.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/biginteger.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/diyfp.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/pow10.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/error/error.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/error/../rapidjson.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/strfunc.h \
+ /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/iterator \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/writer.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/dtoa.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/itoa.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/itoa.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/stringbuffer.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/reader.h \
+ /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/stringbuffer.h \
+ jni/../../Classes/scene/../model/../utility/HttpUtility.h \
+ jni/../../Classes/scene/../model/../utility/StringUtility.h \
+ jni/../../Classes/scene/../model/../utility/../scene/WaitLayer.hpp \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../editor-support/cocostudio/CCSGUIReader.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../ui/UILayout.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../ui/UIWidget.h \
@@ -358,23 +400,6 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/scene/PropertyScene
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../base/ObjectFactory.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/DictionaryHelper.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/document.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/reader.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/rapidjson.h \
- /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/allocators.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/encodings.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/meta.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/../rapidjson.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/stack.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/strtod.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/ieee754.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/biginteger.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/diyfp.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/pow10.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/error/error.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/error/../rapidjson.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/strfunc.h \
- /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/iterator \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocosStudioExport.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../editor-support/cocostudio/WidgetReader/WidgetReaderProtocol.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../ui/CocosGUI.h \
@@ -460,36 +485,12 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/scene/PropertyScene
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../renderer/CCRenderer.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CCBoneNode.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h \
- jni/../../Classes/scene/../sqlite/sqlite3.h \
- jni/../../Classes/scene/../model/Player.h \
- jni/../../Classes/scene/../model/../utility/GCCsvHelper.hpp \
- /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/iostream \
- jni/../../Classes/scene/../model/../utility/HttpUtility.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpClient.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpRequest.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpResponse.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpCookie.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/rapidjson.h \
- jni/../../Classes/scene/../model/../utility/DataUtility.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/document.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/writer.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/rapidjson.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/stack.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/strfunc.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/dtoa.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/itoa.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/../rapidjson.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/diyfp.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/ieee754.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/itoa.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/stringbuffer.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/reader.h \
- /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/stringbuffer.h \
- jni/../../Classes/scene/../model/../utility/HttpUtility.h \
- jni/../../Classes/scene/../model/../utility/StringUtility.h \
- jni/../../Classes/scene/../model/../utility/../scene/WaitLayer.hpp \
+ jni/../../Classes/scene/../model/../utility/../interface/Promptable.hpp \
  jni/../../Classes/scene/../model/Self.h \
  jni/../../Classes/scene/../model/Player.h \
+ jni/../../Classes/scene/../interface/Promptable.hpp \
+ jni/../../Classes/scene/HomeScene.hpp \
+ jni/../../Classes/scene/DialogLayer.h \
  jni/../../Classes/scene/LogInScene.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/./cocos-ext.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/./ExtensionMacros.h \
@@ -530,14 +531,20 @@ obj/local/armeabi/objs-debug/cocos2dcpp_shared/__/__/Classes/scene/PropertyScene
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/./Particle3D/CCParticleSystem3D.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/./Particle3D/PU/CCPUParticleSystem3D.h \
  /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../extensions/Particle3D/CCParticleSystem3D.h \
- jni/../../Classes/scene/AboutScene.h \
- jni/../../Classes/scene/RegeditScene.h \
- jni/../../Classes/scene/DialogLayer.h \
- jni/../../Classes/scene/AuthenticationScene.h \
  jni/../../Classes/scene/../utility/HttpUtility.h \
  jni/../../Classes/scene/../utility/utility.h
 
 jni/../../Classes/scene/PropertyScene.hpp:
+
+jni/../../Classes/scene/../sqlite/sqlite3.h:
+
+jni/../../Classes/scene/../model/Player.h:
+
+/Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/string:
+
+/Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/vector:
+
+/Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/map:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../cocos2d.h:
 
@@ -572,10 +579,6 @@ jni/../../Classes/scene/PropertyScene.hpp:
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../base/CCConsole.h:
 
 /Users/Kelvin/Downloads/android-ndk-r10b/platforms/android-19/arch-arm/usr/include/sys/select.h:
-
-/Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/vector:
-
-/Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/map:
 
 /Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/mutex:
 
@@ -1233,6 +1236,84 @@ jni/../../Classes/scene/PropertyScene.hpp:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../deprecated/CCDeprecated.h:
 
+jni/../../Classes/scene/../model/../utility/GCCsvHelper.hpp:
+
+/Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/iostream:
+
+jni/../../Classes/scene/../model/../utility/HttpUtility.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpClient.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpRequest.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpResponse.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpCookie.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/rapidjson.h:
+
+/Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/allocators.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/rapidjson.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/encodings.h:
+
+jni/../../Classes/scene/../model/../utility/DataUtility.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/document.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/reader.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/rapidjson.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/encodings.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/meta.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/../rapidjson.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/stack.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/strtod.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/ieee754.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/biginteger.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/diyfp.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/pow10.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/error/error.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/error/../rapidjson.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/strfunc.h:
+
+/Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/iterator:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/writer.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/dtoa.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/itoa.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/itoa.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/stringbuffer.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/reader.h:
+
+/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/stringbuffer.h:
+
+jni/../../Classes/scene/../model/../utility/HttpUtility.h:
+
+jni/../../Classes/scene/../model/../utility/StringUtility.h:
+
+jni/../../Classes/scene/../model/../utility/../scene/WaitLayer.hpp:
+
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../editor-support/cocostudio/CCSGUIReader.h:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../ui/UILayout.h:
@@ -1252,40 +1333,6 @@ jni/../../Classes/scene/PropertyScene.hpp:
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/DictionaryHelper.h:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/document.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/reader.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/rapidjson.h:
-
-/Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/cstring:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/allocators.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/encodings.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/meta.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/../rapidjson.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/stack.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/strtod.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/ieee754.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/biginteger.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/diyfp.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/pow10.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/error/error.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/error/../rapidjson.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/internal/strfunc.h:
-
-/Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/iterator:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/CocosStudioExport.h:
 
@@ -1457,65 +1504,17 @@ jni/../../Classes/scene/PropertyScene.hpp:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/editor-support/cocostudio/../cocostudio/ActionTimeline/CSLoader.h:
 
-jni/../../Classes/scene/../sqlite/sqlite3.h:
-
-jni/../../Classes/scene/../model/Player.h:
-
-jni/../../Classes/scene/../model/../utility/GCCsvHelper.hpp:
-
-/Users/Kelvin/Downloads/android-ndk-r10b/sources/cxx-stl/gnu-libstdc++/4.8/include/iostream:
-
-jni/../../Classes/scene/../model/../utility/HttpUtility.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpClient.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpRequest.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpResponse.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/cocos/3d/../network/HttpCookie.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/external/flatbuffers/../json/rapidjson.h:
-
-jni/../../Classes/scene/../model/../utility/DataUtility.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/document.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/writer.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/rapidjson.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/stack.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/strfunc.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/dtoa.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/itoa.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/../rapidjson.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/diyfp.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/ieee754.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/internal/itoa.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/stringbuffer.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/reader.h:
-
-/Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../external/json/stringbuffer.h:
-
-jni/../../Classes/scene/../model/../utility/HttpUtility.h:
-
-jni/../../Classes/scene/../model/../utility/StringUtility.h:
-
-jni/../../Classes/scene/../model/../utility/../scene/WaitLayer.hpp:
+jni/../../Classes/scene/../model/../utility/../interface/Promptable.hpp:
 
 jni/../../Classes/scene/../model/Self.h:
 
 jni/../../Classes/scene/../model/Player.h:
+
+jni/../../Classes/scene/../interface/Promptable.hpp:
+
+jni/../../Classes/scene/HomeScene.hpp:
+
+jni/../../Classes/scene/DialogLayer.h:
 
 jni/../../Classes/scene/LogInScene.h:
 
@@ -1596,14 +1595,6 @@ jni/../../Classes/scene/LogInScene.h:
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/./Particle3D/PU/CCPUParticleSystem3D.h:
 
 /Users/kelvin/Desktop/KYGame/proj.android/../cocos2d/extensions/../extensions/Particle3D/CCParticleSystem3D.h:
-
-jni/../../Classes/scene/AboutScene.h:
-
-jni/../../Classes/scene/RegeditScene.h:
-
-jni/../../Classes/scene/DialogLayer.h:
-
-jni/../../Classes/scene/AuthenticationScene.h:
 
 jni/../../Classes/scene/../utility/HttpUtility.h:
 
