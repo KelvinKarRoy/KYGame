@@ -45,6 +45,16 @@ bool DialogLayer::init()
 	Button* okbtn = (Button*)aboutPanel->getChildByName("Button_ok");
 
 	okbtn->addTouchEventListener(this, toucheventselector(DialogLayer::clickOKCallback));
+    
+    //吞噬下层事件
+    auto callback = [](cocos2d::Touch * ,cocos2d::Event *)
+    {
+        return true;
+    };
+    auto listener = cocos2d::EventListenerTouchOneByOne::create();
+    listener->onTouchBegan = callback;
+    listener->setSwallowTouches(true);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener,this);
 
     return true;
 }
@@ -61,15 +71,15 @@ void DialogLayer::clickOKCallback(Ref*, TouchEventType type)
             break;
         case TouchEventType::TOUCH_EVENT_ENDED:
             CCLOG("%s", "ok!!!!!!!!");
-            if (nextScene != nullptr)
-            {
-                //ÃÌº”¬ﬂº≠ πµ√Ã¯◊™nextScene
+        if (nextScene != nullptr)
+        {
+            //ÃÌº”¬ﬂº≠ πµ√Ã¯◊™nextScene
 			
 		}
-		this->setVisible(false);
+        
 		//÷ÿ–¬º§ªÓœ¬≤„
-		if(this->getParent() != nullptr) utility::setEnable(true, static_cast<Layer*>(this->getParent()));
-		break;
+		if(this->getParent() != nullptr) this->getParent()->removeChild(this);
+        break;
 	case TouchEventType::TOUCH_EVENT_MOVED:
 		break;
 	}

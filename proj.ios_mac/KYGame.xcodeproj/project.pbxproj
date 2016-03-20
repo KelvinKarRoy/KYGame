@@ -223,7 +223,7 @@
 		B6063C5D1C8B3C42003F9C9A /* wait8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait8.png; sourceTree = "<group>"; };
 		B609BCF61C8BF88C0067B838 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Player.cpp; path = model/Player.cpp; sourceTree = "<group>"; };
 		B609BCF81C8BF88C0067B838 /* Self.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Self.cpp; path = model/Self.cpp; sourceTree = "<group>"; };
-		B609BCFE1C8BF89A0067B838 /* AboutScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AboutScene.cpp; path = scene/AboutScene.cpp; sourceTree = "<group>"; };
+		B609BCFE1C8BF89A0067B838 /* AboutScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AboutScene.cpp; path = scene/AboutScene.cpp; sourceTree = "<group>"; };
 		B609BCFF1C8BF89A0067B838 /* AboutScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AboutScene.h; path = scene/AboutScene.h; sourceTree = "<group>"; };
 		B609BD001C8BF89A0067B838 /* AuthenticationScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AuthenticationScene.cpp; path = scene/AuthenticationScene.cpp; sourceTree = "<group>"; };
 		B609BD011C8BF89A0067B838 /* AuthenticationScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AuthenticationScene.h; path = scene/AuthenticationScene.h; sourceTree = "<group>"; };

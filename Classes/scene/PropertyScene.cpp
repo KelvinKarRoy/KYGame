@@ -119,7 +119,7 @@ void PropertyScene::fillText()
     static_cast<Text*>(rootNode->getChildByName("Panel_text")->getChildByName("Text_name"))->setString(temp);
     
     //cpID
-    if(cpid == 0) strcmp(temp,"cp：无");
+    if(cpid == 0) strcpy(temp,"cp：无");
         else std::sprintf(temp, "cp：%d",cpid);
     static_cast<Text*>(rootNode->getChildByName("Panel_text")->getChildByName("Text_cpid"))->setString(temp);
     
@@ -136,7 +136,7 @@ void PropertyScene::fillText()
     static_cast<Text*>(rootNode->getChildByName("Panel_text")->getChildByName("Text_role"))->setString(temp);
     
     //攻受
-    std::sprintf(temp, "攻/受：%s",cpid==0?"":role?"攻":"受");
+    std::sprintf(temp, "攻/受：%s",cpid==0?"":(role?"攻":"受"));
     static_cast<Text*>(rootNode->getChildByName("Panel_text")->getChildByName("Text_top"))->setString(temp);
     
     //各个属性
@@ -154,6 +154,11 @@ void PropertyScene::fillText()
     
     std::sprintf(temp, "领导力：%d",attributes[Player::ATTRIBUTE::BASE_LEADERSHIP]+attributes[Player::ATTRIBUTE::EXP_LEADERSHIP]);
     static_cast<Text*>(rootNode->getChildByName("Panel_text")->getChildByName("Text_leadership"))->setString(temp);
+    
+    //升级进度条
+    auto expLoadingBar = static_cast<cocos2d::ui::LoadingBar*>(rootNode->getChildByName("LoadingBar_exp"));
+    expLoadingBar ->setPercent(player->getExpRate()*100);
+    
 }
 
 

@@ -101,22 +101,15 @@ void LogInScene::clickAboutCallback(Ref*, TouchEventType type)
 		break;
 	case TouchEventType::TOUCH_EVENT_CANCELED:
 		break;
-	case TouchEventType::TOUCH_EVENT_ENDED:
+    case TouchEventType::TOUCH_EVENT_MOVED:
+        break;
+            
+    case TouchEventType::TOUCH_EVENT_ENDED:
 	
 		//添加about层
-		childLayer = AboutScene::create();
-		//将about层设为不可见
-		childLayer->setVisible(false);
-
-		this->addChild(childLayer);
-
-		//关于页面可见
-		childLayer->setVisible(true);
-		
-		this->setTouchEnabled(false);
-		
-		break;
-	case TouchEventType::TOUCH_EVENT_MOVED:
+		auto aboutLayer = AboutScene::createScene(this);
+        aboutLayer->setName("about");
+		this->addChild(aboutLayer);
 		break;
 	}
 

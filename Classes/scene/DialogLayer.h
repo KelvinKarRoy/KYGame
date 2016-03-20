@@ -40,6 +40,8 @@ public:
 
 
 private:
+    Layer* callerLayer;
+    
 	Node* rootNode;//加载的ui
 
 	Scene* nextScene;//下一个要去的页面   如果为nullprt则不跳转

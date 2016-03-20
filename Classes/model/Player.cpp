@@ -32,3 +32,26 @@ void Player::expTolevel()
     delete csv;
     
 }
+
+
+float Player::getExpRate()
+{//经验值升级所需比例
+    GCCsvHelper *csv = new GCCsvHelper();
+    std::string path= FileUtils::getInstance()->getWritablePath();
+    log("%s",path.c_str());
+    path+="db/exp.csv";
+    csv->openAndResolveFile(path.c_str());
+    
+    
+    for (int i = 0; i < csv->getRowLength(); ++i) {
+        if(atoi(csv->getData(i, 1)) > this->exp)
+        {
+            
+            double rate = ((double)this->exp - atoi(csv->getData(i-1, 1))) / (atoi(csv->getData(i, 1)) - atoi(csv->getData(i-1, 1)));
+            delete csv;
+            return rate;
+        }
+    }
+    delete csv;
+    return 1.0;
+}

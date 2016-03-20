@@ -91,8 +91,7 @@ void HttpUtility::onCheckPassword(HttpClient *sender, HttpResponse *response)
     if (!response->isSucceed()) {
         log("response failed");
         log("error buffer: %s", response->getErrorBuffer());
-        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接"
-                                                                    , AuthenticationScene::STATUS::LINK_ERROR);
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接");
         return;
     }
     
@@ -182,8 +181,7 @@ void HttpUtility::onRegeditAccount(HttpClient *sender, HttpResponse *response)
     if (!response->isSucceed()) {
         log("response failed");
         log("error buffer: %s", response->getErrorBuffer());
-        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接"
-                                                                    , AuthenticationScene::STATUS::LINK_ERROR);
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接");
         return;
     }
     
@@ -272,8 +270,7 @@ void HttpUtility::onLoadQuestion(HttpClient *sender, HttpResponse *response)
     if (!response->isSucceed()) {
         log("response failed");
         log("error buffer: %s", response->getErrorBuffer());
-        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接"
-                                                                    , AuthenticationScene::STATUS::LINK_ERROR);
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接");
         return;
     }
     
@@ -294,8 +291,7 @@ void HttpUtility::onLoadQuestion(HttpClient *sender, HttpResponse *response)
     }
     else {
         //连接异常
-        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试"
-                                                                    ,AuthenticationScene::STATUS::LINK_ERROR);
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
     }
 
 }
@@ -351,8 +347,7 @@ void HttpUtility::onLoadPlayerInformation(HttpClient *sender, HttpResponse *resp
     if (!response->isSucceed()) {
         log("response failed");
         log("error buffer: %s", response->getErrorBuffer());
-        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接"
-                                                                    , AuthenticationScene::STATUS::LINK_ERROR);
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接");
         return;
     }
     
@@ -375,8 +370,7 @@ void HttpUtility::onLoadPlayerInformation(HttpClient *sender, HttpResponse *resp
     }
     else {
         //连接异常
-        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试"
-                                                                    ,AuthenticationScene::STATUS::LINK_ERROR);
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
     }
 
 }
@@ -432,8 +426,7 @@ void HttpUtility::onAccount2ID(HttpClient *sender, HttpResponse *response)
     if (!response->isSucceed()) {
         log("response failed");
         log("error buffer: %s", response->getErrorBuffer());
-        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接"
-                                                                    , AuthenticationScene::STATUS::LINK_ERROR);
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接");
         return;
     }
     
@@ -457,8 +450,7 @@ void HttpUtility::onAccount2ID(HttpClient *sender, HttpResponse *response)
     }
     else {
         //连接异常
-        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试"
-                                                                    ,AuthenticationScene::STATUS::LINK_ERROR);
+        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
     }
     
 }

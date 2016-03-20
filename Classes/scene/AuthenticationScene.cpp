@@ -48,13 +48,6 @@ bool AuthenticationScene::init()
 	Button* submitbtn = (Button*)rootNode->getChildByName("Button_submit");
 
 	submitbtn->addTouchEventListener(this, toucheventselector(AuthenticationScene::clickSubmitCallback));
-
-	childLayer = DialogLayer::create();
-
-	childLayer->setVisible(false);
-
-	this->addChild(childLayer);
-
 	//ªÒ»°ŒÂµ¿Ã‚
 	HttpUtility::getInstance(this)->loadQuestion(5);
 	
@@ -111,24 +104,7 @@ void AuthenticationScene::clickGiveupCallback(Ref*, TouchEventType type)
 }
 
 
-//∏˘æ›statusµØ≥ˆ∂‘”¶Ã· æøÚ
-void AuthenticationScene::promptDialogBox(std::string str, AuthenticationScene::STATUS status)
-{
-	utility::setEnable(false, this);
-	switch (status)
-	{
-	case AuthenticationScene::STATUS::LINK_ERROR:
-		childLayer->setVisible(true);
-		((DialogLayer*)childLayer)->setText(str);// ‰≥ˆŒƒ◊÷
-		break;
-	case AuthenticationScene::STATUS::ANSWER_ERROR:
-		childLayer->setVisible(true);
-		((DialogLayer*)childLayer)->setText(str);// ‰≥ˆŒƒ◊÷
-		break;
-	default:
-		break;
-	}
-}
+
 
 void AuthenticationScene::clickSubmitCallback(Ref*, TouchEventType type)
 {
@@ -148,8 +124,7 @@ void AuthenticationScene::clickSubmitCallback(Ref*, TouchEventType type)
 		}
 		else
 		{//回答错误
-			this->promptDialogBox("回答错误!如果你有任何疑问,欢迎寄件给yk118921@outlook.com"
-				, AuthenticationScene::STATUS::ANSWER_ERROR);//µØ≥ˆ∂‘ª∞øÚ
+			this->promptDialogBox("回答错误!如果你有任何疑问,欢迎寄件给yk118921@outlook.com");//弹出对话框
 		}
 		break;
 	case TouchEventType::TOUCH_EVENT_MOVED:
@@ -173,7 +148,8 @@ bool AuthenticationScene::checkAnswer()
 
 	for (int i = 1; i <= answerVector.size(); ++i)
 	{
-		//ªÒ»°∆‰÷–“ª“≥
+		//
+        
 		char childName[30];
 		sprintf(childName, "Panel_%d", i);
 		auto page = pageView->getChildByName(childName);

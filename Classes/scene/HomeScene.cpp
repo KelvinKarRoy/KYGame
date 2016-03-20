@@ -10,6 +10,8 @@
 #include "LogInScene.h"
 #include "MenuLayer.hpp"
 
+#include "../model/Self.h"
+
 HomeScene::HomeScene()
 {
 }
@@ -52,6 +54,11 @@ bool HomeScene::init()
     
     this->addChild(MenuLayer::create());//添加菜单layer
     
+    //升级进度条
+    auto expLoadingBar = static_cast<cocos2d::ui::LoadingBar*>(rootNode->getChildByName("LoadingBar_exp"));
+    expLoadingBar->setPercent(100*Self::getInstance()->getExpRate());
+    
+    //登出按钮及回调
     auto exitButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Button_exit"));
 
     exitButton->addTouchEventListener(this,toucheventselector(HomeScene::onExitClicked));

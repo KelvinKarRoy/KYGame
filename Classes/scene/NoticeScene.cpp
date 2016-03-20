@@ -94,13 +94,21 @@ void NoticeScene::updateNotice()
     
     auto noticeList = static_cast<cocos2d::ui::ListView*>(noticePanel->getChildByName("ListView_notice"));
     
+    //清空内容
+    noticeList->removeAllChildren();
     
     cocos2d::Size size = noticeList->getContentSize();
     
     float width = size.width,height = size.height;
     
     //设置间隔
-    noticeList->setItemsMargin(height/20);
+    noticeList->setItemsMargin(height/18);
+    
+    //最前面加一点空白
+    Text* whiteText = Text::create();
+    whiteText->setString(" ");
+    whiteText->cocos2d::Node::setContentSize(cocos2d::Size(width,height/18));
+    noticeList->addChild(whiteText);
     
     //设置回弹
     noticeList->setBounceEnabled(true);
@@ -204,7 +212,7 @@ void NoticeScene::clickNoticeCallback(Ref* caller,TouchEventType type)
             text->setString(std::string("    ")+notice.m_text);
             
             //滚动区域
-            static_cast<cocos2d::ui::ScrollView*>(static_cast<cocos2d::ui::Layout*>(noticeTextLayer->getChildByName("Panel"))->getChildByName("ScrollView_text"))->setInnerContainerSize( cocos2d::Size( text->getContentSize().width,text->cocos2d::ui::Widget::getContentSize().height));
+            static_cast<cocos2d::ui::ScrollView*>(static_cast<cocos2d::ui::Layout*>(noticeTextLayer->getChildByName("Panel"))->getChildByName("ScrollView_text"))->setInnerContainerSize( cocos2d::Size( text->getContentSize().width,ceil((float)text->getStringLength()/39)*text->getFontSize()+25));
             
             text->setPositionY(static_cast<cocos2d::ui::ScrollView*>(static_cast<cocos2d::ui::Layout*>(noticeTextLayer->getChildByName("Panel"))->getChildByName("ScrollView_text"))->getInnerContainerSize().height-20);
             

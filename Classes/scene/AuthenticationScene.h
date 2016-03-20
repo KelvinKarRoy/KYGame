@@ -19,11 +19,7 @@ public:
 
 	virtual bool init();
 
-	enum STATUS{
-		LINK_ERROR,//服务器连接异常
-		ANSWER_ERROR//答案错误
-	};
-
+	
 	//实现 static create()函数的宏
 	CREATE_FUNC(AuthenticationScene);
 
@@ -33,10 +29,8 @@ public:
 		this->updateQuestion();
 	};
 
-	void promptDialogBox(std::string str, AuthenticationScene::STATUS status);//弹出提示框，第二个参数为状态
-
+	
 private:
-	Layer* childLayer;//子层
 	void updateQuestion();
 	Node* rootNode;
 	std::pair<std::vector<std::string>, std::vector<std::string>> 

@@ -360,6 +360,16 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+          <AbstractNodeData Name="LoadingBar_exp" ActionTag="709225089" Tag="53" IconVisible="False" TopMargin="1232.0000" ctype="LoadingBarObjectData">
+            <Size X="2208.0000" Y="10.0000" />
+            <AnchorPoint ScaleX="0.5000" />
+            <Position X="1104.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="96" G="147" B="152" />
+            <PrePosition X="0.5000" />
+            <PreSize X="1.0000" Y="0.0081" />
+            <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

@@ -1,15 +1,15 @@
 <Solution>
-  <PropertyGroup Name="DialogLayer" Version="2.3.3.0" Type="CocosStudio" />
+  <PropertyGroup Name="DialogLayer" Version="3.10.0.0" Type="CocosStudio" />
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Project Name="DialogLayer.csd" Type="Scene" />
         <Image Name="dialogBackGround.png" />
+        <Project Name="DialogLayer.csd" Type="Scene" />
+        <TTF Name="FNT_BS.ttf" />
+        <TTF Name="FZMWFont.ttf" />
         <Image Name="okbtn1.png" />
         <Image Name="okbtn2.png" />
         <TTF Name="wending.TTF" />
-        <TTF Name="FNT_BS.ttf" />
-        <TTF Name="FZMWFont.ttf" />
       </RootFolder>
     </Group>
   </SolutionFolder>

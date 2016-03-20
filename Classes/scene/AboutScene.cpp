@@ -4,11 +4,13 @@ USING_NS_CC;
 using namespace cocos2d::ui;
 using namespace cocostudio;
 
-Scene* AboutScene::createScene()
+Scene* AboutScene::createScene(Layer* callerLayer)
 {
 	auto scene = Scene::create();
 	
 	auto layer = AboutScene::create();
+    
+    layer->callerLayer = callerLayer;
 
 	scene->addChild(layer);
 
@@ -21,14 +23,14 @@ bool AboutScene::init()
 	{
 		return false;
 	}
-	/*��ȡ��Ļ��С*/
+	/*ªÒ»°∆¡ƒª¥Û–°*/
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	/**************����UI***************/
+	/**************º”‘ÿUI***************/
 	rootNode = CSLoader::createNode("csb/AboutScene.csb");
 	
-	//����UI��С
+	//µ˜’˚UI¥Û–°
 	rootNode->setScale(visibleSize.width / rootNode->getContentSize().width, visibleSize.height / rootNode->getContentSize().height);
 	
 	this->addChild(rootNode);
@@ -39,22 +41,32 @@ bool AboutScene::init()
 
 	backbtn->addTouchEventListener(this,toucheventselector(AboutScene::clickBackCallback));
 
-	return true;
+    //吞噬下层事件
+    auto callback = [](cocos2d::Touch * ,cocos2d::Event *)
+    {
+        return true;
+    };
+    auto listener = cocos2d::EventListenerTouchOneByOne::create();
+    listener->onTouchBegan = callback;
+    listener->setSwallowTouches(true);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener,this);
+    
+    return true;
 }
 
 void AboutScene::clickBackCallback(Ref*, TouchEventType type)
 {
-	switch (type)
-	{
-	case TouchEventType::TOUCH_EVENT_BEGAN:
-		break;
-	case TouchEventType::TOUCH_EVENT_CANCELED:
-		break;
-	case TouchEventType::TOUCH_EVENT_ENDED:	
-		CCLOG("%s", "OK!!!!");
-		this->setVisible(false);
-		break;
-	case TouchEventType::TOUCH_EVENT_MOVED:
+    switch (type)
+    {
+        case TouchEventType::TOUCH_EVENT_BEGAN:
+            break;
+        case TouchEventType::TOUCH_EVENT_CANCELED:
+            break;
+        case TouchEventType::TOUCH_EVENT_ENDED:
+            CCLOG("%s", "OK!!!!");
+            this->callerLayer->removeChildByName("about");
+            break;
+        case TouchEventType::TOUCH_EVENT_MOVED:
 		break;
 	}
 }

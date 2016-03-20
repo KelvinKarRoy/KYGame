@@ -15,7 +15,7 @@ using namespace cocos2d::ui;
 class AboutScene :public Layer
 {
 public:
-	static Scene* createScene();
+	static Scene* createScene(Layer*);
 
 	virtual bool init();
 
@@ -23,6 +23,8 @@ public:
 	CREATE_FUNC(AboutScene);
 
 private:
+    Layer* callerLayer;
+    
 	Node* rootNode;//csb
 
 	void clickBackCallback(Ref*, TouchEventType type);
