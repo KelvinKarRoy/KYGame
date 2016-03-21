@@ -721,8 +721,8 @@ void HttpUtility::getStuff(cocos2d::ui::Button* callerButton,int clothID,int car
     
     //加入等待转圈Layer，并吞噬下层事件
     auto scene = WaitLayer::create();
+    scene->setName("waitLayer");
     callerLayer->addChild(scene);
-    scene->setName("WaitLayer");
     scene->setVisible(true);
 }
 
@@ -765,7 +765,7 @@ void HttpUtility::onGetStuff(HttpClient *sender, HttpResponse *response)
     }
     
     //去掉WaitLayer
-    callerLayer->removeChildByName("WaitLayer");
+    callerLayer->removeChildByName("waitLayer");
     
     if (!response) {
         return;

@@ -47,7 +47,7 @@ private:
     cocos2d::Node* rootNode;
     
     std::vector<Mail> mails;
-    Mail mail;//正在展示的mail
+    Mail* mail;//正在展示的mail
     //back按钮回调
     void onBackClicked(Ref*,TouchEventType type);
     void clickBackCallback(Ref*, TouchEventType type);//点击layer的返回键
