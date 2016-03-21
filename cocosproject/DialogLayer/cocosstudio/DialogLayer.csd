@@ -6,7 +6,7 @@
       <ObjectData Name="Scene" ctype="GameNodeObjectData">
         <Size X="2208.0000" Y="1242.0000" />
         <Children>
-          <AbstractNodeData Name="Panel" ActionTag="549338349" Tag="18" IconVisible="False" LeftMargin="504.0000" RightMargin="504.0000" TopMargin="271.0000" BottomMargin="271.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel" ActionTag="549338349" Tag="18" IconVisible="False" LeftMargin="504.0000" RightMargin="504.0000" TopMargin="271.0000" BottomMargin="271.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="167" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1200.0000" Y="700.0000" />
             <Children>
               <AbstractNodeData Name="ScrollView" ActionTag="838847110" Tag="19" IconVisible="False" LeftMargin="50.0000" RightMargin="50.0000" TopMargin="50.0000" BottomMargin="150.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="0" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
@@ -37,7 +37,7 @@
                 <ColorVector ScaleY="1.0000" />
                 <InnerNodeSize Width="1100" Height="1000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_ok" ActionTag="-1335454182" Tag="21" IconVisible="False" LeftMargin="550.0000" RightMargin="550.0000" TopMargin="579.9998" BottomMargin="40.0002" TouchEnable="True" FontSize="60" ButtonText="OK" Scale9Enable="True" LeftEage="6" RightEage="6" TopEage="6" BottomEage="6" Scale9OriginX="6" Scale9OriginY="6" Scale9Width="9" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_ok" ActionTag="-1335454182" Tag="21" IconVisible="False" LeftMargin="550.0000" RightMargin="550.0000" TopMargin="579.9998" BottomMargin="40.0002" TouchEnable="True" FontSize="60" ButtonText="OK" Scale9Enable="True" LeftEage="6" RightEage="6" TopEage="6" BottomEage="6" Scale9OriginX="6" Scale9OriginY="6" Scale9Width="75" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="100.0000" Y="80.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="600.0000" Y="80.0002" />

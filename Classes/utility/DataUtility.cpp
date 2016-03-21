@@ -11,6 +11,7 @@
 #include "../model/Player.h"
 
 #include "../scene/NoticeScene.hpp"
+#include "../scene/MailListScene.hpp"
 
 DataUtility* DataUtility::dataUtility = DataUtility::getInstance();
 
@@ -162,6 +163,9 @@ void DataUtility::decodeInformation(std::string responseDataStr)
     const rapidjson::Value & vSkillID = dataString["skillID"];
     const rapidjson::Value & vCpID = dataString["cpID"];
     const rapidjson::Value & vTop = dataString["top"];
+    const rapidjson::Value & vCloth = dataString["cloth"];
+    const rapidjson::Value & vCard = dataString["card"];
+    
     
     // «∑Ò « ˝◊È
     CC_ASSERT( vRole.IsInt()
@@ -182,6 +186,8 @@ void DataUtility::decodeInformation(std::string responseDataStr)
               && vSkillID.IsArray()
               && vCpID.IsInt()
               && vTop.IsInt()
+              && vCloth.IsInt()
+              && vCard.IsInt()
               );
     
     HttpUtility::getInstance()->getPlayer()->setRole(vRole.GetInt());
@@ -214,6 +220,9 @@ void DataUtility::decodeInformation(std::string responseDataStr)
     HttpUtility::getInstance()->getPlayer()->setSkillsID(vecSkills);
     HttpUtility::getInstance()->getPlayer()->setCpID(vCpID.GetInt());
     HttpUtility::getInstance()->getPlayer()->setTop(vTop.GetInt());
+    HttpUtility::getInstance()->getPlayer()->setCloth(vCloth.GetInt());
+    HttpUtility::getInstance()->getPlayer()->setCard(vCard.GetInt());
+    
     
     HttpUtility::getInstance()->getPlayer()->expTolevel();//经验值转等级
     
@@ -303,3 +312,80 @@ void DataUtility::decodeNotice(std::string responseDataStr)
     
 }
 
+
+//解析邮件
+void DataUtility::decodeMail(std::string responseDataStr)
+{
+    responseDataStr = StringUtility::WStrToUTF8(StringUtility::decodeUnicode(responseDataStr));//将json数据转成utf编码
+    
+    CCLOG("%s", responseDataStr.c_str());
+    
+    document->Parse<0>(responseDataStr.c_str());
+    //是否解析错误
+    CCASSERT(!document->HasParseError(), "Parsing to document failure.");
+    
+    CCLOG("%s", "Parsing to document succeeded.");
+    //是否有成员“data”
+    CC_ASSERT(document->IsObject() && document->HasMember("data"));
+    const rapidjson::Value & dataString = (*document)["data"];
+    
+    CC_ASSERT(dataString.IsObject() && dataString.HasMember("mail"));
+    const rapidjson::Value & mailVector = dataString["mail"];
+    
+    log("%d",mailVector.Size());
+    
+    CC_ASSERT(mailVector.IsArray());
+    
+    std::vector<MailListScene::Mail> mails;
+    
+    for (unsigned int i = 0; i < mailVector.Size(); i++) {
+        
+        const rapidjson::Value & temp = mailVector[i];
+        
+        CC_ASSERT(temp.HasMember("title")
+                  && temp.HasMember("text")
+                  && temp.HasMember("time")
+                  && temp.HasMember("senderID")
+                  && temp.HasMember("money")
+                  && temp.HasMember("clothID")
+                  && temp.HasMember("cardID"));
+        
+        const rapidjson::Value & vTitle = temp["title"];
+        const rapidjson::Value & vText = temp["text"];
+        const rapidjson::Value & vTime = temp["time"];
+        const rapidjson::Value & vSenderID = temp["senderID"];
+        const rapidjson::Value & vMoney = temp["money"];
+        const rapidjson::Value & vClothID = temp["clothID"];
+        const rapidjson::Value & vCardID = temp["cardID"];
+        const rapidjson::Value & vMailID = temp["mailID"];
+        
+        CC_ASSERT(vTitle.IsString());
+        CC_ASSERT(vText.IsString());
+        CC_ASSERT(vTime.IsString());
+        CC_ASSERT(vSenderID.IsInt());
+        CC_ASSERT(vMoney.IsInt());
+        CC_ASSERT(vClothID.IsInt());
+        CC_ASSERT(vCardID.IsInt());
+        CC_ASSERT(vMailID.IsInt());
+        
+        std::string title=vTitle.GetString(),text=vText.GetString(),time=vTime.GetString();
+        int senderID=vSenderID.GetInt(),money=vMoney.GetInt(),clothID=vClothID.GetInt(),cardID=vCardID.GetInt(),mailID=vMailID.GetInt();
+        
+        MailListScene::Mail mail;
+        mail.m_title=title;
+        mail.m_text=text;
+        mail.m_time=time;
+        mail.m_cardID=cardID;
+        mail.m_clothID=clothID;
+        mail.m_Money=money;
+        mail.m_senderID=senderID;
+        mail.m_mailID=mailID;
+        
+        
+        mails.push_back(mail);
+        
+    }
+    
+    static_cast<MailListScene*>(HttpUtility::getInstance()->getCallerLayer())->setMail(mails);
+    
+}

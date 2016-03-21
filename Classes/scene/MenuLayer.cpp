@@ -9,6 +9,7 @@
 #include "MenuLayer.hpp"
 #include "PropertyScene.hpp"
 #include "NoticeScene.hpp"
+#include "MailListScene.hpp"
 
 
 MenuLayer::MenuLayer()
@@ -57,6 +58,8 @@ bool MenuLayer::init()
     auto noticeButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Panel_menu")->getChildByName("Button_notice"));
     noticeButton->addTouchEventListener(this,toucheventselector(MenuLayer::clickNoticeCallback));
     
+    auto mailButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Panel_menu")->getChildByName("Button_mail"));
+    mailButton->addTouchEventListener(this,toucheventselector(MenuLayer::clickMailCallback));
     
     return true;
 }
@@ -93,6 +96,24 @@ void MenuLayer::clickNoticeCallback(Ref*, TouchEventType type)
             break;
         case TouchEventType::TOUCH_EVENT_ENDED:
             cocos2d::Director::getInstance()->replaceScene(NoticeScene::createScene());//切换到公告页面
+            break;
+        case TouchEventType::TOUCH_EVENT_MOVED:
+            break;
+    }
+}
+
+
+//点击邮件按钮
+void MenuLayer::clickMailCallback(Ref*, TouchEventType type)
+{
+    switch (type)
+    {
+        case TouchEventType::TOUCH_EVENT_BEGAN:
+            break;
+        case TouchEventType::TOUCH_EVENT_CANCELED:
+            break;
+        case TouchEventType::TOUCH_EVENT_ENDED:
+            cocos2d::Director::getInstance()->replaceScene(MailListScene::createScene());//切换到邮件页面
             break;
         case TouchEventType::TOUCH_EVENT_MOVED:
             break;

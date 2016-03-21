@@ -9,7 +9,7 @@
           <AbstractNodeData Name="Panel_mail" ActionTag="-2004869649" Tag="8" IconVisible="False" LeftMargin="104.0000" RightMargin="104.0000" TopMargin="222.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="223" ComboBoxIndex="2" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="2000.0000" Y="1020.0000" />
             <Children>
-              <AbstractNodeData Name="ListView_mail" ActionTag="-261490828" Tag="9" IconVisible="False" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
+              <AbstractNodeData Name="ListView_mail" ActionTag="-261490828" Tag="9" IconVisible="False" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="0" DirectionType="Vertical" HorizontalType="Align_HorizontalCenter" ctype="ListViewObjectData">
                 <Size X="2000.0000" Y="1020.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="1000.0000" Y="510.0000" />

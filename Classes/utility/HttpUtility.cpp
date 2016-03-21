@@ -7,6 +7,7 @@
 #include "../scene/PropertyScene.hpp"
 #include "../scene/HomeScene.hpp"
 #include "../scene/NoticeScene.hpp"
+#include "../scene/MailListScene.hpp"
 
 HttpClient* HttpUtility::httpClient = HttpClient::getInstance();
 HttpUtility* HttpUtility::httpUtility = nullptr;
@@ -475,7 +476,7 @@ void HttpUtility::saveStatus()
     auto attributes = player->getAttributes();
     auto skills = player->getSkillsID();
     log("%lu",skills.size());
-    sprintf(temp, "key=Kkdgx4cp&money=%d&experiense=%d&popularity=%d&beauty=%d&boyablity=%d&leadership=%d&action=%d&clothID=%d&cardID=%d&honor=%d&skill_1_ID=%d&skill_2_ID=%d&skill_3_ID=%d&skill_4_ID=%d&skill_5_ID=%d&cpID=%d&top=%d&playerID=%d",
+    sprintf(temp, "key=Kkdgx4cp&money=%d&experiense=%d&popularity=%d&beauty=%d&boyablity=%d&leadership=%d&action=%d&clothID=%d&cardID=%d&honor=%d&skill_1_ID=%d&skill_2_ID=%d&skill_3_ID=%d&skill_4_ID=%d&skill_5_ID=%d&cpID=%d&top=%d&playerID=%d&cloth=%d&card=%d",
             player->getMoney(),player->getExp(),
             attributes[Player::ATTRIBUTE::BASE_POPULARITY]+attributes[Player::ATTRIBUTE::EXP_POPULARITY],
             attributes[Player::ATTRIBUTE::BASE_BEAUTY]+attributes[Player::ATTRIBUTE::EXP_BEAUTY],
@@ -484,7 +485,7 @@ void HttpUtility::saveStatus()
             attributes[Player::ATTRIBUTE::BASE_ACTION]+attributes[Player::ATTRIBUTE::EXP_ACTION],
             player->getClothID(),player->getCardID(),player->getHonor(),
             skills.size()<=0?0:skills[0],skills.size()<=1?0:skills[1],skills.size()<=2?0:skills[2],skills.size()<=3?0:skills[3],skills.size()<=4?0:skills[4],
-            player->getCpID(),player->getTop(),player->getPlayerID() );
+            player->getCpID(),player->getTop(),player->getPlayerID(),player->getCloth(),player->getCard() );
     std::string finalString = temp;
     CCLOG("%s", finalString.c_str());
     request->setRequestData(finalString.c_str(), finalString.size()/sizeof(char));
@@ -616,4 +617,160 @@ void HttpUtility::onLoadNotice(HttpClient *sender, HttpResponse *response)
     }
     
 }
+
+
+
+/**********************************加载邮件*******************************/
+void HttpUtility::loadMail()
+{
+    HttpRequest * request = new HttpRequest();
+    std::string url = "http://";
+    url += ip + "/php/load_mail.php";
+    CCLOG("url = %s", url.c_str());
+    request->setUrl(url.c_str());
+    request->setRequestType(HttpRequest::Type::POST);
+    request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onLoadMail, this));
+    char tag[5];
+    sprintf(tag,"%d", HttpEnum::LOADACCOUNT);
+    CCLOG("%s", tag);
+    request->setTag(tag);
+    
+    char temp[30];
+    sprintf(temp,"key=Kkdgx4cp&playerID=%d",Self::getInstance()->getPlayerID());
+    CCLOG("%s", temp);
+    request->setRequestData(temp, strlen(temp)/sizeof(char));
+    this->httpClient->send(request);
+    request->release();
+    
+    
+    //加入等待转圈Layer，并吞噬下层事件
+    auto scene = WaitLayer::create();
+    callerLayer->addChild(scene);
+    scene->setName("WaitLayer");
+    scene->setVisible(true);
+}
+
+//loadMail回调函数
+void HttpUtility::onLoadMail(HttpClient *sender, HttpResponse *response)
+{
+    
+    
+    int statusCode = response->getResponseCode();
+    
+    log("response code: %d", statusCode);
+    
+    if (!response->isSucceed()) {
+        log("response failed");
+        log("error buffer: %s", response->getErrorBuffer());
+        ((Promptable*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接");
+        return;
+    }
+    
+    __String *strTag = __String::create(response->getHttpRequest()->getTag());
+    int tag = strTag->uintValue();
+    log("request Action Code = %d", tag);
+    
+    std::vector<char> *responseData = response->getResponseData();
+    std::string responseDataStr = std::string(responseData->begin(), responseData->end());
+    
+    //以上为公共部分
+    if (statusCode == 200) {
+        //连接成功
+        DataUtility::decodeMail(responseDataStr);
+        static_cast<MailListScene*>(callerLayer)->updateMails();
+    }
+    else {
+        //连接异常
+        ((Promptable*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
+    }
+    
+    //去掉WaitLayer
+    callerLayer->removeChildByName("WaitLayer");
+    
+    if (!response) {
+        return;
+    }
+    
+}
+
+
+/*****************************获取邮件里面的东东*********************/
+void HttpUtility::getStuff(cocos2d::ui::Button* callerButton,int clothID,int cardID,int money,int mailID)
+{
+    this->callerButton = callerButton;
+    
+    HttpRequest * request = new HttpRequest();
+    std::string url = "http://";
+    url += ip + "/php/get_stuff.php";
+    CCLOG("url = %s", url.c_str());
+    request->setUrl(url.c_str());
+    request->setRequestType(HttpRequest::Type::POST);
+    request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onGetStuff, this));
+    char tag[5];
+    sprintf(tag,"%d", HttpEnum::LOADACCOUNT);
+    CCLOG("%s", tag);
+    request->setTag(tag);
+    
+    char temp[30];
+    sprintf(temp,"key=Kkdgx4cp&playerID=%d&clothID=%d&cardID=%d&money=%d&mailID=%d",Self::getInstance()->getPlayerID(),clothID,cardID,money,mailID);
+    CCLOG("%s", temp);
+    request->setRequestData(temp, strlen(temp)/sizeof(char));
+    this->httpClient->send(request);
+    request->release();
+    
+    
+    //加入等待转圈Layer，并吞噬下层事件
+    auto scene = WaitLayer::create();
+    callerLayer->addChild(scene);
+    scene->setName("WaitLayer");
+    scene->setVisible(true);
+}
+
+
+//getStuff回调
+void HttpUtility::onGetStuff(HttpClient *sender, HttpResponse *response)
+{
+    int statusCode = response->getResponseCode();
+    
+    log("response code: %d", statusCode);
+    
+    if (!response->isSucceed()) {
+        log("response failed");
+        log("error buffer: %s", response->getErrorBuffer());
+        ((Promptable*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接");
+        return;
+    }
+    
+    __String *strTag = __String::create(response->getHttpRequest()->getTag());
+    int tag = strTag->uintValue();
+    log("request Action Code = %d", tag);
+    
+    std::vector<char> *responseData = response->getResponseData();
+    std::string responseDataStr = std::string(responseData->begin(), responseData->end());
+    
+    //以上为公共部分
+    if (statusCode == 200) {
+        //连接成功
+        bool flag = DataUtility::decodeFlagData(responseDataStr);
+        if(flag)
+        {
+            callerButton->setEnabled(false);
+            callerButton->setTitleText("");
+        }
+        else callerLayer->promptDialogBox("领取失败了，请重新领取");
+    }
+    else {
+        //连接异常
+        ((Promptable*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
+    }
+    
+    //去掉WaitLayer
+    callerLayer->removeChildByName("WaitLayer");
+    
+    if (!response) {
+        return;
+    }
+}
+
+
 

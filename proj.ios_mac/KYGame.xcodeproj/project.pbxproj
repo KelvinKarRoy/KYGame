@@ -93,6 +93,10 @@
 		B6190C421C9AE5CD00903FF4 /* MenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6190C401C9AE5CD00903FF4 /* MenuLayer.cpp */; };
 		B63A05A81C87388F0061C902 /* sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B63A05A71C87388F0061C902 /* sqlite */; };
 		B63A05AA1C8742D80061C902 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B63A05A91C8742D80061C902 /* libsqlite3.dylib */; };
+		B65B7DF11CA017E6007EDEBF /* scard0.png in Resources */ = {isa = PBXBuildFile; fileRef = B65B7DED1CA017E6007EDEBF /* scard0.png */; };
+		B65B7DF21CA017E6007EDEBF /* scard1.png in Resources */ = {isa = PBXBuildFile; fileRef = B65B7DEE1CA017E6007EDEBF /* scard1.png */; };
+		B65B7DF31CA017E6007EDEBF /* scloth0.png in Resources */ = {isa = PBXBuildFile; fileRef = B65B7DEF1CA017E6007EDEBF /* scloth0.png */; };
+		B65B7DF41CA017E6007EDEBF /* scloth1.png in Resources */ = {isa = PBXBuildFile; fileRef = B65B7DF01CA017E6007EDEBF /* scloth1.png */; };
 		B66C09EC1C85505F002C8270 /* aboutScene.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09CB1C85505E002C8270 /* aboutScene.png */; };
 		B66C09ED1C85505F002C8270 /* authenticationBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09CC1C85505E002C8270 /* authenticationBackGround.png */; };
 		B66C09EE1C85505F002C8270 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = B66C09CD1C85505E002C8270 /* back1.png */; };
@@ -121,6 +125,7 @@
 		B68C36C01C96EBD1003595B2 /* radar.png in Resources */ = {isa = PBXBuildFile; fileRef = B68C36BF1C96EBD1003595B2 /* radar.png */; };
 		B68F575B1C8928640008250A /* PropertyBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B68F575A1C8928640008250A /* PropertyBackGround.png */; };
 		B6983C6E1C8BF21D00CA0AFE /* cocosproject in Resources */ = {isa = PBXBuildFile; fileRef = B6983C6C1C8BF21C00CA0AFE /* cocosproject */; };
+		B6A35D181C9F9F5900C9F1C4 /* MailListScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A35D161C9F9F5900C9F1C4 /* MailListScene.cpp */; };
 		B6A808151C9BF19800F425F2 /* NoticeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A808131C9BF19800F425F2 /* NoticeScene.cpp */; };
 		B6E1EF731C89DFBF00D55420 /* db in Resources */ = {isa = PBXBuildFile; fileRef = B6E1EF721C89DFBF00D55420 /* db */; };
 		B6EC36681C998992006AC374 /* Promptable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6EC36661C998992006AC374 /* Promptable.cpp */; };
@@ -254,6 +259,10 @@
 		B6190C411C9AE5CD00903FF4 /* MenuLayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MenuLayer.hpp; path = scene/MenuLayer.hpp; sourceTree = "<group>"; };
 		B63A05A71C87388F0061C902 /* sqlite */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sqlite; path = /Users/kelvin/Desktop/KYGame/Classes/sqlite; sourceTree = "<absolute>"; };
 		B63A05A91C8742D80061C902 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		B65B7DED1CA017E6007EDEBF /* scard0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scard0.png; sourceTree = "<group>"; };
+		B65B7DEE1CA017E6007EDEBF /* scard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scard1.png; sourceTree = "<group>"; };
+		B65B7DEF1CA017E6007EDEBF /* scloth0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scloth0.png; sourceTree = "<group>"; };
+		B65B7DF01CA017E6007EDEBF /* scloth1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scloth1.png; sourceTree = "<group>"; };
 		B66C09CB1C85505E002C8270 /* aboutScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutScene.png; sourceTree = "<group>"; };
 		B66C09CC1C85505E002C8270 /* authenticationBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = authenticationBackGround.png; sourceTree = "<group>"; };
 		B66C09CD1C85505E002C8270 /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
@@ -284,6 +293,8 @@
 		B68F575A1C8928640008250A /* PropertyBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PropertyBackGround.png; sourceTree = "<group>"; };
 		B6983C6C1C8BF21C00CA0AFE /* cocosproject */ = {isa = PBXFileReference; lastKnownFileType = folder; name = cocosproject; path = ../cocosproject; sourceTree = "<group>"; };
 		B69B1BCD1C8C7E8C00BB77F5 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = model/Player.h; sourceTree = "<group>"; };
+		B6A35D161C9F9F5900C9F1C4 /* MailListScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MailListScene.cpp; path = scene/MailListScene.cpp; sourceTree = "<group>"; };
+		B6A35D171C9F9F5900C9F1C4 /* MailListScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MailListScene.hpp; path = scene/MailListScene.hpp; sourceTree = "<group>"; };
 		B6A808131C9BF19800F425F2 /* NoticeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoticeScene.cpp; path = scene/NoticeScene.cpp; sourceTree = "<group>"; };
 		B6A808141C9BF19800F425F2 /* NoticeScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NoticeScene.hpp; path = scene/NoticeScene.hpp; sourceTree = "<group>"; };
 		B6E1EF721C89DFBF00D55420 /* db */ = {isa = PBXFileReference; lastKnownFileType = folder; path = db; sourceTree = "<group>"; };
@@ -423,6 +434,10 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B65B7DED1CA017E6007EDEBF /* scard0.png */,
+				B65B7DEE1CA017E6007EDEBF /* scard1.png */,
+				B65B7DEF1CA017E6007EDEBF /* scloth0.png */,
+				B65B7DF01CA017E6007EDEBF /* scloth1.png */,
 				B67BB7821C8D20C30063DED5 /* HelloWorld.png */,
 				B67BB77C1C8D20A80063DED5 /* exit1.png */,
 				B67BB77D1C8D20A80063DED5 /* exit2.png */,
@@ -588,6 +603,8 @@
 				B6190C411C9AE5CD00903FF4 /* MenuLayer.hpp */,
 				B6A808131C9BF19800F425F2 /* NoticeScene.cpp */,
 				B6A808141C9BF19800F425F2 /* NoticeScene.hpp */,
+				B6A35D161C9F9F5900C9F1C4 /* MailListScene.cpp */,
+				B6A35D171C9F9F5900C9F1C4 /* MailListScene.hpp */,
 			);
 			name = scene;
 			sourceTree = "<group>";
@@ -719,6 +736,7 @@
 				B66C09F01C85505F002C8270 /* csb in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				B66C09F91C85505F002C8270 /* LogInBackGround.png in Resources */,
+				B65B7DF11CA017E6007EDEBF /* scard0.png in Resources */,
 				B67BB7831C8D20C40063DED5 /* HelloWorld.png in Resources */,
 				B66C0A0A1C85505F002C8270 /* wending.TTF in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
@@ -731,10 +749,13 @@
 				B67BB77E1C8D20A80063DED5 /* exit1.png in Resources */,
 				B6063C581C8B3BC2003F9C9A /* wait3.png in Resources */,
 				B6063C5B1C8B3BC2003F9C9A /* wait6.png in Resources */,
+				B65B7DF31CA017E6007EDEBF /* scloth0.png in Resources */,
+				B65B7DF41CA017E6007EDEBF /* scloth1.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				B66C09FC1C85505F002C8270 /* okbtn1.png in Resources */,
 				B66C09FE1C85505F002C8270 /* RegeditBackground.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
+				B65B7DF21CA017E6007EDEBF /* scard1.png in Resources */,
 				B6063C561C8B3BC2003F9C9A /* wait1.png in Resources */,
 				B66C09F21C85505F002C8270 /* dialogBackGround.png in Resources */,
 				B6063C5C1C8B3BC2003F9C9A /* wait7.png in Resources */,
@@ -810,6 +831,7 @@
 				B609BCFA1C8BF88C0067B838 /* Player.cpp in Sources */,
 				B609BCFC1C8BF88C0067B838 /* Self.cpp in Sources */,
 				B609BCAB1C8BF6C20067B838 /* AppDelegate.h in Sources */,
+				B6A35D181C9F9F5900C9F1C4 /* MailListScene.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				B6A808151C9BF19800F425F2 /* NoticeScene.cpp in Sources */,

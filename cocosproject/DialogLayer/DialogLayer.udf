@@ -16,13 +16,21 @@
         <AndroidkeyStore Value="" />
         <AndroidVersion Value="" />
         <iOS_Target Value="DialogLayer-mobile" />
-        <iOS_BundleID Value="" />
+        <iOS_BundleID Value="iPhone Developer: 1642127033@qq.com (4H9J3QADQ5)" />
         <Platform Value="None" />
         <RunPlatform Value="None" />
         <FrameworkVersion Value="cocos2d-x-3.7" />
         <IsDebugKeystore Value="True" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="DialogLayer.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="DialogLayer.csd" />
       </Value>
     </Item>
   </Properties>

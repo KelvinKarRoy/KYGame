@@ -1,0 +1,14 @@
+<Solution>
+  <PropertyGroup Name="MailTextLayer" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="MailTextLayer.csd" Type="Scene" />
+        <Image Name="scard0.png" />
+        <Image Name="scloth0.png" />
+        <Image Name="TextField.png" />
+        <TTF Name="wending.TTF" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

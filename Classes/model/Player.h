@@ -69,6 +69,11 @@ public:
     int getHonor(){ return honor; }
     void setHonor(int honor){ this->honor = honor; }
     
+    int getCloth(){ return cloth; }
+    void setCloth(int cloth) { this->cloth = cloth; }
+    
+    int getCard(){ return card; }
+    void setCard(int card) { this->card = card; }
     
     //各个属性
     enum ATTRIBUTE
@@ -105,6 +110,8 @@ private:
     bool playable;//
     bool speakable;//
     int honor;//
+    int cloth;
+    int card;
     
     std::map<Player::ATTRIBUTE, int> attributes;//
     

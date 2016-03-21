@@ -1,11 +1,21 @@
 <UserData Version="3.10.0.0">
   <Properties>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="MailListScene.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="MailListScene.csd" />
+    <Item Key="PackageParamsKey">
+      <Value ctype="PackageParams">
+        <LuaIsEncrypt Value="False" />
+        <LuaEncryptKey Value="" />
+        <LuaEncryptSign Value="" />
+        <Android_PackageName Value="org.cocos.MailListScene" />
+        <AndroidkeyStore Value="" />
+        <AndroidVersion Value="" />
+        <iOS_Target Value="MailListScene-mobile" />
+        <iOS_BundleID Value="iPhone Developer: 1642127033@qq.com (4H9J3QADQ5)" />
+        <Platform Value="None" />
+        <RunPlatform Value="None" />
+        <FrameworkVersion Value="cocos2d-x-3.10" />
+        <IsDebugKeystore Value="True" />
+        <EnableSourceMap Value="False" />
+        <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
     <Item Key="CocosRecentOperation">
@@ -13,6 +23,14 @@
         <LastPublishType Value="Resource" />
         <IsLastPublish Value="True" />
         <LastRunType Value="Mac" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="MailListScene.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="MailListScene.csd" />
       </Value>
     </Item>
   </Properties>

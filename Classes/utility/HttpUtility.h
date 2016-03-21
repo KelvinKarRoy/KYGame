@@ -51,6 +51,7 @@ private:
     HttpUtility();
     
     Player* player;
+    cocos2d::ui::Button* callerButton;
     //各种回调函数
     void onCheckPassword(HttpClient *sender, HttpResponse *response);//检查账号密码是否匹配
     void onLoadQuestion(HttpClient *sender, HttpResponse *response);//加载验证问题
@@ -59,6 +60,9 @@ private:
     void onAccount2ID(HttpClient *sender, HttpResponse *response);//账号转化成id
     void onSaveStatus(HttpClient *sender, HttpResponse *response);//存储用户信息到服务器
     void onLoadNotice(HttpClient *sender, HttpResponse *response);//加载通知 公告
+    void onLoadMail(HttpClient *sender, HttpResponse *response);//加载邮件
+    void onGetStuff(HttpClient *sender, HttpResponse *response);//获取邮件里面的东东
+    
     
 public:
     
@@ -85,7 +89,8 @@ public:
     void account2ID(std::string account);//account转id
     void saveStatus();//存储用户信息到服务器
     void loadNotice();//加载通知 公告
-    
+    void loadMail();//加载邮件
+    void getStuff(cocos2d::ui::Button* callerButton,int clothID,int cardID,int money,int mailID);//获取邮件里面的东东
     
     //bool checkVersion(std::string version);
 };
