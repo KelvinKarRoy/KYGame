@@ -1,18 +1,19 @@
 <Solution>
-  <PropertyGroup Name="RoleSelectScene" Version="2.3.3.0" Type="CocosStudio" />
+  <PropertyGroup Name="RoleSelectScene" Version="3.10.0.0" Type="CocosStudio" />
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Project Name="RoleSelectScene.csd" Type="Scene" />
-        <Image Name="RoleSelectBackground.png" />
+        <Image Name="back1.png" />
+        <Image Name="back2.png" />
         <Image Name="karryRolebtn1.png" />
         <Image Name="karryRolebtn2.png" />
+        <Image Name="RoleSelectBackground.png" />
+        <Project Name="RoleSelectScene.csd" Type="Scene" />
         <Image Name="royRolebtn1.png" />
         <Image Name="royRolebtn2.png" />
         <Image Name="submitRegeditbtn1.png" />
         <Image Name="submitRegeditbtn2.png" />
-        <Image Name="back1.png" />
-        <Image Name="back2.png" />
+        <TTF Name="wending.TTF" />
       </RootFolder>
     </Group>
   </SolutionFolder>

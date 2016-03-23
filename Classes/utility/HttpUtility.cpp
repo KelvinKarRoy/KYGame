@@ -146,7 +146,7 @@ void HttpUtility::regeditAccount(std::string account,//’À∫≈
 	request->setTag(tag);
 
 	std::string finalString;
-	char temp[100];
+	char temp[150];
 	sprintf(temp, "account=\'%s\'&password=\'%s\'&key=\'Kkdgx4cp\'&name=\'%s\'&role=\'%s\'",
 		account.c_str(), password.c_str(), name.c_str(), role ? "1" : "0");
 	finalString = temp;
@@ -393,7 +393,7 @@ void HttpUtility::account2ID(std::string account)
     CCLOG("%s", tag);
     request->setTag(tag);
     
-    char temp[60];
+    char temp[100];
     std::string finalString = "account=";
     sprintf(temp, "%s'%s'&key=\'Kkdgx4cp\'",finalString.c_str(), account.c_str());
     finalString = temp;
@@ -695,9 +695,15 @@ void HttpUtility::onLoadMail(HttpClient *sender, HttpResponse *response)
 
 
 /*****************************获取邮件里面的东东*********************/
-void HttpUtility::getStuff(cocos2d::ui::Button* callerButton,int clothID,int cardID,int money,int mailID)
+void HttpUtility::getStuff(int clothID,int cardID,int money,int mailID)
 {
-    this->callerButton = callerButton;
+    //加入等待转圈Layer，并吞噬下层事件
+    auto scene = WaitLayer::create();
+    //scene->retain();
+    scene->setName("waitLayer");
+    callerLayer->addChild(scene);
+    scene->setVisible(true);
+    
     
     HttpRequest * request = new HttpRequest();
     std::string url = "http://";
@@ -710,20 +716,15 @@ void HttpUtility::getStuff(cocos2d::ui::Button* callerButton,int clothID,int car
     sprintf(tag,"%d", HttpEnum::LOADACCOUNT);
     CCLOG("%s", tag);
     request->setTag(tag);
-    
-    char temp[30];
+
+    char temp[120];
     sprintf(temp,"key=Kkdgx4cp&playerID=%d&clothID=%d&cardID=%d&money=%d&mailID=%d",Self::getInstance()->getPlayerID(),clothID,cardID,money,mailID);
     CCLOG("%s", temp);
     request->setRequestData(temp, strlen(temp)/sizeof(char));
     this->httpClient->send(request);
     request->release();
     
-    
-    //加入等待转圈Layer，并吞噬下层事件
-    auto scene = WaitLayer::create();
-    scene->setName("waitLayer");
-    callerLayer->addChild(scene);
-    scene->setVisible(true);
+    log("??????");
 }
 
 
@@ -754,8 +755,12 @@ void HttpUtility::onGetStuff(HttpClient *sender, HttpResponse *response)
         bool flag = DataUtility::decodeFlagData(responseDataStr);
         if(flag)
         {
-            callerButton->setEnabled(false);
-            callerButton->setTitleText("");
+            static_cast<Button*>(callerLayer->getChildByName("mailTextLayer")->getChildByName("Panel_mail")->getChildByName("Button_clothID"))->setEnabled(false);
+            
+            static_cast<Button*>(callerLayer->getChildByName("mailTextLayer")->getChildByName("Panel_mail")->getChildByName("Button_cardID"))->setEnabled(false);
+            
+            static_cast<Button*>(callerLayer->getChildByName("mailTextLayer")->getChildByName("Panel_mail")->getChildByName("Button_money"))->setEnabled(false);
+            static_cast<Button*>(callerLayer->getChildByName("mailTextLayer")->getChildByName("Panel_mail")->getChildByName("Button_money"))->setTitleText("0");
         }
         else callerLayer->promptDialogBox("领取失败了，请重新领取");
     }
@@ -765,6 +770,7 @@ void HttpUtility::onGetStuff(HttpClient *sender, HttpResponse *response)
     }
     
     //去掉WaitLayer
+    //callerLayer->getChildByName("waitLayer")->retain();
     callerLayer->removeChildByName("waitLayer");
     
     if (!response) {

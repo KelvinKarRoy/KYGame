@@ -168,7 +168,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_money" ActionTag="-1951626177" Tag="15" IconVisible="False" LeftMargin="1254.6014" RightMargin="25.3986" TopMargin="689.2224" BottomMargin="190.7777" TouchEnable="True" FontSize="40" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="90" Scale9Height="98" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_money" ActionTag="-1951626177" Tag="15" IconVisible="False" LeftMargin="1254.6014" RightMargin="25.3986" TopMargin="689.2223" BottomMargin="190.7777" TouchEnable="True" FontSize="40" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="90" Scale9Height="98" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="120.0000" Y="120.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="1314.6014" Y="250.7777" />
@@ -177,7 +177,7 @@
                 <PrePosition X="0.9390" Y="0.2508" />
                 <PreSize X="0.0857" Y="0.1200" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="scard0.png" Plist="" />
                 <PressedFileData Type="Normal" Path="scard0.png" Plist="" />
                 <NormalFileData Type="Normal" Path="scard0.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />

@@ -239,7 +239,7 @@ void MailListScene::clickMailCallback(Ref* caller,TouchEventType type)
             clothButton->loadTexturePressed(temp);
             if(mail->m_clothID == 0) clothButton->setEnabled(false);
             else clothButton->setEnabled(true);
-            clothButton->addTouchEventListener(this,toucheventselector(MailListScene::clickClothCallback));
+            clothButton->addTouchEventListener(this,toucheventselector(MailListScene::clickGetCallback));
             
             Button* cardButton = static_cast<Button*>(childLayer->getChildByName("Panel_mail")->getChildByName("Button_cardID"));
             //设置纹理
@@ -248,7 +248,7 @@ void MailListScene::clickMailCallback(Ref* caller,TouchEventType type)
             cardButton->loadTexturePressed(temp);
             if(mail->m_cardID == 0) cardButton->setEnabled(false);
             else cardButton->setEnabled(true);
-            cardButton->addTouchEventListener(this,toucheventselector(MailListScene::clickCardCallback));
+            cardButton->addTouchEventListener(this,toucheventselector(MailListScene::clickGetCallback));
             
             
             Button* moneyButton = static_cast<Button*>(childLayer->getChildByName("Panel_mail")->getChildByName("Button_money"));
@@ -260,7 +260,7 @@ void MailListScene::clickMailCallback(Ref* caller,TouchEventType type)
             if(mail->m_Money == 0) moneyButton->setEnabled(false);
             else moneyButton->setEnabled(true);
             moneyButton->setTitleText(temp);
-            moneyButton->addTouchEventListener(this,toucheventselector(MailListScene::clickMoneyCallback));
+            moneyButton->addTouchEventListener(this,toucheventselector(MailListScene::clickGetCallback));
             
             
             //吞噬下层事件
@@ -281,7 +281,7 @@ void MailListScene::clickMailCallback(Ref* caller,TouchEventType type)
     
 }
 
-void MailListScene::clickClothCallback(Ref* callerButton,TouchEventType type)//领取衣服
+void MailListScene::clickGetCallback(Ref* callerButton,TouchEventType type)//领取衣服
 {
     switch (type)
     {
@@ -292,44 +292,10 @@ void MailListScene::clickClothCallback(Ref* callerButton,TouchEventType type)//�
         case TouchEventType::TOUCH_EVENT_MOVED:
             break;
         case TouchEventType::TOUCH_EVENT_ENDED:
+            HttpUtility::getInstance(this)->getStuff(mail->m_clothID,mail->m_cardID,mail->m_Money,mail->m_mailID);
             mail->m_clothID=0;
-            HttpUtility::getInstance(this)->getStuff(static_cast<Button*>(callerButton),mail->m_clothID,0,0,mail->m_mailID);
-            break;
-            
-    }
-}
-
-void MailListScene::clickCardCallback(Ref* callerButton,TouchEventType type)//领取卡片
-{
-    switch (type)
-    {
-        case TouchEventType::TOUCH_EVENT_BEGAN:
-            break;
-        case TouchEventType::TOUCH_EVENT_CANCELED:
-            break;
-        case TouchEventType::TOUCH_EVENT_MOVED:
-            break;
-        case TouchEventType::TOUCH_EVENT_ENDED:
             mail->m_cardID=0;
-            HttpUtility::getInstance(this)->getStuff(static_cast<Button*>(callerButton),0,mail->m_cardID,0,mail->m_mailID);
-            break;
-            
-    }
-}
-
-void MailListScene::clickMoneyCallback(Ref* callerButton,TouchEventType type)//领取金钱
-{
-    switch (type)
-    {
-        case TouchEventType::TOUCH_EVENT_BEGAN:
-            break;
-        case TouchEventType::TOUCH_EVENT_CANCELED:
-            break;
-        case TouchEventType::TOUCH_EVENT_MOVED:
-            break;
-        case TouchEventType::TOUCH_EVENT_ENDED:
             mail->m_Money=0;
-            HttpUtility::getInstance(this)->getStuff(static_cast<Button*>(callerButton),0,0,mail->m_Money,mail->m_mailID);
             break;
             
     }

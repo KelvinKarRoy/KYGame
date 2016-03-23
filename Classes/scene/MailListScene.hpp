@@ -53,10 +53,7 @@ private:
     void clickBackCallback(Ref*, TouchEventType type);//点击layer的返回键
     //点击mail回调
     void clickMailCallback(Ref*,TouchEventType type);
-    void clickClothCallback(Ref*,TouchEventType type);//领取衣服
-    void clickCardCallback(Ref*,TouchEventType type);//领取卡片
-    void clickMoneyCallback(Ref*,TouchEventType type);//领取金钱
-    
+    void clickGetCallback(Ref*,TouchEventType type);//领取衣服.卡片，金钱
 };
 
 #endif /* MailListScene_hpp */
