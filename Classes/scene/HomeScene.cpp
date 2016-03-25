@@ -63,6 +63,8 @@ bool HomeScene::init()
 
     exitButton->addTouchEventListener(this,toucheventselector(HomeScene::onExitClicked));
     
+    //加载玩家信息
+    HttpUtility::getInstance(this)->loadPlayerInformation(Self::getInstance()->getPlayerID(), Self::getInstance());
     
     return true;
 }

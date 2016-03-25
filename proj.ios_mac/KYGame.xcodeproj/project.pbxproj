@@ -121,6 +121,7 @@
 		B68F575B1C8928640008250A /* PropertyBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B68F575A1C8928640008250A /* PropertyBackGround.png */; };
 		B6A35D181C9F9F5900C9F1C4 /* MailListScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A35D161C9F9F5900C9F1C4 /* MailListScene.cpp */; };
 		B6A808151C9BF19800F425F2 /* NoticeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6A808131C9BF19800F425F2 /* NoticeScene.cpp */; };
+		B6B0F2611CA51532004579AC /* FriendListScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6B0F25F1CA51532004579AC /* FriendListScene.cpp */; };
 		B6E1EF731C89DFBF00D55420 /* db in Resources */ = {isa = PBXBuildFile; fileRef = B6E1EF721C89DFBF00D55420 /* db */; };
 		B6EC36681C998992006AC374 /* Promptable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6EC36661C998992006AC374 /* Promptable.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -285,6 +286,8 @@
 		B6A35D171C9F9F5900C9F1C4 /* MailListScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MailListScene.hpp; path = scene/MailListScene.hpp; sourceTree = "<group>"; };
 		B6A808131C9BF19800F425F2 /* NoticeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NoticeScene.cpp; path = scene/NoticeScene.cpp; sourceTree = "<group>"; };
 		B6A808141C9BF19800F425F2 /* NoticeScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = NoticeScene.hpp; path = scene/NoticeScene.hpp; sourceTree = "<group>"; };
+		B6B0F25F1CA51532004579AC /* FriendListScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FriendListScene.cpp; path = scene/FriendListScene.cpp; sourceTree = "<group>"; };
+		B6B0F2601CA51532004579AC /* FriendListScene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = FriendListScene.hpp; path = scene/FriendListScene.hpp; sourceTree = "<group>"; };
 		B6E1EF721C89DFBF00D55420 /* db */ = {isa = PBXFileReference; lastKnownFileType = folder; path = db; sourceTree = "<group>"; };
 		B6EC36661C998992006AC374 /* Promptable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Promptable.cpp; path = interface/Promptable.cpp; sourceTree = "<group>"; };
 		B6EC36671C998992006AC374 /* Promptable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Promptable.hpp; path = interface/Promptable.hpp; sourceTree = "<group>"; };
@@ -565,6 +568,8 @@
 		B609BD371C8BF9500067B838 /* scene */ = {
 			isa = PBXGroup;
 			children = (
+				B6B0F25F1CA51532004579AC /* FriendListScene.cpp */,
+				B6B0F2601CA51532004579AC /* FriendListScene.hpp */,
 				B609BCFE1C8BF89A0067B838 /* AboutScene.cpp */,
 				B609BCFF1C8BF89A0067B838 /* AboutScene.h */,
 				B609BD001C8BF89A0067B838 /* AuthenticationScene.cpp */,
@@ -781,6 +786,7 @@
 				B609BD2D1C8BF8C40067B838 /* GCCsvHelper.hpp in Sources */,
 				B609BD2E1C8BF8C40067B838 /* HttpUtility.cpp in Sources */,
 				B609BD2F1C8BF8C40067B838 /* HttpUtility.h in Sources */,
+				B6B0F2611CA51532004579AC /* FriendListScene.cpp in Sources */,
 				B609BD301C8BF8C40067B838 /* StringUtility.cpp in Sources */,
 				B609BD311C8BF8C40067B838 /* StringUtility.h in Sources */,
 				B609BD321C8BF8C40067B838 /* utility.cpp in Sources */,
@@ -848,7 +854,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 1642127033@qq.com (4H9J3QADQ5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 1642127033@qq.com (4H9J3QADQ5)";
-				COMPRESS_PNG_FILES = YES;
+				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -889,7 +895,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 1642127033@qq.com (4H9J3QADQ5)";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: 1642127033@qq.com (4H9J3QADQ5)";
-				COMPRESS_PNG_FILES = YES;
+				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

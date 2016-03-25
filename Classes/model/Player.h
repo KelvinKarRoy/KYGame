@@ -94,6 +94,7 @@ public:
     std::map<Player::ATTRIBUTE, int> getAttributes(){ return attributes; }
     void setAttributes(std::map<Player::ATTRIBUTE, int> attributes){ this->attributes = attributes; }
     void expTolevel();
+    static int expTolevel(int exp);
     float getExpRate();//经验值升级所需比例
 private:
     int playerID;//

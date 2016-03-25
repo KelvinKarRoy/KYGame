@@ -17,8 +17,7 @@
 
 PropertyScene::PropertyScene()
 {
-    Player* player = Self::getInstance();
-    setPlayer(player);
+    player = &onePlayer;
 }
 
 
@@ -87,7 +86,7 @@ bool PropertyScene::init()
     ->addTouchEventListener(this,toucheventselector(PropertyScene::onCancelClicked));
     
     //从服务器读取用户信息
-    HttpUtility::getInstance(this)->loadPlayerInformation(Self::getInstance()->getPlayerID(), Self::getInstance());
+    HttpUtility::getInstance(this)->loadPlayerInformation(Self::getInstance()->getPlayerID(), player);
     
     return true;
 }

@@ -8,6 +8,7 @@
 #include "../scene/HomeScene.hpp"
 #include "../scene/NoticeScene.hpp"
 #include "../scene/MailListScene.hpp"
+#include "../scene/FriendListScene.hpp"
 
 HttpClient* HttpUtility::httpClient = HttpClient::getInstance();
 HttpUtility* HttpUtility::httpUtility = nullptr;
@@ -771,6 +772,80 @@ void HttpUtility::onGetStuff(HttpClient *sender, HttpResponse *response)
     
     //去掉WaitLayer
     //callerLayer->getChildByName("waitLayer")->retain();
+    callerLayer->removeChildByName("waitLayer");
+    
+    if (!response) {
+        return;
+    }
+}
+
+
+
+/*****************************获取好友列表*********************/
+void HttpUtility::loadFriends()
+{
+    //加入等待转圈Layer，并吞噬下层事件
+    auto scene = WaitLayer::create();
+    //scene->retain();
+    scene->setName("waitLayer");
+    callerLayer->addChild(scene);
+    scene->setVisible(true);
+    
+    
+    HttpRequest * request = new HttpRequest();
+    std::string url = "http://";
+    url += ip + "/php/load_friends.php";
+    CCLOG("url = %s", url.c_str());
+    request->setUrl(url.c_str());
+    request->setRequestType(HttpRequest::Type::POST);
+    request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onLoadFriends, this));
+    char tag[5];
+    sprintf(tag,"%d", HttpEnum::LOADACCOUNT);
+    CCLOG("%s", tag);
+    request->setTag(tag);
+    
+    char temp[120];
+    sprintf(temp,"key=Kkdgx4cp&playerID=%d",Self::getInstance()->getPlayerID());
+    CCLOG("%s", temp);
+    request->setRequestData(temp, strlen(temp)/sizeof(char));
+    this->httpClient->send(request);
+    request->release();
+}
+
+
+//LoadFriends回调
+void HttpUtility::onLoadFriends(HttpClient *sender, HttpResponse *response)
+{
+    int statusCode = response->getResponseCode();
+    
+    log("response code: %d", statusCode);
+    
+    if (!response->isSucceed()) {
+        log("response failed");
+        log("error buffer: %s", response->getErrorBuffer());
+        ((Promptable*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接");
+        return;
+    }
+    
+    __String *strTag = __String::create(response->getHttpRequest()->getTag());
+    int tag = strTag->uintValue();
+    log("request Action Code = %d", tag);
+    
+    std::vector<char> *responseData = response->getResponseData();
+    std::string responseDataStr = std::string(responseData->begin(), responseData->end());
+    
+    //以上为公共部分
+    if (statusCode == 200) {
+        //连接成功
+        DataUtility::decodeFriends(responseDataStr);
+        static_cast<FriendListScene*>(callerLayer)->updateFriends();
+    }
+    else {
+        //连接异常
+        ((Promptable*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
+    }
+    
+    //去掉WaitLayer
     callerLayer->removeChildByName("waitLayer");
     
     if (!response) {

@@ -10,7 +10,7 @@
 #include "PropertyScene.hpp"
 #include "NoticeScene.hpp"
 #include "MailListScene.hpp"
-
+#include "FriendListScene.hpp"
 
 MenuLayer::MenuLayer()
 {
@@ -52,14 +52,19 @@ bool MenuLayer::init()
     addChild(rootNode);
     
     //菜单按钮回调
-    auto propertyButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Panel_menu")->getChildByName("Button_property"));
+    auto propertyButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("ListView_dmenu")->getChildByName("Button_property"));
     propertyButton->addTouchEventListener(this,toucheventselector(MenuLayer::clickPropertyCallback));
     
-    auto noticeButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Panel_menu")->getChildByName("Button_notice"));
+    auto noticeButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("ListView_dmenu")->getChildByName("Button_notice"));
     noticeButton->addTouchEventListener(this,toucheventselector(MenuLayer::clickNoticeCallback));
     
-    auto mailButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Panel_menu")->getChildByName("Button_mail"));
+    auto mailButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("ListView_dmenu")->getChildByName("Button_mail"));
     mailButton->addTouchEventListener(this,toucheventselector(MenuLayer::clickMailCallback));
+    
+    auto friendButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("ListView_dmenu")->getChildByName("Button_friend"));
+    friendButton->addTouchEventListener(this,toucheventselector(MenuLayer::clickFriendCallback));
+    
+    
     
     return true;
 }
@@ -76,11 +81,16 @@ void MenuLayer::clickPropertyCallback(Ref*, TouchEventType type)
             break;
         case TouchEventType::TOUCH_EVENT_CANCELED:
             break;
-        case TouchEventType::TOUCH_EVENT_ENDED:
-            cocos2d::Director::getInstance()->replaceScene(PropertyScene::createScene());//切换到属性页面
-            break;
         case TouchEventType::TOUCH_EVENT_MOVED:
             break;
+        case TouchEventType::TOUCH_EVENT_ENDED:
+            auto layer = static_cast<PropertyScene*>(PropertyScene::create(Self::getInstance()));
+            auto scene = Scene::create();
+            scene->addChild(layer);
+            cocos2d::Director::getInstance()->replaceScene(scene);//切换到属性页面
+
+            break;
+        
     }
     
 }
@@ -114,6 +124,24 @@ void MenuLayer::clickMailCallback(Ref*, TouchEventType type)
             break;
         case TouchEventType::TOUCH_EVENT_ENDED:
             cocos2d::Director::getInstance()->replaceScene(MailListScene::createScene());//切换到邮件页面
+            break;
+        case TouchEventType::TOUCH_EVENT_MOVED:
+            break;
+    }
+}
+
+
+//点击邮件按钮
+void MenuLayer::clickFriendCallback(Ref*, TouchEventType type)
+{
+    switch (type)
+    {
+        case TouchEventType::TOUCH_EVENT_BEGAN:
+            break;
+        case TouchEventType::TOUCH_EVENT_CANCELED:
+            break;
+        case TouchEventType::TOUCH_EVENT_ENDED:
+            cocos2d::Director::getInstance()->replaceScene(FriendListScene::createScene());//切换到好友页面
             break;
         case TouchEventType::TOUCH_EVENT_MOVED:
             break;

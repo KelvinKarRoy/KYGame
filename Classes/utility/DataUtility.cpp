@@ -12,6 +12,7 @@
 
 #include "../scene/NoticeScene.hpp"
 #include "../scene/MailListScene.hpp"
+#include "../scene/FriendListScene.hpp"
 
 DataUtility* DataUtility::dataUtility = DataUtility::getInstance();
 
@@ -389,3 +390,74 @@ void DataUtility::decodeMail(std::string responseDataStr)
     static_cast<MailListScene*>(HttpUtility::getInstance()->getCallerLayer())->setMail(mails);
     
 }
+
+
+
+//解析好友列表信息
+void DataUtility::decodeFriends(std::string responseDataStr)
+{
+    responseDataStr = StringUtility::WStrToUTF8(StringUtility::decodeUnicode(responseDataStr));//将json数据转成utf编码
+    
+    CCLOG("%s", responseDataStr.c_str());
+    
+    document->Parse<0>(responseDataStr.c_str());
+    //是否解析错误
+    CCASSERT(!document->HasParseError(), "Parsing to document failure.");
+    
+    CCLOG("%s", "Parsing to document succeeded.");
+    //是否有成员“data”
+    CC_ASSERT(document->IsObject() && document->HasMember("data"));
+    const rapidjson::Value & dataString = (*document)["data"];
+    
+    CC_ASSERT(dataString.IsObject() && dataString.HasMember("friends"));
+    const rapidjson::Value & friendVector = dataString["friends"];
+    
+    log("%d",friendVector.Size());
+    
+    CC_ASSERT(friendVector.IsArray());
+    
+    std::vector<FriendListScene::Friend> friends;
+    
+    for (unsigned int i = 0; i < friendVector.Size(); i++) {
+        
+        const rapidjson::Value & temp = friendVector[i];
+        
+        CC_ASSERT(temp.HasMember("name")
+                  && temp.HasMember("playerID")
+                  && temp.HasMember("exp")
+                  && temp.HasMember("honor"));
+        
+        const rapidjson::Value & vName = temp["name"];
+        const rapidjson::Value & vID = temp["playerID"];
+        const rapidjson::Value & vExp = temp["exp"];
+        const rapidjson::Value & vHonor = temp["honor"];
+        
+        CC_ASSERT(vName.IsString());
+        CC_ASSERT(vID.IsInt());
+        CC_ASSERT(vExp.IsInt());
+        CC_ASSERT(vHonor.IsInt());
+        
+        std::string name = vName.GetString();
+        int id = vID.GetInt(),exp = vExp.GetInt(),honor = vHonor.GetInt();
+        
+        FriendListScene::Friend theFriend;
+        theFriend.m_honor=honor;
+        theFriend.m_ID=id;
+        theFriend.m_level=Player::expTolevel(exp);
+        theFriend.m_name=name;
+        
+        
+        
+        friends.push_back(theFriend);
+        
+    }
+    
+    static_cast<FriendListScene*>(HttpUtility::getInstance()->getCallerLayer())->setFriends(friends);
+    
+}
+
+
+
+
+
+

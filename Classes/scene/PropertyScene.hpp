@@ -40,7 +40,30 @@ public:
     
     virtual bool init();
     
+    void setPlayer(Player* player)
+    {
+        this->player = player;
+    }
+    Player* getPlayer() { return this->player; }
+    
     CREATE_FUNC(PropertyScene);
+    
+    static PropertyScene* create(Player* player)
+    {
+        PropertyScene *pRet = new(std::nothrow) PropertyScene();
+        pRet->setPlayer(player);
+        if (pRet && pRet->init())
+        {
+            pRet->autorelease();
+            return pRet;
+        }
+        else
+        {
+            delete pRet;
+            pRet = nullptr;
+            return nullptr;
+        }
+    }
     
 private:
     Layer* childLayer;//子层
@@ -48,6 +71,7 @@ private:
     Node* rootNode;//csb
     
     Player* player;//要展示的人
+    Player onePlayer;//实例
     
     //各属性值
     std::map<Player::ATTRIBUTE,int> attributes;
@@ -62,11 +86,6 @@ private:
     std::string name;
     bool role;
     bool top;
-    
-    void setPlayer(Player* player)
-    {
-        this->player = player;
-    }
     
     void onBackClicked(Ref*, TouchEventType type);
     

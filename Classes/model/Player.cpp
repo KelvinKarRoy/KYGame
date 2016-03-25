@@ -13,24 +13,29 @@ Player::~Player()
 
 void Player::expTolevel()
 {//经验值转化为等级
+    this->setLevel(expTolevel(this->getExp()));
+}
+
+
+int Player::expTolevel(int exp)
+{
+    //经验值转化为等级
     GCCsvHelper *csv = new GCCsvHelper();
     std::string path= FileUtils::getInstance()->getWritablePath();
     log("%s",path.c_str());
     path+="db/exp.csv";
     csv->openAndResolveFile(path.c_str());
     
-    
+    int level;
     for (int i = 0; i < csv->getRowLength(); ++i) {
-        log("%d,%d",csv->getRowLength(),csv->getColLength());
-        log("%s : %d",csv->getData(i, 1),this->exp);
-        if(atoi(csv->getData(i, 1))>this->exp)
+        if(atoi(csv->getData(i, 1))>exp)
         {
-            this->level = i;
+            level = i;
             break;
         }
     }
     delete csv;
-    
+    return level;
 }
 
 

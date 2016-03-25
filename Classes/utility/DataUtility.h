@@ -30,6 +30,7 @@ public:
     static void decodePlayerID(std::string responseDataStr);//解析玩家ID
     static void decodeNotice(std::string responseDataStr);//解析公告
     static void decodeMail(std::string responseDataStr);//解析邮件
+    static void decodeFriends(std::string responseDataStr);//加载friends列表信息
     
 private:
 	static DataUtility* dataUtility;
