@@ -19,6 +19,7 @@ FriendListScene::FriendListScene()
 }
 FriendListScene::~FriendListScene()
 {
+    buttonPanel->release();
 }
 
 
@@ -58,15 +59,15 @@ bool FriendListScene::init()
     
     backButton->addTouchEventListener(this,toucheventselector(FriendListScene::clickBackCallback));
     
-    //组合按钮的回调
     auto friendList = static_cast<cocos2d::ui::ListView*>(rootNode->getChildByName("ListView_friend"));
     buttonPanel = static_cast<cocos2d::ui::Layout*>(friendList->getChildByName("Panel_buttons"));
     
+    //组合按钮的回调
+    static_cast<Button*>(buttonPanel->getChildByName("Button_property"))->addTouchEventListener(this,toucheventselector(FriendListScene::clickPropertyCallback));
     
     //组合按钮移除
-    buttonPanel->setVisible(false);
-    rootNode->addChild(buttonPanel);
-    friendList->removeChildByName("Panel_buttons");
+    friendList->removeChild(buttonPanel);
+    buttonPanel->retain();
     
     
     //获取公告
@@ -155,21 +156,17 @@ void FriendListScene::clickFriendCallback(Ref* caller,TouchEventType type)
             int playerID = atoi(temp.substr(6,temp.size()-6).c_str());//点击的按钮对应的id
             if(friendList->getChildByName("Panel_buttons") != nullptr)
             {//如果已经存在
-                rootNode->addChild(buttonPanel);
                 friendList->removeChild(buttonPanel);
-                buttonPanel->setVisible(false);
                 if(showPlayerID != playerID)
                 {//点击的是另一个按钮
                     friendList->insertCustomItem(buttonPanel, friendList->getIndex(callerButton)+1);
-                    buttonPanel->setVisible(true);
-                    rootNode->removeChild(buttonPanel);
                     showPlayerID=playerID;
                 }
+                
             }else
             {//如果木有
+                
                 friendList->insertCustomItem(buttonPanel, friendList->getIndex(callerButton)+1);
-                buttonPanel->setVisible(true);
-                rootNode->removeChild(buttonPanel);
                 showPlayerID=playerID;
             }
          
@@ -192,16 +189,15 @@ void FriendListScene::clickPropertyCallback(Ref*,TouchEventType type)
         case TouchEventType::TOUCH_EVENT_MOVED:
             break;
         case TouchEventType::TOUCH_EVENT_ENDED:
-            Player player;
-            auto layer = static_cast<PropertyScene*>(PropertyScene::create());
-            HttpUtility::getInstance(this)->setPlayer(layer->getPlayer());
+            auto layer = static_cast<PropertyScene*>(PropertyScene::create(showPlayerID));
             auto scene = Scene::create();
             scene->addChild(layer);
-            Director::getInstance()->replaceScene(scene);//切换到主页面
+            Director::getInstance()->replaceScene(scene);//切换到属性页面
             break;
         
     }
 }
+
 
 
 

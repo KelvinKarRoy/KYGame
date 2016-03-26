@@ -2,10 +2,7 @@
   <Properties>
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="MenuLayer.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="MenuLayer.csd" />
+        <ActiveDocument />
       </Value>
     </Item>
     <Item Key="CocosRecentOperation">

@@ -84,7 +84,7 @@ void MenuLayer::clickPropertyCallback(Ref*, TouchEventType type)
         case TouchEventType::TOUCH_EVENT_MOVED:
             break;
         case TouchEventType::TOUCH_EVENT_ENDED:
-            auto layer = static_cast<PropertyScene*>(PropertyScene::create(Self::getInstance()));
+            auto layer = static_cast<PropertyScene*>(PropertyScene::create(Self::getInstance()->getPlayerID()));
             auto scene = Scene::create();
             scene->addChild(layer);
             cocos2d::Director::getInstance()->replaceScene(scene);//切换到属性页面

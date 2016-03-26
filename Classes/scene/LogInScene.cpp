@@ -58,6 +58,10 @@ bool LogInScene::init()
     
     loadPlayerAccount(accountField,passwdField);
     
+    //Sprite* sprite = Sprite::create("LogInBackGround.png");
+    
+    //this->addChild(sprite);
+    
 	return true;
 }
 

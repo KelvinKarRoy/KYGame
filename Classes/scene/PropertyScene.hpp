@@ -48,10 +48,17 @@ public:
     
     CREATE_FUNC(PropertyScene);
     
-    static PropertyScene* create(Player* player)
+    static PropertyScene* create(int playerID)
     {
         PropertyScene *pRet = new(std::nothrow) PropertyScene();
-        pRet->setPlayer(player);
+        if(Self::getInstance()->getPlayerID() == playerID)
+        {
+            pRet->setPlayer(Self::getInstance());
+        }else
+        {
+            pRet->setPlayer(&onePlayer);
+            onePlayer.setPlayerID(playerID);
+        }
         if (pRet && pRet->init())
         {
             pRet->autorelease();
@@ -65,13 +72,15 @@ public:
         }
     }
     
+    void redraw();//重绘
+    
 private:
     Layer* childLayer;//子层
     
     Node* rootNode;//csb
     
     Player* player;//要展示的人
-    Player onePlayer;//实例
+    static Player onePlayer;//实例
     
     //各属性值
     std::map<Player::ATTRIBUTE,int> attributes;

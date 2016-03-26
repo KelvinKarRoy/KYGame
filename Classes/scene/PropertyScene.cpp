@@ -10,10 +10,11 @@
 
 #include "HomeScene.hpp"
 #include "DialogLayer.h"
-
+#include "FriendListScene.hpp"
 
 #include "../model/Player.h"
 
+Player PropertyScene::onePlayer;
 
 PropertyScene::PropertyScene()
 {
@@ -60,17 +61,11 @@ bool PropertyScene::init()
     
     backButton->addTouchEventListener(this,toucheventselector(PropertyScene::onBackClicked));
     
-    //读取各属性值
-    loadPeoperty();
+    //从服务器读取用户信息
+    HttpUtility::getInstance(this)->loadPlayerInformation(player->getPlayerID(), player);
     
-    //填写属性
-    fillText();
-    
-    //画雷达图
-    drawRadar();
-    
-    //计算是否可以加点，enable或者unable加点按钮
-    enableAddButtons((player==Self::getInstance())&&isAddable());
+    //重绘图像
+    redraw();
     
     //获取加点按钮，绑定回调
     for(int i=1;i<=5;++i)
@@ -85,8 +80,7 @@ bool PropertyScene::init()
     static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_cancel"))
     ->addTouchEventListener(this,toucheventselector(PropertyScene::onCancelClicked));
     
-    //从服务器读取用户信息
-    HttpUtility::getInstance(this)->loadPlayerInformation(Self::getInstance()->getPlayerID(), player);
+    
     
     return true;
 }
@@ -221,8 +215,10 @@ void PropertyScene::onBackClicked(Ref*, TouchEventType type)
         case TouchEventType::TOUCH_EVENT_CANCELED:
             break;
         case TouchEventType::TOUCH_EVENT_ENDED:
-            Scene* scene = HomeScene::createScene();
-            cocos2d::Director::getInstance()->replaceScene(scene);//回到主页面
+            if(Self::getInstance() == this->player)
+                cocos2d::Director::getInstance()->replaceScene(HomeScene::createScene());//回到主页面
+            else
+                cocos2d::Director::getInstance()->replaceScene(FriendListScene::createScene());//回到好友页面
             break;
            
     }
@@ -235,11 +231,11 @@ bool PropertyScene::isAddable()
 {
     //计算总基础属性
     int totalBaseProperty = 5+4*Self::getInstance()->getLevel();
-    return attributes[Self::ATTRIBUTE::BASE_ACTION]
+    return (player == Self::getInstance())&&(attributes[Self::ATTRIBUTE::BASE_ACTION]
     +attributes[Self::ATTRIBUTE::BASE_BEAUTY]
     +attributes[Self::ATTRIBUTE::BASE_BOYABLITY]
     +attributes[Self::ATTRIBUTE::BASE_LEADERSHIP]
-    +attributes[Self::ATTRIBUTE::BASE_POPULARITY]< totalBaseProperty;
+    +attributes[Self::ATTRIBUTE::BASE_POPULARITY]< totalBaseProperty);
     
 }
 
@@ -267,12 +263,12 @@ void PropertyScene::enableAddButtons(bool isAddable)
     addPopularityButton->setVisible(isAddable);
     
     auto addOKButton = static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_ok"));
-    addOKButton->setVisible(isPropertyChanged());
-    addOKButton->setEnabled(isPropertyChanged());
+    addOKButton->setVisible((player == Self::getInstance()) && isPropertyChanged());
+    addOKButton->setEnabled((player == Self::getInstance()) && isPropertyChanged());
     
     auto addCancelButton = static_cast<Button *>(rootNode->getChildByName("Panel_text")->getChildByName("Button_cancel"));
-    addCancelButton->setVisible(isPropertyChanged());
-    addCancelButton->setEnabled(isPropertyChanged());
+    addCancelButton->setVisible((player == Self::getInstance()) && isPropertyChanged());
+    addCancelButton->setEnabled((player == Self::getInstance()) && isPropertyChanged());
     
 }
 
@@ -313,9 +309,7 @@ void PropertyScene::onOKClicked(Ref*, TouchEventType type)
     //将Self->getAttributes上传服务器
     HttpUtility::getInstance(this)->saveStatus();
     //重绘图像
-    fillText();
-    drawRadar();
-    enableAddButtons(isAddable());
+    redraw();
 }
 
 //点击了加点取消按钮
@@ -324,6 +318,24 @@ void PropertyScene::onCancelClicked(Ref*, TouchEventType type)
     //恢复Self上的状态
     attributes=player->getAttributes();
     //重绘图像
+    redraw();
+}
+
+//重绘图像
+void PropertyScene::redraw()
+{
+    //读取各属性值
+    loadPeoperty();
+    
+    //填写属性
+    fillText();
+    
+    //画雷达图
+    drawRadar();
+    
+    //计算是否可以加点，enable或者unable加点按钮
+    enableAddButtons((player==Self::getInstance())&&isAddable());
+    
     fillText();
     drawRadar();
     enableAddButtons(isAddable());

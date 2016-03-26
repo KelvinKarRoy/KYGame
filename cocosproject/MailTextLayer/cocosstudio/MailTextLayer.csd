@@ -88,7 +88,7 @@
               <AbstractNodeData Name="Panel_text" ActionTag="1496378300" Tag="20" IconVisible="False" LeftMargin="233.3700" RightMargin="166.6300" TopMargin="379.0798" BottomMargin="120.9202" TouchEnable="True" ClipAble="True" ComboBoxIndex="2" ColorAngle="90.0000" LeftEage="280" RightEage="280" TopEage="29" BottomEage="29" Scale9OriginX="-280" Scale9OriginY="-29" Scale9Width="560" Scale9Height="58" ctype="PanelObjectData">
                 <Size X="1000.0000" Y="500.0000" />
                 <Children>
-                  <AbstractNodeData Name="TextField_text" ActionTag="1481617296" Tag="21" IconVisible="False" TouchEnable="True" FontSize="56" IsCustomSize="True" LabelText="" PlaceHolderText="正文" MaxLengthEnable="True" MaxLengthText="12" ctype="TextFieldObjectData">
+                  <AbstractNodeData Name="TextField_text" ActionTag="1481617296" Tag="21" IconVisible="False" TouchEnable="True" FontSize="56" IsCustomSize="True" LabelText="" PlaceHolderText="正文" MaxLengthEnable="True" MaxLengthText="140" ctype="TextFieldObjectData">
                     <Size X="1000.0000" Y="500.0000" />
                     <AnchorPoint />
                     <Position />

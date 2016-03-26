@@ -335,8 +335,6 @@ void HttpUtility::loadPlayerInformation(int playerID,Player* player)
 //loadPlayerInformation的回调函数
 void HttpUtility::onLoadPlayerInformation(HttpClient *sender, HttpResponse *response)
 {
-    //去掉WaitLayer
-    callerLayer->removeChildByName("WaitLayer");
     
     if (!response) {
         return;
@@ -365,15 +363,21 @@ void HttpUtility::onLoadPlayerInformation(HttpClient *sender, HttpResponse *resp
     if (statusCode == 200) {
         //连接成功
         DataUtility::decodeInformation(responseDataStr);
-        if(typeid(LogInScene) == typeid(*callerLayer))
-        {//如果调用它的是登录页面
-            cocos2d::Director::getInstance()->replaceScene(HomeScene::createScene());//切换到主页面
+        log("%s\n%s",typeid(*callerLayer).name(),typeid(PropertyScene).name());
+        if(typeid(*callerLayer) == typeid(PropertyScene))
+        {//如果是属性页面
+            static_cast<PropertyScene*>(callerLayer)->redraw();
         }
     }
     else {
         //连接异常
         ((AuthenticationScene*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
     }
+    
+    
+    //去掉WaitLayer
+    callerLayer->removeChildByName("WaitLayer");
+    
 
 }
 
@@ -447,8 +451,11 @@ void HttpUtility::onAccount2ID(HttpClient *sender, HttpResponse *response)
         DataUtility::decodePlayerID(responseDataStr);
         
         //以此ID加载用户其他信息
-        loadPlayerInformation(player->getPlayerID(),Self::getInstance());
-        
+        //loadPlayerInformation(player->getPlayerID(),Self::getInstance());
+        if(typeid(LogInScene) == typeid(*callerLayer))
+        {//如果调用它的是登录页面
+            cocos2d::Director::getInstance()->replaceScene(HomeScene::createScene());//切换到主页面
+        }
     }
     else {
         //连接异常
