@@ -1,5 +1,8 @@
 #include "DialogLayer.h"
 
+
+#include "../utility/utility.h"
+
 USING_NS_CC;
 using namespace cocos2d::ui;
 using namespace cocostudio;

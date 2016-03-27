@@ -75,6 +75,10 @@ public:
     int getCard(){ return card; }
     void setCard(int card) { this->card = card; }
     
+    int getVP(){ return VP; }
+    void setVP(int VP) { this->VP = VP; }
+    
+    
     //各个属性
     enum ATTRIBUTE
     {
@@ -113,6 +117,7 @@ private:
     int honor;//
     int cloth;
     int card;
+    int VP;
     
     std::map<Player::ATTRIBUTE, int> attributes;//
     

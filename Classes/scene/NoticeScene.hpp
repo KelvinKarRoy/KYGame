@@ -11,13 +11,15 @@
 
 #include "../interface/Promptable.hpp"
 
+#include "DialogLayer.h"
+
 using namespace cocos2d;
 using namespace cocos2d::ui;
 using namespace cocostudio;
 
 
 
-class NoticeScene :public Promptable
+class NoticeScene :public Httpable
 {
 public:
     NoticeScene();
@@ -39,6 +41,16 @@ public:
     void setNotice(std::vector<Notice> notices){ this->notices = notices; }
     
     void updateNotice();
+    
+    void onUpdateInfo() {};
+    
+    //弹出对话框
+    void promptDialogBox(std::string str)
+    {
+        childLayer = DialogLayer::create();
+        ((DialogLayer*)childLayer)->setText(str);//弹出对话框
+        this->addChild((DialogLayer*)childLayer);
+    }
     
 private:
     cocos2d::Node* rootNode;

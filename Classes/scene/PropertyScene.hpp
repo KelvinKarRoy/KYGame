@@ -20,7 +20,9 @@
 #include "../model/Player.h"
 #include "../model/Self.h"
 
-#include "../interface/Promptable.hpp"
+#include "../interface/Httpable.hpp"
+
+#include "DialogLayer.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -30,7 +32,7 @@ using namespace cocos2d::ui;
 using namespace cocos2d;
 
 
-class PropertyScene :public Promptable
+class PropertyScene :public Httpable
 {
 public:
     PropertyScene();
@@ -74,9 +76,20 @@ public:
     
     void redraw();//重绘
     
-private:
-    Layer* childLayer;//子层
     
+    void onUpdateInfo();//http请求成功后
+    
+    //弹出对话框
+    void promptDialogBox(std::string str)
+    {
+        childLayer = DialogLayer::create();
+        ((DialogLayer*)childLayer)->setText(str);//弹出对话框
+        this->addChild((DialogLayer*)childLayer);
+    }
+    
+    
+    
+private:
     Node* rootNode;//csb
     
     Player* player;//要展示的人

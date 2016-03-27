@@ -16,7 +16,8 @@
 
 
 
-class WaitLayer : public cocos2d::Layer{
+class WaitLayer : public cocos2d::Layer
+{
 
 public:
     WaitLayer();

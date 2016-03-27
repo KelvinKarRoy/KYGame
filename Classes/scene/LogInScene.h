@@ -13,11 +13,13 @@
 #include "../utility/StringUtility.h"
 
 
-#include "../interface/Promptable.hpp"
+#include "../interface/Httpable.hpp"
+
+#include "DialogLayer.h"
+
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 #include "../sqlite/sqlite3.h"
-//#include "../sqlite/sqlite3.c"
 #else
 #include "sqlite3.h"
 #endif
@@ -26,7 +28,7 @@ using namespace cocos2d::ui;
 
 
 
-class LogInScene : public Promptable
+class LogInScene :public Httpable
 {
 public:
 	static cocos2d::Scene* createScene();
@@ -35,11 +37,22 @@ public:
 
 	// µœ÷ static create()∫Ø ˝µƒ∫Í
 	CREATE_FUNC(LogInScene);
+    
+    
+    void onUpdateInfo() {};
+    
+    //弹出对话框
+    void promptDialogBox(std::string str)
+    {
+        childLayer = DialogLayer::create();
+        ((DialogLayer*)childLayer)->setText(str);//弹出对话框
+        this->addChild((DialogLayer*)childLayer);
+    }
 
 	
 private:
 	Node* rootNode;
-	Layer* childLayer;//∏˜÷÷“≥√Ê
+    
 	void clickAboutCallback(Ref*, TouchEventType type);//πÿ”⁄∞¥≈•ªÿµ˜∫Ø ˝
 	void clickLoginCallback(Ref*, TouchEventType type);//µ«¬º∞¥≈•ªÿµ˜∫Ø ˝
 	void clickRegeditCallback(Ref*, TouchEventType type);//◊¢≤·∞¥≈•ªÿµ˜∫Ø ˝
@@ -49,6 +62,8 @@ private:
 
     void toHome();//账号密码正确，进入游戏主页面
 
+    
+    
     friend class HttpUtility;//设置友元 使得http工具类能访问toHome()等重要方法
 };
 

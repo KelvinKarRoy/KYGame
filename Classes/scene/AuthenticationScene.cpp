@@ -1,5 +1,7 @@
 #include "AuthenticationScene.h"
 
+#include "LogInScene.h"
+
 USING_NS_CC;
 using namespace cocos2d::ui;
 using namespace cocostudio;
@@ -173,3 +175,5 @@ bool AuthenticationScene::checkAnswer()
 	}
 	return flag;
 }
+
+

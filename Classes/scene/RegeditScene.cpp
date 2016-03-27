@@ -1,5 +1,9 @@
 #include "RegeditScene.h"
 
+#include "LogInScene.h"
+
+#include "../utility/HttpUtility.h"
+
 
 RegeditScene::RegeditScene()
 {

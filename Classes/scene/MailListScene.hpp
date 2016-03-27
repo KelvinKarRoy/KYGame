@@ -9,13 +9,15 @@
 #ifndef MailListScene_hpp
 #define MailListScene_hpp
 
-#include "../interface/Promptable.hpp"
+#include "../interface/Httpable.hpp"
+
+#include "DialogLayer.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
 using namespace cocostudio;
 
-class MailListScene : public Promptable
+class MailListScene :public Httpable
 {
 public:
     MailListScene();
@@ -43,8 +45,19 @@ public:
     
     void updateMails();
     
+    void onUpdateInfo() {};
+    
+    //弹出对话框
+    void promptDialogBox(std::string str)
+    {
+        childLayer = DialogLayer::create();
+        ((DialogLayer*)childLayer)->setText(str);//弹出对话框
+        this->addChild((DialogLayer*)childLayer);
+    }
+    
 private:
     cocos2d::Node* rootNode;
+    
     
     std::vector<Mail> mails;
     Mail* mail;//正在展示的mail

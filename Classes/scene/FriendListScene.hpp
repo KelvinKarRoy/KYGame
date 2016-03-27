@@ -9,12 +9,14 @@
 #ifndef FriendListScene_hpp
 #define FriendListScene_hpp
 
-#include "../interface/Promptable.hpp"
+#include "../interface/Httpable.hpp"
+
+#include "DialogLayer.h"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
 
-class FriendListScene : public Promptable
+class FriendListScene :public Httpable
 {
 public:
     FriendListScene();
@@ -39,8 +41,20 @@ public:
     
     void updateFriends();
     
+    void onUpdateInfo() {};
+    
+    //弹出对话框
+    void promptDialogBox(std::string str)
+    {
+        childLayer = DialogLayer::create();
+        ((DialogLayer*)childLayer)->setText(str);//弹出对话框
+        this->addChild((DialogLayer*)childLayer);
+    }
+
+    
 private:
     cocos2d::Node* rootNode;
+    
     
     cocos2d::ui::Layout* buttonPanel;
     

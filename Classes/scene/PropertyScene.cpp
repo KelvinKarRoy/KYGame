@@ -341,4 +341,13 @@ void PropertyScene::redraw()
     enableAddButtons(isAddable());
 }
 
+//http请求成功后
+void PropertyScene::onUpdateInfo()
+{
+    redraw();
+}
+
+
+
+
 

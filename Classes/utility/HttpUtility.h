@@ -19,7 +19,7 @@
 #include "DataUtility.h"
 #include "../scene/WaitLayer.hpp"
 
-#include "../interface/Promptable.hpp"
+#include "../interface/Httpable.hpp"
 
 class Player;
 
@@ -31,7 +31,7 @@ class HttpUtility
 private:
     static HttpClient* httpClient;
     static HttpUtility* httpUtility;
-    Promptable* callerLayer;//调用它的对象
+    Httpable* callerLayer;//调用它的对象
     
     //flag枚举
     enum HttpEnum
@@ -69,11 +69,11 @@ private:
 public:
     
     //单例类获取
-    static HttpUtility* getInstance(Promptable* callerLayer);//调用它的对象
+    static HttpUtility* getInstance(Httpable* callerLayer);//调用它的对象
     static HttpUtility* getInstance();
     
     bool getFlag();
-    Promptable* getCallerLayer(){ return callerLayer; }
+    Httpable* getCallerLayer(){ return callerLayer; }
     
     ~HttpUtility();
     

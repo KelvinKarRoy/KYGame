@@ -97,6 +97,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     copyFile("db/radar.csv");
     copyFile("db/exp.csv");
     copyFile("db/KYGame.db");
+    copyFile("db/food.csv");
 #endif
 
     // create a scene. it's an autorelease object

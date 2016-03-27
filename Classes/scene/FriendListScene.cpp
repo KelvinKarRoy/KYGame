@@ -201,3 +201,5 @@ void FriendListScene::clickPropertyCallback(Ref*,TouchEventType type)
 
 
 
+
+

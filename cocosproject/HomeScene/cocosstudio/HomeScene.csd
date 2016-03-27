@@ -30,6 +30,81 @@
             <PreSize X="1.0000" Y="0.0081" />
             <ImageFileData Type="Default" Path="Default/LoadingBarFile.png" Plist="" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Panel_info" ActionTag="1363986417" Tag="15" IconVisible="False" RightMargin="1808.0000" BottomMargin="892.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="400.0000" Y="350.0000" />
+            <Children>
+              <AbstractNodeData Name="Text_name" ActionTag="-1547436080" Alpha="229" Tag="16" IconVisible="False" LeftMargin="20.0000" RightMargin="248.0000" TopMargin="25.0000" BottomMargin="275.0000" FontSize="50" LabelText="昵称：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="132.0000" Y="50.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="20.0000" Y="300.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0500" Y="0.8571" />
+                <PreSize X="0.3300" Y="0.1429" />
+                <FontResource Type="Normal" Path="wending.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Text_level" ActionTag="-188705152" Alpha="229" Tag="17" IconVisible="False" LeftMargin="20.0000" RightMargin="248.0000" TopMargin="75.0000" BottomMargin="225.0000" FontSize="50" LabelText="等级：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="132.0000" Y="50.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="20.0000" Y="250.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0500" Y="0.7143" />
+                <PreSize X="0.3300" Y="0.1429" />
+                <FontResource Type="Normal" Path="wending.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Text_exp" ActionTag="1067603517" Alpha="229" Tag="18" IconVisible="False" LeftMargin="20.0000" RightMargin="198.0000" TopMargin="125.0000" BottomMargin="175.0000" FontSize="50" LabelText="经验值：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="182.0000" Y="50.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="20.0000" Y="200.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0500" Y="0.5714" />
+                <PreSize X="0.4550" Y="0.1429" />
+                <FontResource Type="Normal" Path="wending.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Text_VP" ActionTag="-1909095977" Alpha="229" Tag="19" IconVisible="False" LeftMargin="20.0000" RightMargin="198.0000" TopMargin="175.0000" BottomMargin="125.0000" FontSize="50" LabelText="饥饿度：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="182.0000" Y="50.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="20.0000" Y="150.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0500" Y="0.4286" />
+                <PreSize X="0.4550" Y="0.1429" />
+                <FontResource Type="Normal" Path="wending.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Text_money" ActionTag="-666280880" Alpha="229" Tag="20" IconVisible="False" LeftMargin="20.0000" RightMargin="198.0000" TopMargin="225.0000" BottomMargin="75.0000" FontSize="50" LabelText="游戏币：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="182.0000" Y="50.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="20.0000" Y="100.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0500" Y="0.2857" />
+                <PreSize X="0.4550" Y="0.1429" />
+                <FontResource Type="Normal" Path="wending.TTF" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleY="1.0000" />
+            <Position Y="1242.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition Y="1.0000" />
+            <PreSize X="0.1812" Y="0.2818" />
+            <SingleColor A="255" R="255" G="255" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

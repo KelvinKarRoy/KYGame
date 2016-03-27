@@ -143,7 +143,8 @@ void DataUtility::decodeInformation(std::string responseDataStr)
               && dataString.HasMember("honor")
               && dataString.HasMember("skillID")
               && dataString.HasMember("cpID")
-              && dataString.HasMember("top"));
+              && dataString.HasMember("top")
+              && dataString.HasMember("VP"));
     
     //ªÒ»°
     const rapidjson::Value & vRole = dataString["role"];
@@ -166,6 +167,7 @@ void DataUtility::decodeInformation(std::string responseDataStr)
     const rapidjson::Value & vTop = dataString["top"];
     const rapidjson::Value & vCloth = dataString["cloth"];
     const rapidjson::Value & vCard = dataString["card"];
+    const rapidjson::Value & vVP = dataString["VP"];
     
     
     // «∑Ò « ˝◊È
@@ -189,6 +191,7 @@ void DataUtility::decodeInformation(std::string responseDataStr)
               && vTop.IsInt()
               && vCloth.IsInt()
               && vCard.IsInt()
+              && vVP.IsInt()
               );
     
     HttpUtility::getInstance()->getPlayer()->setRole(vRole.GetInt());
@@ -223,7 +226,7 @@ void DataUtility::decodeInformation(std::string responseDataStr)
     HttpUtility::getInstance()->getPlayer()->setTop(vTop.GetInt());
     HttpUtility::getInstance()->getPlayer()->setCloth(vCloth.GetInt());
     HttpUtility::getInstance()->getPlayer()->setCard(vCard.GetInt());
-    
+    HttpUtility::getInstance()->getPlayer()->setVP(vVP.GetInt());
     
     HttpUtility::getInstance()->getPlayer()->expTolevel();//经验值转等级
     

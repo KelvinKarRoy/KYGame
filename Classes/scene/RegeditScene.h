@@ -1,12 +1,12 @@
 #pragma once
 /*
-	×¢²áÒ³Ãæ
+	â—ŠÂ¢â‰¤Â·â€œâ‰¥âˆšÃŠ
 */
 
 
 #include "DialogLayer.h"
 
-#include "../interface/Promptable.hpp"
+#include "../interface/Httpable.hpp"
 
 using namespace cocos2d;
 using namespace cocos2d::ui;
@@ -16,7 +16,7 @@ using namespace cocos2d::ui;
 using namespace cocos2d;
 
 
-class RegeditScene :public Promptable
+class RegeditScene :public Httpable
 {
 public:
 	RegeditScene();
@@ -24,9 +24,9 @@ public:
 
 
 	enum STATUS{
-		ACCOUNTEXIST,//ÕËºÅÒÑ´æÔÚ
-		SUCCEED,//×¢²á³É¹¦
-		LINK_ERROR//·þÎñÆ÷Á¬½Ó´íÎó
+		ACCOUNTEXIST,//â€™Ã€âˆ«â‰ˆâ€œâ€”Â¥ÃŠâ€˜â„
+		SUCCEED,//â—ŠÂ¢â‰¤Â·â‰¥â€¦Ï€Â¶
+		LINK_ERROR//âˆ‘Ë›Å’Ã’âˆ†ËœÂ¡Â¨Î©â€Â¥ÃŒÅ’Ã›
 	};
 
 
@@ -34,13 +34,22 @@ public:
 
 	virtual bool init();
 
-	//ÊµÏÖ static create()º¯ÊýµÄºê
+	//Â ÂµÅ“Ã· static create()âˆ«Ã˜Â ËÂµÆ’âˆ«Ã
 	CREATE_FUNC(RegeditScene);
 
     
+    void onUpdateInfo() {};
+    
+    //å¼¹å‡ºå¯¹è¯æ¡†
+    void promptDialogBox(std::string str)
+    {
+        childLayer = DialogLayer::create();
+        ((DialogLayer*)childLayer)->setText(str);//å¼¹å‡ºå¯¹è¯æ¡†
+        this->addChild((DialogLayer*)childLayer);
+    }
+    
+    
 private:
-	Layer* childLayer;//×ÓÒ³Ãæ
-
 	struct
 	{
 		std::string account;
@@ -53,12 +62,16 @@ private:
 
 	Button* karrybtn, *roybtn;
 
-	void onClickBackCallback(Ref*, TouchEventType type);//·µ»Ø¼ü
-	void onClickNextCallback(Ref*, TouchEventType type);//next¼ü
-	void onClickKarryCallback(Ref*, TouchEventType type);//Ñ¡Ôñkarry
-	void onClickRoyCallback(Ref*, TouchEventType type);//Ñ¡Ôñroy
-	void onClickRegeditCallback(Ref*, TouchEventType type);//×¢²á¼ü
-
-	bool isRegeditLegal();
+	void onClickBackCallback(Ref*, TouchEventType type);//âˆ‘ÂµÂªÃ¿ÂºÂ¸
+	void onClickNextCallback(Ref*, TouchEventType type);//nextÂºÂ¸
+	void onClickKarryCallback(Ref*, TouchEventType type);//â€”Â°â€˜Ã’karry
+	void onClickRoyCallback(Ref*, TouchEventType type);//â€”Â°â€˜Ã’roy
+	void onClickRegeditCallback(Ref*, TouchEventType type);//â—ŠÂ¢â‰¤Â·ÂºÂ¸
+    
+    
+    
+    
+    
+    bool isRegeditLegal();
 };
 

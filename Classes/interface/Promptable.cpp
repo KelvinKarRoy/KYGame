@@ -7,12 +7,6 @@
 //
 
 #include "Promptable.hpp"
-#include "../scene/DialogLayer.h"
 
-//弹出对话框
-void Promptable::promptDialogBox(std::string str)
-{
-    childLayer = DialogLayer::create();
-    ((DialogLayer*)childLayer)->setText(str);//弹出对话框
-    this->addChild((DialogLayer*)childLayer);
-}
+
+

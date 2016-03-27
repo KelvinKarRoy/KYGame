@@ -20,7 +20,7 @@ HttpUtility::HttpUtility() {
 
 
 
-HttpUtility* HttpUtility::getInstance(Promptable* callerLayer){
+HttpUtility* HttpUtility::getInstance(Httpable* callerLayer){
 	
 	if (httpUtility == nullptr)
 	{
@@ -70,7 +70,7 @@ void HttpUtility::checkPassword(std::string account, std::string password)
     
     //加入等待转圈Layer，并吞噬下层事件
     auto scene = WaitLayer::create();
-    callerLayer->addChild(scene);
+    ((Layer*)callerLayer)->addChild(scene);
     scene->setName("WaitLayer");
     
 }
@@ -79,7 +79,7 @@ void HttpUtility::checkPassword(std::string account, std::string password)
 void HttpUtility::onCheckPassword(HttpClient *sender, HttpResponse *response)
 {
     //去掉WaitLayer
-    callerLayer->removeChildByName("WaitLayer");
+    ((Layer*)callerLayer)->removeChildByName("WaitLayer");
     
     
     if (!response) {
@@ -93,7 +93,7 @@ void HttpUtility::onCheckPassword(HttpClient *sender, HttpResponse *response)
     if (!response->isSucceed()) {
         log("response failed");
         log("error buffer: %s", response->getErrorBuffer());
-        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接");
+        this->callerLayer->promptDialogBox("网络有屎，请倒立十分钟后连接");
         return;
     }
     
@@ -160,7 +160,7 @@ void HttpUtility::regeditAccount(std::string account,//’À∫≈
     
     //加入等待转圈Layer，并吞噬下层事件
     auto scene = WaitLayer::create();
-    callerLayer->addChild(scene);
+    ((Layer*)callerLayer)->addChild(scene);
     scene->setName("WaitLayer");
     log("%s",scene->getName().c_str());
     scene->setVisible(true);
@@ -170,7 +170,7 @@ void HttpUtility::regeditAccount(std::string account,//’À∫≈
 void HttpUtility::onRegeditAccount(HttpClient *sender, HttpResponse *response)
 {
     //去掉WaitLayer
-    callerLayer->removeChildByName("WaitLayer");
+    ((Layer*)callerLayer)->removeChildByName("WaitLayer");
     
     if (!response) {
         return;
@@ -250,7 +250,7 @@ void HttpUtility::loadQuestion(int num_question)
     
     //加入等待转圈Layer，并吞噬下层事件
     auto scene = WaitLayer::create();
-    callerLayer->addChild(scene);
+    ((Layer*)callerLayer)->addChild(scene);
     scene->setName("WaitLayer");
     scene->setVisible(true);
 }
@@ -259,7 +259,7 @@ void HttpUtility::loadQuestion(int num_question)
 void HttpUtility::onLoadQuestion(HttpClient *sender, HttpResponse *response)
 {
     //去掉WaitLayer
-    callerLayer->removeChildByName("WaitLayer");
+    ((Layer*)callerLayer)->removeChildByName("WaitLayer");
     
     if (!response) {
         return;
@@ -272,7 +272,7 @@ void HttpUtility::onLoadQuestion(HttpClient *sender, HttpResponse *response)
     if (!response->isSucceed()) {
         log("response failed");
         log("error buffer: %s", response->getErrorBuffer());
-        ((AuthenticationScene*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接");
+        callerLayer->promptDialogBox("网络有屎，请倒立十分钟后连接");
         return;
     }
     
@@ -327,7 +327,7 @@ void HttpUtility::loadPlayerInformation(int playerID,Player* player)
     
     //加入等待转圈Layer，并吞噬下层事件
     auto scene = WaitLayer::create();
-    callerLayer->addChild(scene);
+    ((Layer*)callerLayer)->addChild(scene);
     scene->setName("WaitLayer");
     scene->setVisible(true);
 }
@@ -363,11 +363,8 @@ void HttpUtility::onLoadPlayerInformation(HttpClient *sender, HttpResponse *resp
     if (statusCode == 200) {
         //连接成功
         DataUtility::decodeInformation(responseDataStr);
-        log("%s\n%s",typeid(*callerLayer).name(),typeid(PropertyScene).name());
-        if(typeid(*callerLayer) == typeid(PropertyScene))
-        {//如果是属性页面
-            static_cast<PropertyScene*>(callerLayer)->redraw();
-        }
+        //加载
+        static_cast<LoadInfoable*>(callerLayer)->onUpdateInfo();
     }
     else {
         //连接异常
@@ -376,7 +373,7 @@ void HttpUtility::onLoadPlayerInformation(HttpClient *sender, HttpResponse *resp
     
     
     //去掉WaitLayer
-    callerLayer->removeChildByName("WaitLayer");
+    ((Layer*)callerLayer)->removeChildByName("WaitLayer");
     
 
 }
@@ -410,7 +407,7 @@ void HttpUtility::account2ID(std::string account)
     
     //加入等待转圈Layer，并吞噬下层事件
     auto scene = WaitLayer::create();
-    callerLayer->addChild(scene);
+    ((Layer*)callerLayer)->addChild(scene);
     scene->setName("WaitLayer");
     scene->setVisible(true);
 }
@@ -419,7 +416,7 @@ void HttpUtility::account2ID(std::string account)
 void HttpUtility::onAccount2ID(HttpClient *sender, HttpResponse *response)
 {
     //去掉WaitLayer
-    callerLayer->removeChildByName("WaitLayer");
+    ((Layer*)callerLayer)->removeChildByName("WaitLayer");
     
     if (!response) {
         return;
@@ -503,7 +500,7 @@ void HttpUtility::saveStatus()
     
     //加入等待转圈Layer，并吞噬下层事件
     auto scene = WaitLayer::create();
-    callerLayer->addChild(scene);
+    ((Layer*)callerLayer)->addChild(scene);
     scene->setName("WaitLayer");
     scene->setVisible(true);
 }
@@ -512,7 +509,7 @@ void HttpUtility::saveStatus()
 void HttpUtility::onSaveStatus(HttpClient *sender, HttpResponse *response)
 {
     //去掉WaitLayer
-    callerLayer->removeChildByName("WaitLayer");
+    ((Layer*)callerLayer)->removeChildByName("WaitLayer");
     
     if (!response) {
         return;
@@ -578,7 +575,7 @@ void HttpUtility::loadNotice()
     
     //加入等待转圈Layer，并吞噬下层事件
     auto scene = WaitLayer::create();
-    callerLayer->addChild(scene);
+    ((Layer*)callerLayer)->addChild(scene);
     scene->setName("WaitLayer");
     scene->setVisible(true);
 }
@@ -614,11 +611,11 @@ void HttpUtility::onLoadNotice(HttpClient *sender, HttpResponse *response)
     }
     else {
         //连接异常
-        ((Promptable*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
+        this->callerLayer->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
     }
     
     //去掉WaitLayer
-    callerLayer->removeChildByName("WaitLayer");
+    ((Layer*)(callerLayer))->removeChildByName("WaitLayer");
     
     if (!response) {
         return;
@@ -770,7 +767,7 @@ void HttpUtility::onGetStuff(HttpClient *sender, HttpResponse *response)
             static_cast<Button*>(callerLayer->getChildByName("mailTextLayer")->getChildByName("Panel_mail")->getChildByName("Button_money"))->setEnabled(false);
             static_cast<Button*>(callerLayer->getChildByName("mailTextLayer")->getChildByName("Panel_mail")->getChildByName("Button_money"))->setTitleText("0");
         }
-        else callerLayer->promptDialogBox("领取失败了，请重新领取");
+        else static_cast<Promptable*>(callerLayer)->promptDialogBox("领取失败了，请重新领取");
     }
     else {
         //连接异常
