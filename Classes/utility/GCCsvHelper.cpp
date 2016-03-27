@@ -8,6 +8,8 @@
 
 #include "GCCsvHelper.hpp"
 
+#include "StringUtility.h"
+
 GCCsvHelper::GCCsvHelper()
 :m_seperator(",")
 ,m_colLength(0)
@@ -49,13 +51,13 @@ bool GCCsvHelper::openAndResolveFile(const char *fileName)
         {
             if(line[i]==';')
             {
-                vline.push_back(std::string(line,j,i-j));
+                vline.push_back(StringUtility::WStrToUTF8(StringUtility::decodeUnicode(std::string(line,j,i-j))));
                 j=i+1;
                 m_colLength++;
             }
             if(i==strlen(line)-1)
             {
-                vline.push_back(std::string(line,j,i-j+1));
+                vline.push_back(StringUtility::WStrToUTF8(StringUtility::decodeUnicode( std::string(line,j,i-j+1))));
                 m_colLength++;
             }
             

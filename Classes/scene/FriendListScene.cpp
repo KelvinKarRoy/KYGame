@@ -9,6 +9,7 @@
 #include "FriendListScene.hpp"
 
 #include "../utility/HttpUtility.h"
+#include "../utility/GCCsvHelper.hpp"
 
 #include "HomeScene.hpp"
 #include "PropertyScene.hpp"

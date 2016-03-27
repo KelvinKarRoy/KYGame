@@ -11,6 +11,7 @@
 #include "NoticeScene.hpp"
 #include "MailListScene.hpp"
 #include "FriendListScene.hpp"
+#include "FoodScene.hpp"
 
 MenuLayer::MenuLayer()
 {
@@ -64,7 +65,8 @@ bool MenuLayer::init()
     auto friendButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("ListView_dmenu")->getChildByName("Button_friend"));
     friendButton->addTouchEventListener(this,toucheventselector(MenuLayer::clickFriendCallback));
     
-    
+    auto foodButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("ListView_dmenu")->getChildByName("Button_food"));
+    foodButton->addTouchEventListener(this,toucheventselector(MenuLayer::clickFoodCallback));
     
     return true;
 }
@@ -130,6 +132,25 @@ void MenuLayer::clickMailCallback(Ref*, TouchEventType type)
     }
 }
 
+//点击投食按钮
+void MenuLayer::clickFoodCallback(Ref*, TouchEventType type)
+{
+    switch (type)
+    {
+        case TouchEventType::TOUCH_EVENT_BEGAN:
+        break;
+        case TouchEventType::TOUCH_EVENT_CANCELED:
+        break;
+        case TouchEventType::TOUCH_EVENT_MOVED:
+        break;
+        case TouchEventType::TOUCH_EVENT_ENDED:
+            auto layer = (FoodScene::create(Self::getInstance()->getPlayerID()));
+            auto scene = Scene::create();
+            scene->addChild(layer);
+            cocos2d::Director::getInstance()->replaceScene(scene);//切换到好友页面
+        break;
+    }
+}
 
 //点击邮件按钮
 void MenuLayer::clickFriendCallback(Ref*, TouchEventType type)

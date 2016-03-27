@@ -34,6 +34,7 @@ public:
     void clickPropertyCallback(Ref*, TouchEventType type);//点击属性按钮
     void clickNoticeCallback(Ref*, TouchEventType type);//点击公告按钮
     void clickMailCallback(Ref*, TouchEventType type);//点击邮件按钮
+    void clickFoodCallback(Ref*, TouchEventType type);//点击投食按钮
     void clickFriendCallback(Ref*, TouchEventType type);//点击好友按钮
     
 private:
