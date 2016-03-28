@@ -1,11 +1,11 @@
 #pragma once
 /*
-	¹ØÓÚÒ³Ãæ²ã
+	Ï€Ã¿â€â„â€œâ‰¥âˆšÃŠâ‰¤â€
 */
 #include "cocos2d.h"
 #include "editor-support/cocostudio/CCSGUIReader.h"
-#include "ui/CocosGUI.h"//UIÏà¹ØµÄÍ·ÎÄ¼ş 
-#include "cocostudio/CocoStudio.h"//ÔÚCocosStudio.h Í·ÎÄ¼şÖĞÒÑ¾­°üº¬ÁËStudioËùĞèÒªµÄ¸÷¸öÍ·ÎÄ¼ş(³ıCocosGUI)Òò´ËÎÒÃÇÊ¹ÓÃStudio½öĞèÒª°üº¬Ëû¾Í¿ÉÒÔ 
+#include "ui/CocosGUI.h"//UIÅ“â€¡Ï€Ã¿ÂµÆ’Ã•âˆ‘Å’Æ’ÂºË› 
+#include "cocostudio/CocoStudio.h"//â€˜â„CocosStudio.h Ã•âˆ‘Å’Æ’ÂºË›Ã·â€“â€œâ€”Ã¦â‰ âˆÂ¸âˆ«Â¨Â¡Ã€StudioÃ€Ë˜â€“Ã‹â€œâ„¢ÂµÆ’âˆËœâˆË†Ã•âˆ‘Å’Æ’ÂºË›(â‰¥ËCocosGUI)â€œÃšÂ¥Ã€Å’â€œâˆšÂ«Â Ï€â€âˆšStudioÎ©Ë†â€“Ã‹â€œâ„¢âˆÂ¸âˆ«Â¨Ã€ËšÃ¦Ã•Ã¸â€¦â€œâ€˜ 
 
 #include "../utility/StringUtility.h"
 
@@ -16,22 +16,30 @@ using namespace cocos2d::ui;
 class DialogLayer :public Layer
 {
 public:
+    enum DialogType
+    {
+        OKDIALOG,
+        OKCANCELDIALOG
+    };
+    
 	static Scene* createScene();
 
 	virtual bool init();
-
-	//ÊµÏÖ static create()º¯ÊıµÄºê
-	CREATE_FUNC(DialogLayer);
-
-	//ÉèÖÃÎÄ±¾
+    //å¸¦ç±»å‹çš„init
+    bool init(DialogType type);
+    
+    //Â ÂµÅ“Ã· static create()âˆ«Ã˜Â ËÂµÆ’âˆ«Ã
+    CREATE_FUNC(DialogLayer);
+    static DialogLayer* create(DialogType type);
+    
+	//â€¦Ã‹Ã·âˆšÅ’Æ’Â±Ã¦
 	void setText(std::string text);
 
-	//ÉèÖÃok°´Å¥µÄ»Øµ÷º¯Êı
+	//â€¦Ã‹Ã·âˆšokâˆÂ¥â‰ˆâ€¢ÂµÆ’ÂªÃ¿ÂµËœâˆ«Ã˜Â Ë
 	void setCallback(void(DialogLayer::*ptr)(Ref*, TouchEventType type));
 	
-	//°´ok»Øµ½loginÒ³ÃæµÄ»Øµ÷º¯Êı
-	void clickOKCallbackBackToLogin(Ref*, TouchEventType type);
-
+	
+    
 	void setNextScene(Scene* layer)
 	{
 		nextScene = layer;
@@ -41,11 +49,14 @@ public:
 private:
     Layer* callerLayer;
     
-	Node* rootNode;//¼ÓÔØµÄui
+	Node* rootNode;//Âºâ€â€˜Ã¿ÂµÆ’ui
 
-	Scene* nextScene;//ÏÂÒ»¸öÒªÈ¥µÄÒ³Ãæ   Èç¹ûÎªnullprtÔò²»Ìø×ª
+	Scene* nextScene;//Å“Â¬â€œÂªâˆË†â€œâ„¢Â»â€¢ÂµÆ’â€œâ‰¥âˆšÃŠ   Â»ÃÏ€ËšÅ’â„¢nullprtâ€˜Ãšâ‰¤ÂªÃƒÂ¯â—Šâ„¢
 
-	void clickOKCallback(Ref*, TouchEventType type);
+	void clickCancelCallback(Ref*, TouchEventType type);
+    void clickOKCallback(Ref*, TouchEventType type);
+    
+    
 };
 
 

@@ -49,27 +49,34 @@ public:
     void onUpdateInfo();
     
     //弹出对话框
-    void promptDialogBox(std::string str)
-    {
-        childLayer = DialogLayer::create();
-        ((DialogLayer*)childLayer)->setText(str);//弹出对话框
-        this->addChild((DialogLayer*)childLayer);
-    }
+    void promptDialogBox(std::string str,DialogLayer::DialogType type =
+                         DialogLayer::DialogType::OKDIALOG);
     
     void setPlayer(Player* player) { this->player = player; }
     Player* getPlayer() { return player; }
     
+    //ok按钮回调
+    void onClickOKCallback();
     
 private:
     cocos2d::Node* rootNode;
     
     Player* player;
     static Player onePlayer;//实例
+    
+    int foodID;
+    
     //back按钮回调
     void clickBackCallback(Ref*, TouchEventType type);
     
+    //food按钮回调
+    void clickFoodCallback(Ref*, TouchEventType type);
+    
+    
     void drawFoods();//画那些食物
 };
+
+
 
 
 #endif /* FoodScene_hpp */

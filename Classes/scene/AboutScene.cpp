@@ -28,7 +28,7 @@ bool AboutScene::init()
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 	/**************º”‘ÿUI***************/
-	rootNode = CSLoader::createNode("csb/AboutScene.csb");
+	rootNode = CSLoader::createNode("csb/AboutLayer.csb");
 	
 	//µ˜’˚UI¥Û–°
 	rootNode->setScale(visibleSize.width / rootNode->getContentSize().width, visibleSize.height / rootNode->getContentSize().height);

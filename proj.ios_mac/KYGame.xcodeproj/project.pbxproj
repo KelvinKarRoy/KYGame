@@ -124,6 +124,8 @@
 		B63BE7721CA828DC0097B611 /* food8.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE7681CA828DC0097B611 /* food8.png */; };
 		B63BE7731CA828DC0097B611 /* food9.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE7691CA828DC0097B611 /* food9.png */; };
 		B63BE7741CA828DC0097B611 /* food10.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE76A1CA828DC0097B611 /* food10.png */; };
+		B63BE7771CA83C6E0097B611 /* aboutScene.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE7751CA83C6E0097B611 /* aboutScene.png */; };
+		B63BE7781CA83C6E0097B611 /* authenticationBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE7761CA83C6E0097B611 /* authenticationBackGround.png */; };
 		B66C09F01C85505F002C8270 /* csb in Resources */ = {isa = PBXBuildFile; fileRef = B66C09CF1C85505E002C8270 /* csb */; };
 		B66C09F11C85505F002C8270 /* Default in Resources */ = {isa = PBXBuildFile; fileRef = B66C09D01C85505E002C8270 /* Default */; };
 		B66C09F31C85505F002C8270 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = B66C09D21C85505F002C8270 /* fonts */; };
@@ -230,7 +232,7 @@
 		B609BD001C8BF89A0067B838 /* AuthenticationScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AuthenticationScene.cpp; path = scene/AuthenticationScene.cpp; sourceTree = "<group>"; };
 		B609BD011C8BF89A0067B838 /* AuthenticationScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuthenticationScene.h; path = scene/AuthenticationScene.h; sourceTree = "<group>"; };
 		B609BD021C8BF89A0067B838 /* DialogLayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DialogLayer.cpp; path = scene/DialogLayer.cpp; sourceTree = "<group>"; };
-		B609BD031C8BF89A0067B838 /* DialogLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DialogLayer.h; path = scene/DialogLayer.h; sourceTree = "<group>"; };
+		B609BD031C8BF89A0067B838 /* DialogLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DialogLayer.h; path = scene/DialogLayer.h; sourceTree = "<group>"; };
 		B609BD041C8BF89A0067B838 /* LogInScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = LogInScene.cpp; path = scene/LogInScene.cpp; sourceTree = "<group>"; };
 		B609BD051C8BF89A0067B838 /* LogInScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LogInScene.h; path = scene/LogInScene.h; sourceTree = "<group>"; };
 		B609BD061C8BF89A0067B838 /* PropertyScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PropertyScene.cpp; path = scene/PropertyScene.cpp; sourceTree = "<group>"; };
@@ -298,6 +300,8 @@
 		B63BE7681CA828DC0097B611 /* food8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food8.png; sourceTree = "<group>"; };
 		B63BE7691CA828DC0097B611 /* food9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food9.png; sourceTree = "<group>"; };
 		B63BE76A1CA828DC0097B611 /* food10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food10.png; sourceTree = "<group>"; };
+		B63BE7751CA83C6E0097B611 /* aboutScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutScene.png; sourceTree = "<group>"; };
+		B63BE7761CA83C6E0097B611 /* authenticationBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = authenticationBackGround.png; sourceTree = "<group>"; };
 		B66C09CF1C85505E002C8270 /* csb */ = {isa = PBXFileReference; lastKnownFileType = folder; path = csb; sourceTree = "<group>"; };
 		B66C09D01C85505E002C8270 /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Default; sourceTree = "<group>"; };
 		B66C09D21C85505F002C8270 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
@@ -447,6 +451,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B63BE7751CA83C6E0097B611 /* aboutScene.png */,
+				B63BE7761CA83C6E0097B611 /* authenticationBackGround.png */,
 				B63BE7611CA828DC0097B611 /* food1.png */,
 				B63BE7621CA828DC0097B611 /* food2.png */,
 				B63BE7631CA828DC0097B611 /* food3.png */,
@@ -756,9 +762,11 @@
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				B63BE7521CA80B1E0097B611 /* scloth0.png in Resources */,
 				B63BE76B1CA828DC0097B611 /* food1.png in Resources */,
+				B63BE7781CA83C6E0097B611 /* authenticationBackGround.png in Resources */,
 				B66C09F11C85505F002C8270 /* Default in Resources */,
 				B63BE7501CA80B1E0097B611 /* scard0.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
+				B63BE7771CA83C6E0097B611 /* aboutScene.png in Resources */,
 				B63BE72C1CA80B010097B611 /* back1.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,

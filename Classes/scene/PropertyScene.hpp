@@ -80,7 +80,8 @@ public:
     void onUpdateInfo();//http请求成功后
     
     //弹出对话框
-    void promptDialogBox(std::string str)
+    void promptDialogBox(std::string str,DialogLayer::DialogType type =
+                         DialogLayer::DialogType::OKDIALOG)
     {
         childLayer = DialogLayer::create();
         ((DialogLayer*)childLayer)->setText(str);//弹出对话框

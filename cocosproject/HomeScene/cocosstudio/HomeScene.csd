@@ -105,6 +105,17 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Particle" ActionTag="-1588778439" Tag="28" IconVisible="True" LeftMargin="1103.9980" RightMargin="1104.0020" TopMargin="621.0008" BottomMargin="620.9992" ctype="ParticleObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="1103.9980" Y="620.9992" />
+            <Scale ScaleX="8.0004" ScaleY="7.6073" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Default" Path="Default/defaultParticle.plist" Plist="" />
+            <BlendFunc Src="775" Dst="772" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

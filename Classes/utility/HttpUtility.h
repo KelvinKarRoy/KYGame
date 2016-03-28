@@ -63,6 +63,7 @@ private:
     void onLoadMail(HttpClient *sender, HttpResponse *response);//加载邮件
     void onGetStuff(HttpClient *sender, HttpResponse *response);//获取邮件里面的东东
     void onLoadFriends(HttpClient *sender, HttpResponse *response);//加载好友列表
+    void onEatFood(HttpClient *sender, HttpResponse *response);//吃东西
     
     
     
@@ -94,6 +95,7 @@ public:
     void loadMail();//加载邮件
     void getStuff(int clothID,int cardID,int money,int mailID);//获取邮件里面的东东
     void loadFriends();//加载好友列表
+    void eatFood(int vp,int money,int exp,int honor);//吃食物
     
     //bool checkVersion(std::string version);
 };

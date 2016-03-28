@@ -858,4 +858,85 @@ void HttpUtility::onLoadFriends(HttpClient *sender, HttpResponse *response)
 }
 
 
+/*****************************获取好友列表*********************/
+void HttpUtility::eatFood(int vp, int money, int exp, int honor)
+{
+    //加入等待转圈Layer，并吞噬下层事件
+    auto scene = WaitLayer::create();
+    //scene->retain();
+    scene->setName("waitLayer");
+    callerLayer->addChild(scene);
+    scene->setVisible(true);
+    
+    
+    HttpRequest * request = new HttpRequest();
+    std::string url = "http://";
+    url += ip + "/php/eat_food.php";
+    CCLOG("url = %s", url.c_str());
+    request->setUrl(url.c_str());
+    request->setRequestType(HttpRequest::Type::POST);
+    request->setResponseCallback(CC_CALLBACK_2(HttpUtility::onEatFood, this));
+    char tag[5];
+    sprintf(tag,"%d", HttpEnum::LOADACCOUNT);
+    CCLOG("%s", tag);
+    request->setTag(tag);
+    
+    char temp[120];
+    sprintf(temp,"key=Kkdgx4cp&playerID=%d&vp=%d&money=%d&exp=%d&honor=%d"
+            ,Self::getInstance()->getPlayerID(),
+            vp,money,exp,honor);
+    CCLOG("%s", temp);
+    request->setRequestData(temp, strlen(temp)/sizeof(char));
+    this->httpClient->send(request);
+    request->release();
+}
+
+
+//LoadFriends回调
+void HttpUtility::onEatFood(HttpClient *sender, HttpResponse *response)
+{
+    int statusCode = response->getResponseCode();
+    
+    log("response code: %d", statusCode);
+    
+    if (!response->isSucceed()) {
+        log("response failed");
+        log("error buffer: %s", response->getErrorBuffer());
+        ((Promptable*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后连接");
+        return;
+    }
+    
+    __String *strTag = __String::create(response->getHttpRequest()->getTag());
+    int tag = strTag->uintValue();
+    log("request Action Code = %d", tag);
+    
+    std::vector<char> *responseData = response->getResponseData();
+    std::string responseDataStr = std::string(responseData->begin(), responseData->end());
+    
+    //以上为公共部分
+    if (statusCode == 200) {
+        //连接成功
+        bool flag = DataUtility::decodeFlagData(responseDataStr);
+        if(flag)
+        {
+            getInstance(callerLayer)->loadPlayerInformation(Self::getInstance()->getPlayerID(), Self::getInstance());
+        }
+        else
+        {//失败
+            //连接异常
+            ((Promptable*) this->callerLayer)->promptDialogBox("网络有屎，请倒立十分钟后重试");
+        }
+    }
+    else {
+        //连接异常
+        ((Promptable*) this->callerLayer)->promptDialogBox("服务器连接异常，请倒立十分钟后重试");
+    }
+    
+    //去掉WaitLayer
+    callerLayer->removeChildByName("waitLayer");
+    
+    if (!response) {
+        return;
+    }
+}
 

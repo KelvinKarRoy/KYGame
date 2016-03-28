@@ -165,12 +165,19 @@ void FoodScene::drawFoods()
         char temp[30];
         sprintf(temp, "food%d.png",i);
         
-        auto foodSprite = Sprite::create(temp);
+        auto foodButton = Button::create(temp);
+        //给按钮起个名字
+        sprintf(temp,"%d",i-1);
+        foodButton->setName(temp);
         
-        foodSprite->setAnchorPoint(Point(0,0.5));
-        foodSprite->setPosition(listSize.width/10, listSize.height/3/2);
-        foodSprite->setScale(listSize.height/4/foodSprite->getContentSize().width,listSize.height/4/foodSprite->getContentSize().height);
-        foodPanel->addChild(foodSprite);
+        foodButton->setAnchorPoint(Point(0,0.5));
+        foodButton->setPosition(Size(listSize.width/10, listSize.height/3/2));
+        foodButton->setScale(listSize.height/4/foodButton->getContentSize().width,listSize.height/4/foodButton->getContentSize().height);
+        
+        //绑定按钮回调
+        foodButton->addTouchEventListener(this,toucheventselector(FoodScene::clickFoodCallback));
+        
+        foodPanel->addChild(foodButton);
         
         auto nameText = Text::create(food.m_name.c_str(), "wending.TTF", 60);
         nameText->cocos2d::Node::setPosition(listSize.height/4 + listSize.width/4,listSize.height/3/7*6);
@@ -216,4 +223,56 @@ void FoodScene::drawFoods()
     
     
 }
+
+
+
+
+//food按钮回调
+void FoodScene::clickFoodCallback(Ref* caller, TouchEventType type)
+{
+    switch (type)
+    {
+        case TouchEventType::TOUCH_EVENT_BEGAN:
+            break;
+        case TouchEventType::TOUCH_EVENT_CANCELED:
+            break;
+        case TouchEventType::TOUCH_EVENT_MOVED:
+            break;
+        case TouchEventType::TOUCH_EVENT_ENDED:
+            //获取食物id
+            std::string sid = static_cast<Button*>(caller)->getName();
+            foodID = atoi(sid.c_str());
+            
+            if(Self::getInstance()->getVP() + foods[foodID].m_vp<=100)
+            {//未超量
+                char temp[50];
+                sprintf(temp, "你确定要花 %d 买这个给宝宝吃么~",foods[foodID].m_money);
+                promptDialogBox(temp,DialogLayer::DialogType::OKCANCELDIALOG);
+            }else
+            {//超量
+                promptDialogBox("喂得太饱了对身体不好~");
+            }
+            
+            
+            break;
+            
+    }
+}
+
+
+//弹出对话框
+void FoodScene::promptDialogBox(std::string str,DialogLayer::DialogType type)
+{
+    childLayer = DialogLayer::create(type);
+    ((DialogLayer*)childLayer)->setText(str);//弹出对话框
+    this->addChild((DialogLayer*)childLayer);
+}
+
+//ok按钮回调
+void FoodScene::onClickOKCallback()
+{
+    HttpUtility::getInstance(this)->eatFood(foods[foodID].m_vp,foods[foodID].m_money,
+                                            foods[foodID].m_exp,foods[foodID].m_honor);
+}
+
 
