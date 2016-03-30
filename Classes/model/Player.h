@@ -78,6 +78,8 @@ public:
     int getVP(){ return VP; }
     void setVP(int VP) { this->VP = VP; }
     
+    int getEatCount(){ return eatCount; }
+    void setEatCount(int eatCount){ this->eatCount = eatCount; }
     
     //各个属性
     enum ATTRIBUTE
@@ -118,6 +120,7 @@ private:
     int cloth;
     int card;
     int VP;
+    int eatCount;
     
     std::map<Player::ATTRIBUTE, int> attributes;//
     

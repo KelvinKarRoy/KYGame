@@ -91,10 +91,17 @@ bool AppDelegate::applicationDidFinishLaunching() {
     //iOS将本地数据库移到沙盒
 #if (CC_TARGET_PLATFORM != CC_PLATFORM_WIN32)
     createDownLoadUrl("db/");
+    /*
     if(!isFileExist("db/radar.csv"))    copyFile("db/radar.csv");
     if(!isFileExist("db/exp.csv"))    copyFile("db/exp.csv");
     if(!isFileExist("db/food.csv"))    copyFile("db/food.csv");
     if(!isFileExist("db/KYGame.db"))    copyFile("db/KYGame.db");
+    */
+    copyFile("db/radar.csv");
+    copyFile("db/exp.csv");
+    copyFile("db/food.csv");
+    if(!isFileExist("db/KYGame.db"))    copyFile("db/KYGame.db");
+    
     
 #endif
 

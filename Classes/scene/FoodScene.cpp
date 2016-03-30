@@ -242,22 +242,36 @@ void FoodScene::clickFoodCallback(Ref* caller, TouchEventType type)
             //获取食物id
             std::string sid = static_cast<Button*>(caller)->getName();
             foodID = atoi(sid.c_str());
-            if(Self::getInstance()->getMoney() >= foods[foodID].m_money)
-            {//钱够了
-                if(Self::getInstance()->getVP() + foods[foodID].m_vp<=100)
-                {//未超量
+            if(foods[foodID].m_money<=0)
+            {//会员免费食物
+                if(Self::getInstance()->getEatCount()>0)
+                {//还可以吃
                     char temp[50];
-                    sprintf(temp, "你确定要花 %d 买这个给宝宝吃么~",foods[foodID].m_money);
+                    sprintf(temp, "尊敬的会员，您今天还有 %d 次用餐机会",Self::getInstance()->getEatCount());
                     promptDialogBox(temp,DialogLayer::DialogType::OKCANCELDIALOG);
                 }else
-                {//超量
-                    promptDialogBox("喂得太饱了对身体不好~");
+                {//已经不能吃了
+                    promptDialogBox("抱歉，您今天免费用餐机会已用完");
                 }
+                
             }else
-            {//钱不够
-                promptDialogBox("对不起，你的现金不足哦~");
+            {
+                if(Self::getInstance()->getMoney() >= foods[foodID].m_money)
+                {//钱够了
+                    if(Self::getInstance()->getVP() + foods[foodID].m_vp<=100)
+                    {//未超量
+                        char temp[50];
+                        sprintf(temp, "你确定要花 %d 买这个给宝宝吃么~",foods[foodID].m_money);
+                        promptDialogBox(temp,DialogLayer::DialogType::OKCANCELDIALOG);
+                    }else
+                    {//超量
+                        promptDialogBox("喂得太饱了对身体不好~");
+                    }
+                }else
+                {//钱不够
+                    promptDialogBox("对不起，你的现金不足哦~");
+                }
             }
-            
             
             break;
             
