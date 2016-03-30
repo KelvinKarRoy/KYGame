@@ -87,8 +87,6 @@
 		B63BE7231CA7E10D0097B611 /* LoadInfoable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B63BE7211CA7E10D0097B611 /* LoadInfoable.cpp */; };
 		B63BE7261CA7E1AA0097B611 /* Httpable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B63BE7241CA7E1AA0097B611 /* Httpable.cpp */; };
 		B63BE7291CA808310097B611 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
-		B63BE72C1CA80B010097B611 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE72A1CA80B010097B611 /* back1.png */; };
-		B63BE72D1CA80B010097B611 /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE72B1CA80B010097B611 /* back2.png */; };
 		B63BE7351CA80B100097B611 /* FZMWFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B63BE72E1CA80B100097B611 /* FZMWFont.ttf */; };
 		B63BE7361CA80B100097B611 /* karryRolebtn1.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE72F1CA80B100097B611 /* karryRolebtn1.png */; };
 		B63BE7371CA80B100097B611 /* karryRolebtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE7301CA80B100097B611 /* karryRolebtn2.png */; };
@@ -124,7 +122,6 @@
 		B63BE7721CA828DC0097B611 /* food8.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE7681CA828DC0097B611 /* food8.png */; };
 		B63BE7731CA828DC0097B611 /* food9.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE7691CA828DC0097B611 /* food9.png */; };
 		B63BE7741CA828DC0097B611 /* food10.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE76A1CA828DC0097B611 /* food10.png */; };
-		B63BE7771CA83C6E0097B611 /* aboutScene.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE7751CA83C6E0097B611 /* aboutScene.png */; };
 		B63BE7781CA83C6E0097B611 /* authenticationBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = B63BE7761CA83C6E0097B611 /* authenticationBackGround.png */; };
 		B66C09F01C85505F002C8270 /* csb in Resources */ = {isa = PBXBuildFile; fileRef = B66C09CF1C85505E002C8270 /* csb */; };
 		B66C09F11C85505F002C8270 /* Default in Resources */ = {isa = PBXBuildFile; fileRef = B66C09D01C85505E002C8270 /* Default */; };
@@ -262,8 +259,6 @@
 		B63BE7221CA7E10D0097B611 /* LoadInfoable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = LoadInfoable.hpp; path = interface/LoadInfoable.hpp; sourceTree = "<group>"; };
 		B63BE7241CA7E1AA0097B611 /* Httpable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Httpable.cpp; path = interface/Httpable.cpp; sourceTree = "<group>"; };
 		B63BE7251CA7E1AA0097B611 /* Httpable.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Httpable.hpp; path = interface/Httpable.hpp; sourceTree = "<group>"; };
-		B63BE72A1CA80B010097B611 /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
-		B63BE72B1CA80B010097B611 /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
 		B63BE72E1CA80B100097B611 /* FZMWFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZMWFont.ttf; sourceTree = "<group>"; };
 		B63BE72F1CA80B100097B611 /* karryRolebtn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = karryRolebtn1.png; sourceTree = "<group>"; };
 		B63BE7301CA80B100097B611 /* karryRolebtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = karryRolebtn2.png; sourceTree = "<group>"; };
@@ -300,7 +295,6 @@
 		B63BE7681CA828DC0097B611 /* food8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food8.png; sourceTree = "<group>"; };
 		B63BE7691CA828DC0097B611 /* food9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food9.png; sourceTree = "<group>"; };
 		B63BE76A1CA828DC0097B611 /* food10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = food10.png; sourceTree = "<group>"; };
-		B63BE7751CA83C6E0097B611 /* aboutScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutScene.png; sourceTree = "<group>"; };
 		B63BE7761CA83C6E0097B611 /* authenticationBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = authenticationBackGround.png; sourceTree = "<group>"; };
 		B66C09CF1C85505E002C8270 /* csb */ = {isa = PBXFileReference; lastKnownFileType = folder; path = csb; sourceTree = "<group>"; };
 		B66C09D01C85505E002C8270 /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Default; sourceTree = "<group>"; };
@@ -451,7 +445,6 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B63BE7751CA83C6E0097B611 /* aboutScene.png */,
 				B63BE7761CA83C6E0097B611 /* authenticationBackGround.png */,
 				B63BE7611CA828DC0097B611 /* food1.png */,
 				B63BE7621CA828DC0097B611 /* food2.png */,
@@ -487,8 +480,6 @@
 				B63BE7321CA80B100097B611 /* PropertyBackGround.png */,
 				B63BE7331CA80B100097B611 /* radar.png */,
 				B63BE7341CA80B100097B611 /* RegeditBackground.png */,
-				B63BE72A1CA80B010097B611 /* back1.png */,
-				B63BE72B1CA80B010097B611 /* back2.png */,
 				B6E1EF721C89DFBF00D55420 /* db */,
 				B66C09CF1C85505E002C8270 /* csb */,
 				B66C09D01C85505E002C8270 /* Default */,
@@ -766,8 +757,6 @@
 				B66C09F11C85505F002C8270 /* Default in Resources */,
 				B63BE7501CA80B1E0097B611 /* scard0.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
-				B63BE7771CA83C6E0097B611 /* aboutScene.png in Resources */,
-				B63BE72C1CA80B010097B611 /* back1.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				B63BE74D1CA80B1E0097B611 /* RoleSelectBackground.png in Resources */,
@@ -776,7 +765,6 @@
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				B63BE7721CA828DC0097B611 /* food8.png in Resources */,
 				B63BE75A1CA80B1E0097B611 /* wait6.png in Resources */,
-				B63BE72D1CA80B010097B611 /* back2.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				B63BE7531CA80B1E0097B611 /* scloth1.png in Resources */,
