@@ -72,6 +72,14 @@ private:
     //点击查看属性
     void clickPropertyCallback(Ref*,TouchEventType type);
     
+    //点击查找玩家
+    void clickFindCallback(Ref*,TouchEventType type);
+    
+    //过滤器
+    void textFieldEvent(Ref * pSender, TextField::EventType type);
+
+
+    
 };
 
 

@@ -1110,11 +1110,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scene/FriendListScene.cpp"
-            timestampString = "480783171.801936"
+            timestampString = "481208472.072126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "FriendListScene::updateFriends()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1364,11 +1364,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/scene/FriendListScene.cpp"
-            timestampString = "480783171.801936"
+            timestampString = "481208472.072126"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "FriendListScene::clickPropertyCallback(Ref*,TouchEventType type)"
             landmarkType = "5">
          </BreakpointContent>

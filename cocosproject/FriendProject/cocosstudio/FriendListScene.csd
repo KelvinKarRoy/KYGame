@@ -54,7 +54,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Button_property" ActionTag="-624120052" Tag="45" IconVisible="False" LeftMargin="605.8986" RightMargin="1482.1014" TopMargin="13.5045" BottomMargin="26.4955" TouchEnable="True" FontSize="50" ButtonText="属性" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="6" BottomEage="6" Scale9OriginX="15" Scale9OriginY="6" Scale9Width="72" Scale9Height="38" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_property" ActionTag="-624120052" Tag="45" IconVisible="False" LeftMargin="605.8986" RightMargin="1482.1013" TopMargin="13.5045" BottomMargin="26.4955" TouchEnable="True" FontSize="50" ButtonText="属性" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="6" BottomEage="6" Scale9OriginX="15" Scale9OriginY="6" Scale9Width="72" Scale9Height="38" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="120.0000" Y="120.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="665.8986" Y="86.4955" />
@@ -117,6 +117,44 @@
             <FontResource Type="Normal" Path="wending.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Panel_find" ActionTag="91290683" Tag="55" IconVisible="False" LeftMargin="60.0000" RightMargin="1798.0000" TopMargin="42.0000" BottomMargin="1150.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="130" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="350.0000" Y="50.0000" />
+            <Children>
+              <AbstractNodeData Name="TextField_find" ActionTag="-1145299032" Tag="54" IconVisible="False" RightMargin="90.0000" TouchEnable="True" FontSize="40" IsCustomSize="True" LabelText="" PlaceHolderText="   好友的ID" MaxLengthEnable="True" MaxLengthText="7" ctype="TextFieldObjectData">
+                <Size X="260.0000" Y="50.0000" />
+                <AnchorPoint />
+                <Position />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize X="0.7429" Y="1.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Button_find" ActionTag="908047072" Tag="56" IconVisible="False" LeftMargin="260.0000" TouchEnable="True" FontSize="33" ButtonText="find" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="6" BottomEage="6" Scale9OriginX="15" Scale9OriginY="6" Scale9Width="11" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="90.0000" Y="50.0000" />
+                <AnchorPoint />
+                <Position X="260.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.7429" />
+                <PreSize X="0.2571" Y="1.0000" />
+                <FontResource Type="Normal" Path="wending.TTF" Plist="" />
+                <TextColor A="255" R="255" G="255" B="255" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint />
+            <Position X="60.0000" Y="1150.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0272" Y="0.9259" />
+            <PreSize X="0.1585" Y="0.0403" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

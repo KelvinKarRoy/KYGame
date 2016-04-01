@@ -60,6 +60,11 @@ bool FriendListScene::init()
     
     backButton->addTouchEventListener(this,toucheventselector(FriendListScene::clickBackCallback));
     
+    auto findButton = static_cast<cocos2d::ui::Button*>(rootNode->getChildByName("Panel_find")->getChildByName("Button_find"));
+    
+    findButton->addTouchEventListener(this,toucheventselector(FriendListScene::clickFindCallback));
+    
+    
     auto friendList = static_cast<cocos2d::ui::ListView*>(rootNode->getChildByName("ListView_friend"));
     buttonPanel = static_cast<cocos2d::ui::Layout*>(friendList->getChildByName("Panel_buttons"));
     
@@ -199,8 +204,38 @@ void FriendListScene::clickPropertyCallback(Ref*,TouchEventType type)
     }
 }
 
-
-
+//点击find
+void FriendListScene::clickFindCallback(Ref*,TouchEventType type)
+{
+    switch (type)
+    {
+        case TouchEventType::TOUCH_EVENT_BEGAN:
+            break;
+        case TouchEventType::TOUCH_EVENT_CANCELED:
+            break;
+        case TouchEventType::TOUCH_EVENT_MOVED:
+            break;
+        case TouchEventType::TOUCH_EVENT_ENDED:
+            std::string inputStr = static_cast<cocos2d::ui::TextField*>(rootNode->getChildByName("Panel_find")->getChildByName("TextField_find"))->getString();
+            for(int i=0;i<inputStr.size();++i)
+            {
+                if((inputStr[i] < '0' || inputStr[i] > '9'))
+                {
+                    promptDialogBox("输入非法,只接受数字");
+                    return;
+                }
+            }
+            
+            auto findText = static_cast<cocos2d::ui::TextField*>(rootNode->getChildByName("Panel_find")->getChildByName("TextField_find"));
+            showPlayerID = atoi(findText->getString().c_str());
+            auto layer = static_cast<PropertyScene*>(PropertyScene::create(showPlayerID));
+            auto scene = Scene::create();
+            scene->addChild(layer);
+            Director::getInstance()->replaceScene(scene);//切换到属性页面
+            break;
+            
+    }
+}
 
 
 
