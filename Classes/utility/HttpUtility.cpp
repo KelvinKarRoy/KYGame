@@ -362,9 +362,15 @@ void HttpUtility::onLoadPlayerInformation(HttpClient *sender, HttpResponse *resp
     
     if (statusCode == 200) {
         //连接成功
-        DataUtility::decodeInformation(responseDataStr);
-        //加载
-        static_cast<LoadInfoable*>(callerLayer)->onUpdateInfo();
+        if(DataUtility::decodeFlagData(responseDataStr))
+        {
+            DataUtility::decodeInformation(responseDataStr);
+            //加载
+            static_cast<LoadInfoable*>(callerLayer)->onUpdateInfo();
+        }else
+        {
+            static_cast<Promptable*>(callerLayer)->promptDialogBox("用户不存在~~");
+        }
     }
     else {
         //连接异常
